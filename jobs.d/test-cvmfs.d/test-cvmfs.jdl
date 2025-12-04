@@ -1,0 +1,10 @@
+[
+    JobName = "test cvmfs";
+    Executable = "./test-cvmfs.sh";
+    Arguments = "";
+    StdOutput = "std.out";
+    StdError = "std.err";
+    InputSandbox = {"test-cvmfs.sh", "cmssw-env"};
+    OutputSandbox = {"std.out","std.err"};
+    CPUTime = 100;
+    ]

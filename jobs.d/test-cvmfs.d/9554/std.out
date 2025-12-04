@@ -1,0 +1,141 @@
+==============================================================
+current env print out:
+
+_CONDOR_ANCESTOR_3502=1287248:1762239815:705256318
+DIRACSITE=LCG.UKI-SCOTGRID-GLASGOW.uk
+NVIDIA_VISIBLE_DEVICES=none
+SINGULARITY_CACHEDIR=/var/lib/condor/execute/dir_3814407
+_CONDOR_CHIRP_CONFIG=/var/lib/condor/execute/dir_3814407/.chirp.config
+_CONDOR_JOB_IWD=/var/lib/condor/execute/dir_3814407
+PYTHONUNBUFFERED=yes
+HISTCONTROL=ignoredups
+_CONDOR_MACHINE_AD=/var/lib/condor/execute/dir_3814407/.machine.ad
+ROOT_MAX_THREADS=8
+HOSTNAME=wn-d20-020.beowulf.cluster
+HISTSIZE=1000
+DAVIX_DISABLE_REDIRECT_CACHING=1
+NUMEXPR_NUM_THREADS=8
+GRID_GLOBAL_JOBURL=https://ce04.gla.scotgrid.ac.uk:443/arex/76816b56e41a
+CUBACORES=8
+_CHIRP_DELAYED_UPDATE_PREFIX=Chirp*
+OMP_THREAD_LIMIT=8
+OPENSSL_ALLOW_PROXY_CERTS=1
+XML_CATALOG_FILES=file:///cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/etc/xml/catalog file:///etc/xml/catalog
+PWD=/var/lib/condor/execute/dir_3814407/76816b56e41a/DIRAC_9bv84jj6pilot/9554
+GSETTINGS_SCHEMA_DIR=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/share/glib-2.0/schemas
+LOGNAME=dteam401
+CONDA_PREFIX=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64
+DIRAC_PROCESSORS=1
+MAMBA_ROOT_PREFIX=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64
+_CONDOR_JOB_AD=/var/lib/condor/execute/dir_3814407/.job.ad
+DIRACSYSCONFIG=/var/lib/condor/execute/dir_3814407/76816b56e41a/DIRAC_9bv84jj6pilot/pilot.cfg
+GSETTINGS_SCHEMA_DIR_CONDA_BACKUP=
+X509_USER_CERT=/var/lib/condor/execute/dir_3814407/76816b56e41a/user.proxy
+X509_VOMS_DIR=/cvmfs/grid.cern.ch/etc/grid-security/vomsdir
+PYTHON_CPU_COUNT=8
+OPENBLAS_NUM_THREADS=8
+_CONDOR_BIN=/usr/bin
+_CONDOR_ANCESTOR_3814407=3814445:1764325172:3695656950
+HOME=/var/lib/condor/execute/dir_3814407/76816b56e41a
+LANG=en_GB.UTF-8
+DAVIX_USE_LIBCURL=1
+X509_VOMSES=/cvmfs/grid.cern.ch/etc/grid-security/vomses
+JOBID=9554
+CONDA_PROMPT_MODIFIER=(base)
+DIRAC_JOB_PROCESSORS=1
+TMPDIR=/tmp
+_CONDOR_SCRATCH_DIR=/var/lib/condor/execute/dir_3814407
+DIRAC_VOMSES=/cvmfs/grid.cern.ch/etc/grid-security/vomses
+DIRAC_PILOT_STAMP=962303fa83b64334a47c3efd3dfe81a0
+CONDOR_STARTER_PID=3814407
+CUDA_VISIBLE_DEVICES=10000
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+USER=dteam401
+_CONDOR_JOB_PIDS=
+GPU_DEVICE_ORDINAL=10000
+CONDA_BACKUP_CONDOR_CONFIG=empty
+CONDA_SHLVL=1
+TEMP=/tmp
+X509_CERT_DIR=/cvmfs/grid.cern.ch/etc/grid-security/certificates
+GRID_GLOBAL_JOBINTERFACE=org.nordugrid.arcrest
+GOMAXPROCS=8
+SHLVL=4
+_CONDOR_LOWPORT=30000
+TF_NUM_THREADS=8
+APPTAINER_CACHEDIR=/var/lib/condor/execute/dir_3814407
+_CONDOR_ANCESTOR_1287248=3814407:1764325170:1233910696
+BATCH_SYSTEM=HTCondor
+_CONDOR_AssignedGPUs=10000
+CONDOR_CONFIG=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/etc/condor/condor_config
+_CONDOR_SLOT=slot1_12
+_CONDOR_HIGHPORT=32000
+DIRACOS=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64
+TF_LOOP_PARALLEL_ITERATIONS=8
+S_COLORS=auto
+CONDA_DEFAULT_ENV=base
+GRID_GLOBAL_JOBHOST=ce04.gla.scotgrid.ac.uk
+OMP_NUM_THREADS=8
+DEBUGINFOD_IMA_CERT_PATH=/etc/keys/ima:
+AGENT_WORKDIRECTORY=/var/lib/condor/execute/dir_3814407/76816b56e41a/DIRAC_9bv84jj6pilot/work/WorkloadManagement/JobAgent
+which_declare=declare -f
+XRD_WRITERECOVERY=0
+TMP=/tmp
+PATH=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/bin:/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/condabin:/home/dteam401/.local/bin:/home/dteam401/bin:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin
+JULIA_NUM_THREADS=8
+PYTHONWARNINGS=ignore
+MKL_NUM_THREADS=8
+MAIL=/var/spool/mail/dteam401
+DIRAC_WHOLENODE=False
+X509_USER_PROXY=/tmp/tmp2pxyb5g7
+DIRAC_RC_PATH=/cvmfs/dirac.egi.eu/dirac/v9.0.9/Linux-x86_64/diracosrc
+OLDPWD=/var/lib/condor/execute/dir_3814407
+GRID_GLOBAL_JOBID=76816b56e41a
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+_=/usr/bin/env
+
+
+==============================================================
+current user:
+
+***
+
+
+==============================================================
+current machine and arch:
+
+Linux wn-d20-020.beowulf.cluster 5.14.0-570.44.1.el9_6.x86_64 #1 SMP PREEMPT_DYNAMIC Wed Sep 17 10:32:11 EDT 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+
+==============================================================
+current OS:
+
+NAME="AlmaLinux"
+VERSION="9.6 (Sage Margay)"
+ID="almalinux"
+ID_LIKE="rhel centos fedora"
+VERSION_ID="9.6"
+PLATFORM_ID="platform:el9"
+PRETTY_NAME="AlmaLinux 9.6 (Sage Margay)"
+ANSI_COLOR="0;34"
+LOGO="fedora-logo-icon"
+CPE_NAME="cpe:/o:almalinux:almalinux:9::baseos"
+HOME_URL="https://almalinux.org/"
+DOCUMENTATION_URL="https://wiki.almalinux.org/"
+BUG_REPORT_URL="https://bugs.almalinux.org/"
+
+ALMALINUX_MANTISBT_PROJECT="AlmaLinux-9"
+ALMALINUX_MANTISBT_PROJECT_VERSION="9.6"
+REDHAT_SUPPORT_PRODUCT="AlmaLinux"
+REDHAT_SUPPORT_PRODUCT_VERSION="9.6"
+SUPPORT_END=2032-06-01
+
+
+==============================================================
+probing to run apptainer:
+executing: /cvmfs/cms.cern.ch/common/cmssw-el8 -- 'echo we are here'
+
+we are here
+
+

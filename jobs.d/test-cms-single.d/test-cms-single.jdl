@@ -1,0 +1,13 @@
+JobName = "test cms single job";
+Executable = "./test-cms-single.sh";
+Arguments = "";
+StdOutput = "std.out";
+StdError = "std.err";
+InputSandbox = {
+    "test-cms-single.sh",
+    "Startup.sh",
+    "JobPackage.pkl",
+    "pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2",
+    "Unpacker.py"};
+OutputSandbox = {"std.out", "std.err", "Report.0.pkl", "wmagentJob.log"};
+CPUTime = 1000;

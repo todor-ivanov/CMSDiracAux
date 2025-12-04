@@ -1,0 +1,603 @@
+INFO:root:Process id: 1156304	Current working directory: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job
+INFO:root:Python version: 3.8.2 (default, Nov 21 2020, 05:27:33) 
+[GCC 9.3.0]
+INFO:root:Python path: ['/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job', '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMCore.zip', '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/py3-future/0.18.2/lib/python3.8/site-packages', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python38.zip', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8/lib-dynload', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8/site-packages']
+INFO:root:Loading job definition
+INFO:root:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+INFO:root:Loading task
+INFO:root:Setting up monitoring
+INFO:root:Creating WM runtime information json
+INFO:root:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+INFO:root:runtime json = {
+    "cmsRun_params": [
+        {
+            "input_files": [],
+            "keep_output": true,
+            "output_files": [
+                "FEVTDEBUGoutput.root"
+            ],
+            "output_files_datatiers": [
+                "GEN-SIM"
+            ],
+            "output_files_merged_base": [
+                "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "output_files_unmerged_base": [
+                "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "step": "cmsRun1",
+            "transient_output": [
+                true
+            ]
+        }
+    ],
+    "job_type": "Production",
+    "number_of_cmsRuns": 1,
+    "worker_arch": "X86_64",
+    "worker_os": "rhel8",
+    "workflow_type": "TaskChain"
+}
+INFO:root:Creating WM runtime information json took 0.252 seconds to complete
+INFO:root:Building task at directory: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job
+INFO:root:CMSSW.coreBuild invoked
+INFO:root:create(/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1)
+INFO:root:Builders.CMSSW.build called on cmsRun1
+INFO:root:StageOut.coreBuild invoked
+INFO:root:create(/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/stageOut1)
+INFO:root:Builders.StageOut.build called on stageOut1
+INFO:root:LogArchive.coreBuild invoked
+INFO:root:create(/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1)
+INFO:root:Builders.LogArchive.build called on logArch1
+INFO:root:Executing task at directory: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job
+INFO:root:In Watchdog.setupMonitors
+INFO:root:Set Watchdog interval to 300
+INFO:root:Initializing monitor PerformanceMonitor
+INFO:root:Not resizing job
+INFO:root:Watchdog modified: False. Final settings:
+INFO:root:  hardTimeout: 159900
+INFO:root:  softTimeout: 159600
+INFO:root:  maxPSS: 20000
+INFO:root:  cores: 8
+INFO:root:MonitorThread: JobStarted
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.CMSSW.pre called
+INFO:root:Steps.Executors.CMSSW.execute called
+INFO:root:CMSSW configured for 8 cores and 1 event streams
+INFO:root:CMSSW configured for GPU required: forbidden, with these settings: None
+INFO:root:Executing CMSSW step
+INFO:root:Running SCRAM
+INFO:root:Running PRE scripts
+INFO:root:    Invoking command:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/bin/python3 -m WMCore.WMRuntime.ScriptInvoke WMTaskSpace.cmsRun1 SetupCMSSWPset 
+
+INFO:root:stdout: 2025-12-02 15:15:08,257:INFO:ScriptInvoke:Invoking scripts in current directory: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1
+2025-12-02 15:15:08,275:INFO:Bootstrap:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+2025-12-02 15:15:08,348:INFO:SetupCMSSWPset:Executing SetupCMSSWPSet...
+2025-12-02 15:15:08,348:INFO:SetupCMSSWPset:Creating Scram environment with scram arch: el8_amd64_gcc13 and CMSSW version: CMSSW_16_0_0_pre2
+2025-12-02 15:15:13,375:INFO:SetupCMSSWPset:DEBUG: Now in the none scenario to load PSET
+2025-12-02 15:15:13,375:INFO:SetupCMSSWPset:Working dir: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1
+2025-12-02 15:15:13,375:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_pickler.py --input /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.py --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:13,376:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:13,376:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:13,382:INFO:Scram:    Invoking command: edm_pset_pickler.py --input /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.py --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:16,939:INFO:Scram:Subprocess stdout was:
+
+2025-12-02 15:15:16,939:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:17,013:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_condor_status_service.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --name cmsRun1
+2025-12-02 15:15:17,014:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:17,014:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:17,021:INFO:Scram:    Invoking command: cmssw_handle_condor_status_service.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --name cmsRun1
+2025-12-02 15:15:18,318:INFO:Scram:Subprocess stdout was:
+Added CondorStatusService
+
+2025-12-02 15:15:18,319:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:18,319:INFO:SetupCMSSWPset:DEBUG output module = FEVTDEBUGoutput
+2025-12-02 15:15:18,321:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:18,322:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:18,322:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:18,327:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:19,644:INFO:Scram:Subprocess stdout was:
+Attribute already set process.options. Not changing
+Attribute already set process.FEVTDEBUGoutput.dataset. Not changing
+
+2025-12-02 15:15:19,644:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:19,645:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:19,645:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:19,645:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:19,651:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:20,925:INFO:Scram:Subprocess stdout was:
+Attribute already set process.FEVTDEBUGoutput.fileName. Not changing
+Set attribute process.FEVTDEBUGoutput.logicalFileName to cms.untracked.string('')
+
+2025-12-02 15:15:20,925:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:20,925:INFO:WMTweak:Not resizing job
+2025-12-02 15:15:20,926:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:20,926:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:20,926:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:20,933:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-12-02 15:15:22,071:INFO:Scram:Subprocess stdout was:
+Attribute already set process.options. Not changing
+
+2025-12-02 15:15:22,071:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:22,072:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:22,072:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:22,072:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:22,079:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:23,297:INFO:Scram:Subprocess stdout was:
+Set attribute process.options.numberOfThreads to cms.untracked.uint32(8)
+Set attribute process.options.numberOfStreams to cms.untracked.uint32(1)
+Set attribute process.GlobalTag.globaltag to cms.string('151X_mcRun3_2025_realistic_v4')
+
+2025-12-02 15:15:23,297:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:23,297:INFO:SetupCMSSWPset:Creating job level tweaks
+2025-12-02 15:15:23,297:INFO:WMTweak:Setting 'firstLuminosityBlock' attr to: 1001
+2025-12-02 15:15:23,297:INFO:WMTweak:Adding 0 files to 'fileNames' attr
+2025-12-02 15:15:23,298:INFO:WMTweak:Adding 0 files to 'secondaryFileNames' attr
+2025-12-02 15:15:23,298:INFO:WMTweak:Setting 'firstEvent' attr to: 100001
+2025-12-02 15:15:23,298:INFO:WMTweak:Setting 'maxEvents.input' attr to: 100
+2025-12-02 15:15:23,298:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:23,299:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:23,299:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:23,305:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:24,569:INFO:Scram:Subprocess stdout was:
+Set attribute process.maxEvents to cms.untracked.PSet(
+    input = cms.untracked.int32(100),
+    output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
+)
+Set attribute process.source.firstLuminosityBlock to cms.untracked.uint32(1001)
+Set attribute process.source.firstEvent to cms.untracked.uint32(100001)
+Set attribute process.source.firstRun to cms.untracked.uint32(1)
+
+2025-12-02 15:15:24,569:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:24,569:INFO:SetupCMSSWPset:Output module section
+2025-12-02 15:15:24,673:INFO:WMTweak:modName = FEVTDEBUGoutput
+2025-12-02 15:15:24,674:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --allow_failed_tweaks
+2025-12-02 15:15:24,674:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:24,674:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:24,682:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json --allow_failed_tweaks
+2025-12-02 15:15:25,969:INFO:Scram:Subprocess stdout was:
+Set attribute process.FEVTDEBUGoutput.fileName to cms.untracked.string('FEVTDEBUGoutput.root')
+Set attribute process.FEVTDEBUGoutput.logicalFileName to cms.untracked.string('/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/FEVTDEBUGoutput.root')
+
+2025-12-02 15:15:25,969:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:25,969:INFO:SetupCMSSWPset:Job seeding set to: AutomaticSeeding
+2025-12-02 15:15:25,969:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_random_seeds.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --seeding AutomaticSeeding
+2025-12-02 15:15:25,969:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:25,969:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:25,977:INFO:Scram:    Invoking command: cmssw_handle_random_seeds.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --seeding AutomaticSeeding
+2025-12-02 15:15:27,283:INFO:Scram:Subprocess stdout was:
+Populared random numbers of RandomNumberService
+
+2025-12-02 15:15:27,283:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:27,284:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:27,285:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:27,285:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:27,291:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:28,750:INFO:Scram:Subprocess stdout was:
+Set attribute process.SimpleMemoryCheck to SimpleMemoryCheck
+Set attribute process.CPU to CPU
+Set attribute process.Timing to Timing
+
+2025-12-02 15:15:28,751:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:28,751:INFO:SetupCMSSWPset:DQMFileSaver set to multiRun: False, runIsComplete: False, runLimits: 
+2025-12-02 15:15:28,751:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_dqm_filesaver.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:28,751:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:28,751:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:28,757:INFO:Scram:    Invoking command: cmssw_handle_dqm_filesaver.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:30,008:INFO:Scram:Subprocess stdout was:
+
+2025-12-02 15:15:30,008:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:30,008:INFO:SetupCMSSWPset:Not evaluating enforceGUIDInFileName parameter for process source EmptySource
+2025-12-02 15:15:30,009:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:30,009:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:30,009:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:30,056:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --json /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-12-02 15:15:31,188:INFO:Scram:Subprocess stdout was:
+Set attribute process.Timing.summaryOnly to cms.untracked.bool(True)
+Set attribute process.source.numberEventsInLuminosityBlock to cms.untracked.uint32(100)
+
+2025-12-02 15:15:31,188:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:31,189:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_nEvents.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:31,189:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-12-02 15:15:31,189:INFO:Scram:Also recording SCRAM command-line related output.
+2025-12-02 15:15:31,195:INFO:Scram:    Invoking command: cmssw_handle_nEvents.py --input_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-12-02 15:15:32,396:INFO:Scram:Subprocess stdout was:
+
+2025-12-02 15:15:32,396:INFO:Scram:Subprocess stderr was:
+None
+2025-12-02 15:15:32,396:INFO:SetupCMSSWPset:CMSSW PSet setup completed!
+
+stderr: 
+INFO:root:RUNNING SCRAM SCRIPTS
+INFO:root:Executing CMSSW. args: ['/bin/bash', '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/cmsRun1-main.sh', '', 'el8_amd64_gcc13', 'scramv1', 'CMSSW', 'CMSSW_16_0_0_pre2', 'FrameworkJobReport.xml', 'cmsRun', 'PSet.py', '']
+INFO:root:PSS: 1067530; RSS: 1259436; PCPU: 94.0; PMEM: 0.1
+INFO:root:PSS: 1124125; RSS: 1308976; PCPU: 97.0; PMEM: 0.1
+INFO:root:PSS: 1167665; RSS: 1349800; PCPU: 97.6; PMEM: 0.1
+INFO:root:PSS: 1198007; RSS: 1362364; PCPU: 98.1; PMEM: 0.1
+INFO:root:PSS: 1206907; RSS: 1372796; PCPU: 98.3; PMEM: 0.1
+INFO:root:PSS: 1476102; RSS: 1398704; PCPU: 98.5; PMEM: 0.1
+WARNING:root:condor_chirp was not found in the system.
+INFO:root:Step cmsRun1: Chirp_WMCore_cmsRun_ExitCode 0
+WARNING:root:condor_chirp was not found in the system.
+INFO:root:Step cmsRun1: Chirp_WMCore_cmsRun1_ExitCode 0
+INFO:root:addOutputFile method called with outputModule: FEVTDEBUGoutput, aFile: None
+INFO:root:addOutputFile method fileRef: , whole tree: {}
+INFO:root:Steps.Executors.CMSSW.post called
+INFO:root:StepName: cmsRun1, StepType: CMSSW, with result: 0
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.StageOut.pre called
+INFO:root:Steps.Executors.StageOut.execute called
+INFO:root:StageOut override is: stageOut1.section_('input')
+stageOut1.input.section_('links')
+stageOut1.section_('builder')
+stageOut1.builder.workingDir = '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/stageOut1'
+stageOut1.owner_vorole = 'DEFAULT'
+stageOut1.section_('environment')
+stageOut1.environment.section_('paths')
+stageOut1.environment.section_('variables')
+stageOut1.retryDelay = 300
+stageOut1.section_('execution')
+stageOut1.execution.exitStatus = 0
+stageOut1.execution.reportLocation = '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/stageOut1/Report.pkl'
+stageOut1.stepType = 'StageOut'
+stageOut1.filecount = 0
+stageOut1.section_('sandbox')
+stageOut1.retryCount = 3
+stageOut1.section_('emulator')
+stageOut1.objectType = 'WMStep'
+stageOut1.owner_vogroup = 'DEFAULT'
+stageOut1.section_('application')
+stageOut1.application.section_('configuration')
+stageOut1.application.section_('controls')
+stageOut1.section_('build')
+stageOut1.build.section_('directories')
+stageOut1.build.directories.section_('stageOut1')
+stageOut1.newStageout = False
+stageOut1.section_('files')
+stageOut1.asyncDest = None
+stageOut1.userDN = None
+stageOut1.section_('override')
+stageOut1.section_('output')
+stageOut1.output.minMergeSize = 2147483648
+stageOut1.output.maxMergeEvents = 20000000
+stageOut1.section_('tree')
+stageOut1.tree.parent = 'cmsRun1'
+stageOut1.tree.section_('children')
+stageOut1.tree.childNames = []
+ 
+INFO:root:StageOutMgr::__init__()
+INFO:root:==== Stageout configuration start ====
+INFO:root:
+There are 3 stage out definitions.
+INFO:root:
+Stage out to : T2_UK_SGrid_RALPP using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=xrootd-module path-match-re=/(.*) result=/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=file path-match-re=/(.*) result=file:/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=xrootd-module path-match-re=/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=file path-match-re=file:/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:
+Stage out to : T2_UK_SGrid_RALPP using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=xrootd-module path-match-re=/(.*) result=/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=file path-match-re=/(.*) result=file:/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=xrootd-module path-match-re=/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=file path-match-re=file:/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:
+Stage out to : T2_UK_London_IC using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://gfe02.grid.hep.ph.ic.ac.uk:1094//pnfs/hep.ph.ic.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://gfe02.grid.hep.ph.ic.ac.uk:2880/pnfs/hep.ph.ic.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://gfe02.grid.hep.ph.ic.ac.uk:1094//pnfs/hep.ph.ic.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://gfe02.grid.hep.ph.ic.ac.uk:2880/pnfs/hep.ph.ic.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:==== Stageout configuration finish ====
+INFO:root:Beginning report processing for step cmsRun1
+INFO:root:==>Working on file: /store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+INFO:root:===> Attempting 3 Stage Outs
+INFO:root:LFN to PFN match made:
+LFN: /store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+PFN: davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+
+INFO:root:Creating output directory...
+INFO:root:Stage out requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:File removal requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:Running the stage out with the available auth method (attempt 1)...
+INFO:root:Command to run: #!/bin/bash
+env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-copy -t 2400 -T 2400 -p -v --abort-on-failure -K adler32:38661517  file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root'
+        EXIT_STATUS=$?
+        echo "gfal-copy exit status: $EXIT_STATUS"
+        if [[ $EXIT_STATUS != 0 ]]; then
+            echo "ERROR: gfal-copy exited with $EXIT_STATUS"
+            echo "Cleaning up failed file:"
+            env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-rm -t 600 davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root'
+        fi
+        exit $EXIT_STATUS
+        
+INFO:root:Executing command with timeout: 10800 seconds
+INFO:root:Command exited with status: 0
+Output message: stdout: Tue Dec  2 15:47:10 GMT 2025
+Copying 94129000 bytes file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690430424] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+event: [1764690430424] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690430424] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+event: [1764690430424] BOTH   http_plugin	PREPARE:ENTER	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690430424] SOURCE http_plugin	CHECKSUM:ENTER	
+event: [1764690430557] SOURCE http_plugin	CHECKSUM:EXIT	
+event: [1764690430612] BOTH   http_plugin	PREPARE:EXIT	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690430612] BOTH   http_plugin	TRANSFER:ENTER	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690430612] BOTH   http_plugin	TRANSFER:TYPE	streamed
+event: [1764690431198] BOTH   http_plugin	TRANSFER:EXIT	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root
+event: [1764690431198] DEST   http_plugin	CHECKSUM:ENTER	
+event: [1764690431230] DEST   http_plugin	CHECKSUM:EXIT	
+gfal-copy exit status: 0
+
+stderr: bash: /startup_environment.sh: No such file or directory
+
+INFO:root:
+Stage-out succeeded with the current environment.
+INFO:root:attempting stageOut
+INFO:root:===> Stage Out Successful: {'LFN': '/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root', 'PFN': 'davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/c65f9aa6-7e7e-4465-b5aa-f0e008e6688f.root', 'PNN': 'T2_UK_SGrid_RALPP', 'StageOutCommand': 'gfal2', 'Checksums': {'adler32': '38661517', 'cksum': '1669915812'}, 'StageOutReport': []}
+INFO:root:Beginning report processing for step logArch1
+ERROR:root:Cannot find report for step logArch1 in space /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1
+INFO:root:Transferred 1 files
+INFO:root:Steps.Executors.StageOut.post called
+INFO:root:Beginning report processing for step cmsRun1
+INFO:root:Beginning report processing for step logArch1
+ERROR:root:Cannot find report for step logArch1 in space /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1
+INFO:root:StepName: stageOut1, StepType: StageOut, with result: 0
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.LogArchive.pre called
+INFO:root:Steps.Executors.LogArchive.execute called
+INFO:root:Using the following overrides: {'eos-lfn-prefix': 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'} 
+INFO:root:Step configuration is: logArch1.newStageout = False
+logArch1.objectType = 'WMStep'
+logArch1.section_('sandbox')
+logArch1.retryCount = 3
+logArch1.section_('application')
+logArch1.application.section_('configuration')
+logArch1.application.section_('controls')
+logArch1.section_('input')
+logArch1.input.section_('links')
+logArch1.section_('emulator')
+logArch1.section_('builder')
+logArch1.builder.workingDir = '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1'
+logArch1.section_('tree')
+logArch1.tree.parent = 'cmsRun1'
+logArch1.tree.section_('children')
+logArch1.tree.childNames = []
+logArch1.section_('override')
+logArch1.override.eos-lfn-prefix = 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'
+logArch1.logcount = 0
+logArch1.section_('output')
+logArch1.output.section_('modules')
+logArch1.output.modules.section_('logArchive')
+logArch1.section_('build')
+logArch1.build.section_('directories')
+logArch1.build.directories.section_('logArch1')
+logArch1.section_('logs')
+logArch1.section_('environment')
+logArch1.environment.section_('paths')
+logArch1.environment.section_('variables')
+logArch1.section_('execution')
+logArch1.execution.exitStatus = 0
+logArch1.execution.reportLocation = '/scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/Report.pkl'
+logArch1.retryDelay = 300
+logArch1.stepType = 'LogArchive'
+
+INFO:root:StageOutMgr::__init__()
+INFO:root:StageOutMgr::__init__(): Override: {'eos-lfn-prefix': 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'}
+INFO:root:=======StageOut Override: These are not the parameters you are looking for
+INFO:root:==== Stageout configuration start ====
+INFO:root:
+There are 3 stage out definitions.
+INFO:root:
+Stage out to : T2_UK_SGrid_RALPP using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=xrootd-module path-match-re=/(.*) result=/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=file path-match-re=/(.*) result=file:/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=xrootd-module path-match-re=/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=file path-match-re=file:/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:
+Stage out to : T2_UK_SGrid_RALPP using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=xrootd-module path-match-re=/(.*) result=/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=file path-match-re=/(.*) result=file:/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=xrootd-module path-match-re=/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=file path-match-re=file:/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://mover.pp.rl.ac.uk:1094/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:
+Stage out to : T2_UK_London_IC using: gfal2
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://gfe02.grid.hep.ph.ic.ac.uk:1094//pnfs/hep.ph.ic.ac.uk/data/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://gfe02.grid.hep.ph.ic.ac.uk:2880/pnfs/hep.ph.ic.ac.uk/data/cms/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://gfe02.grid.hep.ph.ic.ac.uk:1094//pnfs/hep.ph.ic.ac.uk/data/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://gfe02.grid.hep.ph.ic.ac.uk:2880/pnfs/hep.ph.ic.ac.uk/data/cms/(.*) result=/$1
+
+INFO:root:==== Stageout configuration finish ====
+INFO:root:==>Working on file: /store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+INFO:root:===> Attempting 3 Stage Outs
+INFO:root:LFN to PFN match made:
+LFN: /store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+PFN: davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+
+INFO:root:Creating output directory...
+INFO:root:Stage out requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:File removal requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:Running the stage out with the available auth method (attempt 1)...
+INFO:root:Command to run: #!/bin/bash
+env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-copy -t 2400 -T 2400 -p -v --abort-on-failure -K adler32  file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        EXIT_STATUS=$?
+        echo "gfal-copy exit status: $EXIT_STATUS"
+        if [[ $EXIT_STATUS != 0 ]]; then
+            echo "ERROR: gfal-copy exited with $EXIT_STATUS"
+            echo "Cleaning up failed file:"
+            env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-rm -t 600 davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        fi
+        exit $EXIT_STATUS
+        
+INFO:root:Executing command with timeout: 10800 seconds
+INFO:root:Command exited with status: 17
+Output message: stdout: Tue Dec  2 15:47:11 GMT 2025
+gfal-copy exit status: 17
+ERROR: gfal-copy exited with 17
+Cleaning up failed file:
+Tue Dec  2 15:47:11 GMT 2025
+davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz	DELETED
+
+stderr: bash: /startup_environment.sh: No such file or directory
+gfal-copy error: 17 (File exists) - Destination davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz exists and overwrite is not set
+bash: /startup_environment.sh: No such file or directory
+
+ERROR:root:Exception During Stage Out:
+Command exited non-zero, ExitCode: 17
+Output: stdout: Tue Dec  2 15:47:11 GMT 2025
+gfal-copy exit status: 17
+ERROR: gfal-copy exited with 17
+Cleaning up failed file:
+Tue Dec  2 15:47:11 GMT 2025
+davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz	DELETED
+
+stderr: bash: /startup_environment.sh: No such file or directory
+gfal-copy error: 17 (File exists) - Destination davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz exists and overwrite is not set
+bash: /startup_environment.sh: No such file or directory
+
+ERROR:root:Attempt 0 to stage out failed with default setup.
+Error details:
+<@========== WMException Start ==========@>
+Exception Class: StageOutError
+Message: Command exited non-zero, ExitCode: 17
+Output: stdout: Tue Dec  2 15:47:11 GMT 2025
+gfal-copy exit status: 17
+ERROR: gfal-copy exited with 17
+Cleaning up failed file:
+Tue Dec  2 15:47:11 GMT 2025
+davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz	DELETED
+
+stderr: bash: /startup_environment.sh: No such file or directory
+gfal-copy error: 17 (File exists) - Destination davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz exists and overwrite is not set
+bash: /startup_environment.sh: No such file or directory
+
+	ClassName : None
+	ModuleName : WMCore.Storage.StageOutError
+	MethodName : __init__
+	ClassInstance : None
+	FileName : /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMCore.zip/WMCore/Storage/StageOutError.py
+	LineNumber : 32
+	ErrorNr : 0
+	Command : #!/bin/bash
+env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-copy -t 2400 -T 2400 -p -v --abort-on-failure -K adler32  file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        EXIT_STATUS=$?
+        echo "gfal-copy exit status: $EXIT_STATUS"
+        if [[ $EXIT_STATUS != 0 ]]; then
+            echo "ERROR: gfal-copy exited with $EXIT_STATUS"
+            echo "Cleaning up failed file:"
+            env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh;  date;  gfal-rm -t 600 davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        fi
+        exit $EXIT_STATUS
+        
+	ExitCode : 17
+	ErrorCode : 60311
+	ErrorType : GeneralStageOutFailure
+
+Traceback: 
+
+<@---------- WMException End ----------@>
+
+INFO:root:Retrying with authentication-safe logic...
+INFO:root:Retrying with X509_USER_PROXY with BEARER_TOKEN unset...
+INFO:root:Command to run: #!/bin/bash
+env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh; unset BEARER_TOKEN; date;  gfal-copy -t 2400 -T 2400 -p -v --abort-on-failure -K adler32  file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        EXIT_STATUS=$?
+        echo "gfal-copy exit status: $EXIT_STATUS"
+        if [[ $EXIT_STATUS != 0 ]]; then
+            echo "ERROR: gfal-copy exited with $EXIT_STATUS"
+            echo "Cleaning up failed file:"
+            env -i X509_USER_PROXY=$X509_USER_PROXY JOBSTARTDIR=$JOBSTARTDIR bash -c '. $JOBSTARTDIR/startup_environment.sh; unset BEARER_TOKEN; date;  gfal-rm -t 600 davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz'
+        fi
+        exit $EXIT_STATUS
+        
+INFO:root:Executing command with timeout: 10800 seconds
+INFO:root:Command exited with status: 0
+Output message: stdout: Tue Dec  2 15:47:12 GMT 2025
+Copying 175421 bytes file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690432738] BOTH   GFAL2:CORE:COPY	LIST:ENTER	
+event: [1764690432738] BOTH   GFAL2:CORE:COPY	LIST:ITEM	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690432738] BOTH   GFAL2:CORE:COPY	LIST:EXIT	
+event: [1764690432738] BOTH   http_plugin	PREPARE:ENTER	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690432738] SOURCE http_plugin	CHECKSUM:ENTER	
+event: [1764690432739] SOURCE http_plugin	CHECKSUM:EXIT	
+event: [1764690432797] BOTH   http_plugin	PREPARE:EXIT	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690432797] BOTH   http_plugin	TRANSFER:ENTER	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690432797] BOTH   http_plugin	TRANSFER:TYPE	streamed
+event: [1764690433054] BOTH   http_plugin	TRANSFER:EXIT	file:///scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/logArchive.tar.gz => davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+event: [1764690433054] DEST   http_plugin	CHECKSUM:ENTER	
+event: [1764690433087] DEST   http_plugin	CHECKSUM:EXIT	
+gfal-copy exit status: 0
+
+stderr: bash: /startup_environment.sh: No such file or directory
+
+INFO:root:Stage-out succeeded with X509 with BEARER_TOKEN unset.
+INFO:root:attempting stageOut
+INFO:root:===> Stage Out Successful: {'LFN': '/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'PFN': 'davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'PNN': 'T2_UK_SGrid_RALPP', 'GUID': None, 'StageOutReport': [], 'StageOutCommand': 'gfal2'}
+INFO:root:addOutputFile method called with outputModule: logArchive, aFile: {'lfn': '/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'pfn': 'davs://mover.pp.rl.ac.uk:2880/pnfs/pp.rl.ac.uk/data/cms/store/unmerged/logs/prod/2025/12/2/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'location': 'T2_UK_SGrid_RALPP', 'module_label': 'logArchive', 'events': 0, 'size': 0, 'merged': False, 'checksums': {'adler32': 'eef91d49', 'cksum': '1587890168'}}
+INFO:root:addOutputFile method fileRef: , whole tree: {}
+INFO:root:Success job! Not saving its logs to CERN EOS recent area.
+INFO:root:Steps.Executors.LogArchive.post called
+INFO:root:StepName: logArch1, StepType: LogArchive, with result: 0
+INFO:root:MonitorThread: JobEnded
+INFO:root:MonitorState: Shutdown called
+INFO:root:Completing task at directory: /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace
+INFO:root:Looking for master report at /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/../../Report.0.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/cmsRun1/Report.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/stageOut1/Report.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /scratch/condor/dir_753924/r2IMDmmTgk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmqRPKDmWpqItn/DIRAC_ra_uk7r8pilot/9562/job/WMTaskSpace/logArch1/Report.pkl
+INFO:root:  found it!
+INFO:root:Shutting down monitor
