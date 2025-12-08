@@ -39,7 +39,7 @@ These are notes collected during the process of initial tests of running CMS spe
 
 <details>
 
-<summary>* Printout the job runtime environment and run a single command from within a singularity image:</summary>
+<summary>Printout the job runtime environment and run a single command from within a singularity image:</summary>
 
 ```
 (base) [tivanov@vocms0290 test-cvmfs.d]$ cat 9554/std.out
@@ -189,7 +189,8 @@ we are here
 #### CMSSW single job tests
 
 * Dissemble a CMS production workflow and run a single CMSSW job locally:
-The procedures here follows the instructions provided with the WMCore documentation at:
+
+The procedures here follow the instructions provided within the WMCore documentation at:
 [Running WMCore jobs interactively](https://cms-wmcore.docs.cern.ch/training/interactive_jobs/)
 
  * The workflow chosen: [pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717](https://cmsweb.cern.ch/reqmgr2/fetch?rid=pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717)
@@ -197,21 +198,53 @@ The procedures here follows the instructions provided with the WMCore documentat
  * Get all the files you'd need from the agent running the workflow:
 
 ```
-(base) [tivanov@vocms0290 ~] cd CMSDiracAux/CMSWorkflows.d/
-
+[tivanov@lxplus9118 ~] cd ~/CMSDiracAux/CMSWorkflows.d/
+[tivanov@lxplus9118 CMSWorkflows.d]$ wmWflow=pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717
+[tivanov@lxplus9118 CMSWorkflows.d]$ wmAgent=vocms0281
+[tivanov@lxplus9118 CMSWorkflows.d]$ mkdir -p $wmWflow/WorkQueueManager/cache/
+[tivanov@lxplus9118 CMSWorkflows.d]$ scp -r $wmAgent:/data/dockerMount/srv/wmagent/current/install/Docker/WMRuntime/ $wmWorkflow/
+[tivanov@lxplus9118 CMSWorkflows.d]$ scp -r $wmAgent:/data/dockerMount/srv/wmagent/current/install/WorkQueueManager/cache/$wmWflow $wmWflow/WorkQueueManager/cache/
 ```
 
+The job chosen was from a DIGI task: 219128
 
+ * Unpack the job in an isolated space:
 
-* Run one production job with Dirac
+```
+[tivanov@lxplus9118 CMSWorkflows.d]$ mkdir -p $wmWflow/run_job_219128/
+[tivanov@lxplus9118 CMSWorkflows.d]$ cp $wmWflow/WorkQueueManager/cache/$wmWflow/*-Sandbox.tar.bz2 $wmWflow/run_job_219128/
+[tivanov@lxplus9118 CMSWorkflows.d]$ cp $wmWflow/WorkQueueManager/cache/$wmWflow/PackageCollection_0/batch_219427-0/JobPackage.pkl $wmWflow/run_job_219128/JobPackage.pkl
+[tivanov@lxplus9118 CMSWorkflows.d]$ cd $wmWflow/run_job_219128/
+[tivanov@lxplus9118 run_job_219128]$ sandbox=$PWD/*-Sandbox.tar.bz2
+[tivanov@lxplus9118 run_job_219128]$ package=$PWD/JobPackage.pkl
+[tivanov@lxplus9118 run_job_219128]$ index=219128
+[tivanov@lxplus9118 run_job_219128]$ python3 Unpacker.py --sandbox=$sandbox --package=$package --index=$index
+```
+
+ * Run the job locally:
+```
+[tivanov@lxplus9118 run_job_219128]$ source /cvmfs/cms.cern.ch/COMP/rhel8_x86_64/external/python3/3.8.2/etc/profile.d/init.sh
+[tivanov@lxplus9118 run_job_219128]$ source /cvmfs/cms.cern.ch/COMP/rhel8_x86_64/external/py3-future/0.18.2/etc/profile.d/init.sh
+[tivanov@lxplus9118 run_job_219128]$ cd job
+[tivanov@lxplus9118 job]$ /cvmfs/cms.cern.ch/common/cmssw-el8
+
+Singularity> cd ~/CMSDiracAux/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/
+Singularity> export WMAGENTJOBDIR=$PWD
+Singularity> export PYTHONPATH=$PWD/WMCore.zip:$PWD:$PYTHONPATH
+Singularity> python3 Startup.py
+```
+
+#### Run one production job with Dirac
 
  * Submitting a job:
+
 ```
 (base) [tivanov@vocms0290 test-cms-single.d]$ dirac-wms-job-submit test-cms-single.jdl
 JobID = 9558
 ```
 
  * Getting the JDL description of an already submitted job:
+
 ```
 (base) [tivanov@vocms0290 test-cms-single.d]$ dirac-wms-job-get-jdl 9558
 {'Arguments': '',
@@ -254,6 +287,7 @@ JobID = 9558
 
 
  * Checking the list of the current user's jobs and states:
+
 ```
 (base) [tivanov@vocms0290 test-cms-single.d]$ dstat -a
 JobID  Owner    JobName              OwnerGroup  JobGroup  Site                         Status  MinorStatus                       SubmissionTime
@@ -279,6 +313,7 @@ JobID  Owner    JobName              OwnerGroup  JobGroup  Site                 
 ```
 
  * Look at the StdOut of a currently running job:
+
 ```
 (base) [tivanov@vocms0290 test-cms-single.d]$ dirac-wms-job-peek   9558
 
