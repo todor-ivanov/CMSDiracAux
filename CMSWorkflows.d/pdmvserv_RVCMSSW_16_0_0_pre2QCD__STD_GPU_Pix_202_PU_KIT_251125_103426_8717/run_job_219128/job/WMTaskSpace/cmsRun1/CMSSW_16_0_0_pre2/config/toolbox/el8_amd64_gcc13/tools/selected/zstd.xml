@@ -1,0 +1,11 @@
+<tool name="zstd" version="1.5.7-06370988946837b634b6dbd71385514f" revision="2">
+  <info url="http://https://facebook.github.io/zstd"/>
+  <lib name="zstd"/>
+  <client>
+    <environment name="ZSTD_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/zstd/1.5.7-06370988946837b634b6dbd71385514f"/>
+    <environment name="LIBDIR" default="$ZSTD_BASE/lib"/>
+    <environment name="INCLUDE" default="$ZSTD_BASE/include"/>
+  </client>
+  <runtime name="ROOT_INCLUDE_PATH" value="$INCLUDE" type="path"/>
+  <use name="root_cxxdefaults"/>
+</tool>

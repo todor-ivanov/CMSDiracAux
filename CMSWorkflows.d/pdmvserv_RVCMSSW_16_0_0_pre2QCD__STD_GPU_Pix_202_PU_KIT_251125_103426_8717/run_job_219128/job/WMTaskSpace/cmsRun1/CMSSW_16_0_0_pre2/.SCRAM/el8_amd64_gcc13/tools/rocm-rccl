@@ -1,0 +1,11 @@
+{
+  "LIB": [
+    "rccl"
+  ],
+  "TOOLNAME": "rocm-rccl",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "6.4.3-8bc52e5de186aa7fa61c7d17f290f0df",
+  "USE": [
+    "rocm"
+  ]
+}

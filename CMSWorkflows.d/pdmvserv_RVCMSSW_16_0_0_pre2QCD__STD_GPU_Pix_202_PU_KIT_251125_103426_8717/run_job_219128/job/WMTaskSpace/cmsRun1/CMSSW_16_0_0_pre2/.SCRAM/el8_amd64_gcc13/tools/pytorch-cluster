@@ -1,0 +1,29 @@
+{
+  "FLAGS": {
+    "FORCE_LINK": [
+      "1"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-cluster/1.6.3-955f299a82de4efdf0232b75d5c6f37d/include",
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-cluster/1.6.3-955f299a82de4efdf0232b75d5c6f37d/include/torchcluster/"
+  ],
+  "LIB": [
+    "torchcluster"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-cluster/1.6.3-955f299a82de4efdf0232b75d5c6f37d/lib"
+  ],
+  "PYTORCH_CLUSTER_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-cluster/1.6.3-955f299a82de4efdf0232b75d5c6f37d",
+  "TOOLNAME": "pytorch-cluster",
+  "TOOLREVISION": "3",
+  "TOOLVERSION": "1.6.3-955f299a82de4efdf0232b75d5c6f37d",
+  "USE": [
+    "pytorch"
+  ],
+  "VARIABLES": [
+    "PYTORCH_CLUSTER_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

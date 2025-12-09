@@ -1,0 +1,10 @@
+<tool name="isal" version="2.30.0-790c74797ac4a35ef6b55fc2b4216d70" revision="2">
+  <info url="https://github.com/intel/isa-l/wiki"/>
+  <lib name="isal"/>
+  <client>
+    <environment name="ISAL_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/isal/2.30.0-790c74797ac4a35ef6b55fc2b4216d70"/>
+    <environment name="LIBDIR" default="$ISAL_BASE/lib"/>
+    <environment name="INCLUDE" default="$ISAL_BASE/include"/>
+  </client>
+  <use name="eigen"/>
+</tool>

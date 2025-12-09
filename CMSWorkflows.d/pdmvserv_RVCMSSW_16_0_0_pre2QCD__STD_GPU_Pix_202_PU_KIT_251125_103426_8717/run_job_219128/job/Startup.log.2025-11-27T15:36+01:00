@@ -1,0 +1,451 @@
+INFO:root:Process id: 2638636	Current working directory: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job
+INFO:root:Python version: 3.8.2 (default, Nov 21 2020, 05:27:33) 
+[GCC 9.3.0]
+INFO:root:Python path: ['/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job', '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMCore.zip', '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/py3-future/0.18.2/lib/python3.8/site-packages', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python38.zip', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8/lib-dynload', '/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/lib/python3.8/site-packages']
+INFO:root:Loading job definition
+INFO:root:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+INFO:root:Loading task
+INFO:root:Setting up monitoring
+INFO:root:Creating WM runtime information json
+INFO:root:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+INFO:root:runtime json = {
+    "cmsRun_params": [
+        {
+            "input_files": [],
+            "keep_output": true,
+            "output_files": [
+                "FEVTDEBUGoutput.root"
+            ],
+            "output_files_datatiers": [
+                "GEN-SIM"
+            ],
+            "output_files_merged_base": [
+                "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "output_files_unmerged_base": [
+                "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "step": "cmsRun1",
+            "transient_output": [
+                true
+            ]
+        }
+    ],
+    "job_type": "Production",
+    "number_of_cmsRuns": 1,
+    "worker_arch": "X86_64",
+    "worker_os": "rhel8",
+    "workflow_type": "TaskChain"
+}
+INFO:root:Creating WM runtime information json took 0.18 seconds to complete
+INFO:root:Building task at directory: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job
+INFO:root:CMSSW.coreBuild invoked
+INFO:root:create(/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1)
+INFO:root:Builders.CMSSW.build called on cmsRun1
+INFO:root:StageOut.coreBuild invoked
+INFO:root:create(/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/stageOut1)
+INFO:root:Builders.StageOut.build called on stageOut1
+INFO:root:LogArchive.coreBuild invoked
+INFO:root:create(/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1)
+INFO:root:Builders.LogArchive.build called on logArch1
+INFO:root:Executing task at directory: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job
+INFO:root:In Watchdog.setupMonitors
+INFO:root:Set Watchdog interval to 300
+INFO:root:Initializing monitor PerformanceMonitor
+WARNING:root:job adfile is not set in environment.
+INFO:root:Not resizing job
+INFO:root:Watchdog modified: False. Final settings:
+INFO:root:  hardTimeout: 159900
+INFO:root:  softTimeout: 159600
+INFO:root:  maxPSS: 20000
+INFO:root:  cores: 8
+INFO:root:MonitorThread: JobStarted
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.CMSSW.pre called
+INFO:root:Steps.Executors.CMSSW.execute called
+WARNING:root:machine adfile is not set in environment.
+INFO:root:CMSSW configured for 8 cores and 1 event streams
+INFO:root:CMSSW configured for GPU required: forbidden, with these settings: None
+INFO:root:Executing CMSSW step
+INFO:root:Running SCRAM
+INFO:root:Running PRE scripts
+INFO:root:    Invoking command:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH
+/cvmfs/cms.cern.ch/cc8_amd64_gcc9/external/python3/3.8.2-555576dae8d03b340ea3079ddb8abb0d/bin/python3 -m WMCore.WMRuntime.ScriptInvoke WMTaskSpace.cmsRun1 SetupCMSSWPset 
+
+INFO:root:stdout: 2025-11-27 15:37:12,396:INFO:ScriptInvoke:Invoking scripts in current directory: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1
+2025-11-27 15:37:12,405:INFO:Bootstrap:Job Index = 219128
+Job Instance = {'input_files': [{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}], 'id': 219128, 'jobgroup': 42922, 'name': 'fc873065-b21d-4c00-843e-cf58702751f8-0', 'state': 'new', 'state_time': 1764072663, 'outcome': 'failure', 'retry_count': 0, 'location': None, 'mask': {'inclusivemask': True, 'FirstEvent': 100001, 'LastEvent': 100100, 'FirstLumi': 1001, 'LastLumi': 1001, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219128}, 'task': '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull', 'fwjr': None, 'fwjr_path': None, 'workflow': 'pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717', 'owner': 'pdmvserv', 'estimatedJobTime': 3600, 'estimatedMemoryUsage': 20000.0, 'estimatedDiskUsage': 1000000, 'cache_dir': '/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219128', 'sandbox': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2', 'jobType': 'Production', 'taskType': 'relval', 'counter': 1, 'spec': '/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl', 'agentNumber': 258, 'agentName': 'vocms0258.cern.ch', 'ownerDN': '/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service', 'ownerGroup': 'unknown', 'ownerRole': 'unknown', 'numberOfCores': 8, 'allowOpportunistic': False, 'requiresGPU': 'forbidden', 'jobExtraMatchRequirements': '', 'requestType': 'TaskChain', 'physicsTaskType': 'GEN,SIM', 'campaignName': 'CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651'}
+
+2025-11-27 15:37:12,438:INFO:SetupCMSSWPset:Executing SetupCMSSWPSet...
+2025-11-27 15:37:12,438:INFO:SetupCMSSWPset:Creating Scram environment with scram arch: el8_amd64_gcc13 and CMSSW version: CMSSW_16_0_0_pre2
+2025-11-27 15:37:15,608:INFO:SetupCMSSWPset:DEBUG: Now in the none scenario to load PSET
+2025-11-27 15:37:15,608:INFO:SetupCMSSWPset:Working dir: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1
+2025-11-27 15:37:15,608:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_pickler.py --input /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.py --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:15,608:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:15,608:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:15,611:INFO:Scram:    Invoking command: edm_pset_pickler.py --input /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.py --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:21,368:INFO:Scram:Subprocess stdout was:
+
+2025-11-27 15:37:21,368:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:21,399:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_condor_status_service.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --name cmsRun1
+2025-11-27 15:37:21,399:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:21,399:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:21,402:INFO:Scram:    Invoking command: cmssw_handle_condor_status_service.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --name cmsRun1
+2025-11-27 15:37:22,200:INFO:Scram:Subprocess stdout was:
+Added CondorStatusService
+
+2025-11-27 15:37:22,200:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:22,201:INFO:SetupCMSSWPset:DEBUG output module = FEVTDEBUGoutput
+2025-11-27 15:37:22,204:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:22,204:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:22,204:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:22,207:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:23,017:INFO:Scram:Subprocess stdout was:
+Attribute already set process.options. Not changing
+Attribute already set process.FEVTDEBUGoutput.dataset. Not changing
+
+2025-11-27 15:37:23,017:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:23,019:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:23,019:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:23,019:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:23,022:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:23,873:INFO:Scram:Subprocess stdout was:
+Attribute already set process.FEVTDEBUGoutput.fileName. Not changing
+Set attribute process.FEVTDEBUGoutput.logicalFileName to cms.untracked.string('')
+
+2025-11-27 15:37:23,873:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:23,873:WARNING:WMTweak:job adfile is not set in environment.
+2025-11-27 15:37:23,873:INFO:WMTweak:Not resizing job
+2025-11-27 15:37:23,874:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:23,874:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:23,874:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:23,878:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --skip_if_set
+2025-11-27 15:37:24,748:INFO:Scram:Subprocess stdout was:
+Attribute already set process.options. Not changing
+
+2025-11-27 15:37:24,748:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:24,750:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:24,750:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:24,750:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:24,754:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:25,688:INFO:Scram:Subprocess stdout was:
+Set attribute process.options.numberOfThreads to cms.untracked.uint32(8)
+Set attribute process.options.numberOfStreams to cms.untracked.uint32(1)
+Set attribute process.GlobalTag.globaltag to cms.string('151X_mcRun3_2025_realistic_v4')
+
+2025-11-27 15:37:25,688:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:25,688:INFO:SetupCMSSWPset:Creating job level tweaks
+2025-11-27 15:37:25,688:INFO:WMTweak:Setting 'firstLuminosityBlock' attr to: 1001
+2025-11-27 15:37:25,688:INFO:WMTweak:Adding 0 files to 'fileNames' attr
+2025-11-27 15:37:25,689:INFO:WMTweak:Adding 0 files to 'secondaryFileNames' attr
+2025-11-27 15:37:25,689:INFO:WMTweak:Setting 'firstEvent' attr to: 100001
+2025-11-27 15:37:25,689:INFO:WMTweak:Setting 'maxEvents.input' attr to: 100
+2025-11-27 15:37:25,690:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:25,690:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:25,690:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:25,694:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:26,600:INFO:Scram:Subprocess stdout was:
+Set attribute process.maxEvents to cms.untracked.PSet(
+    input = cms.untracked.int32(100),
+    output = cms.optional.untracked.allowed(cms.int32,cms.PSet)
+)
+Set attribute process.source.firstLuminosityBlock to cms.untracked.uint32(1001)
+Set attribute process.source.firstEvent to cms.untracked.uint32(100001)
+Set attribute process.source.firstRun to cms.untracked.uint32(1)
+
+2025-11-27 15:37:26,600:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:26,600:INFO:SetupCMSSWPset:Output module section
+2025-11-27 15:37:26,643:INFO:WMTweak:modName = FEVTDEBUGoutput
+2025-11-27 15:37:26,644:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --allow_failed_tweaks
+2025-11-27 15:37:26,644:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:26,644:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:26,647:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json --allow_failed_tweaks
+2025-11-27 15:37:27,466:INFO:Scram:Subprocess stdout was:
+Set attribute process.FEVTDEBUGoutput.fileName to cms.untracked.string('FEVTDEBUGoutput.root')
+Set attribute process.FEVTDEBUGoutput.logicalFileName to cms.untracked.string('/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/FEVTDEBUGoutput.root')
+
+2025-11-27 15:37:27,466:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:27,466:INFO:SetupCMSSWPset:Job seeding set to: AutomaticSeeding
+2025-11-27 15:37:27,466:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_random_seeds.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --seeding AutomaticSeeding
+2025-11-27 15:37:27,466:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:27,466:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:27,469:INFO:Scram:    Invoking command: cmssw_handle_random_seeds.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --seeding AutomaticSeeding
+2025-11-27 15:37:28,303:INFO:Scram:Subprocess stdout was:
+Populared random numbers of RandomNumberService
+
+2025-11-27 15:37:28,303:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:28,305:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:28,305:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:28,305:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:28,307:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:29,176:INFO:Scram:Subprocess stdout was:
+Set attribute process.SimpleMemoryCheck to SimpleMemoryCheck
+Set attribute process.CPU to CPU
+Set attribute process.Timing to Timing
+
+2025-11-27 15:37:29,176:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:29,176:INFO:SetupCMSSWPset:DQMFileSaver set to multiRun: False, runIsComplete: False, runLimits: 
+2025-11-27 15:37:29,176:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_dqm_filesaver.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:29,176:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:29,176:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:29,180:INFO:Scram:    Invoking command: cmssw_handle_dqm_filesaver.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:30,032:INFO:Scram:Subprocess stdout was:
+
+2025-11-27 15:37:30,032:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:30,032:INFO:SetupCMSSWPset:Not evaluating enforceGUIDInFileName parameter for process source EmptySource
+2025-11-27 15:37:30,034:INFO:SetupCMSSWPset:ScramRun command args: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:30,034:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:30,034:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:30,038:INFO:Scram:    Invoking command: edm_pset_tweak.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --json /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSetTweak.json
+2025-11-27 15:37:30,940:INFO:Scram:Subprocess stdout was:
+Set attribute process.Timing.summaryOnly to cms.untracked.bool(True)
+Set attribute process.source.numberEventsInLuminosityBlock to cms.untracked.uint32(100)
+
+2025-11-27 15:37:30,941:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:30,942:INFO:SetupCMSSWPset:ScramRun command args: cmssw_handle_nEvents.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:30,942:INFO:Scram:Creating a subprocess to run the PSet setup.
+2025-11-27 15:37:30,942:INFO:Scram:Also recording SCRAM command-line related output.
+2025-11-27 15:37:30,949:INFO:Scram:    Invoking command: cmssw_handle_nEvents.py --input_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl --output_pkl /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/PSet.pkl
+2025-11-27 15:37:31,868:INFO:Scram:Subprocess stdout was:
+
+2025-11-27 15:37:31,868:INFO:Scram:Subprocess stderr was:
+None
+2025-11-27 15:37:31,868:INFO:SetupCMSSWPset:CMSSW PSet setup completed!
+
+stderr: 
+INFO:root:RUNNING SCRAM SCRIPTS
+INFO:root:Executing CMSSW. args: ['/bin/bash', '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/cmsRun1-main.sh', '', 'el8_amd64_gcc13', 'scramv1', 'CMSSW', 'CMSSW_16_0_0_pre2', 'FrameworkJobReport.xml', 'cmsRun', 'PSet.py', '']
+INFO:root:PSS: 1242144; RSS: 1243304; PCPU: 92.2; PMEM: 2.0
+INFO:root:PSS: 1336917; RSS: 1338548; PCPU: 95.9; PMEM: 2.2
+INFO:root:PSS: 1358206; RSS: 1359508; PCPU: 97.3; PMEM: 2.2
+WARNING:root:condor_chirp was not found in the system.
+INFO:root:Step cmsRun1: Chirp_WMCore_cmsRun_ExitCode 0
+WARNING:root:condor_chirp was not found in the system.
+INFO:root:Step cmsRun1: Chirp_WMCore_cmsRun1_ExitCode 0
+INFO:root:addOutputFile method called with outputModule: FEVTDEBUGoutput, aFile: None
+INFO:root:addOutputFile method fileRef: , whole tree: {}
+INFO:root:Steps.Executors.CMSSW.post called
+INFO:root:StepName: cmsRun1, StepType: CMSSW, with result: 0
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.StageOut.pre called
+INFO:root:Steps.Executors.StageOut.execute called
+INFO:root:StageOut override is: stageOut1.section_('builder')
+stageOut1.builder.workingDir = '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/stageOut1'
+stageOut1.owner_vorole = 'DEFAULT'
+stageOut1.section_('build')
+stageOut1.build.section_('directories')
+stageOut1.build.directories.section_('stageOut1')
+stageOut1.owner_vogroup = 'DEFAULT'
+stageOut1.section_('emulator')
+stageOut1.newStageout = False
+stageOut1.retryDelay = 300
+stageOut1.section_('execution')
+stageOut1.execution.reportLocation = '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/stageOut1/Report.pkl'
+stageOut1.execution.exitStatus = 0
+stageOut1.section_('sandbox')
+stageOut1.section_('application')
+stageOut1.application.section_('configuration')
+stageOut1.application.section_('controls')
+stageOut1.asyncDest = None
+stageOut1.section_('files')
+stageOut1.section_('input')
+stageOut1.input.section_('links')
+stageOut1.section_('tree')
+stageOut1.tree.childNames = []
+stageOut1.tree.parent = 'cmsRun1'
+stageOut1.tree.section_('children')
+stageOut1.objectType = 'WMStep'
+stageOut1.section_('override')
+stageOut1.section_('output')
+stageOut1.output.minMergeSize = 2147483648
+stageOut1.output.maxMergeEvents = 20000000
+stageOut1.section_('environment')
+stageOut1.environment.section_('variables')
+stageOut1.environment.section_('paths')
+stageOut1.userDN = None
+stageOut1.retryCount = 3
+stageOut1.filecount = 0
+stageOut1.stepType = 'StageOut'
+ 
+INFO:root:StageOutMgr::__init__()
+INFO:root:==== Stageout configuration start ====
+INFO:root:
+There are 1 stage out definitions.
+INFO:root:
+Stage out to : T2_CH_CERN using: xrdcp
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://eoscms.cern.ch//eos/cms/$1
+	lfn-to-pfn: protocol=P5xrootd path-match-re=/(.*) result=root://eoscmshlt.cern.ch//eos/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://eoscms.cern.ch:443/eos/cms/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://eoscms.cern.ch//eos/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=P5xrootd path-match-re=root://eoscmshlt.cern.ch//eos/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://eoscms.cern.ch:443/eos/cms/(.*) result=/$1
+
+INFO:root:==== Stageout configuration finish ====
+INFO:root:Beginning report processing for step cmsRun1
+INFO:root:==>Working on file: /store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root
+INFO:root:===> Attempting 1 Stage Outs
+INFO:root:LFN to PFN match made:
+LFN: /store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root
+PFN: root://eoscms.cern.ch//eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root
+
+INFO:root:Creating output directory...
+INFO:root:Stage out requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:Running the stage out with the available auth method (attempt 1)...
+INFO:root:Command to run: LOCAL_SIZE=`stat -c%s "/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root"`
+echo "Local File Size is: $LOCAL_SIZE"
+env X509_USER_PROXY=$X509_USER_PROXY xrdcp --force --nopbar --cksum adler32:65f7fc7e  "/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/FEVTDEBUGoutput.root"  "root://eoscms.cern.ch//eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root" 
+RC=$? 
+echo "xrdcp exit code: $RC" 
+REMOTE_SIZE=`env X509_USER_PROXY=$X509_USER_PROXY  xrdfs 'eoscms.cern.ch' stat '/eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root' | grep Size | sed -r 's/.*Size:[ ]*([0-9]+).*/\1/'`
+echo "Remote File Size is: $REMOTE_SIZE"
+echo "Local File Checksum is: 65f7fc7e"
+REMOTE_XS=`env X509_USER_PROXY=$X509_USER_PROXY  xrdfs 'eoscms.cern.ch' query checksum '/eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root' | grep -i adler32 | sed -r 's/.*[adler|ADLER]32[ ]*([0-9a-fA-F]{8}).*/\1/'`
+echo "Remote File Checksum is: $REMOTE_XS"
+if [ $RC == 0 ] && [ $REMOTE_SIZE ] && [ $REMOTE_XS ] && [ $LOCAL_SIZE == $REMOTE_SIZE ] && [ '65f7fc7e' == $REMOTE_XS ]; then exit 0; else echo "ERROR: XRootD file transfer return code is $RC. Size or Checksum Mismatch between local and SE"; env X509_USER_PROXY=$X509_USER_PROXY  xrdfs 'eoscms.cern.ch' rm /eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root ; exit 60311 ; fi
+INFO:root:Executing command with timeout: 10800 seconds
+INFO:root:Command exited with status: 0
+Output message: stdout: Local File Size is: 99938732
+xrdcp exit code: 0
+Remote File Size is: 99938732
+Local File Checksum is: 65f7fc7e
+Remote File Checksum is: 65f7fc7e
+
+stderr: TLS: Unable to use cert+key file ; does not exist.
+TLS: Unable to use cert+key file ; does not exist.
+TLS: Unable to use cert+key file ; does not exist.
+
+INFO:root:
+Stage-out succeeded with the current environment.
+INFO:root:attempting stageOut
+INFO:root:===> Stage Out Successful: {'LFN': '/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root', 'PFN': 'root://eoscms.cern.ch//eos/cms/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/2580000/90ae7413-50a4-42f8-8af7-579e1ef2427f.root', 'PNN': 'T2_CH_CERN', 'StageOutCommand': 'xrdcp', 'Checksums': {'adler32': '65f7fc7e', 'cksum': '3325694336'}, 'StageOutReport': []}
+INFO:root:Beginning report processing for step logArch1
+ERROR:root:Cannot find report for step logArch1 in space /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1
+INFO:root:Transferred 1 files
+INFO:root:Steps.Executors.StageOut.post called
+INFO:root:Beginning report processing for step cmsRun1
+INFO:root:Beginning report processing for step logArch1
+ERROR:root:Cannot find report for step logArch1 in space /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1
+INFO:root:StepName: stageOut1, StepType: StageOut, with result: 0
+INFO:root:Steps.Executor logging started
+INFO:root:Steps.Executors.LogArchive.pre called
+INFO:root:Steps.Executors.LogArchive.execute called
+INFO:root:Using the following overrides: {'eos-lfn-prefix': 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'} 
+INFO:root:Step configuration is: logArch1.section_('application')
+logArch1.application.section_('configuration')
+logArch1.application.section_('controls')
+logArch1.section_('build')
+logArch1.build.section_('directories')
+logArch1.build.directories.section_('logArch1')
+logArch1.logcount = 0
+logArch1.section_('override')
+logArch1.override.eos-lfn-prefix = 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'
+logArch1.section_('logs')
+logArch1.section_('emulator')
+logArch1.newStageout = False
+logArch1.section_('builder')
+logArch1.builder.workingDir = '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1'
+logArch1.section_('environment')
+logArch1.environment.section_('variables')
+logArch1.environment.section_('paths')
+logArch1.retryDelay = 300
+logArch1.section_('execution')
+logArch1.execution.reportLocation = '/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1/Report.pkl'
+logArch1.execution.exitStatus = 0
+logArch1.section_('input')
+logArch1.input.section_('links')
+logArch1.section_('tree')
+logArch1.tree.childNames = []
+logArch1.tree.parent = 'cmsRun1'
+logArch1.tree.section_('children')
+logArch1.retryCount = 3
+logArch1.stepType = 'LogArchive'
+logArch1.section_('sandbox')
+logArch1.objectType = 'WMStep'
+logArch1.section_('output')
+logArch1.output.section_('modules')
+logArch1.output.modules.section_('logArchive')
+
+INFO:root:StageOutMgr::__init__()
+INFO:root:StageOutMgr::__init__(): Override: {'eos-lfn-prefix': 'root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION'}
+INFO:root:=======StageOut Override: These are not the parameters you are looking for
+INFO:root:==== Stageout configuration start ====
+INFO:root:
+There are 1 stage out definitions.
+INFO:root:
+Stage out to : T2_CH_CERN using: xrdcp
+INFO:root:
+Rucio File Catalog has been loaded:
+	lfn-to-pfn: protocol=XRootD path-match-re=/(.*) result=root://eoscms.cern.ch//eos/cms/$1
+	lfn-to-pfn: protocol=P5xrootd path-match-re=/(.*) result=root://eoscmshlt.cern.ch//eos/cms/$1
+	lfn-to-pfn: protocol=WebDAV path-match-re=/(.*) result=davs://eoscms.cern.ch:443/eos/cms/$1
+	pfn-to-lfn: protocol=XRootD path-match-re=root://eoscms.cern.ch//eos/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=P5xrootd path-match-re=root://eoscmshlt.cern.ch//eos/cms/(.*) result=/$1
+	pfn-to-lfn: protocol=WebDAV path-match-re=davs://eoscms.cern.ch:443/eos/cms/(.*) result=/$1
+
+INFO:root:==== Stageout configuration finish ====
+INFO:root:==>Working on file: /store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+INFO:root:===> Attempting 1 Stage Outs
+INFO:root:LFN to PFN match made:
+LFN: /store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+PFN: root://eoscms.cern.ch//eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz
+
+INFO:root:Creating output directory...
+INFO:root:Stage out requested with tokens, but environment variable is not defined. Forcing it to use X509 authentication method instead.
+INFO:root:Running the stage out with the available auth method (attempt 1)...
+INFO:root:Command to run: LOCAL_SIZE=`stat -c%s "/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1/logArchive.tar.gz"`
+echo "Local File Size is: $LOCAL_SIZE"
+env X509_USER_PROXY=$X509_USER_PROXY xrdcp --force --nopbar  "/afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1/logArchive.tar.gz"  "root://eoscms.cern.ch//eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz" 
+RC=$? 
+echo "xrdcp exit code: $RC" 
+REMOTE_SIZE=`env X509_USER_PROXY=$X509_USER_PROXY  xrdfs 'eoscms.cern.ch' stat '/eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz' | grep Size | sed -r 's/.*Size:[ ]*([0-9]+).*/\1/'`
+echo "Remote File Size is: $REMOTE_SIZE"
+if [ $RC == 0 ] && [ $REMOTE_SIZE ] && [ $LOCAL_SIZE == $REMOTE_SIZE ]; then exit 0; else echo "ERROR: XRootD file transfer return code is $RC. Size or Checksum Mismatch between local and SE"; env X509_USER_PROXY=$X509_USER_PROXY  xrdfs 'eoscms.cern.ch' rm /eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz ; exit 60311 ; fi
+INFO:root:Executing command with timeout: 10800 seconds
+INFO:root:Command exited with status: 0
+Output message: stdout: Local File Size is: 184018
+xrdcp exit code: 0
+Remote File Size is: 184018
+
+stderr: TLS: Unable to use cert+key file ; does not exist.
+TLS: Unable to use cert+key file ; does not exist.
+
+INFO:root:
+Stage-out succeeded with the current environment.
+INFO:root:attempting stageOut
+INFO:root:===> Stage Out Successful: {'LFN': '/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'PFN': 'root://eoscms.cern.ch//eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'PNN': 'T2_CH_CERN', 'GUID': None, 'StageOutReport': [], 'StageOutCommand': 'xrdcp'}
+INFO:root:addOutputFile method called with outputModule: logArchive, aFile: {'lfn': '/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'pfn': 'root://eoscms.cern.ch//eos/cms/store/unmerged/logs/prod/2025/11/27/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/0000/0/fc873065-b21d-4c00-843e-cf58702751f8-0-0-logArchive.tar.gz', 'location': 'T2_CH_CERN', 'module_label': 'logArchive', 'events': 0, 'size': 0, 'merged': False, 'checksums': {'adler32': '1b3a379f', 'cksum': '737492955'}}
+INFO:root:addOutputFile method fileRef: , whole tree: {}
+INFO:root:Success job! Not saving its logs to CERN EOS recent area.
+INFO:root:Steps.Executors.LogArchive.post called
+INFO:root:StepName: logArch1, StepType: LogArchive, with result: 0
+INFO:root:MonitorThread: JobEnded
+INFO:root:MonitorState: Shutdown called
+INFO:root:Completing task at directory: /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace
+INFO:root:Looking for master report at /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/../../Report.0.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/cmsRun1/Report.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/stageOut1/Report.pkl
+INFO:root:  found it!
+INFO:root:Looking for a taskStep report at /afs/cern.ch/user/t/tivanov/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMTaskSpace/logArch1/Report.pkl
+INFO:root:  found it!
+INFO:root:Shutting down monitor

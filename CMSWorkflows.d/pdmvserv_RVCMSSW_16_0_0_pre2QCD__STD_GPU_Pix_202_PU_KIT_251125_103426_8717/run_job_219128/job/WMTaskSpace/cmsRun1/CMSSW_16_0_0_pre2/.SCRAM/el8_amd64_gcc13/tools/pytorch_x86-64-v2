@@ -1,0 +1,9 @@
+{
+  "TOOLNAME": "pytorch_x86-64-v2",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.6.0-f6c41fe57ae3614e0affd3a720b244f5",
+  "VARIABLES": [
+    "X86_64_V2_LIBDIR"
+  ],
+  "X86_64_V2_LIBDIR": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch_x86-64-v2/2.6.0-f6c41fe57ae3614e0affd3a720b244f5/lib"
+}

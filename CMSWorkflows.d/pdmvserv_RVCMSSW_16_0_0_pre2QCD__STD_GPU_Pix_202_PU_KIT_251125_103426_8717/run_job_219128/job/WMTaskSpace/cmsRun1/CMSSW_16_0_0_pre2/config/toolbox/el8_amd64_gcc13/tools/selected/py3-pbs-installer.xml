@@ -1,0 +1,6 @@
+<tool name="py3-pbs-installer" version="2025.6.12-a03795c5b1b9a9c58822fe320ceab49a" revision="1">
+  <client>
+    <environment name="PY3_PBS_INSTALLER_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-pbs-installer/2025.6.12-a03795c5b1b9a9c58822fe320ceab49a"/>
+  </client>
+  <runtime name="PATH" value="$PY3_PBS_INSTALLER_BASE/bin" type="path"/>
+</tool>

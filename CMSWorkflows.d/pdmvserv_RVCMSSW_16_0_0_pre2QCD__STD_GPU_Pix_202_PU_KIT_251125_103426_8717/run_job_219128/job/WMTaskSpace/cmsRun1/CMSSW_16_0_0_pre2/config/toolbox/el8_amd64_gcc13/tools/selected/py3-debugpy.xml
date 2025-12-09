@@ -1,0 +1,6 @@
+<tool name="py3-debugpy" version="1.8.14-7c06c875942e9dc8c0be064040420b59" revision="1">
+  <client>
+    <environment name="PY3_DEBUGPY_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-debugpy/1.8.14-7c06c875942e9dc8c0be064040420b59"/>
+  </client>
+  <runtime name="PATH" value="$PY3_DEBUGPY_BASE/bin" type="path"/>
+</tool>

@@ -1,0 +1,13 @@
+{
+  "L1TSC4NGJETMODEL_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/L1TSC4NGJetModel/0.0.0-e9218444c32dbf21b9802b6a3dbc00b3",
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/L1TSC4NGJetModel/0.0.0-e9218444c32dbf21b9802b6a3dbc00b3/lib64"
+  ],
+  "TOOLNAME": "l1tsc4ngjetmodel",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.0.0-e9218444c32dbf21b9802b6a3dbc00b3",
+  "VARIABLES": [
+    "L1TSC4NGJETMODEL_BASE",
+    "LIBDIR"
+  ]
+}

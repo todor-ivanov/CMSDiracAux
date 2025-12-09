@@ -1,0 +1,9 @@
+<tool name="pydata" version="426-58f10129591b3d37a990f6c6a43729ca" revision="1">
+  <client>
+    <environment name="PYDATA_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pythia6/426-58f10129591b3d37a990f6c6a43729ca"/>
+  </client>
+  <ifos value="linux">
+    <flags LDFLAGS="$(PYDATA_BASE)/lib/pydata.o"/>
+  </ifos>
+  <flags NO_RECURSIVE_EXPORT="1"/>
+</tool>

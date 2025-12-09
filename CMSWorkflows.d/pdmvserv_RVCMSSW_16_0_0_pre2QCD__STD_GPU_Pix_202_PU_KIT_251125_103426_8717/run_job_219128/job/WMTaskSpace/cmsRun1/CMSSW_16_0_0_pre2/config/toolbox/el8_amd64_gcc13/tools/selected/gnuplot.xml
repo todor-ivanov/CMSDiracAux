@@ -1,0 +1,7 @@
+  <tool name="gnuplot" version="5.2.8-3c0b88e1a1e28c8eacc01d6b17225339" revision="2">
+    <info url="http://gnuplot.sourceforge.net"/>
+    <client>
+      <environment name="GNUPLOT_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gnuplot/5.2.8-3c0b88e1a1e28c8eacc01d6b17225339"/>
+    </client>
+    <runtime name="PATH" value="$GNUPLOT_BASE/bin" type="path"/>
+  </tool>

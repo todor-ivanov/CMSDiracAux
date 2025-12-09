@@ -1,0 +1,9 @@
+<tool name="pyquen" version="1.5.4-2dc2e9912178f3440fe9bf7f5c347f12" revision="2">
+  <lib name="pyquen"/>
+  <client>
+    <environment name="PYQUEN_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pyquen/1.5.4-2dc2e9912178f3440fe9bf7f5c347f12"/>
+    <environment name="LIBDIR" default="$PYQUEN_BASE/lib"/>
+  </client>
+  <use name="pythia6"/>
+  <use name="lhapdf"/>
+</tool>

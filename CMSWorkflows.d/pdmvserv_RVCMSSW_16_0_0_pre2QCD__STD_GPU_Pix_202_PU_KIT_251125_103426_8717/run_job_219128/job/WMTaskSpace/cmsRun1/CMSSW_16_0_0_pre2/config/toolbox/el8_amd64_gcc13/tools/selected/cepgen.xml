@@ -1,0 +1,22 @@
+<tool name="cepgen" version="1.2.5-137bf09f59f8883b832ea8ce07fb67b4" revision="2">
+  <info url="https://cepgen.hepforge.org/"/>
+  <lib name="CepGen"/>
+  <lib name="CepGenHepMC2"/>
+  <lib name="CepGenHepMC3"/>
+  <lib name="CepGenLHAPDF"/>
+  <lib name="CepGenProcesses"/>
+  <lib name="CepGenPythia6"/>
+  <client>
+    <environment name="CEPGEN_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/cepgen/1.2.5-137bf09f59f8883b832ea8ce07fb67b4"/>
+    <environment name="LIBDIR" default="$CEPGEN_BASE/lib64"/>
+    <environment name="INCLUDE" default="$CEPGEN_BASE/include"/>
+  </client>
+  <runtime name="PATH" value="$CEPGEN_BASE/bin" type="path"/>
+  <runtime name="CEPGEN_PATH" value="$CEPGEN_BASE/share/CepGen"/>
+  <use name="gsl"/>
+  <use name="OpenBLAS"/>
+  <use name="hepmc"/>
+  <use name="hepmc3"/>
+  <use name="lhapdf"/>
+  <use name="pythia6"/>
+</tool>

@@ -1,0 +1,28 @@
+{
+  "GDBM_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdbm/1.10-753330a3609ddaf6e39bff4f10eafcb3",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdbm/1.10-753330a3609ddaf6e39bff4f10eafcb3/include"
+  ],
+  "LIB": [
+    "gdbm"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdbm/1.10-753330a3609ddaf6e39bff4f10eafcb3/lib"
+  ],
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdbm/1.10-753330a3609ddaf6e39bff4f10eafcb3/include"
+    ]
+  },
+  "TOOLNAME": "gdbm",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "1.10-753330a3609ddaf6e39bff4f10eafcb3",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "GDBM_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

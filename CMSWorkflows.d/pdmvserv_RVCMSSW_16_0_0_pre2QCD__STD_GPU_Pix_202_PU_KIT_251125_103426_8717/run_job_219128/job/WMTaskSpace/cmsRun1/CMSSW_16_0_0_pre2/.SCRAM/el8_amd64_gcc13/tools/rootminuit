@@ -1,0 +1,11 @@
+{
+  "LIB": [
+    "Minuit"
+  ],
+  "TOOLNAME": "rootminuit",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "6.32.13-2ba92f62034c9fcccda180513e8d0814",
+  "USE": [
+    "rootgpad"
+  ]
+}

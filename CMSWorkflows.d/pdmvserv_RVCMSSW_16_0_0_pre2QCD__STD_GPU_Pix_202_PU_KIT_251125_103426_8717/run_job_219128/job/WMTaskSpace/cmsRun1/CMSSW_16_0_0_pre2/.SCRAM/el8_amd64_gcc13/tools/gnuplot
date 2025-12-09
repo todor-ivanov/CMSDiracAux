@@ -1,0 +1,14 @@
+{
+  "GNUPLOT_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gnuplot/5.2.8-3c0b88e1a1e28c8eacc01d6b17225339",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gnuplot/5.2.8-3c0b88e1a1e28c8eacc01d6b17225339/bin"
+    ]
+  },
+  "TOOLNAME": "gnuplot",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "5.2.8-3c0b88e1a1e28c8eacc01d6b17225339",
+  "VARIABLES": [
+    "GNUPLOT_BASE"
+  ]
+}

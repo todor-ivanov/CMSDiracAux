@@ -1,0 +1,14 @@
+{
+  "PY3_HATCH_JUPYTER_BUILDER_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hatch-jupyter-builder/0.9.1-42fa1124ebc85dadfca8f028ab76874c",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hatch-jupyter-builder/0.9.1-42fa1124ebc85dadfca8f028ab76874c/bin"
+    ]
+  },
+  "TOOLNAME": "py3-hatch-jupyter-builder",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.9.1-42fa1124ebc85dadfca8f028ab76874c",
+  "VARIABLES": [
+    "PY3_HATCH_JUPYTER_BUILDER_BASE"
+  ]
+}

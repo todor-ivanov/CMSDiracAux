@@ -1,0 +1,6 @@
+<tool name="py3-pyflakes" version="3.3.2-a931dd38bc1ef76933f56fb1fcc2cee0" revision="1">
+  <client>
+    <environment name="PY3_PYFLAKES_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-pyflakes/3.3.2-a931dd38bc1ef76933f56fb1fcc2cee0"/>
+  </client>
+  <runtime name="PATH" value="$PY3_PYFLAKES_BASE/bin" type="path"/>
+</tool>

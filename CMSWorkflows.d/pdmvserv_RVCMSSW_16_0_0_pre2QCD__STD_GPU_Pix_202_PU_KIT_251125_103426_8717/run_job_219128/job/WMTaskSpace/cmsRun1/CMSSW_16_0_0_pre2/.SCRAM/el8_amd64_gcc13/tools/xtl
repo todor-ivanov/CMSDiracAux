@@ -1,0 +1,13 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xtl/0.7.4-25704e768ddd0442adb99183c8b81b8e/include"
+  ],
+  "TOOLNAME": "xtl",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "0.7.4-25704e768ddd0442adb99183c8b81b8e",
+  "VARIABLES": [
+    "XTL_BASE",
+    "INCLUDE"
+  ],
+  "XTL_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xtl/0.7.4-25704e768ddd0442adb99183c8b81b8e"
+}

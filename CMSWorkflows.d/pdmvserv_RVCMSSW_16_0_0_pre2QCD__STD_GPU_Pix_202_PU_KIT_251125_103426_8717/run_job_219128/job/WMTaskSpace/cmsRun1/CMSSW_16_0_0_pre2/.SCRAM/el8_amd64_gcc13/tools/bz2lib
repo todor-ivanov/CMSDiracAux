@@ -1,0 +1,28 @@
+{
+  "BZ2LIB_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/bz2lib/1.0.6-d113e1c6278c07eeaff5f84db9548446",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/bz2lib/1.0.6-d113e1c6278c07eeaff5f84db9548446/include"
+  ],
+  "LIB": [
+    "bz2"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/bz2lib/1.0.6-d113e1c6278c07eeaff5f84db9548446/lib"
+  ],
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/bz2lib/1.0.6-d113e1c6278c07eeaff5f84db9548446/include"
+    ]
+  },
+  "TOOLNAME": "bz2lib",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "1.0.6-d113e1c6278c07eeaff5f84db9548446",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "BZ2LIB_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

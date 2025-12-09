@@ -1,0 +1,13 @@
+{
+  "FLAGS": {
+    "FORCE_LINK": [
+      "1"
+    ]
+  },
+  "LIB": [
+    "resolv"
+  ],
+  "TOOLNAME": "resolv",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "system"
+}

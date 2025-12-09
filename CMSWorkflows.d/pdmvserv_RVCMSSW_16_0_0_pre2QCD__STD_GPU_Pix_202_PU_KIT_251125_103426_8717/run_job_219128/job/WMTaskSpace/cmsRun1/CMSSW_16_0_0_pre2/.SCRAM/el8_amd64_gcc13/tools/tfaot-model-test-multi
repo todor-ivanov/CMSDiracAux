@@ -1,0 +1,27 @@
+{
+  "FLAGS": {
+    "LDFLAGS": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a/lib/test_multi_bs1.o",
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a/lib/test_multi_bs2.o",
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a/lib/test_multi_bs4.o"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a/include"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a/lib"
+  ],
+  "TFAOT_MODEL_TEST_MULTI_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tfaot-model-test-multi/1.0.1-f26c32f0ef584234a2c0c0260b21165a",
+  "TOOLNAME": "tfaot-model-test-multi",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.0.0",
+  "USE": [
+    "tensorflow-xla-runtime"
+  ],
+  "VARIABLES": [
+    "TFAOT_MODEL_TEST_MULTI_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

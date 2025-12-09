@@ -1,0 +1,25 @@
+{
+  "HEPMC_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hepmc/2.06.10-903e23142392c852f3df97c32fbd4659",
+  "LIB": [
+    "HepMCfio",
+    "HepMC"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hepmc/2.06.10-903e23142392c852f3df97c32fbd4659/lib"
+  ],
+  "RUNTIME": {
+    "PATH:CMSSW_FWLITE_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hepmc/2.06.10-903e23142392c852f3df97c32fbd4659/include"
+    ]
+  },
+  "TOOLNAME": "hepmc",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "2.06.10-903e23142392c852f3df97c32fbd4659",
+  "USE": [
+    "hepmc_headers"
+  ],
+  "VARIABLES": [
+    "HEPMC_BASE",
+    "LIBDIR"
+  ]
+}

@@ -469,6 +469,87 @@ FrameworkJobReport.task = '/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_
 <WMCore.Configuration.ConfigSection object at 0x7f475c446a60>
 ```
 
+#### Few debugging tips:
+
+ * Fetching Job attributes and parameters from runtime:
+```
+(base) [tivanov@vocms0290 test-cms-single.d]$ dirac-wms-job-attributes 9565
+=================
+ 9565
+{'AccountedFlag': 'False',
+ 'ApplicationStatus': 'Unknown',
+ 'EndExecTime': datetime.datetime(2025, 12, 3, 11, 13, 44),
+ 'HeartBeatTime': datetime.datetime(2025, 12, 3, 11, 13, 44),
+ 'JobGroup': '00000000',
+ 'JobID': 9565,
+ 'JobName': 'test cms single job',
+ 'JobType': 'user',
+ 'LastUpdateTime': datetime.datetime(2025, 12, 3, 11, 13, 44),
+ 'MinorStatus': 'Execution Complete',
+ 'Owner': 'tivanov',
+ 'OwnerGroup': 'dteam_user',
+ 'RescheduleCounter': 0,
+ 'RescheduleTime': None,
+ 'Site': 'LCG.UKI-SOUTHGRID-RALPP.uk',
+ 'StartExecTime': datetime.datetime(2025, 12, 3, 10, 46, 22),
+ 'Status': 'Done',
+ 'SubmissionTime': datetime.datetime(2025, 12, 3, 10, 46, 11),
+ 'UserPriority': 1,
+ 'VO': 'dteam',
+ 'VerifiedFlag': 'True'}
+```
+
+```
+(base) [tivanov@vocms0290 test-cms-single.d]$ dirac-wms-job-parameters 9565
+{9565: {'BatchSystem': 'HTCondor',
+        'CEQueue': 'nordugrid-Condor-grid',
+        'DiskSpace(MB)': 1.0,
+        'GridCE': 'heplnx206.pp.rl.ac.uk',
+        'HostName': 'heplnc144.pp.rl.ac.uk',
+        'JobID': 9565,
+        'LastUpdateCPU(s)': 7.0,
+        'LoadAverage': 26.0,
+        'LocalAccount': 'dteam003',
+        'Memory(MB)': 123737,
+        'MemoryUsed(MB)': 2.125,
+        'ModelName': 'Intel(R) Xeon(R) Gold 6130 CPU @ 2.10GHz',
+        'OutputSandboxLFN': '/dteam/user/t/tivanov/9/9565/LDSB.f7h3pcp9',
+        'ScaledCPUTime(s)': 60399.40944314003,
+        'Status': 'Done',
+        'WallClockTime(s)': 1610.6509184837341,
+        'timestamp': 1764944750538}}
+
+```
+
+ * Finding information about the pilot which matched the job and run it:
+```
+(base) [tivanov@vocms0290 test-cms-single.d]$ dirac-admin-get-job-pilots 9565
+{'https://heplnx206.pp.rl.ac.uk:443/arex/OTYNDmp9yk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmmmPKDmHloF4n': {'AccountingSent': 'True',
+                                                                                                   'BenchMark': 37.5,
+                                                                                                   'DestinationSite': 'heplnx206.pp.rl.ac.uk',
+                                                                                                   'GridSite': 'LCG.UKI-SOUTHGRID-RALPP.uk',
+                                                                                                   'GridType': 'AREX',
+                                                                                                   'Jobs': [9565],
+                                                                                                   'LastUpdateTime': datetime.datetime(2025, 12, 3, 11, 30, 36),
+                                                                                                   'PilotID': 1278309,
+                                                                                                   'PilotJobReference': 'https://heplnx206.pp.rl.ac.uk:443/arex/OTYNDmp9yk8n8FVDjqQVj3jqav4PzpABFKDm3iGKDmmmPKDmHloF4n',
+                                                                                                   'PilotStamp': 'b561dd167076450292637f0a9934ac90',
+                                                                                                   'Queue': 'nordugrid-Condor-grid',
+                                                                                                   'Status': 'Done',
+                                                                                                   'SubmissionTime': datetime.datetime(2025, 12, 3, 10, 20, 53),
+                                                                                                   'VO': 'dteam'}}
+```
+
+ * Getting the pilot log/stdout:
+```
+(base) [tivanov@vocms0290 test-cms-single.d]$ dirac-admin-get-job-pilot-output 9565
+No standard error returned
+Outputs retrieved in /afs/cern.ch/user/t/tivanov/CMSDiracAux/jobs.d/test-cms-single.d/pilot_9565
+```
+
+The output will be preserved in a directory named pilot_*: e.g. [pilot_9565/std.out](https://github.com/todor-ivanov/CMSDiracAux/blob/main/jobs.d/test-cms-single.d/pilot_9565/std.out)
+
+
 * Disassemble a CMS analysis workflow
 
 * Run the Analysis workflow with Dirac

@@ -1,0 +1,13 @@
+<tool name="openmpi" version="5.0.8-24e5c04aba2b22775d5002f4c09c95a4" revision="3">
+  <lib name="mpi"/>
+  <client>
+    <environment name="OPENMPI_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4"/>
+    <environment name="LIBDIR"       default="$OPENMPI_BASE/lib"/>
+    <environment name="INCLUDE"      default="$OPENMPI_BASE/include"/>
+  </client>
+  <runtime name="PATH" value="$OPENMPI_BASE/bin" type="path"/>
+  <runtime name="OPAL_PREFIX" value="$OPENMPI_BASE"/>
+  <runtime name="PMIX_PREFIX" value="$OPENMPI_BASE"/>
+  <runtime name="HFI_NO_BACKTRACE" value="1"/>
+  <runtime name="IPATH_NO_BACKTRACE" value="1"/>
+</tool>

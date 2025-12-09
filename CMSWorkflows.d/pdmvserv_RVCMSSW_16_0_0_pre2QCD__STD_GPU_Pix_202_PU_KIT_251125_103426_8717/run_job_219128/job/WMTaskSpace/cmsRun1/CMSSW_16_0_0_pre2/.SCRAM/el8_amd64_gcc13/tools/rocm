@@ -1,0 +1,66 @@
+{
+  "BINDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/bin"
+  ],
+  "FLAGS": {
+    "CPPDEFINES": [
+      "__HIP_PLATFORM_HCC__",
+      "__HIP_PLATFORM_AMD__"
+    ],
+    "REM_ROCM_HOST_CXXFLAGS": [
+      "-march=%"
+    ],
+    "ROCM_FLAGS": [
+      "--offload-arch=gfx908:sramecc+",
+      "--offload-arch=gfx90a:sramecc+",
+      "--offload-arch=gfx942:sramecc+",
+      "--offload-arch=gfx1030",
+      "--offload-arch=gfx1100",
+      "--offload-arch=gfx1102",
+      "-fgpu-rdc"
+    ],
+    "ROCM_HOST_CXXFLAGS": [
+      "-march=x86-64-v2"
+    ],
+    "SYSTEM_INCLUDE": [
+      "1"
+    ]
+  },
+  "HIPCC": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/bin/hipcc",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/include"
+  ],
+  "LIB": [
+    "amdhip64",
+    "hsa-runtime64",
+    "rocm_smi64"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/lib"
+  ],
+  "ROCM_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df",
+  "RUNTIME": {
+    "HSA_XNACK": [
+      "1"
+    ],
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/bin"
+    ],
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rocm/6.4.3-8bc52e5de186aa7fa61c7d17f290f0df/include"
+    ]
+  },
+  "TOOLNAME": "rocm",
+  "TOOLREVISION": "6",
+  "TOOLVERSION": "6.4.3-8bc52e5de186aa7fa61c7d17f290f0df",
+  "USE": [
+    "fmt"
+  ],
+  "VARIABLES": [
+    "ROCM_BASE",
+    "HIPCC",
+    "BINDIR",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

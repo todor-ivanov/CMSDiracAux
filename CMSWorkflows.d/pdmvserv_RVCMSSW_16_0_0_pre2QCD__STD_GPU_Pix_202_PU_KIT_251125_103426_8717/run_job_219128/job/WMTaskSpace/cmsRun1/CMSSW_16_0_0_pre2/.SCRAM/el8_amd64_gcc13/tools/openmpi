@@ -1,0 +1,37 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4/include"
+  ],
+  "LIB": [
+    "mpi"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4/lib"
+  ],
+  "OPENMPI_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4",
+  "RUNTIME": {
+    "HFI_NO_BACKTRACE": [
+      "1"
+    ],
+    "IPATH_NO_BACKTRACE": [
+      "1"
+    ],
+    "OPAL_PREFIX": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4"
+    ],
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4/bin"
+    ],
+    "PMIX_PREFIX": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openmpi/5.0.8-24e5c04aba2b22775d5002f4c09c95a4"
+    ]
+  },
+  "TOOLNAME": "openmpi",
+  "TOOLREVISION": "3",
+  "TOOLVERSION": "5.0.8-24e5c04aba2b22775d5002f4c09c95a4",
+  "VARIABLES": [
+    "OPENMPI_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

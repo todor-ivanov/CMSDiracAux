@@ -1,0 +1,9 @@
+<tool name="catch2" version="3.11.0-2e42f64598f571f0c3579816b5de560c" revision="3">
+  <lib name="Catch2Main"/>
+  <lib name="Catch2"/>
+  <client>
+    <environment name="CATCH2_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/catch2/3.11.0-2e42f64598f571f0c3579816b5de560c"/>
+    <environment name="INCLUDE"     default="$CATCH2_BASE/include"/>
+    <environment name="LIBDIR"      default="$CATCH2_BASE/lib64"/>
+  </client>
+</tool>

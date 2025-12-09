@@ -1,0 +1,21 @@
+{
+  "CATCH2_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/catch2/3.11.0-2e42f64598f571f0c3579816b5de560c",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/catch2/3.11.0-2e42f64598f571f0c3579816b5de560c/include"
+  ],
+  "LIB": [
+    "Catch2Main",
+    "Catch2"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/catch2/3.11.0-2e42f64598f571f0c3579816b5de560c/lib64"
+  ],
+  "TOOLNAME": "catch2",
+  "TOOLREVISION": "3",
+  "TOOLVERSION": "3.11.0-2e42f64598f571f0c3579816b5de560c",
+  "VARIABLES": [
+    "CATCH2_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "FLAGS": {
+    "SYSTEM_INCLUDE": [
+      "1"
+    ]
+  },
+  "HLS_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hls/2025.05-bf66465791178392d0ccc731a47dd76b",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hls/2025.05-bf66465791178392d0ccc731a47dd76b/include"
+  ],
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/hls/2025.05-bf66465791178392d0ccc731a47dd76b/include"
+    ]
+  },
+  "TOOLNAME": "hls",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "2025.05-bf66465791178392d0ccc731a47dd76b",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "HLS_BASE",
+    "INCLUDE"
+  ]
+}

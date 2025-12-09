@@ -1,0 +1,7 @@
+<tool name="git-lfs" version="3.6.0-9c6d615ae60925c210a7c63647fe2eed" revision="2">
+  <info url="https://git-lfs.com/"/>
+  <client>
+    <environment name="GIT_LFS_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/git-lfs/3.6.0-9c6d615ae60925c210a7c63647fe2eed"/>
+  </client>
+  <runtime name="PATH" value="$GIT_LFS_BASE/bin" type="path"/>
+</tool>

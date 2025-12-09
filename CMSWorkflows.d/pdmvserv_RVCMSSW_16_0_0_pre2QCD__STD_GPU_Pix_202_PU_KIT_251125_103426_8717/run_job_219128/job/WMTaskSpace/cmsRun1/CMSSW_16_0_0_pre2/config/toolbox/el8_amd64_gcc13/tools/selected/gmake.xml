@@ -1,0 +1,6 @@
+<tool name="gmake" version="4.3-85cee3ae629d02a00fb0f690ae86e0e3" revision="2">
+  <client>
+    <environment name="MAKE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gmake/4.3-85cee3ae629d02a00fb0f690ae86e0e3"/>
+  </client>
+  <runtime name="PATH" value="$MAKE_BASE/bin" type="path"/>
+</tool>

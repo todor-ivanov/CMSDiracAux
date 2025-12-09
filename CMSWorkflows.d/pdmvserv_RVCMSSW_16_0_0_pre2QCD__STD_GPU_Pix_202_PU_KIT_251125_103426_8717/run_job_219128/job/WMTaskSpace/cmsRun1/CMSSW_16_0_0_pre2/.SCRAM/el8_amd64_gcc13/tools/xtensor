@@ -1,0 +1,16 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xtensor/0.24.1-5bcaa583bbbfd1303178349673491f64/include"
+  ],
+  "TOOLNAME": "xtensor",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "0.24.1-5bcaa583bbbfd1303178349673491f64",
+  "USE": [
+    "xtl"
+  ],
+  "VARIABLES": [
+    "XTENSOR_BASE",
+    "INCLUDE"
+  ],
+  "XTENSOR_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xtensor/0.24.1-5bcaa583bbbfd1303178349673491f64"
+}

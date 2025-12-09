@@ -1,0 +1,7 @@
+<tool name="openloops" version="2.1.2-e7178009b695884d97435f2f0a2a6d6d" revision="2">
+<client>
+<environment name="OPENLOOPS_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/openloops/2.1.2-e7178009b695884d97435f2f0a2a6d6d"/>
+<environment name="LIBDIR" default="$OPENLOOPS_BASE/lib"/>
+<runtime name="CMS_OPENLOOPS_PREFIX" value="$OPENLOOPS_BASE" type="path"/>
+</client>
+</tool>

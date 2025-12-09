@@ -1,0 +1,6 @@
+<tool name="py3-numpy" version="1.26.4-7cdb25235220a2050f220da3fa2e44f7" revision="2">
+  <client>
+    <environment name="PY3_NUMPY_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-numpy/1.26.4-7cdb25235220a2050f220da3fa2e44f7"/>
+  </client>
+  <runtime name="PATH" value="$PY3_NUMPY_BASE/bin" type="path"/>
+</tool>

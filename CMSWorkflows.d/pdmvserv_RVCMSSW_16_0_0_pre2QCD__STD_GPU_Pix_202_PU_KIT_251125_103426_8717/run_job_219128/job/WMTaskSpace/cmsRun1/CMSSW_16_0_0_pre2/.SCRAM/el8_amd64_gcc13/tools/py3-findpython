@@ -1,0 +1,14 @@
+{
+  "PY3_FINDPYTHON_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-findpython/0.6.3-053f193c78a68535ffd5858cf32ae6b7",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-findpython/0.6.3-053f193c78a68535ffd5858cf32ae6b7/bin"
+    ]
+  },
+  "TOOLNAME": "py3-findpython",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.6.3-053f193c78a68535ffd5858cf32ae6b7",
+  "VARIABLES": [
+    "PY3_FINDPYTHON_BASE"
+  ]
+}

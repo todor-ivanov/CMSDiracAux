@@ -1,0 +1,31 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pacparser/1.4.5-7478446a64c6706d24c3de325a2b3cb7/include"
+  ],
+  "LIB": [
+    "pacparser"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pacparser/1.4.5-7478446a64c6706d24c3de325a2b3cb7/lib"
+  ],
+  "PACPARSER_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pacparser/1.4.5-7478446a64c6706d24c3de325a2b3cb7",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pacparser/1.4.5-7478446a64c6706d24c3de325a2b3cb7/bin"
+    ],
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pacparser/1.4.5-7478446a64c6706d24c3de325a2b3cb7/include"
+    ]
+  },
+  "TOOLNAME": "pacparser",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "1.4.5-7478446a64c6706d24c3de325a2b3cb7",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "PACPARSER_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

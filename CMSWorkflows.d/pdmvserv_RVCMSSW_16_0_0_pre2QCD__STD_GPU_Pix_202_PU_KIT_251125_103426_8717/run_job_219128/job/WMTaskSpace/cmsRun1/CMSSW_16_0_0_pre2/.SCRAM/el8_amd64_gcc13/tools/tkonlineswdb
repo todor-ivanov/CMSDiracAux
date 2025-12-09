@@ -1,0 +1,14 @@
+{
+  "LIB": [
+    "DeviceDescriptions",
+    "Fed9UDeviceFactory"
+  ],
+  "TOOLNAME": "tkonlineswdb",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "4.2.0-1_gcc7-125a3932f5bbc3e6eba7b31ac4ba0c21",
+  "USE": [
+    "tkonlinesw",
+    "oracle",
+    "oracleocci"
+  ]
+}

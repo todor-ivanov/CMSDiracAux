@@ -1,0 +1,28 @@
+{
+  "FFTJET_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/fftjet/1.5.0-53f2ba4cbdb0a293733a72d7acbc1cdf",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/fftjet/1.5.0-53f2ba4cbdb0a293733a72d7acbc1cdf/include"
+  ],
+  "LIB": [
+    "fftjet"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/fftjet/1.5.0-53f2ba4cbdb0a293733a72d7acbc1cdf/lib"
+  ],
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/fftjet/1.5.0-53f2ba4cbdb0a293733a72d7acbc1cdf/include"
+    ]
+  },
+  "TOOLNAME": "fftjet",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "1.5.0-53f2ba4cbdb0a293733a72d7acbc1cdf",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "FFTJET_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

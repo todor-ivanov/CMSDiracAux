@@ -1,0 +1,8 @@
+  <tool name="igprof" version="5.9.16-ab91cae3a2e1db5f5d333bfe43e8ec2a" revision="2">
+    <info url="http://igprof.sourceforge.net/"/>
+    <client>
+      <environment name="IGPROF_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/igprof/5.9.16-ab91cae3a2e1db5f5d333bfe43e8ec2a"/>
+      <environment name="LIBDIR" default="$IGPROF_BASE/lib"/>
+    </client>
+    <runtime name="PATH" value="$IGPROF_BASE/bin" type="path"/>
+  </tool>

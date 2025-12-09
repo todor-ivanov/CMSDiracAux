@@ -1,0 +1,13 @@
+<tool name="cuda-interface" version="12.9.1-cff83d5f72da96ebfea8cafd87a05296" revision="1">
+  <info url="https://docs.nvidia.com/cuda/index.html"/>
+  <client>
+    <environment name="CUDA_INTERFACE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/cuda/12.9.1-cff83d5f72da96ebfea8cafd87a05296"/>
+    <environment name="BINDIR"              default="$CUDA_INTERFACE_BASE/bin"/>
+    <environment name="LIBDIR"              default="$CUDA_INTERFACE_BASE/lib64"/>
+    <environment name="INCLUDE"             default="$CUDA_INTERFACE_BASE/include"/>
+  </client>
+  <flags SKIP_TOOL_SYMLINKS="1"/>
+  <runtime name="LD_LIBRARY_PATH" value="$LIBDIR"  type="path"/>
+  <runtime name="ROOT_INCLUDE_PATH"        value="$INCLUDE" type="path"/>
+  <runtime name="PATH"                     value="$BINDIR"  type="path"/>
+</tool>

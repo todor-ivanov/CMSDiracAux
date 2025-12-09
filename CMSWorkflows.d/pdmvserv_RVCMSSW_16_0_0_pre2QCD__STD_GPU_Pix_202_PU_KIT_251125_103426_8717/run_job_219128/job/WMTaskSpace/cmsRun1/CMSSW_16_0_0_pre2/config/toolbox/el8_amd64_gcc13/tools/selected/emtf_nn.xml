@@ -1,0 +1,6 @@
+<tool name="EMTF_NN" version="1.0.0-714f32af64128e3c2d71d097f1bc4f5d" revision="1">
+  <client>
+    <environment name="EMTF_NN_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/EMTF_NN/1.0.0-714f32af64128e3c2d71d097f1bc4f5d"/>
+    <environment name="LIBDIR"       default="$EMTF_NN_BASE/lib64"/>
+  </client>
+</tool>

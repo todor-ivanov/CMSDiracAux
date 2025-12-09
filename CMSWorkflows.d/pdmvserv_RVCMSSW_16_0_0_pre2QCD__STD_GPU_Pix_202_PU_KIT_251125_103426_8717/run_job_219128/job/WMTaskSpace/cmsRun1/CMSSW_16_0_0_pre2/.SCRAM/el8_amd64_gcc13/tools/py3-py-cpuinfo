@@ -1,0 +1,14 @@
+{
+  "PY3_PY_CPUINFO_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-py-cpuinfo/9.0.0-8c05983c8b010365862d9a813a3e543d",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-py-cpuinfo/9.0.0-8c05983c8b010365862d9a813a3e543d/bin"
+    ]
+  },
+  "TOOLNAME": "py3-py-cpuinfo",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "9.0.0-8c05983c8b010365862d9a813a3e543d",
+  "VARIABLES": [
+    "PY3_PY_CPUINFO_BASE"
+  ]
+}

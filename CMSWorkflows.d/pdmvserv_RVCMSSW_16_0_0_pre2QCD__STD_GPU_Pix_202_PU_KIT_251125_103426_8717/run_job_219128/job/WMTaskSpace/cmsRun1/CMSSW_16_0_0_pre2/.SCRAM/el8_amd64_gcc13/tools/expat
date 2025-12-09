@@ -1,0 +1,35 @@
+{
+  "BINDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c/bin"
+  ],
+  "EXPAT_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c/include"
+  ],
+  "LIB": [
+    "expat"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c/lib"
+  ],
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c/bin"
+    ],
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/expat/2.4.8-90d4121d63d495f95df72519ccbb6e9c/include"
+    ]
+  },
+  "TOOLNAME": "expat",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "2.4.8-90d4121d63d495f95df72519ccbb6e9c",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "EXPAT_BASE",
+    "LIBDIR",
+    "INCLUDE",
+    "BINDIR"
+  ]
+}

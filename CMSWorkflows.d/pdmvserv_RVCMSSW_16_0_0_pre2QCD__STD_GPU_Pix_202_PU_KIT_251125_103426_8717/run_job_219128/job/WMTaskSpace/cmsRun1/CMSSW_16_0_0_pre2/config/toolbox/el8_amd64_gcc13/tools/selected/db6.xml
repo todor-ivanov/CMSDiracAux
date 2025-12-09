@@ -1,0 +1,10 @@
+<tool name="db6" version="6.2.32-f03b5a082d34901a451c3e15477c22fe" revision="2">
+  <lib name="db"/>
+  <client>
+    <environment name="DB6_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe"/>
+    <environment name="LIBDIR" default="$DB6_BASE/lib"/>
+    <environment name="INCLUDE" default="$DB6_BASE/include"/>
+    <environment name="BINDIR" default="$DB6_BASE/bin"/>
+  </client>
+  <runtime name="PATH" value="$BINDIR" type="path"/>
+</tool>

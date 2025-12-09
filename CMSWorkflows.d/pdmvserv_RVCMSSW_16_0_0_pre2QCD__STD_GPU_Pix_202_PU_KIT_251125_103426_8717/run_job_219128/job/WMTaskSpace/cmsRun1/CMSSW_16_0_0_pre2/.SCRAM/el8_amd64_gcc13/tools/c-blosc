@@ -1,0 +1,20 @@
+{
+  "C_BLOSC_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/c-blosc/1.21.6-a2aac6801b4e8582dfd2376c71494e05",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/c-blosc/1.21.6-a2aac6801b4e8582dfd2376c71494e05/include"
+  ],
+  "LIB": [
+    "blosc"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/c-blosc/1.21.6-a2aac6801b4e8582dfd2376c71494e05/lib64"
+  ],
+  "TOOLNAME": "c-blosc",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.21.6-a2aac6801b4e8582dfd2376c71494e05",
+  "VARIABLES": [
+    "C_BLOSC_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

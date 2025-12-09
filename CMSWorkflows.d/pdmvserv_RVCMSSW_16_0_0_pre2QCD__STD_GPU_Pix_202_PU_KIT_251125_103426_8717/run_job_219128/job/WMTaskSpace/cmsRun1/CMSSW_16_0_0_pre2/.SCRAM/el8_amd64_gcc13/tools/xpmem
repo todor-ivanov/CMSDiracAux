@@ -1,0 +1,20 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xpmem/v2.6.3-20220308-9b40da6112cf24c0bcdb5df4d025e6d1/include"
+  ],
+  "LIB": [
+    "xpmem"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xpmem/v2.6.3-20220308-9b40da6112cf24c0bcdb5df4d025e6d1/lib"
+  ],
+  "TOOLNAME": "xpmem",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "v2.6.3-20220308-9b40da6112cf24c0bcdb5df4d025e6d1",
+  "VARIABLES": [
+    "XPMEM_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ],
+  "XPMEM_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/xpmem/v2.6.3-20220308-9b40da6112cf24c0bcdb5df4d025e6d1"
+}

@@ -1,0 +1,7 @@
+<tool name="clue" version="1.1.1-075ad42b2f01af97239f37c4c019c25e" revision="2">
+  <use name="alpaka"/>
+  <client>
+    <environment name="CLUE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/clue/1.1.1-075ad42b2f01af97239f37c4c019c25e"/>
+    <environment name="INCLUDE"   default="$CLUE_BASE/include"/>
+  </client>
+</tool>

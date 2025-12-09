@@ -1,0 +1,15 @@
+<tool name="utm" version="utm_0.13.0-8912d72a1f971b590131da443e7dca41" revision="2">
+  <lib name="tmeventsetup"/>
+  <lib name="tmtable"/>
+  <lib name="tmxsd"/>
+  <lib name="tmgrammar"/>
+  <lib name="tmutil"/>
+  <client>
+    <environment name="UTM_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/utm/utm_0.13.0-8912d72a1f971b590131da443e7dca41"/>
+    <environment name="LIBDIR" default="$UTM_BASE/lib"/>
+    <environment name="INCLUDE" default="$UTM_BASE/include"/>
+  </client>
+  <runtime name="ROOT_INCLUDE_PATH" value="$INCLUDE" type="path"/>
+  <runtime name="UTM_XSD_DIR" value="$UTM_BASE"/>
+  <use name="root_cxxdefaults"/>
+</tool>

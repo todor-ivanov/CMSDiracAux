@@ -1,0 +1,13 @@
+{
+  "EMTF_NN_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/EMTF_NN/1.0.0-714f32af64128e3c2d71d097f1bc4f5d",
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/EMTF_NN/1.0.0-714f32af64128e3c2d71d097f1bc4f5d/lib64"
+  ],
+  "TOOLNAME": "emtf_nn",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.0.0-714f32af64128e3c2d71d097f1bc4f5d",
+  "VARIABLES": [
+    "EMTF_NN_BASE",
+    "LIBDIR"
+  ]
+}

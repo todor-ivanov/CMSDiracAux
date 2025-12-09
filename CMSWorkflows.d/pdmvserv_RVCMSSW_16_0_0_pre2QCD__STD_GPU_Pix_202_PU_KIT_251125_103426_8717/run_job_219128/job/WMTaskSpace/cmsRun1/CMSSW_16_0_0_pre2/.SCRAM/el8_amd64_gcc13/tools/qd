@@ -1,0 +1,21 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/qd/2.3.13-5b50ae2e97e3ae25e67231c994a752cf/include"
+  ],
+  "LIB": [
+    "qdmod",
+    "qd"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/qd/2.3.13-5b50ae2e97e3ae25e67231c994a752cf/lib"
+  ],
+  "QD_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/qd/2.3.13-5b50ae2e97e3ae25e67231c994a752cf",
+  "TOOLNAME": "qd",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "2.3.13-5b50ae2e97e3ae25e67231c994a752cf",
+  "VARIABLES": [
+    "QD_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

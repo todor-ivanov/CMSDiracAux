@@ -1,0 +1,6 @@
+<tool name="py3-future" version="1.0.0-0f362565d3d979c12d40f145cdf901dd" revision="1">
+  <client>
+    <environment name="PY3_FUTURE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-future/1.0.0-0f362565d3d979c12d40f145cdf901dd"/>
+  </client>
+  <runtime name="PATH" value="$PY3_FUTURE_BASE/bin" type="path"/>
+</tool>

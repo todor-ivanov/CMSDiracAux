@@ -1,0 +1,13 @@
+{
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/TOPO/0.1.0-4fd0f54a2745d280ad2e1849710f12e1/lib64"
+  ],
+  "TOOLNAME": "topo",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.1.0-4fd0f54a2745d280ad2e1849710f12e1",
+  "TOPO_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/TOPO/0.1.0-4fd0f54a2745d280ad2e1849710f12e1",
+  "VARIABLES": [
+    "TOPO_BASE",
+    "LIBDIR"
+  ]
+}

@@ -1,0 +1,6 @@
+<tool name="py3-pybind11" version="2.13.6-22603a73e3995f20a1c706947915b1fe" revision="2">
+  <client>
+    <environment name="PY3_PYBIND11_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-pybind11/2.13.6-22603a73e3995f20a1c706947915b1fe"/>
+    <environment name="INCLUDE" default="$PY3_PYBIND11_BASE/lib/python3.9/site-packages/pybind11/include"/>
+  </client>
+</tool>

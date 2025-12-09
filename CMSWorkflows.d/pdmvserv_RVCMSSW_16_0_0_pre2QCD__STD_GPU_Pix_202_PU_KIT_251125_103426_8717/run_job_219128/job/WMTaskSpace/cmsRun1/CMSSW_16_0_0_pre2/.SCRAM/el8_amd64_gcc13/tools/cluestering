@@ -1,0 +1,16 @@
+{
+  "CLUESTERING_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/CLUEstering/2.7.2-4bf22a3cce60ec463c2cce4c3f6193eb",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/CLUEstering/2.7.2-4bf22a3cce60ec463c2cce4c3f6193eb/include"
+  ],
+  "TOOLNAME": "cluestering",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.7.2-4bf22a3cce60ec463c2cce4c3f6193eb",
+  "USE": [
+    "alpaka"
+  ],
+  "VARIABLES": [
+    "CLUESTERING_BASE",
+    "INCLUDE"
+  ]
+}

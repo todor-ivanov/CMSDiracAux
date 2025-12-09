@@ -1,0 +1,14 @@
+{
+  "PY3_CMSML_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-cmsml/0.2.7-197782e629b3d5a8e4faa993bfa1a987",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-cmsml/0.2.7-197782e629b3d5a8e4faa993bfa1a987/bin"
+    ]
+  },
+  "TOOLNAME": "py3-cmsml",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.2.7-197782e629b3d5a8e4faa993bfa1a987",
+  "VARIABLES": [
+    "PY3_CMSML_BASE"
+  ]
+}

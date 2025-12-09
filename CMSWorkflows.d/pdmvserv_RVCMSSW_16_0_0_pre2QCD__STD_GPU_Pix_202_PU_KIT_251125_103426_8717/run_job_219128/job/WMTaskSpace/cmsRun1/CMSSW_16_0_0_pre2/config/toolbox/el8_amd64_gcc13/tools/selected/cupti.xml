@@ -1,0 +1,5 @@
+<tool name="cupti" version="12.9.1-cff83d5f72da96ebfea8cafd87a05296" revision="2">
+  <info url="https://docs.nvidia.com/cupti/Cupti/index.html"/>
+  <lib name="cupti"/>
+  <use name="cuda-interface"/>
+</tool>

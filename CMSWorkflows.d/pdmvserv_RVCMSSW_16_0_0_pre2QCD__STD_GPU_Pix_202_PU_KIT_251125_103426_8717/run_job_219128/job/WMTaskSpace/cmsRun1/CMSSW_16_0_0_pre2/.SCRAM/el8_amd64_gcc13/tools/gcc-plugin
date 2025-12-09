@@ -1,0 +1,20 @@
+{
+  "GCC_PLUGIN_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/plugin",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/plugin/include"
+  ],
+  "LIB": [
+    "cc1plugin cp1plugin"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/plugin"
+  ],
+  "TOOLNAME": "gcc-plugin",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "13.4.0",
+  "VARIABLES": [
+    "GCC_PLUGIN_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

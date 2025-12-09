@@ -1,0 +1,11 @@
+{
+  "LIB": [
+    "nvidia-ml"
+  ],
+  "TOOLNAME": "cuda-nvml",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "12.9.1-cff83d5f72da96ebfea8cafd87a05296",
+  "USE": [
+    "cuda-stubs"
+  ]
+}

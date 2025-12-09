@@ -1,0 +1,14 @@
+{
+  "PY3_PBS_INSTALLER_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-pbs-installer/2025.6.12-a03795c5b1b9a9c58822fe320ceab49a",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-pbs-installer/2025.6.12-a03795c5b1b9a9c58822fe320ceab49a/bin"
+    ]
+  },
+  "TOOLNAME": "py3-pbs-installer",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2025.6.12-a03795c5b1b9a9c58822fe320ceab49a",
+  "VARIABLES": [
+    "PY3_PBS_INSTALLER_BASE"
+  ]
+}

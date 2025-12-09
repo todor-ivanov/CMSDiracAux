@@ -1,0 +1,12 @@
+{
+  "GCC_ATOMIC_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923",
+  "LIB": [
+    "atomic"
+  ],
+  "TOOLNAME": "gcc-atomic",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "13.4.0",
+  "VARIABLES": [
+    "GCC_ATOMIC_BASE"
+  ]
+}

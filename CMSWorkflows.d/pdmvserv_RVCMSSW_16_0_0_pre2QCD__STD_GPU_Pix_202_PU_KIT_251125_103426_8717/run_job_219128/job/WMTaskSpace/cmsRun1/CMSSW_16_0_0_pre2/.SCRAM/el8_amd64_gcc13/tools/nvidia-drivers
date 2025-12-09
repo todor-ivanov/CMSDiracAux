@@ -1,0 +1,18 @@
+{
+  "FLAGS": {
+    "SKIP_TOOL_SYMLINKS": [
+      "1"
+    ]
+  },
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/cuda/12.9.1-cff83d5f72da96ebfea8cafd87a05296/drivers"
+  ],
+  "NVIDIA_DRIVERS_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/cuda/12.9.1-cff83d5f72da96ebfea8cafd87a05296",
+  "TOOLNAME": "nvidia-drivers",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "12.9.1-cff83d5f72da96ebfea8cafd87a05296",
+  "VARIABLES": [
+    "NVIDIA_DRIVERS_BASE",
+    "LIBDIR"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "PY3_TROVE_CLASSIFIERS_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-trove-classifiers/2025.5.9.12-15301a9164f5dcbb49c2a2a50cc2f032",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-trove-classifiers/2025.5.9.12-15301a9164f5dcbb49c2a2a50cc2f032/bin"
+    ]
+  },
+  "TOOLNAME": "py3-trove-classifiers",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2025.5.9.12-15301a9164f5dcbb49c2a2a50cc2f032",
+  "VARIABLES": [
+    "PY3_TROVE_CLASSIFIERS_BASE"
+  ]
+}

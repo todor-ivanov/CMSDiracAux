@@ -1,0 +1,8 @@
+  <tool name="gcc-plugin" version="13.4.0" revision="1">
+    <lib name="cc1plugin cp1plugin"/>
+    <client>
+      <environment name="GCC_PLUGIN_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gcc/13.4.0-6908cfdf803923e783448096ca4f0923/bin/../lib/gcc/x86_64-redhat-linux-gnu/13.4.0/plugin"/>
+      <environment name="INCLUDE"   default="$GCC_PLUGIN_BASE/include"/>
+      <environment name="LIBDIR"    default="$GCC_PLUGIN_BASE"/>
+    </client>
+  </tool>

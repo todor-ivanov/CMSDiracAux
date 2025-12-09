@@ -1,0 +1,14 @@
+{
+  "GDB_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdb/16.2-33f3a5beb406753a834cbeea8fe54fa2",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gdb/16.2-33f3a5beb406753a834cbeea8fe54fa2/bin"
+    ]
+  },
+  "TOOLNAME": "gdb",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "16.2-33f3a5beb406753a834cbeea8fe54fa2",
+  "VARIABLES": [
+    "GDB_BASE"
+  ]
+}

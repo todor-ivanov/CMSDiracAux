@@ -1,0 +1,28 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-numpy/1.26.4-7cdb25235220a2050f220da3fa2e44f7/c-api/core/include"
+  ],
+  "LIB": [
+    "npymath"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-numpy/1.26.4-7cdb25235220a2050f220da3fa2e44f7/c-api/core/lib"
+  ],
+  "NUMPY_C_API_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-numpy/1.26.4-7cdb25235220a2050f220da3fa2e44f7",
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-numpy/1.26.4-7cdb25235220a2050f220da3fa2e44f7/c-api/core/include"
+    ]
+  },
+  "TOOLNAME": "numpy-c-api",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.26.4-7cdb25235220a2050f220da3fa2e44f7",
+  "USE": [
+    "root_cxxdefaults"
+  ],
+  "VARIABLES": [
+    "NUMPY_C_API_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "BINDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe/bin"
+  ],
+  "DB6_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe",
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe/include"
+  ],
+  "LIB": [
+    "db"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe/lib"
+  ],
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/db6/6.2.32-f03b5a082d34901a451c3e15477c22fe/bin"
+    ]
+  },
+  "TOOLNAME": "db6",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "6.2.32-f03b5a082d34901a451c3e15477c22fe",
+  "VARIABLES": [
+    "DB6_BASE",
+    "LIBDIR",
+    "INCLUDE",
+    "BINDIR"
+  ]
+}

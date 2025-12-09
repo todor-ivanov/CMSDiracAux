@@ -1,0 +1,6 @@
+<tool name="py3-luigi" version="3.6.0-e569372f354f8b08d4ed0c8bed78bf96" revision="1">
+  <client>
+    <environment name="PY3_LUIGI_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-luigi/3.6.0-e569372f354f8b08d4ed0c8bed78bf96"/>
+  </client>
+  <runtime name="PATH" value="$PY3_LUIGI_BASE/bin" type="path"/>
+</tool>

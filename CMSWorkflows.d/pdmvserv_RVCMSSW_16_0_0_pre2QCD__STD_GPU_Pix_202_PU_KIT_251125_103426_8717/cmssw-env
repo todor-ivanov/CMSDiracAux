@@ -1,0 +1,164 @@
+#!/bin/bash -e
+EXTRA_OPTS=
+BASE_SCRIPT="cmssw-env"
+CMD_TO_RUN=()
+CMS_IMAGE=$(basename $0)
+THISDIR=$(dirname $0)
+IGNORE_MOUNTS=""
+SHOW_COMMAND="true"
+INTERACTIVE=""
+CONTAINER_CMD="singularity"
+BINDPATH_ENV="SINGULARITY_BINDPATH"
+MOUNT_POINTS="${SINGULARITY_BINDPATH}"
+if which apptainer >/dev/null 2>&1 ; then
+  CONTAINER_CMD="apptainer"
+  BINDPATH_ENV="APPTAINER_BINDPATH"
+  MOUNT_POINTS="${APPTAINER_BINDPATH}"
+fi
+while [ "$#" != 0 ]; do
+  case "$1" in
+    -h|--help)
+      HELP_ARG=""
+      if [ "${CMS_IMAGE}" = "${BASE_SCRIPT}" ] ; then HELP_ARG="[--cmsos <image>] "; fi
+      echo "Usage: $0 [-h|--help] ${HELP_ARG}[extra-options] [--show-command] [--ignore-mount <dir1[,dir2[,...]]>] [--interactive] [--command-to-run|-- <command(s)>]"
+      echo "Environment variable UNPACKED_IMAGE can be set to point to either valid docker/singularity image or unpacked image path"
+      echo "If <command> includes multiple commands separated by ; or &&, or other high-precedence shell operators like >, it must be quoted"
+      echo "--ignore-mount /dir        To not explicitly mount /dir"
+      echo "--interactive              To start the shell in interactive mode"
+      echo "--command-to-run <command> To run <command> and exit."
+      exit 0
+      ;;
+    --show-command) SHOW_COMMAND="set -x"; shift ;;
+    --ignore-mount) IGNORE_MOUNTS=$(echo $2 | tr ',' ' '); shift; shift ;;
+    --interactive) INTERACTIVE="-l -i"; shift ;;
+    --cmsos)
+      if [ "${CMS_IMAGE}" != "${BASE_SCRIPT}" ] ; then
+        echo "ERROR: Unknown option '--cmsos' found. This option is only valid for ${BASE_SCRIPT} command."
+        exit 1
+      fi
+      CMS_IMAGE=$2 ; shift ; shift
+      if [ $(echo "$CMS_IMAGE" | grep '/' | wc -l) -eq 0 ] ; then CMS_IMAGE="cmssw/$CMS_IMAGE"; fi
+      CMS_IMAGE="$(echo ${CMS_IMAGE} | sed 's|/|-|')"
+      ;;
+    --command-to-run|--)
+      shift
+      CMD_TO_RUN=("$@")
+      break
+      ;;
+    *)
+      EXTRA_OPTS="${EXTRA_OPTS} $1"
+      shift
+      ;;
+  esac
+done
+
+if [ "${CMS_IMAGE}" = "cmssw-el6" ] ; then
+  #Always use SCRAM V2 for el6
+  #Avoid accidental usage of scram V3 if scram command ran from a project area which uses scram v3
+  export SCRAM_VERSION=V2_99_99
+  export SCRAM_NO_VERSION_SPAWN=true
+else
+  export SCRAM_NO_VERSION_SPAWN=false
+fi
+
+if [ -d /cvmfs ] ; then
+  cvmfs_repos="cms cms-ib grid unpacked"
+  case "$(hostname -d)" in cern.ch|cms) cvmfs_repos="${cvmfs_repos} projects" ;; esac
+  for repo in ${cvmfs_repos} ; do
+    ls /cvmfs/${repo}.cern.ch >/dev/null 2>&1 || true
+  done
+  MOUNT_POINTS="${MOUNT_POINTS},/cvmfs,/cvmfs/grid.cern.ch/etc/grid-security/vomses:/etc/vomses,/cvmfs/grid.cern.ch/etc/grid-security:/etc/grid-security"
+fi
+for dir in /etc/tnsnames.ora /etc/pki/ca-trust /eos /build /data /afs /pool $(/bin/pwd -P | cut -d/ -f1-2) ; do
+  [ ! -e $dir ] || MOUNT_POINTS="${MOUNT_POINTS},${dir}"
+done
+
+#https://github.com/cms-sw/cmssw-osenv/issues/18
+#Extra paths to force mount if exists on host
+FORCE_MOUNT="/asap3 /beegfs /gpfs /nfs /pnfs"
+for dir in ${FORCE_MOUNT} ; do
+  [ ! -e $dir ] || MOUNT_POINTS="${MOUNT_POINTS},${dir}"
+done
+
+KRB5FILE=$(klist 2>&1 | grep 'FILE:' | sed 's|.*FILE:|FILE:|')
+case "${KRB5FILE}" in
+  FILE:/run/user/* )
+    export KRB5CCNAME="${KRB5FILE}"
+    MOUNT_POINTS="${MOUNT_POINTS},/run/user,/var/run/user"
+    ;;
+  FILE:/* )
+    export KRB5CCNAME="${KRB5FILE}"
+    ;;
+esac
+OLD_CMSOS=$(echo ${SCRAM_ARCH} | cut -d_ -f1,2)
+RESET_SCRAM_ARCH=""
+if [ -e ${THISDIR}/../cmsset_default.sh ] ; then
+  RESET_SCRAM_ARCH="[ \"${OLD_CMSOS}\" != \"\$(${THISDIR}/cmsos)\" ] && export SCRAM_ARCH= ; source ${THISDIR}/../cmsset_default.sh;"
+fi
+
+if [ "${#CMD_TO_RUN[@]}" -gt 0 ] ; then
+  # necessary to preserve quotes/grouping in original CMD_TO_RUN when running multiple commands through sh -c
+  printf -v CMD_STR '%q ' "${CMD_TO_RUN[@]}"
+  # necessary to expand multi-command input given as quoted string
+  CMD_PREF=
+  if [ "${#CMD_TO_RUN[@]}" -eq 1 ]; then CMD_PREF="eval "; fi
+  CMD_TO_RUN=("${CMD_PREF}${CMD_STR}")
+fi
+
+if [ "X${UNPACKED_IMAGE}" = "X" ] ;then
+  if [ "${CMS_IMAGE}" = "${BASE_SCRIPT}" ] ; then
+    echo "ERROR: Missing --cmsos <image> command-line argument. Usage $0 --cmsos el8"
+    exit 1
+  fi
+  CMS_IMAGE=$(echo $CMS_IMAGE | sed -E 's/-(slc|cc)/-el/')
+  DOCKER_NAME="$(echo ${CMS_IMAGE} | sed 's|-|/|')"
+  UNAME_M=":$(uname -m)"
+  UNPACK_DIRS="/cvmfs/unpacked.cern.ch/registry.hub.docker.com /cvmfs/singularity.opensciencegrid.org"
+  for dir in ${UNPACK_DIRS} ; do
+    ls ${dir} >/dev/null 2>&1 || true
+    for tag in "" ${UNAME_M} :latest ; do
+      if [ -e "${dir}/${DOCKER_NAME}${tag}" ] ; then
+        UNPACKED_IMAGE="${dir}/${DOCKER_NAME}${tag}"
+        break
+      fi
+    done
+    [ "${UNPACKED_IMAGE}" != "" ] && break
+  done
+  if [ "${UNPACKED_IMAGE}" = "" ] ; then
+    echo "ERROR: Unable to find unpacked image '${DOCKER_NAME}' under ${UNPACK_DIRS} path(s)."
+    exit 1
+  fi
+fi
+
+if [ -e $UNPACKED_IMAGE ] ; then
+  VALID_MOUNT_POINTS=""
+  for dir in $(echo $MOUNT_POINTS | tr ',' '\n' | sort | uniq) ; do
+    hdir=$(echo $dir | sed 's|:.*||')
+    bind_dir=$(echo $dir | sed 's|.*:||')
+    [ "${bind_dir}" = "" ] && bind_dir="${hdir}"
+    if [ "${IGNORE_MOUNTS}" != "" ] ; then
+      if [ $(echo " ${IGNORE_MOUNTS} " | grep " $hdir " | wc -l) -gt 0 ] ; then continue ; fi
+    fi
+    mount_path=false
+    if [ -e ${hdir} ] && [ $(echo " ${FORCE_MOUNT} " | grep " ${bind_dir} " | wc -l) -gt 0 ] ; then
+      mount_path=true
+    elif   [ -f ${hdir} -a -f ${UNPACKED_IMAGE}/${bind_dir} ] ; then
+      mount_path=true
+    elif [ -d ${hdir} -a -d ${UNPACKED_IMAGE}/${bind_dir} ] ; then
+      mount_path=true
+    fi
+    $mount_path && VALID_MOUNT_POINTS="${VALID_MOUNT_POINTS},${dir}"
+  done
+  VALID_MOUNT_POINTS=$(echo ${VALID_MOUNT_POINTS} | sed 's|^,||')
+  ${SHOW_COMMAND} ; export ${BINDPATH_ENV}=${VALID_MOUNT_POINTS}
+fi
+
+#See https://github.com/cms-sw/cmssw-osenv/issues/17
+#Containers might not have all locales installed, so force set  LC_ALL=C
+export LC_ALL="C"
+
+if [ "${#CMD_TO_RUN[@]}" -eq 0 ] ; then
+  ${SHOW_COMMAND} ; ${CONTAINER_CMD} -s exec ${EXTRA_OPTS} $UNPACKED_IMAGE sh -c "${RESET_SCRAM_ARCH} /bin/bash ${INTERACTIVE}"
+else
+  ${SHOW_COMMAND} ; ${CONTAINER_CMD} -s exec ${EXTRA_OPTS} $UNPACKED_IMAGE sh -c "${RESET_SCRAM_ARCH} /bin/bash ${INTERACTIVE} -c '${CMD_TO_RUN[@]}'"
+fi

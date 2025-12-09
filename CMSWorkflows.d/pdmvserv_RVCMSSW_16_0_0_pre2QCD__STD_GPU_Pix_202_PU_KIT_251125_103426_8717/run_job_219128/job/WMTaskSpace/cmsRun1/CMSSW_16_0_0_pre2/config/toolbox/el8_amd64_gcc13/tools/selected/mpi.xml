@@ -1,0 +1,3 @@
+<tool name="mpi" version="1.0-41edc8473c4cae77bd40666b59de8bb5" revision="2">
+  <use name="openmpi"/>
+</tool>

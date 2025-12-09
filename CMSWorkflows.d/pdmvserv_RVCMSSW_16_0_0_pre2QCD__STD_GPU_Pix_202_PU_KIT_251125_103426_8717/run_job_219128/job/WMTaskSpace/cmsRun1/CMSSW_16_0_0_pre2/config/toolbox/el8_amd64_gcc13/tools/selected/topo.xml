@@ -1,0 +1,6 @@
+<tool name="TOPO" version="0.1.0-4fd0f54a2745d280ad2e1849710f12e1" revision="1">
+  <client>
+    <environment name="TOPO_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/TOPO/0.1.0-4fd0f54a2745d280ad2e1849710f12e1"/>
+    <environment name="LIBDIR"       default="$TOPO_BASE/lib64"/>
+  </client>
+</tool>

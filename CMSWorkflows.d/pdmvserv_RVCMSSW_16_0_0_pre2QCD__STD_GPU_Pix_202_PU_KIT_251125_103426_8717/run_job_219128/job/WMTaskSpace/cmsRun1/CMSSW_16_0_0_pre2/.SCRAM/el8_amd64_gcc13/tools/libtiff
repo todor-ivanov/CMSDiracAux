@@ -1,0 +1,30 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libtiff/4.0.10-0a7efc1dc040b67acbb48cd9f228d256/include"
+  ],
+  "LIB": [
+    "tiff"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libtiff/4.0.10-0a7efc1dc040b67acbb48cd9f228d256/lib"
+  ],
+  "LIBTIFF_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libtiff/4.0.10-0a7efc1dc040b67acbb48cd9f228d256",
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libtiff/4.0.10-0a7efc1dc040b67acbb48cd9f228d256/include"
+    ]
+  },
+  "TOOLNAME": "libtiff",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "4.0.10-0a7efc1dc040b67acbb48cd9f228d256",
+  "USE": [
+    "root_cxxdefaults",
+    "libjpeg-turbo",
+    "zlib"
+  ],
+  "VARIABLES": [
+    "LIBTIFF_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

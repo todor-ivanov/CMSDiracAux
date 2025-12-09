@@ -1,0 +1,6 @@
+<tool name="cicada" version="1.4.0-4497c19dacb453e94e0b2b6cebf02c27" revision="1">
+  <client>
+    <environment name="CICADA_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/CICADA/1.4.0-4497c19dacb453e94e0b2b6cebf02c27"/>
+    <environment name="LIBDIR"       default="$CICADA_BASE/lib64"/>
+  </client>
+</tool>

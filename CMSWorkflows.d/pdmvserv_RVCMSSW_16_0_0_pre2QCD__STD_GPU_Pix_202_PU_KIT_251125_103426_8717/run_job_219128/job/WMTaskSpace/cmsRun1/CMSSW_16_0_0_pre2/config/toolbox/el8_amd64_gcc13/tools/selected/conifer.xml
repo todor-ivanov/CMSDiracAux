@@ -1,0 +1,7 @@
+<tool name="conifer" version="1.7-dbc19c2030ff5aecfc1032db7a43b5b3" revision="2">
+  <client>
+    <environment name="CONIFER_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/conifer/1.7-dbc19c2030ff5aecfc1032db7a43b5b3"/>
+    <environment name="INCLUDE" default="$CONIFER_BASE/include"/>
+  </client>
+  <use name="json"/>
+</tool>

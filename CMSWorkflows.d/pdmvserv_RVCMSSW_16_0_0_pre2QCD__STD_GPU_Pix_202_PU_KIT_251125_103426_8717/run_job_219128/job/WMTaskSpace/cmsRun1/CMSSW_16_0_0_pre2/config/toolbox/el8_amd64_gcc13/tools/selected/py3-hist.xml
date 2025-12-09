@@ -1,0 +1,6 @@
+<tool name="py3-hist" version="2.8.1-641a5e925d2dd5cd3d178956dd4361ae" revision="1">
+  <client>
+    <environment name="PY3_HIST_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hist/2.8.1-641a5e925d2dd5cd3d178956dd4361ae"/>
+  </client>
+  <runtime name="PATH" value="$PY3_HIST_BASE/bin" type="path"/>
+</tool>

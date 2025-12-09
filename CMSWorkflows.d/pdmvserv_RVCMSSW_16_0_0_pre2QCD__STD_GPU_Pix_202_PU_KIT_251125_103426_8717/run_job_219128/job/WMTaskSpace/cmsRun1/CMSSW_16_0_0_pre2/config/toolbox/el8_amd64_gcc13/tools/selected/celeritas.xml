@@ -1,0 +1,19 @@
+<tool name="celeritas" version="v0.6.0-83e163ba78e5fd34056de732529bdbe9" revision="4">
+  <info url="https://github.com/celeritas-project/celeritas"/>
+  <lib name="accel"/>
+  <lib name="celeritas"/>
+  <lib name="geocel"/>
+  <lib name="corecel"/>
+  <lib name="g4vg"/>
+  <client>
+    <environment name="CELERITAS_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/celeritas/v0.6.0-83e163ba78e5fd34056de732529bdbe9"/>
+    <environment name="INCLUDE" default="$CELERITAS_BASE/include"/>
+    <environment name="LIBDIR" default="$CELERITAS_BASE/lib64"/>
+  </client>
+  <flags CXXFLAGS="-Wno-error=missing-braces"/>
+  <use name="geant4core"/>
+  <use name="expat"/>
+  <use name="xerces-c"/>
+  <use name="vecgeom_interface"/>
+  <use name="vecgeom"/>
+</tool>

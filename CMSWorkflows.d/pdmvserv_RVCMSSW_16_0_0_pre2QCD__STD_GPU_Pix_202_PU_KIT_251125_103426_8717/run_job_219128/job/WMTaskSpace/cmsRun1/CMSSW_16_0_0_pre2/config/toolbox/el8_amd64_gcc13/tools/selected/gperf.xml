@@ -1,0 +1,3 @@
+<tool name="gperf" version="2.11-a0cc64b49445f425114ece9ce4e7eb52" revision="2">
+  <use name="gperf_profiler"/>
+</tool>

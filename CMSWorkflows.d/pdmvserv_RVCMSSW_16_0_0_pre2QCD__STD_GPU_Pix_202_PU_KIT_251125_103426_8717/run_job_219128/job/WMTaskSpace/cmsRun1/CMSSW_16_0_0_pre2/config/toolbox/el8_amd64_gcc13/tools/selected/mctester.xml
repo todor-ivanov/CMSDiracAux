@@ -1,0 +1,14 @@
+<tool name="mctester" version="1.25.1-4003c341fc28196f4df77fc684e07feb" revision="2">
+  <lib name="HEPEvent"/>
+  <lib name="HepMCEvent"/>
+  <lib name="MCTester"/>
+  <client>
+    <environment name="MCTESTER_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/mctester/1.25.1-4003c341fc28196f4df77fc684e07feb"/>
+    <environment name="LIBDIR" default="$MCTESTER_BASE/lib"/>
+    <environment name="INCLUDE" default="$MCTESTER_BASE/include"/>
+  </client>
+  <runtime name="ROOT_INCLUDE_PATH" value="$INCLUDE" type="path"/>
+  <use name="root_cxxdefaults"/>
+  <use name="root"/>
+  <use name="HepMC"/>
+</tool>

@@ -1,0 +1,13 @@
+{
+  "FLAGS": {
+    "NO_RECURSIVE_EXPORT": [
+      "1"
+    ]
+  },
+  "LIB": [
+    "pythia6_pdfdummy"
+  ],
+  "TOOLNAME": "pythia6_pdfdummy",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "426-58f10129591b3d37a990f6c6a43729ca"
+}

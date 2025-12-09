@@ -1,0 +1,8 @@
+<tool name="c-blosc2" version="2.20.0-1696450e36470e6006bd86923d6a0066" revision="1">
+  <lib name="blosc2"/>
+  <client>
+    <environment name="C_BLOSC2_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/c-blosc2/2.20.0-1696450e36470e6006bd86923d6a0066"/>
+    <environment name="INCLUDE"      default="$C_BLOSC2_BASE/include"/>
+    <environment name="LIBDIR"       default="$C_BLOSC2_BASE/lib64"/>
+  </client>
+</tool>

@@ -1,0 +1,6 @@
+<tool name="py3-hatch-jupyter-builder" version="0.9.1-42fa1124ebc85dadfca8f028ab76874c" revision="1">
+  <client>
+    <environment name="PY3_HATCH_JUPYTER_BUILDER_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hatch-jupyter-builder/0.9.1-42fa1124ebc85dadfca8f028ab76874c"/>
+  </client>
+  <runtime name="PATH" value="$PY3_HATCH_JUPYTER_BUILDER_BASE/bin" type="path"/>
+</tool>

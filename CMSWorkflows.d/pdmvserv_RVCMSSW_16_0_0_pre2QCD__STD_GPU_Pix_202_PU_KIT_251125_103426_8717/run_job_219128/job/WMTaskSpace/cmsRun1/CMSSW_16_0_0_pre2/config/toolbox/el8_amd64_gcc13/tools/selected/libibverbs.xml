@@ -1,0 +1,5 @@
+<tool name="libibverbs" version="57.0-df88f82c1888d30a8706b9e276fe4266" revision="1">
+  <info url="https://github.com/linux-rdma/rdma-core/blob/master/README.md"/>
+  <use name="rdma-core"/>
+  <lib name="ibverbs"/>
+</tool>

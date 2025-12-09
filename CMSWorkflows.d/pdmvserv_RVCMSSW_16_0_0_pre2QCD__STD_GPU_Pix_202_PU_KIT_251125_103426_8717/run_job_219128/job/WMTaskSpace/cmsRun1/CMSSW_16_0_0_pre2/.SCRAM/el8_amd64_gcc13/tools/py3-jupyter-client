@@ -1,0 +1,14 @@
+{
+  "PY3_JUPYTER_CLIENT_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyter-client/8.6.3-d53469abf95cbd36c063de0cbb68b2b6",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyter-client/8.6.3-d53469abf95cbd36c063de0cbb68b2b6/bin"
+    ]
+  },
+  "TOOLNAME": "py3-jupyter-client",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "8.6.3-d53469abf95cbd36c063de0cbb68b2b6",
+  "VARIABLES": [
+    "PY3_JUPYTER_CLIENT_BASE"
+  ]
+}

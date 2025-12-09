@@ -1,0 +1,11 @@
+{
+  "TOOLNAME": "opencv_x86-64-v2",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "4.9.0-651ef756b99adb202cc46b24110fb709",
+  "VARIABLES": [
+    "X86_64_V2_LIBDIR",
+    "X86_64_V2_BINDIR"
+  ],
+  "X86_64_V2_BINDIR": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/opencv_x86-64-v2/4.9.0-651ef756b99adb202cc46b24110fb709/bin",
+  "X86_64_V2_LIBDIR": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/opencv_x86-64-v2/4.9.0-651ef756b99adb202cc46b24110fb709/lib"
+}

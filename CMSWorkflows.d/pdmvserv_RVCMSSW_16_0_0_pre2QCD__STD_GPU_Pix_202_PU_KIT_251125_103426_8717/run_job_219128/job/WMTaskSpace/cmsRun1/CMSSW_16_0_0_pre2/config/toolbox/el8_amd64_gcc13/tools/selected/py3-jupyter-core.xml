@@ -1,0 +1,6 @@
+<tool name="py3-jupyter-core" version="5.8.1-a7c316f186e0ecfad63b63eba1380745" revision="1">
+  <client>
+    <environment name="PY3_JUPYTER_CORE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyter-core/5.8.1-a7c316f186e0ecfad63b63eba1380745"/>
+  </client>
+  <runtime name="PATH" value="$PY3_JUPYTER_CORE_BASE/bin" type="path"/>
+</tool>

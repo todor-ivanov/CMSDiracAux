@@ -1,0 +1,14 @@
+{
+  "PY3_SYMPY_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-sympy/1.14.0-89b74399e289d93b230e3f50aa785058",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-sympy/1.14.0-89b74399e289d93b230e3f50aa785058/bin"
+    ]
+  },
+  "TOOLNAME": "py3-sympy",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.14.0-89b74399e289d93b230e3f50aa785058",
+  "VARIABLES": [
+    "PY3_SYMPY_BASE"
+  ]
+}

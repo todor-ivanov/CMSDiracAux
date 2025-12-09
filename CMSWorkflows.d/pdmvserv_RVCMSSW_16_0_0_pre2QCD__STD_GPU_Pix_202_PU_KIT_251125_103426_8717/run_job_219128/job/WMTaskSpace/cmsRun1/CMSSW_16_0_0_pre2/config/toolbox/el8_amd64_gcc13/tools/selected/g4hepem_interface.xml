@@ -1,0 +1,9 @@
+<tool name="g4hepem_interface" version="20250220-69570cb9991508f0cd0e1323621d4447" revision="3">
+  <info url="https://github.com/mnovak42/g4hepem"/>
+  <client>
+    <environment name="G4HEPEM_INTERFACE_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/g4hepem/20250220-69570cb9991508f0cd0e1323621d4447"/>
+    <environment name="LIBDIR" default="$G4HEPEM_INTERFACE_BASE/lib64"/>
+    <environment name="INCLUDE" default="$G4HEPEM_INTERFACE_BASE/include/G4HepEm"/>
+  </client>
+  <use name="geant4core"/>
+</tool>

@@ -1,0 +1,14 @@
+{
+  "PY3_JUPYTERLAB_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyterlab/4.4.3-165aa6069463dc0525b7a4e089082895",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyterlab/4.4.3-165aa6069463dc0525b7a4e089082895/bin"
+    ]
+  },
+  "TOOLNAME": "py3-jupyterlab",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "4.4.3-165aa6069463dc0525b7a4e089082895",
+  "VARIABLES": [
+    "PY3_JUPYTERLAB_BASE"
+  ]
+}

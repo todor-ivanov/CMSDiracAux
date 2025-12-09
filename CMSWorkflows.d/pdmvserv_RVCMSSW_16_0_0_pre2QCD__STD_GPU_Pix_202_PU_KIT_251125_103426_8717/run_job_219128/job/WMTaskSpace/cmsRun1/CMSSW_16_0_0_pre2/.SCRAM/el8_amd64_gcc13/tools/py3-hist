@@ -1,0 +1,14 @@
+{
+  "PY3_HIST_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hist/2.8.1-641a5e925d2dd5cd3d178956dd4361ae",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-hist/2.8.1-641a5e925d2dd5cd3d178956dd4361ae/bin"
+    ]
+  },
+  "TOOLNAME": "py3-hist",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.8.1-641a5e925d2dd5cd3d178956dd4361ae",
+  "VARIABLES": [
+    "PY3_HIST_BASE"
+  ]
+}

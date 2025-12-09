@@ -1,0 +1,36 @@
+{
+  "CELERITAS_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/celeritas/v0.6.0-83e163ba78e5fd34056de732529bdbe9",
+  "FLAGS": {
+    "CXXFLAGS": [
+      "-Wno-error=missing-braces"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/celeritas/v0.6.0-83e163ba78e5fd34056de732529bdbe9/include"
+  ],
+  "LIB": [
+    "accel",
+    "celeritas",
+    "geocel",
+    "corecel",
+    "g4vg"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/celeritas/v0.6.0-83e163ba78e5fd34056de732529bdbe9/lib64"
+  ],
+  "TOOLNAME": "celeritas",
+  "TOOLREVISION": "4",
+  "TOOLVERSION": "v0.6.0-83e163ba78e5fd34056de732529bdbe9",
+  "USE": [
+    "geant4core",
+    "expat",
+    "xerces-c",
+    "vecgeom_interface",
+    "vecgeom"
+  ],
+  "VARIABLES": [
+    "CELERITAS_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

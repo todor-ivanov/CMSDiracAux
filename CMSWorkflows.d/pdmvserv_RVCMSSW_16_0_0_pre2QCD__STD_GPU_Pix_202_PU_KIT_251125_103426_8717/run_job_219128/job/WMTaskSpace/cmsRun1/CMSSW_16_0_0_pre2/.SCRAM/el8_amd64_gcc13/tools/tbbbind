@@ -1,0 +1,28 @@
+{
+  "FLAGS": {
+    "SYSTEM_INCLUDE": [
+      "1"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tbb/v2022.0.0-ede4a930df4abec602e96e3f3ad15914/include"
+  ],
+  "LIB": [
+    "tbbbind_2_0"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tbb/v2022.0.0-ede4a930df4abec602e96e3f3ad15914/lib"
+  ],
+  "TBBBIND_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/tbb/v2022.0.0-ede4a930df4abec602e96e3f3ad15914",
+  "TOOLNAME": "tbbbind",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "v2022.0.0-ede4a930df4abec602e96e3f3ad15914",
+  "USE": [
+    "tbb"
+  ],
+  "VARIABLES": [
+    "TBBBIND_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

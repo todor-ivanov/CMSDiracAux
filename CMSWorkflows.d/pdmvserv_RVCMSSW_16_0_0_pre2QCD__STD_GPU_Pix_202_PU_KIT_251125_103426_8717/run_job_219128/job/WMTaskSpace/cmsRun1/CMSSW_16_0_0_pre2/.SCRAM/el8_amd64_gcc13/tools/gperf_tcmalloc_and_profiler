@@ -1,0 +1,11 @@
+{
+  "LIB": [
+    "tcmalloc_and_profiler"
+  ],
+  "TOOLNAME": "gperf_tcmalloc_and_profiler",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.11-a0cc64b49445f425114ece9ce4e7eb52",
+  "USE": [
+    "gperf_interface"
+  ]
+}

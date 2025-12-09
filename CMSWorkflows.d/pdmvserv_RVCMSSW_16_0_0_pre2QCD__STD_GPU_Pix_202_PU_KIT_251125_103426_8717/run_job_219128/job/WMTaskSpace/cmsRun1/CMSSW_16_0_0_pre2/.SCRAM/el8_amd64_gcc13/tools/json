@@ -1,0 +1,13 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/json/3.11.3-3bf93f232c63d55abe3d04e52aa0a168/include"
+  ],
+  "JSON_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/json/3.11.3-3bf93f232c63d55abe3d04e52aa0a168",
+  "TOOLNAME": "json",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "3.11.3-3bf93f232c63d55abe3d04e52aa0a168",
+  "VARIABLES": [
+    "JSON_BASE",
+    "INCLUDE"
+  ]
+}

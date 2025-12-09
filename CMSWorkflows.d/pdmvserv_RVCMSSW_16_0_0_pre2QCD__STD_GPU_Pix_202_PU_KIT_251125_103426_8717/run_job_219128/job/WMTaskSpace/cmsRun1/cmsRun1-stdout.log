@@ -1,0 +1,554 @@
+Setting up Frontier log level
+Beginning CMSSW wrapper script
+ el8_amd64_gcc13 scramv1 CMSSW
+Performing SCRAM setup...
+Completed SCRAM setup
+Retrieving SCRAM project...
+Completed SCRAM project
+Executing CMSSW
+cmsRun  -j FrameworkJobReport.xml PSet.py
+%MSG-i ThreadStreamSetup:  (NoModuleName) 27-Nov-2025 15:37:34 CET pre-events
+setting # threads 8
+setting # streams 1
+%MSG
+
+**************************************************************
+ Geant4 version Name: geant4-11-02-patch-02 [MT]   (21-June-2024)
+  << in Multi-threaded mode >> 
+                       Copyright : Geant4 Collaboration
+                      References : NIM A 506 (2003), 250-303
+                                 : IEEE-TNS 53 (2006), 270-278
+                                 : NIM A 835 (2016), 186-225
+                             WWW : http://geant4.org/
+**************************************************************
+
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.315      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change: 27 May 2025  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 27 Nov 2025 at 15:38:26    |  | 
+ |  |                                                                              |  | 
+ |  |   Program documentation and an archive of historic versions is found on:     |  | 
+ |  |                                                                              |  | 
+ |  |                               https://pythia.org/                            |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is authored by a collaboration consisting of:                       |  | 
+ |  |                                                                              |  | 
+ |  |   Javira Altmann, Christian Bierlich, Naomi Cooke, Nishita Desai,            |  | 
+ |  |   Ilkka Helenius, Philip Ilten, Leif Lonnblad, Stephen Mrenna,               |  | 
+ |  |   Christian Preuss, Torbjorn Sjostrand, and Peter Skands.                    |  | 
+ |  |                                                                              |  | 
+ |  |   The complete list of authors, including contact information and            |  | 
+ |  |   affiliations, can be found on https://pythia.org/.                         |  | 
+ |  |   Problems or bugs should be reported on email at authors@pythia.org.        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is C. Bierlich et al,                           |  | 
+ |  |   'A comprehensive guide to the physics and usage of Pythia 8.3',            |  | 
+ |  |   SciPost Phys. Codebases 8-r8.3 (2022) [arXiv:2203.11601 [hep-ph]]          |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is released under the GNU General Public Licence version 2          |  | 
+ |  |   or later. Please respect the MCnet Guidelines for Generator Authors        |  | 
+ |  |   and Users.                                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2025 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+
+ *------------------------------------------------------------------------------------* 
+ |                                                                                    | 
+ |  *------------------------------------------------------------------------------*  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  |   PPP   Y   Y  TTTTT  H   H  III    A      Welcome to the Lund Monte Carlo!  |  | 
+ |  |   P  P   Y Y     T    H   H   I    A A     This is PYTHIA version 8.315      |  | 
+ |  |   PPP     Y      T    HHHHH   I   AAAAA    Last date of change: 27 May 2025  |  | 
+ |  |   P       Y      T    H   H   I   A   A                                      |  | 
+ |  |   P       Y      T    H   H  III  A   A    Now is 27 Nov 2025 at 15:38:26    |  | 
+ |  |                                                                              |  | 
+ |  |   Program documentation and an archive of historic versions is found on:     |  | 
+ |  |                                                                              |  | 
+ |  |                               https://pythia.org/                            |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is authored by a collaboration consisting of:                       |  | 
+ |  |                                                                              |  | 
+ |  |   Javira Altmann, Christian Bierlich, Naomi Cooke, Nishita Desai,            |  | 
+ |  |   Ilkka Helenius, Philip Ilten, Leif Lonnblad, Stephen Mrenna,               |  | 
+ |  |   Christian Preuss, Torbjorn Sjostrand, and Peter Skands.                    |  | 
+ |  |                                                                              |  | 
+ |  |   The complete list of authors, including contact information and            |  | 
+ |  |   affiliations, can be found on https://pythia.org/.                         |  | 
+ |  |   Problems or bugs should be reported on email at authors@pythia.org.        |  | 
+ |  |                                                                              |  | 
+ |  |   The main program reference is C. Bierlich et al,                           |  | 
+ |  |   'A comprehensive guide to the physics and usage of Pythia 8.3',            |  | 
+ |  |   SciPost Phys. Codebases 8-r8.3 (2022) [arXiv:2203.11601 [hep-ph]]          |  | 
+ |  |                                                                              |  | 
+ |  |   PYTHIA is released under the GNU General Public Licence version 2          |  | 
+ |  |   or later. Please respect the MCnet Guidelines for Generator Authors        |  | 
+ |  |   and Users.                                                                 |  | 
+ |  |                                                                              |  | 
+ |  |   Disclaimer: this program comes without any guarantees.                     |  | 
+ |  |   Beware of errors and use common sense when interpreting results.           |  | 
+ |  |                                                                              |  | 
+ |  |   Copyright (C) 2025 Torbjorn Sjostrand                                      |  | 
+ |  |                                                                              |  | 
+ |  |                                                                              |  | 
+ |  *------------------------------------------------------------------------------*  | 
+ |                                                                                    | 
+ *------------------------------------------------------------------------------------* 
+
+LHAPDF 6.4.0 loading /cvmfs/cms.cern.ch/el8_amd64_gcc13/external/lhapdf/6.4.0-2eb83ba3df468330e902fb8a81d46b4c/share/LHAPDF/NNPDF31_nnlo_as_0118/NNPDF31_nnlo_as_0118_0000.dat
+NNPDF31_nnlo_as_0118 PDF set, member #0, version 1; LHAPDF ID = 303600
+LHAPDF 6.4.0 loading /cvmfs/cms.cern.ch/el8_amd64_gcc13/external/lhapdf/6.4.0-2eb83ba3df468330e902fb8a81d46b4c/share/LHAPDF/NNPDF31_nnlo_as_0118/NNPDF31_nnlo_as_0118_0000.dat
+NNPDF31_nnlo_as_0118 PDF set, member #0, version 1; LHAPDF ID = 303600
+
+ *-------  PYTHIA Process Initialization  --------------------------*
+ |                                                                  |
+ | We collide p+ with p+ at a CM energy of 1.400e+04 GeV            |
+ |                                                                  |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | Subprocess                                    Code |   Estimated |
+ |                                                    |    max (mb) |
+ |                                                    |             |
+ |------------------------------------------------------------------|
+ |                                                    |             |
+ | g g -> g g                                     111 |   5.465e+02 |
+ | g g -> q qbar (uds)                            112 |   2.176e+01 |
+ | q g -> q g                                     113 |   1.773e+03 |
+ | q q(bar)' -> q q(bar)'                         114 |   6.068e+02 |
+ | q qbar -> g g                                  115 |   4.564e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |   4.535e+00 |
+ | g g -> c cbar                                  121 |   7.246e+00 |
+ | q qbar -> c cbar                               122 |   1.510e+00 |
+ | g g -> b bbar                                  123 |   7.178e+00 |
+ | q qbar -> b bbar                               124 |   1.497e+00 |
+ |                                                                  |
+ *-------  End PYTHIA Process Initialization -----------------------*
+ PYTHIA Warning in SimpleTimeShower::init: pTmin too low , raised to 0.611
+
+ *-------  PYTHIA Multiparton Interactions Initialization  ---------* 
+ |                                                                  | 
+ |                   sigmaNonDiffractive =    55.36 mb              | 
+ |                                                                  | 
+ |    pT0 =  1.44 gives sigmaInteraction =   505.56 mb: accepted    | 
+ |                                                                  | 
+ *-------  End PYTHIA Multiparton Interactions Initialization  -----* 
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Check:epTolErr                                |                0.0100000 |   1.0000e-04                         | 
+ | ColourReconnection:range                      |                  5.17600 |      1.80000         0.0    10.00000 | 
+ | HadronLevel:QED                               |                       on |          off                         | 
+ | HardQCD:all                                   |                       on |          off                         | 
+ | Main:timesAllowErrors                         |                    10000 |           10           0             | 
+ | MultipartonInteractions:alphaSorder           |                        2 |            1           0           3 | 
+ | MultipartonInteractions:alphaSvalue           |                  0.11800 |      0.13000   0.0600000     0.25000 | 
+ | MultipartonInteractions:bProfile              |                        2 |            3           0           4 | 
+ | MultipartonInteractions:coreFraction          |                  0.63000 |      0.50000         0.0     1.00000 | 
+ | MultipartonInteractions:coreRadius            |                  0.76340 |      0.40000     0.10000     1.00000 | 
+ | MultipartonInteractions:ecmPow                |                0.0334400 |      0.21500         0.0     0.50000 | 
+ | MultipartonInteractions:pT0Ref                |                  1.41000 |      2.28000     0.50000    10.00000 | 
+ | Next:numberShowEvent                          |                        0 |            1           0             | 
+ | ParticleDecays:limitTau0                      |                       on |          off                         | 
+ | PDF:pSet                                      | LHAPDF6:NNPDF31_nnlo_as_0118 |           13                     | 
+ | PhaseSpace:pTHatMax                           |                 3000.000 |     -1.00000                         | 
+ | PhaseSpace:pTHatMin                           |                 15.00000 |          0.0         0.0             | 
+ | SigmaProcess:alphaSorder                      |                        2 |            1           0           3 | 
+ | SigmaProcess:alphaSvalue                      |                  0.11800 |      0.13000   0.0600000     0.25000 | 
+ | SigmaTotal:mode                               |                        0 |            1           0           4 | 
+ | SigmaTotal:sigmaEl                            |                 21.89000 |     25.00000         0.0             | 
+ | SigmaTotal:sigmaTot                           |                100.30900 |    100.00000         0.0             | 
+ | SigmaTotal:zeroAXB                            |                      off |           on                         | 
+ | SLHA:minMassSM                                |                 1000.000 |    100.00000                         | 
+ | SpaceShower:alphaSorder                       |                        2 |            1           0           3 | 
+ | SpaceShower:alphaSvalue                       |                  0.11800 |      0.13650   0.0600000     0.25000 | 
+ | StringZ:useOldAExtra                          |                       on |          off                         | 
+ | TimeShower:alphaSorder                        |                        2 |            1           0           3 | 
+ | TimeShower:alphaSvalue                        |                  0.11800 |      0.13650   0.0600000     0.25000 | 
+ | Tune:preferLHAPDF                             |                        2 |            0           0           3 | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+ no particle data has been changed from its default value 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+
+ *-------  PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings (changes only)  ------------------* 
+ |                                                                                                                 | 
+ | Name                                          |                      Now |      Default         Min         Max | 
+ |                                               |                          |                                      | 
+ | Next:numberShowEvent                          |                        0 |            1           0             | 
+ | ParticleDecays:limitTau0                      |                       on |          off                         | 
+ | ProcessLevel:all                              |                      off |           on                         | 
+ | StringZ:useOldAExtra                          |                       on |          off                         | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Flag + Mode + Parm + Word + FVec + MVec + PVec + WVec Settings  -----------------------------* 
+
+ --------  PYTHIA Particle Data Table (changed only)  ------------------------------------------------------------------------------
+ 
+      id   name            antiName         spn chg col      m0        mWidth      mMin       mMax       tau0    res dec ext vis wid
+             no onMode   bRatio   meMode     products 
+
+ no particle data has been changed from its default value 
+
+ --------  End PYTHIA Particle Data Table  -----------------------------------------------------------------------------------------
+
+Begin processing the 1st record. Run 1, Event 100001, LumiSection 1001 on stream 0 at 27-Nov-2025 15:38:27.487 CET
+
+ --------  PYTHIA Info Listing  ---------------------------------------- 
+ 
+ Beam A: id =   2212, pz =  7.000e+03, e =  7.000e+03, m =  9.383e-01.
+ Beam B: id =   2212, pz = -7.000e+03, e =  7.000e+03, m =  9.383e-01.
+
+ In 1: id =    1, x =  7.292e-02, pdf =  3.927e-01 at Q2 =  1.681e+05.
+ In 2: id =   -4, x =  1.103e-01, pdf =  2.628e-02 at same Q2.
+
+ Subprocess q q(bar)' -> q q(bar)' with code 114 is 2 -> 2.
+ It has sHat =  1.577e+06,    tHat = -1.913e+05,    uHat = -1.386e+06,
+       pTHat =  4.100e+02,   m3Hat =  3.300e-01,   m4Hat =  1.500e+00,
+    thetaHat =  7.116e-01,  phiHat =  6.115e+00.
+     alphaEM =  7.953e-03,  alphaS =  9.727e-02    at Q2 =  1.681e+05.
+
+ Impact parameter b =  6.416e-01 gives enhancement factor =  1.872e+00.
+ Max pT scale for MPI =  4.100e+02, ISR =  4.100e+02, FSR =  4.100e+02.
+ Number of MPI =    20, ISR =    23, FSRproc =    66, FSRreson =     0.
+
+ --------  End PYTHIA Info Listing  ------------------------------------
+
+ --------  PYTHIA Event Listing  (hard process)  -----------------------------------------------------------------------------------
+ 
+    no         id  name            status     mothers   daughters     colours      p_x        p_y        p_z         e          m 
+     0         90  (system)           -11     0     0     0     0     0     0      0.000      0.000      0.000  14000.000  14000.000
+     1       2212  (p+)               -12     0     0     3     0     0     0      0.000      0.000   7000.000   7000.000      0.938
+     2       2212  (p+)               -12     0     0     4     0     0     0      0.000      0.000  -7000.000   7000.000      0.938
+     3          1  (d)                -21     1     0     5     6   101     0      0.000      0.000    510.474    510.474      0.000
+     4         -4  (cbar)             -21     2     0     5     6     0   101      0.000      0.000   -772.250    772.250      0.000
+     5          1  d                   23     3     4     0     0   102     0    404.258    -68.487    354.832    542.237      0.330
+     6         -4  cbar                23     3     4     0     0     0   102   -404.258     68.487   -616.608    740.488      1.500
+                                   Charge sum: -1.000           Momentum sum:      0.000      0.000   -261.776   1282.724   1255.729
+
+ --------  End PYTHIA Event Listing  -----------------------------------------------------------------------------------------------
+#--------------------------------------------------------------------------
+#                         FastJet release 3.4.1
+#                 M. Cacciari, G.P. Salam and G. Soyez                  
+#     A software package for jet finding and analysis at colliders      
+#                           http://fastjet.fr                           
+#	                                                                      
+# Please cite EPJC72(2012)1896 [arXiv:1111.6097] if you use this package
+# for scientific work and optionally PLB641(2006)57 [hep-ph/0512210].   
+#                                                                       
+# FastJet is provided without warranty under the GNU GPL v2 or higher.  
+# It uses T. Chan's closest pair algorithm, S. Fortune's Voronoi code
+# and 3rd party plugin jet algorithms. See COPYING file for details.
+#--------------------------------------------------------------------------
+%MSG-w MemoryCheck:  source 27-Nov-2025 15:38:41 CET PreSource
+MemoryCheck: module source:source VSIZE 1785.63 8 RSS 1216.43 -9.125
+%MSG
+Begin processing the 2nd record. Run 1, Event 100002, LumiSection 1001 on stream 0 at 27-Nov-2025 15:38:41.116 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:38:55 CET  Run: 1 Event: 100002
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 1827.63 42 RSS 1251.73 26.1836
+%MSG
+Begin processing the 3rd record. Run 1, Event 100003, LumiSection 1001 on stream 0 at 27-Nov-2025 15:38:55.739 CET
+Begin processing the 4th record. Run 1, Event 100004, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:04.011 CET
+Begin processing the 5th record. Run 1, Event 100005, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:11.999 CET
+ PYTHIA Warning in SimpleSpaceShower::pT2nextQCD: weight above unity
+Begin processing the 6th record. Run 1, Event 100006, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:17.385 CET
+Begin processing the 7th record. Run 1, Event 100007, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:24.886 CET
+Begin processing the 8th record. Run 1, Event 100008, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:34.383 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:39:53 CET  Run: 1 Event: 100008
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 1835.63 8 RSS 1249.44 -2.29297
+%MSG
+Begin processing the 9th record. Run 1, Event 100009, LumiSection 1001 on stream 0 at 27-Nov-2025 15:39:53.058 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:40:04 CET  Run: 1 Event: 100009
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 1855.63 20 RSS 1243.88 -7.85156
+%MSG
+Begin processing the 10th record. Run 1, Event 100010, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:04.582 CET
+%MSG-w MemoryCheck:  OscarMTProducer:g4SimHits 27-Nov-2025 15:40:21 CET  Run: 1 Event: 100010
+MemoryCheck: module OscarMTProducer:g4SimHits VSIZE 1875.63 20 RSS 1245.11 -6.62109
+%MSG
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:40:21 CET  Run: 1 Event: 100010
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 1907.63 32 RSS 1272.18 20.4414
+%MSG
+Begin processing the 11th record. Run 1, Event 100011, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:21.934 CET
+Begin processing the 12th record. Run 1, Event 100012, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:27.040 CET
+Begin processing the 13th record. Run 1, Event 100013, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:35.240 CET
+Begin processing the 14th record. Run 1, Event 100014, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:44.148 CET
+Begin processing the 15th record. Run 1, Event 100015, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:53.995 CET
+Begin processing the 16th record. Run 1, Event 100016, LumiSection 1001 on stream 0 at 27-Nov-2025 15:40:59.615 CET
+ PYTHIA Warning in SimpleSpaceShower::pT2nextQCD: small daughter PDF
+Begin processing the 17th record. Run 1, Event 100017, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:09.282 CET
+Begin processing the 18th record. Run 1, Event 100018, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:17.024 CET
+Begin processing the 19th record. Run 1, Event 100019, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:34.857 CET
+Begin processing the 20th record. Run 1, Event 100020, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:46.205 CET
+Begin processing the 21st record. Run 1, Event 100021, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:50.971 CET
+Begin processing the 22nd record. Run 1, Event 100022, LumiSection 1001 on stream 0 at 27-Nov-2025 15:41:54.170 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:42:07 CET  Run: 1 Event: 100022
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 1907.63 0 RSS 1300.32 28.1445
+%MSG
+Begin processing the 23rd record. Run 1, Event 100023, LumiSection 1001 on stream 0 at 27-Nov-2025 15:42:07.359 CET
+%MSG-w MemoryCheck:  OscarMTProducer:g4SimHits 27-Nov-2025 15:42:31 CET  Run: 1 Event: 100023
+MemoryCheck: module OscarMTProducer:g4SimHits VSIZE 1971.63 64 RSS 1298.85 -1.47266
+%MSG
+Begin processing the 24th record. Run 1, Event 100024, LumiSection 1001 on stream 0 at 27-Nov-2025 15:42:31.434 CET
+Begin processing the 25th record. Run 1, Event 100025, LumiSection 1001 on stream 0 at 27-Nov-2025 15:42:44.821 CET
+Begin processing the 26th record. Run 1, Event 100026, LumiSection 1001 on stream 0 at 27-Nov-2025 15:42:52.637 CET
+Begin processing the 27th record. Run 1, Event 100027, LumiSection 1001 on stream 0 at 27-Nov-2025 15:42:57.658 CET
+Begin processing the 28th record. Run 1, Event 100028, LumiSection 1001 on stream 0 at 27-Nov-2025 15:43:05.180 CET
+Begin processing the 29th record. Run 1, Event 100029, LumiSection 1001 on stream 0 at 27-Nov-2025 15:43:21.760 CET
+Begin processing the 30th record. Run 1, Event 100030, LumiSection 1001 on stream 0 at 27-Nov-2025 15:43:38.793 CET
+Begin processing the 31st record. Run 1, Event 100031, LumiSection 1001 on stream 0 at 27-Nov-2025 15:43:42.658 CET
+Begin processing the 32nd record. Run 1, Event 100032, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:02.268 CET
+Begin processing the 33rd record. Run 1, Event 100033, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:07.715 CET
+Begin processing the 34th record. Run 1, Event 100034, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:17.222 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:44:36 CET  Run: 1 Event: 100034
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2011.63 40 RSS 1306.33 6.00781
+%MSG
+Begin processing the 35th record. Run 1, Event 100035, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:36.914 CET
+%MSG-w MemoryCheck:  Pythia8ConcurrentGeneratorFilter:generator  27-Nov-2025 15:44:36 CET Run: 1 Event: 100035
+MemoryCheck: module Pythia8ConcurrentGeneratorFilter:generator VSIZE 2011.63 0 RSS 1306.68 0.355469
+%MSG
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:44:46 CET  Run: 1 Event: 100035
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2011.63 0 RSS 1308.54 1.85156
+%MSG
+Begin processing the 36th record. Run 1, Event 100036, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:46.200 CET
+Begin processing the 37th record. Run 1, Event 100037, LumiSection 1001 on stream 0 at 27-Nov-2025 15:44:58.509 CET
+Begin processing the 38th record. Run 1, Event 100038, LumiSection 1001 on stream 0 at 27-Nov-2025 15:45:14.132 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:45:34 CET  Run: 1 Event: 100038
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2047.63 36 RSS 1351.86 43.3203
+%MSG
+Begin processing the 39th record. Run 1, Event 100039, LumiSection 1001 on stream 0 at 27-Nov-2025 15:45:34.177 CET
+Begin processing the 40th record. Run 1, Event 100040, LumiSection 1001 on stream 0 at 27-Nov-2025 15:45:41.078 CET
+Begin processing the 41st record. Run 1, Event 100041, LumiSection 1001 on stream 0 at 27-Nov-2025 15:45:51.531 CET
+Begin processing the 42nd record. Run 1, Event 100042, LumiSection 1001 on stream 0 at 27-Nov-2025 15:45:57.193 CET
+Begin processing the 43rd record. Run 1, Event 100043, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:07.316 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:46:18 CET  Run: 1 Event: 100043
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2069.63 22 RSS 1333.05 -18.8008
+%MSG
+Begin processing the 44th record. Run 1, Event 100044, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:18.195 CET
+Begin processing the 45th record. Run 1, Event 100045, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:25.403 CET
+Begin processing the 46th record. Run 1, Event 100046, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:29.314 CET
+Begin processing the 47th record. Run 1, Event 100047, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:34.050 CET
+Begin processing the 48th record. Run 1, Event 100048, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:41.214 CET
+Begin processing the 49th record. Run 1, Event 100049, LumiSection 1001 on stream 0 at 27-Nov-2025 15:46:49.307 CET
+Begin processing the 50th record. Run 1, Event 100050, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:04.766 CET
+Begin processing the 51st record. Run 1, Event 100051, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:16.539 CET
+Begin processing the 52nd record. Run 1, Event 100052, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:24.060 CET
+Begin processing the 53rd record. Run 1, Event 100053, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:27.261 CET
+Begin processing the 54th record. Run 1, Event 100054, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:37.724 CET
+Begin processing the 55th record. Run 1, Event 100055, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:43.856 CET
+Begin processing the 56th record. Run 1, Event 100056, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:50.944 CET
+Begin processing the 57th record. Run 1, Event 100057, LumiSection 1001 on stream 0 at 27-Nov-2025 15:47:58.676 CET
+%MSG-w MemoryCheck:  OscarMTProducer:g4SimHits 27-Nov-2025 15:48:17 CET  Run: 1 Event: 100057
+MemoryCheck: module OscarMTProducer:g4SimHits VSIZE 2093.63 24 RSS 1326.08 -25.7734
+%MSG
+Begin processing the 58th record. Run 1, Event 100058, LumiSection 1001 on stream 0 at 27-Nov-2025 15:48:17.611 CET
+Begin processing the 59th record. Run 1, Event 100059, LumiSection 1001 on stream 0 at 27-Nov-2025 15:48:27.602 CET
+Begin processing the 60th record. Run 1, Event 100060, LumiSection 1001 on stream 0 at 27-Nov-2025 15:48:51.489 CET
+Begin processing the 61st record. Run 1, Event 100061, LumiSection 1001 on stream 0 at 27-Nov-2025 15:48:56.037 CET
+Begin processing the 62nd record. Run 1, Event 100062, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:03.786 CET
+Begin processing the 63rd record. Run 1, Event 100063, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:08.272 CET
+Begin processing the 64th record. Run 1, Event 100064, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:13.101 CET
+Begin processing the 65th record. Run 1, Event 100065, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:23.464 CET
+Begin processing the 66th record. Run 1, Event 100066, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:34.170 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:49:45 CET  Run: 1 Event: 100066
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2093.63 0 RSS 1361.76 9.90625
+%MSG
+Begin processing the 67th record. Run 1, Event 100067, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:45.186 CET
+Begin processing the 68th record. Run 1, Event 100068, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:47.998 CET
+Begin processing the 69th record. Run 1, Event 100069, LumiSection 1001 on stream 0 at 27-Nov-2025 15:49:55.931 CET
+Begin processing the 70th record. Run 1, Event 100070, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:03.259 CET
+Begin processing the 71st record. Run 1, Event 100071, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:06.567 CET
+Begin processing the 72nd record. Run 1, Event 100072, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:17.742 CET
+Begin processing the 73rd record. Run 1, Event 100073, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:26.548 CET
+Begin processing the 74th record. Run 1, Event 100074, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:38.609 CET
+Begin processing the 75th record. Run 1, Event 100075, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:51.312 CET
+Begin processing the 76th record. Run 1, Event 100076, LumiSection 1001 on stream 0 at 27-Nov-2025 15:50:57.078 CET
+Begin processing the 77th record. Run 1, Event 100077, LumiSection 1001 on stream 0 at 27-Nov-2025 15:51:02.214 CET
+Begin processing the 78th record. Run 1, Event 100078, LumiSection 1001 on stream 0 at 27-Nov-2025 15:51:22.929 CET
+Begin processing the 79th record. Run 1, Event 100079, LumiSection 1001 on stream 0 at 27-Nov-2025 15:51:39.941 CET
+Begin processing the 80th record. Run 1, Event 100080, LumiSection 1001 on stream 0 at 27-Nov-2025 15:51:51.320 CET
+Begin processing the 81st record. Run 1, Event 100081, LumiSection 1001 on stream 0 at 27-Nov-2025 15:52:05.243 CET
+Begin processing the 82nd record. Run 1, Event 100082, LumiSection 1001 on stream 0 at 27-Nov-2025 15:52:14.599 CET
+Begin processing the 83rd record. Run 1, Event 100083, LumiSection 1001 on stream 0 at 27-Nov-2025 15:52:24.726 CET
+Begin processing the 84th record. Run 1, Event 100084, LumiSection 1001 on stream 0 at 27-Nov-2025 15:52:29.062 CET
+Begin processing the 85th record. Run 1, Event 100085, LumiSection 1001 on stream 0 at 27-Nov-2025 15:52:42.294 CET
+Begin processing the 86th record. Run 1, Event 100086, LumiSection 1001 on stream 0 at 27-Nov-2025 15:53:02.171 CET
+%MSG-w MemoryCheck:  OscarMTProducer:g4SimHits 27-Nov-2025 15:53:23 CET  Run: 1 Event: 100086
+MemoryCheck: module OscarMTProducer:g4SimHits VSIZE 2097.63 4 RSS 1347.7 -14.0625
+%MSG
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:53:23 CET  Run: 1 Event: 100086
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2097.63 0 RSS 1371.2 9.4375
+%MSG
+Begin processing the 87th record. Run 1, Event 100087, LumiSection 1001 on stream 0 at 27-Nov-2025 15:53:23.947 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:53:34 CET  Run: 1 Event: 100087
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2109.63 12 RSS 1371.38 0.175781
+%MSG
+Begin processing the 88th record. Run 1, Event 100088, LumiSection 1001 on stream 0 at 27-Nov-2025 15:53:34.622 CET
+%MSG-w MemoryCheck:  PoolOutputModule:FEVTDEBUGoutput 27-Nov-2025 15:53:46 CET  Run: 1 Event: 100088
+MemoryCheck: module PoolOutputModule:FEVTDEBUGoutput VSIZE 2123.63 14 RSS 1368.43 -2.94531
+%MSG
+Begin processing the 89th record. Run 1, Event 100089, LumiSection 1001 on stream 0 at 27-Nov-2025 15:53:46.837 CET
+Begin processing the 90th record. Run 1, Event 100090, LumiSection 1001 on stream 0 at 27-Nov-2025 15:53:55.732 CET
+Begin processing the 91st record. Run 1, Event 100091, LumiSection 1001 on stream 0 at 27-Nov-2025 15:54:10.657 CET
+Begin processing the 92nd record. Run 1, Event 100092, LumiSection 1001 on stream 0 at 27-Nov-2025 15:54:17.868 CET
+Begin processing the 93rd record. Run 1, Event 100093, LumiSection 1001 on stream 0 at 27-Nov-2025 15:54:40.525 CET
+Begin processing the 94th record. Run 1, Event 100094, LumiSection 1001 on stream 0 at 27-Nov-2025 15:54:43.550 CET
+Begin processing the 95th record. Run 1, Event 100095, LumiSection 1001 on stream 0 at 27-Nov-2025 15:54:58.416 CET
+Begin processing the 96th record. Run 1, Event 100096, LumiSection 1001 on stream 0 at 27-Nov-2025 15:55:06.487 CET
+Begin processing the 97th record. Run 1, Event 100097, LumiSection 1001 on stream 0 at 27-Nov-2025 15:55:18.792 CET
+Begin processing the 98th record. Run 1, Event 100098, LumiSection 1001 on stream 0 at 27-Nov-2025 15:55:20.838 CET
+Begin processing the 99th record. Run 1, Event 100099, LumiSection 1001 on stream 0 at 27-Nov-2025 15:55:26.368 CET
+Begin processing the 100th record. Run 1, Event 100100, LumiSection 1001 on stream 0 at 27-Nov-2025 15:55:35.146 CET
+
+ *-------  PYTHIA Event and Cross Section Statistics  -------------------------------------------------------------*
+ |                                                                                                                 |
+ | Subprocess                                    Code |            Number of events       |      sigma +- delta    |
+ |                                                    |       Tried   Selected   Accepted |     (estimated) (mb)   |
+ |                                                    |                                   |                        |
+ |-----------------------------------------------------------------------------------------------------------------|
+ |                                                    |                                   |                        |
+ | g g -> g g                                     111 |         525         40         40 |   9.502e-01  7.530e-02 |
+ | g g -> q qbar (uds)                            112 |          22          0          0 |   0.000e+00  0.000e+00 |
+ | q g -> q g                                     113 |        1648         44         44 |   5.222e-01  3.124e-02 |
+ | q q(bar)' -> q q(bar)'                         114 |         530         15         15 |   6.670e-02  6.578e-03 |
+ | q qbar -> g g                                  115 |           4          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |           2          1          1 |   1.241e-03  1.241e-03 |
+ | g g -> c cbar                                  121 |          12          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> c cbar                               122 |           1          0          0 |   0.000e+00  0.000e+00 |
+ | g g -> b bbar                                  123 |           7          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> b bbar                               124 |           0          0          0 |   0.000e+00  0.000e+00 |
+ |                                                    |                                   |                        |
+ | sum                                                |        2751        100        100 |   1.540e+00  8.179e-02 |
+ |                                                                                                                 |
+ *-------  End PYTHIA Event and Cross Section Statistics ----------------------------------------------------------*
+
+ *-------  PYTHIA Error and Warning Messages Statistics  ----------------------------------------------------------* 
+ |                                                                                                                 | 
+ |  times   message                                                                                                | 
+ |                                                                                                                 | 
+ |     54   Warning in SimpleSpaceShower::pT2nextQCD: small daughter PDF                                           | 
+ |     36   Warning in SimpleSpaceShower::pT2nextQCD: weight above unity                                           | 
+ |      2   Warning in SimpleTimeShower::init: pTmin too low                                                       | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Error and Warning Messages Statistics  ------------------------------------------------------* 
+
+ *-------  PYTHIA Event and Cross Section Statistics  -------------------------------------------------------------*
+ |                                                                                                                 |
+ | Subprocess                                    Code |            Number of events       |      sigma +- delta    |
+ |                                                    |       Tried   Selected   Accepted |     (estimated) (mb)   |
+ |                                                    |                                   |                        |
+ |-----------------------------------------------------------------------------------------------------------------|
+ |                                                    |                                   |                        |
+ | g g -> g g                                     111 |         525         40         40 |   9.502e-01  7.530e-02 |
+ | g g -> q qbar (uds)                            112 |          22          0          0 |   0.000e+00  0.000e+00 |
+ | q g -> q g                                     113 |        1648         44         44 |   5.222e-01  3.124e-02 |
+ | q q(bar)' -> q q(bar)'                         114 |         530         15         15 |   6.670e-02  6.578e-03 |
+ | q qbar -> g g                                  115 |           4          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> q' qbar' (uds)                       116 |           2          1          1 |   1.241e-03  1.241e-03 |
+ | g g -> c cbar                                  121 |          12          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> c cbar                               122 |           1          0          0 |   0.000e+00  0.000e+00 |
+ | g g -> b bbar                                  123 |           7          0          0 |   0.000e+00  0.000e+00 |
+ | q qbar -> b bbar                               124 |           0          0          0 |   0.000e+00  0.000e+00 |
+ |                                                    |                                   |                        |
+ | sum                                                |        2751        100        100 |   1.540e+00  8.179e-02 |
+ |                                                                                                                 |
+ *-------  End PYTHIA Event and Cross Section Statistics ----------------------------------------------------------*
+
+ *-------  PYTHIA Error and Warning Messages Statistics  ----------------------------------------------------------* 
+ |                                                                                                                 | 
+ |  times   message                                                                                                | 
+ |                                                                                                                 | 
+ |     54   Warning in SimpleSpaceShower::pT2nextQCD: small daughter PDF                                           | 
+ |     36   Warning in SimpleSpaceShower::pT2nextQCD: weight above unity                                           | 
+ |      2   Warning in SimpleTimeShower::init: pTmin too low                                                       | 
+ |                                                                                                                 | 
+ *-------  End PYTHIA Error and Warning Messages Statistics  ------------------------------------------------------* 
+
+------------------------------------
+GenXsecAnalyzer:
+------------------------------------
+Before Filter: total cross section = 1.540e+09 +- 8.179e+07 pb
+Filter efficiency (taking into account weights)= (1.54892) / (1.54892) = 1.000e+00 +- 0.000e+00
+Filter efficiency (event-level)= (100) / (100) = 1.000e+00 +- 0.000e+00    [TO BE USED IN MCM]
+
+After filter: final cross section = 1.540e+09 +- 8.179e+07 pb
+After filter: final fraction of events with negative weights = 0.000e+00 +- 0.000e+00
+After filter: final equivalent lumi for 1M events (1/fb) = 6.492e-07 +- 3.448e-08
+TimeReport> Time report complete in 1098.84 seconds
+ Time Summary: 
+ - Min event:   2.04472
+ - Max event:   24.0727
+ - Avg event:   10.3968
+ - Total loop:  1082.9
+ - Total init:  15.9192
+ - Total job:   1098.84
+ - Total EventSetup: 21.9245
+ - Total non-module: 7539
+ Event Throughput: 0.0923445 ev/s
+ CPU Summary: 
+ - Total loop:     1071.31
+ - Total init:     2.91704
+ - Total extra:    0
+ - Total children: 0.086824
+ - Total job:      1074.26
+ Processing Summary: 
+ - Number of Events:  100
+ - Number of Global Begin Lumi Calls:  1
+ - Number of Global Begin Run Calls: 1
+
+MemoryReport> EndJob: virtual size 2123.63 Mbytes, RSS 1314.5 Mbytes, PSS 1313.22 MBytes, Private 1311.66
+ AnonHugePages 32 Mbytes
+ mmapped memory pages 1356.54 Mbytes (VSize), 789.16 MBytes (RSS)
+ mmapped file pages 766.836 Mbytes (VSize), 526.523 MBytes (RSS)
+  of which .so's 447.074 Mbytes (VSize), 267.711 MBytes (RSS)
+  of which PCM's 319.359 Mbytes (VSize), 258.41 MBytes (RSS)
+  of which other 0.402344 Mbytes (VSize), 0.402344 MBytes (RSS)
+ Jemalloc allocated 572.712 MBytes, active 596.703 MBytes
+  resident 804.637 Mbytes, mapped 831.691 Mbytes
+  metadata 21.1627 Mbytes
+MemoryReport> Peak virtual size 2123.63 Mbytes (RSS 1368.43)
+ Jemalloc allocated 760.202 active 780.832 resident 858.816 mapped 886.027 metadata 21.0329
+ Key events increasing vsize: 
+[2] run: 1 lumi: 1001 event: 100002  vsize = 1827.63 deltaVsize = 50 rss = 1251.73 delta = 26.1836 allocated = 628.037 active = 645.992
+[10] run: 1 lumi: 1001 event: 100010  vsize = 1907.63 deltaVsize = 52 rss = 1272.18 delta = 20.4414 allocated = 638.133 active = 658.121
+[23] run: 1 lumi: 1001 event: 100023  vsize = 1971.63 deltaVsize = 64 rss = 1298.2 delta = 26.0273 allocated = 694.156 active = 714.605
+[34] run: 1 lumi: 1001 event: 100034  vsize = 2011.63 deltaVsize = 40 rss = 1306.33 delta = 8.125 allocated = 718.415 active = 739.605
+[38] run: 1 lumi: 1001 event: 100038  vsize = 2047.63 deltaVsize = 36 rss = 1351.86 delta = 45.5273 allocated = 744.598 active = 765.438
+[90] run: 1 lumi: 1001 event: 100090  vsize = 2123.63 deltaVsize = 0 rss = 1333.71 delta = -34.7227 allocated = 763.657 active = 784.43
+[89] run: 1 lumi: 1001 event: 100089  vsize = 2123.63 deltaVsize = 0 rss = 1345.68 delta = -22.7539 allocated = 761.554 active = 782.242
+[88] run: 1 lumi: 1001 event: 100088  vsize = 2123.63 deltaVsize = 14 rss = 1368.43 delta = -2.94531 allocated = 760.202 active = 780.832
+MemoryReport> Peak rss size 1371.38 Mbytes (VSIZE 2109.63)
+ Jemalloc allocated 761.606 active 782.492 resident 862.133 mapped 889.344 metadata 21.0329
+ Key events increasing rss:
+[88] run: 1 lumi: 1001 event: 100088  vsize = 2123.63 deltaVsize = 14 rss = 1368.43 delta = -2.94531 allocated = 760.202 active = 780.832
+[86] run: 1 lumi: 1001 event: 100086  vsize = 2097.63 deltaVsize = 4 rss = 1371.2 delta = 9.4375 allocated = 761.551 active = 782.395
+[87] run: 1 lumi: 1001 event: 100087  vsize = 2109.63 deltaVsize = 12 rss = 1371.38 delta = 0.175781 allocated = 761.606 active = 782.492
+[2] run: 1 lumi: 1001 event: 100002  vsize = 1827.63 deltaVsize = 50 rss = 1251.73 delta = 26.1836 allocated = 628.037 active = 645.992
+[22] run: 1 lumi: 1001 event: 100022  vsize = 1907.63 deltaVsize = 0 rss = 1300.32 delta = 28.1445 allocated = 687.881 active = 707.684
+[38] run: 1 lumi: 1001 event: 100038  vsize = 2047.63 deltaVsize = 36 rss = 1351.86 delta = 43.3203 allocated = 744.598 active = 765.438
+Thanks for using LHAPDF 6.4.0. Please make sure to cite the paper:
+  Eur.Phys.J. C75 (2015) 3, 132  (http://arxiv.org/abs/1412.7420)
+Complete
+process id is 2640103 status is 0

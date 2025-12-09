@@ -1,0 +1,29 @@
+{
+    "cmsRun_params": [
+        {
+            "input_files": [],
+            "keep_output": true,
+            "output_files": [
+                "FEVTDEBUGoutput.root"
+            ],
+            "output_files_datatiers": [
+                "GEN-SIM"
+            ],
+            "output_files_merged_base": [
+                "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "output_files_unmerged_base": [
+                "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            ],
+            "step": "cmsRun1",
+            "transient_output": [
+                true
+            ]
+        }
+    ],
+    "job_type": "Production",
+    "number_of_cmsRuns": 1,
+    "worker_arch": "X86_64",
+    "worker_os": "rhel8",
+    "workflow_type": "TaskChain"
+}

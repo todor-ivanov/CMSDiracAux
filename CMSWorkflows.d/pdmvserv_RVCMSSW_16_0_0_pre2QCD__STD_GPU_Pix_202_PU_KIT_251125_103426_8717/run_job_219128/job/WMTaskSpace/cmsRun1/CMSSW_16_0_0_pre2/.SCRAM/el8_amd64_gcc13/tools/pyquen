@@ -1,0 +1,20 @@
+{
+  "LIB": [
+    "pyquen"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pyquen/1.5.4-2dc2e9912178f3440fe9bf7f5c347f12/lib"
+  ],
+  "PYQUEN_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pyquen/1.5.4-2dc2e9912178f3440fe9bf7f5c347f12",
+  "TOOLNAME": "pyquen",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "1.5.4-2dc2e9912178f3440fe9bf7f5c347f12",
+  "USE": [
+    "pythia6",
+    "lhapdf"
+  ],
+  "VARIABLES": [
+    "PYQUEN_BASE",
+    "LIBDIR"
+  ]
+}

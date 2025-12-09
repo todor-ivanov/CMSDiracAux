@@ -1,0 +1,16 @@
+{
+  "LIB": [
+    "tcmalloc_minimal"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gperftools/2.11-a0cc64b49445f425114ece9ce4e7eb52/lib"
+  ],
+  "TCMALLOC_MINIMAL_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gperftools/2.11-a0cc64b49445f425114ece9ce4e7eb52",
+  "TOOLNAME": "tcmalloc_minimal",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.11-a0cc64b49445f425114ece9ce4e7eb52",
+  "VARIABLES": [
+    "TCMALLOC_MINIMAL_BASE",
+    "LIBDIR"
+  ]
+}

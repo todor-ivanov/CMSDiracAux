@@ -1,0 +1,29 @@
+{
+  "FLAGS": {
+    "FORCE_LINK": [
+      "1"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-sparse/0.6.18-e460ea90b4f873d378aa281d9e2c6c54/include",
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-sparse/0.6.18-e460ea90b4f873d378aa281d9e2c6c54/include/torchsparse/"
+  ],
+  "LIB": [
+    "torchsparse"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-sparse/0.6.18-e460ea90b4f873d378aa281d9e2c6c54/lib"
+  ],
+  "PYTORCH_SPARSE_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/pytorch-sparse/0.6.18-e460ea90b4f873d378aa281d9e2c6c54",
+  "TOOLNAME": "pytorch-sparse",
+  "TOOLREVISION": "3",
+  "TOOLVERSION": "0.6.18-e460ea90b4f873d378aa281d9e2c6c54",
+  "USE": [
+    "pytorch"
+  ],
+  "VARIABLES": [
+    "PYTORCH_SPARSE_BASE",
+    "INCLUDE",
+    "LIBDIR"
+  ]
+}

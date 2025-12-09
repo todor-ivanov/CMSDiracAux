@@ -1,0 +1,14 @@
+{
+  "PY3_MESON_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-meson/1.8.2-5befb66a43b9a670a2473ab6bdc147f1",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-meson/1.8.2-5befb66a43b9a670a2473ab6bdc147f1/bin"
+    ]
+  },
+  "TOOLNAME": "py3-meson",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.8.2-5befb66a43b9a670a2473ab6bdc147f1",
+  "VARIABLES": [
+    "PY3_MESON_BASE"
+  ]
+}

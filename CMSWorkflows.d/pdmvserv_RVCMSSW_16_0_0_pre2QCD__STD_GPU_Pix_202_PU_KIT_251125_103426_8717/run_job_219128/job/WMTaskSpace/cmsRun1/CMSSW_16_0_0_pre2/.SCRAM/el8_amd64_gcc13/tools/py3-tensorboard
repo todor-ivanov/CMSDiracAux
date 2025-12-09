@@ -1,0 +1,14 @@
+{
+  "PY3_TENSORBOARD_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-tensorboard/2.19.0-0f1ccabb9eecaca0110066d23eed31aa",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-tensorboard/2.19.0-0f1ccabb9eecaca0110066d23eed31aa/bin"
+    ]
+  },
+  "TOOLNAME": "py3-tensorboard",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "2.19.0-0f1ccabb9eecaca0110066d23eed31aa",
+  "VARIABLES": [
+    "PY3_TENSORBOARD_BASE"
+  ]
+}

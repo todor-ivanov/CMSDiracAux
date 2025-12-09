@@ -1,0 +1,7 @@
+<tool name="ruff" version="0.5.6-b847bbb36fea8205cc84d3b82b1f1bda" revision="2">
+  <info url="https://docs.astral.sh/ruff/"/>
+  <client>
+    <environment name="RUFF_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/ruff/0.5.6-b847bbb36fea8205cc84d3b82b1f1bda"/>
+  </client>
+  <runtime name="PATH" value="$RUFF_BASE/bin" type="path"/>
+</tool>

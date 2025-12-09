@@ -1,0 +1,40 @@
+{
+  "ALPAKA_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/alpaka/2.0.0-8493f1d11d0378dc14d6ea6ecfc69ac5",
+  "FLAGS": {
+    "CUDA_FLAGS": [
+      "-DALPAKA_DEFAULT_HOST_MEMORY_ALIGNMENT=128",
+      "-DALPAKA_DISABLE_VENDOR_RNG",
+      "-DALPAKA_HAS_STD_ATOMIC_REF"
+    ],
+    "CXXFLAGS": [
+      "-DALPAKA_DEFAULT_HOST_MEMORY_ALIGNMENT=128",
+      "-DALPAKA_DISABLE_VENDOR_RNG",
+      "-DALPAKA_HAS_STD_ATOMIC_REF"
+    ],
+    "GENREFLEX_CPPFLAGS": [
+      "-DALPAKA_DEFAULT_HOST_MEMORY_ALIGNMENT=128",
+      "-DALPAKA_DISABLE_VENDOR_RNG",
+      "-DALPAKA_HAS_STD_ATOMIC_REF"
+    ],
+    "LDFLAGS": [
+      "-Wl,-no-as-needed",
+      "-lpthread",
+      "-Wl,-as-needed"
+    ]
+  },
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/alpaka/2.0.0-8493f1d11d0378dc14d6ea6ecfc69ac5/include"
+  ],
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/alpaka/2.0.0-8493f1d11d0378dc14d6ea6ecfc69ac5/include"
+    ]
+  },
+  "TOOLNAME": "alpaka",
+  "TOOLREVISION": "3",
+  "TOOLVERSION": "2.0.0-8493f1d11d0378dc14d6ea6ecfc69ac5",
+  "VARIABLES": [
+    "ALPAKA_BASE",
+    "INCLUDE"
+  ]
+}

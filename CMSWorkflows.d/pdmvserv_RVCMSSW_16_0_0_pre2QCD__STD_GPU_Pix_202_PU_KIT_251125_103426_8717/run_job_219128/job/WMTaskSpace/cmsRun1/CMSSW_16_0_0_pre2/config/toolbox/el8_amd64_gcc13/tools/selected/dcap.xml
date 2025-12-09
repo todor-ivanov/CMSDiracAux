@@ -1,0 +1,10 @@
+<tool name="dcap" version="2.47.14-9af06ef3f63c37500b79c61c07d38ff3" revision="2">
+  <lib name="dcap"/>
+  <client>
+    <environment name="DCAP_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/dcap/2.47.14-9af06ef3f63c37500b79c61c07d38ff3"/>
+    <environment name="LIBDIR" default="$DCAP_BASE/lib"/>
+    <environment name="INCLUDE" default="$DCAP_BASE/include"/>
+  </client>
+  <runtime name="ROOT_INCLUDE_PATH" value="$INCLUDE" type="path"/>
+  <use name="root_cxxdefaults"/>
+</tool>

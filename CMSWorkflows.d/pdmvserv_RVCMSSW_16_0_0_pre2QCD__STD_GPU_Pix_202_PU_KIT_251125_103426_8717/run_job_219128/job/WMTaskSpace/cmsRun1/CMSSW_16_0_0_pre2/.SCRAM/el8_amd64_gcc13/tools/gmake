@@ -1,0 +1,14 @@
+{
+  "MAKE_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gmake/4.3-85cee3ae629d02a00fb0f690ae86e0e3",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/gmake/4.3-85cee3ae629d02a00fb0f690ae86e0e3/bin"
+    ]
+  },
+  "TOOLNAME": "gmake",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "4.3-85cee3ae629d02a00fb0f690ae86e0e3",
+  "VARIABLES": [
+    "MAKE_BASE"
+  ]
+}

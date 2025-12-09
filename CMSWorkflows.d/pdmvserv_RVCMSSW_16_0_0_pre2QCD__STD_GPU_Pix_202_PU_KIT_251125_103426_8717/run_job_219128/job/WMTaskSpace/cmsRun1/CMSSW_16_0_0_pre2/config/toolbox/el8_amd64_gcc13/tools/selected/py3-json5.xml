@@ -1,0 +1,6 @@
+<tool name="py3-json5" version="0.12.0-2ab438ec3b636867f49d7d6f5dd6c9e4" revision="1">
+  <client>
+    <environment name="PY3_JSON5_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-json5/0.12.0-2ab438ec3b636867f49d7d6f5dd6c9e4"/>
+  </client>
+  <runtime name="PATH" value="$PY3_JSON5_BASE/bin" type="path"/>
+</tool>

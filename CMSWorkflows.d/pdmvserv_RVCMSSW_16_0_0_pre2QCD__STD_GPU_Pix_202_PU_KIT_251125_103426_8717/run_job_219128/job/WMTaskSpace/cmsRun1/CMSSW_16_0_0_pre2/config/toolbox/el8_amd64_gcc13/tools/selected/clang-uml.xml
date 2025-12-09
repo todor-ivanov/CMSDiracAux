@@ -1,0 +1,9 @@
+<tool name="clang-uml" version="0.5.2-c2e74bb741b8c1fe6629e68df181feec" revision="2">
+  <info url="https://github.com/bkryza/clang-uml/"/>
+  <client>
+    <environment name="CLANG_UML_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/clang-uml/0.5.2-c2e74bb741b8c1fe6629e68df181feec"/>
+  </client>
+  <runtime name="PATH" value="$CLANG_UML_BASE/bin" type="path"/>
+  <use name="yaml-cpp"/>
+  <use name="zlib"/>
+</tool>

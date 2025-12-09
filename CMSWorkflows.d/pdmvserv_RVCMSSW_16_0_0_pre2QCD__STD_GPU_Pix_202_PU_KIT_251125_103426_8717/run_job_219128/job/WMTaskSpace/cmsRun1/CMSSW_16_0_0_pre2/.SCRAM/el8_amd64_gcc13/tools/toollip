@@ -1,0 +1,13 @@
+{
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/TOoLLiP/1.0.1-d459f6fa9ae5845af1091cf41c059cfc/lib64"
+  ],
+  "TOOLLIP_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/TOoLLiP/1.0.1-d459f6fa9ae5845af1091cf41c059cfc",
+  "TOOLNAME": "toollip",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "1.0.1-d459f6fa9ae5845af1091cf41c059cfc",
+  "VARIABLES": [
+    "TOOLLIP_BASE",
+    "LIBDIR"
+  ]
+}

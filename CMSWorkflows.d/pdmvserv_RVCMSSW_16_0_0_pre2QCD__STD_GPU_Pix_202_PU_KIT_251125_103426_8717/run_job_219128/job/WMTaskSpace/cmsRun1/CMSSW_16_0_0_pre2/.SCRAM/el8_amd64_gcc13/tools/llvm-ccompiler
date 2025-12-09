@@ -1,0 +1,15 @@
+{
+  "CC": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/llvm/18.1.6-1db4a110789967373cf0342ea8c09443/bin/clang",
+  "LLVM_CCOMPILER_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/llvm/18.1.6-1db4a110789967373cf0342ea8c09443",
+  "SCRAM_COMPILER": 1,
+  "TOOLNAME": "llvm-ccompiler",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "18.1.6-1db4a110789967373cf0342ea8c09443",
+  "USE": [
+    "gcc-ccompiler"
+  ],
+  "VARIABLES": [
+    "LLVM_CCOMPILER_BASE",
+    "CC"
+  ]
+}

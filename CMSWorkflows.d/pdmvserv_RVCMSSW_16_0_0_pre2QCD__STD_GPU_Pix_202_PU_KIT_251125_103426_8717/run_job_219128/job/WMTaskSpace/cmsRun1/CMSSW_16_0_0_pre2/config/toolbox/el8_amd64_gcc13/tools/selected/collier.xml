@@ -1,0 +1,5 @@
+<tool name="collier" version="1.2.8-01331ea64f47fcc1c48634f7d0fbb192" revision="2">
+  <client>
+    <environment name="COLLIER_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/collier/1.2.8-01331ea64f47fcc1c48634f7d0fbb192"/>
+  </client>
+</tool>

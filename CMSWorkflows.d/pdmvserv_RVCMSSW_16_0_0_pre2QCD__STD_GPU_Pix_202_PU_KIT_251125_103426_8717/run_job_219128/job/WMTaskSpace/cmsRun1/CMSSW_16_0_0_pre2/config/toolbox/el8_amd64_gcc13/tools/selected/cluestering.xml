@@ -1,0 +1,7 @@
+<tool name="CLUEstering" version="2.7.2-4bf22a3cce60ec463c2cce4c3f6193eb" revision="1">
+  <use name="alpaka"/>
+  <client>
+    <environment name="CLUESTERING_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/CLUEstering/2.7.2-4bf22a3cce60ec463c2cce4c3f6193eb"/>
+    <environment name="INCLUDE"   default="$CLUESTERING_BASE/include"/>
+  </client>
+</tool>

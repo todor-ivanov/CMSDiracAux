@@ -1,0 +1,6 @@
+<tool name="rivet_x86-64-v2" version="4.1.0-967da3399dbe6df6bf6f33bda9acc4b6" revision="1">
+  <client>
+    <environment name="X86_64_V2_LIBDIR" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rivet_x86-64-v2/4.1.0-967da3399dbe6df6bf6f33bda9acc4b6/lib"/>
+  </client>
+  <runtime name="X86_64_V2_PATH" value="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/rivet_x86-64-v2/4.1.0-967da3399dbe6df6bf6f33bda9acc4b6/bin" type="path"/>
+</tool>

@@ -1,0 +1,11 @@
+{
+  "LIB": [
+    "g4hepem-static"
+  ],
+  "TOOLNAME": "g4hepemcore",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "20250220-69570cb9991508f0cd0e1323621d4447",
+  "USE": [
+    "g4hepem_interface"
+  ]
+}

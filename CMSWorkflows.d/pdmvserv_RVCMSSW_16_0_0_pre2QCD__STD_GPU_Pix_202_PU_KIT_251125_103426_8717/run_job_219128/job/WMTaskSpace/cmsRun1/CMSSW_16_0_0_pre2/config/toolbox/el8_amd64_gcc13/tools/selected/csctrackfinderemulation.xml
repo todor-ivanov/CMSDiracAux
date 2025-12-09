@@ -1,0 +1,10 @@
+<tool name="CSCTrackFinderEmulation" version="1.2-0273d6fc020e1c6f56b03d1b18eefed5" revision="1">
+  <lib name="CSCTrackFinderEmulation"/>
+  <client>
+    <environment name="CSCTRACKFINDEREMULATION_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/cms/CSCTrackFinderEmulation/1.2-0273d6fc020e1c6f56b03d1b18eefed5"/>
+    <environment name="LIBDIR" default="$CSCTRACKFINDEREMULATION_BASE/lib64"/>
+    <environment name="INCLUDE" default="$CSCTRACKFINDEREMULATION_BASE/include"/>
+  </client>
+  <runtime name="CSC_TRACK_FINDER_DATA_DIR" default="$CSCTRACKFINDEREMULATION_BASE/data/"/>
+  <runtime name="CMSSW_SEARCH_PATH" default="$CSCTRACKFINDEREMULATION_BASE/data" type="path"/>
+</tool>

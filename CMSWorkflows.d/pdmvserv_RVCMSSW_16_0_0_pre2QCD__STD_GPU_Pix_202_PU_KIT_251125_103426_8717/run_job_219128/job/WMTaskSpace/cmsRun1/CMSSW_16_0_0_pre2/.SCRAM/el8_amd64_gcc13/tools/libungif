@@ -1,0 +1,29 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libungif/4.1.4-43dbed606843ca750167a7b12a601879/include"
+  ],
+  "LIB": [
+    "ungif"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libungif/4.1.4-43dbed606843ca750167a7b12a601879/lib"
+  ],
+  "LIBUNGIF_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libungif/4.1.4-43dbed606843ca750167a7b12a601879",
+  "RUNTIME": {
+    "PATH:ROOT_INCLUDE_PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/libungif/4.1.4-43dbed606843ca750167a7b12a601879/include"
+    ]
+  },
+  "TOOLNAME": "libungif",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "4.1.4-43dbed606843ca750167a7b12a601879",
+  "USE": [
+    "root_cxxdefaults",
+    "zlib"
+  ],
+  "VARIABLES": [
+    "LIBUNGIF_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

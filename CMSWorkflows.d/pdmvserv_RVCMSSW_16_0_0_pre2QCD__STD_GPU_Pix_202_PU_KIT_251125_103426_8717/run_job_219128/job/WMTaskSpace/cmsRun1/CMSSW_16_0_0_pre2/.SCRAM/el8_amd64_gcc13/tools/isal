@@ -1,0 +1,23 @@
+{
+  "INCLUDE": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/isal/2.30.0-790c74797ac4a35ef6b55fc2b4216d70/include"
+  ],
+  "ISAL_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/isal/2.30.0-790c74797ac4a35ef6b55fc2b4216d70",
+  "LIB": [
+    "isal"
+  ],
+  "LIBDIR": [
+    "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/isal/2.30.0-790c74797ac4a35ef6b55fc2b4216d70/lib"
+  ],
+  "TOOLNAME": "isal",
+  "TOOLREVISION": "2",
+  "TOOLVERSION": "2.30.0-790c74797ac4a35ef6b55fc2b4216d70",
+  "USE": [
+    "eigen"
+  ],
+  "VARIABLES": [
+    "ISAL_BASE",
+    "LIBDIR",
+    "INCLUDE"
+  ]
+}

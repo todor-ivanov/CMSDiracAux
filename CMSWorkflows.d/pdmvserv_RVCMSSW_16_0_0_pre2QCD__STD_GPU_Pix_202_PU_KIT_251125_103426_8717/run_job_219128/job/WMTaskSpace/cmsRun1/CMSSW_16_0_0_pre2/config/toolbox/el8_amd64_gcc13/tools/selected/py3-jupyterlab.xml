@@ -1,0 +1,6 @@
+<tool name="py3-jupyterlab" version="4.4.3-165aa6069463dc0525b7a4e089082895" revision="1">
+  <client>
+    <environment name="PY3_JUPYTERLAB_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-jupyterlab/4.4.3-165aa6069463dc0525b7a4e089082895"/>
+  </client>
+  <runtime name="PATH" value="$PY3_JUPYTERLAB_BASE/bin" type="path"/>
+</tool>

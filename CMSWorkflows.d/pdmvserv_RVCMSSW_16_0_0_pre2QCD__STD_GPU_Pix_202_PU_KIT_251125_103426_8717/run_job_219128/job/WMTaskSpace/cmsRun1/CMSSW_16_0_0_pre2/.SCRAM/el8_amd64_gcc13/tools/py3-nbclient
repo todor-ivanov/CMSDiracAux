@@ -1,0 +1,14 @@
+{
+  "PY3_NBCLIENT_BASE": "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-nbclient/0.10.2-d582fea2f70cd500d705bab1b80a7f4b",
+  "RUNTIME": {
+    "PATH:PATH": [
+      "/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-nbclient/0.10.2-d582fea2f70cd500d705bab1b80a7f4b/bin"
+    ]
+  },
+  "TOOLNAME": "py3-nbclient",
+  "TOOLREVISION": "1",
+  "TOOLVERSION": "0.10.2-d582fea2f70cd500d705bab1b80a7f4b",
+  "VARIABLES": [
+    "PY3_NBCLIENT_BASE"
+  ]
+}

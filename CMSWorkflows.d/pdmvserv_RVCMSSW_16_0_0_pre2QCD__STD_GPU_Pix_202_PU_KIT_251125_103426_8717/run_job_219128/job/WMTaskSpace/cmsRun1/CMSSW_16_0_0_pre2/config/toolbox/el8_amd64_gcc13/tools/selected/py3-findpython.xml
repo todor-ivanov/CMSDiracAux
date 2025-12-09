@@ -1,0 +1,6 @@
+<tool name="py3-findpython" version="0.6.3-053f193c78a68535ffd5858cf32ae6b7" revision="1">
+  <client>
+    <environment name="PY3_FINDPYTHON_BASE" default="/cvmfs/cms.cern.ch/el8_amd64_gcc13/external/py3-findpython/0.6.3-053f193c78a68535ffd5858cf32ae6b7"/>
+  </client>
+  <runtime name="PATH" value="$PY3_FINDPYTHON_BASE/bin" type="path"/>
+</tool>
