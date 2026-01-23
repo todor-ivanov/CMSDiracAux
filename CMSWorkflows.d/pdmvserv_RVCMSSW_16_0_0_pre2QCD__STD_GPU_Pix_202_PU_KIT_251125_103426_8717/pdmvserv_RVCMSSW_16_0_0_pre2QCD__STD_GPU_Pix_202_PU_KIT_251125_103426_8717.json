@@ -1,0 +1,351 @@
+{
+  "_id": "pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717",
+  "Group": "PPD",
+  "Requestor": "pdmvserv",
+  "CouchURL": "https://cmsweb.cern.ch/couchdb",
+  "ConfigCacheUrl": "https://cmsweb.cern.ch/couchdb",
+  "PrepID": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+  "SubRequestType": "RelVal",
+  "RequestString": "RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT",
+  "Campaign": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+  "RequestPriority": 450000,
+  "TimePerEvent": 1,
+  "SizePerEvent": 1,
+  "ProcessingVersion": 1,
+  "Memory": 3000,
+  "Multicore": 1,
+  "EnableHarvesting": true,
+  "DbsUrl": "https://cmsweb-prod.cern.ch/dbs/prod/global/DBSReader",
+  "Task1": {
+    "Seeding": "AutomaticSeeding",
+    "PrimaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+    "RequestNumEvents": 500000,
+    "SplittingAlgo": "EventBased",
+    "EventsPerJob": 100,
+    "EventsPerLumi": 100,
+    "TaskName": "GenSimFull",
+    "ConfigCacheID": "145b5022e36a88759d2e1096624248a2",
+    "KeepOutput": true,
+    "ScramArch": [
+      "el8_amd64_gcc13"
+    ],
+    "GlobalTag": "151X_mcRun3_2025_realistic_v4",
+    "ProcessingString": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "CMSSWVersion": "CMSSW_16_0_0_pre2",
+    "AcquisitionEra": "CMSSW_16_0_0_pre2",
+    "Memory": 20000,
+    "Multicore": 8,
+    "Campaign": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+    "EventStreams": 1
+  },
+  "Task2": {
+    "SplittingAlgo": "LumiBased",
+    "InputTask": "GenSimFull",
+    "InputFromOutputModule": "FEVTDEBUGoutput",
+    "LumisPerJob": 10,
+    "TaskName": "Digi_2025",
+    "ConfigCacheID": "145b5022e36a88759d2e10966242838f",
+    "KeepOutput": true,
+    "ScramArch": [
+      "el8_amd64_gcc13"
+    ],
+    "GlobalTag": "151X_mcRun3_2025_realistic_v4",
+    "ProcessingString": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "CMSSWVersion": "CMSSW_16_0_0_pre2",
+    "AcquisitionEra": "CMSSW_16_0_0_pre2",
+    "Memory": 20000,
+    "Multicore": 8,
+    "Campaign": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+    "EventStreams": 1,
+    "GPUParams": "{\"CUDACapabilities\": [\"6.0\", \"6.1\", \"6.2\", \"7.0\", \"7.2\", \"7.5\", \"8.0\", \"8.6\", \"8.7\", \"8.9\", \"9.0\", \"10.0\"], \"CUDARuntime\": \"12.0\", \"GPUMemoryMB\": 12000}",
+    "RequiresGPU": "required"
+  },
+  "Task3": {
+    "SplittingAlgo": "LumiBased",
+    "InputTask": "Digi_2025",
+    "InputFromOutputModule": "FEVTDEBUGHLToutput",
+    "LumisPerJob": 10,
+    "TaskName": "RecoNano_2025",
+    "ConfigCacheID": "145b5022e36a88759d2e10966242ae4a",
+    "KeepOutput": true,
+    "ScramArch": [
+      "el8_amd64_gcc13"
+    ],
+    "GlobalTag": "151X_mcRun3_2025_realistic_v4",
+    "ProcessingString": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "CMSSWVersion": "CMSSW_16_0_0_pre2",
+    "AcquisitionEra": "CMSSW_16_0_0_pre2",
+    "Memory": 20000,
+    "Multicore": 8,
+    "Campaign": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+    "EventStreams": 1,
+    "GPUParams": "{\"CUDACapabilities\": [\"6.0\", \"6.1\", \"6.2\", \"7.0\", \"7.2\", \"7.5\", \"8.0\", \"8.6\", \"8.7\", \"8.9\", \"9.0\", \"10.0\"], \"CUDARuntime\": \"12.0\", \"GPUMemoryMB\": 12000}",
+    "RequiresGPU": "required"
+  },
+  "DQMConfigCacheID": "145b5022e36a88759d2e10966242f094",
+  "DQMUploadUrl": "https://cmsweb.cern.ch/dqm/relval",
+  "Task4": {
+    "SplittingAlgo": "LumiBased",
+    "InputTask": "RecoNano_2025",
+    "InputFromOutputModule": "RECOSIMoutput",
+    "LumisPerJob": 10,
+    "TaskName": "ALCA_2025",
+    "ConfigCacheID": "145b5022e36a88759d2e1096624345af",
+    "KeepOutput": true,
+    "ScramArch": [
+      "el8_amd64_gcc13"
+    ],
+    "GlobalTag": "151X_mcRun3_2025_realistic_v4",
+    "ProcessingString": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "CMSSWVersion": "CMSSW_16_0_0_pre2",
+    "AcquisitionEra": "CMSSW_16_0_0_pre2",
+    "Memory": 20000,
+    "Multicore": 8,
+    "Campaign": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+    "EventStreams": 1
+  },
+  "CMSSWVersion": "CMSSW_16_0_0_pre2",
+  "ScramArch": [
+    "el8_amd64_gcc13"
+  ],
+  "AcquisitionEra": {
+    "GenSimFull": "CMSSW_16_0_0_pre2",
+    "Digi_2025": "CMSSW_16_0_0_pre2",
+    "RecoNano_2025": "CMSSW_16_0_0_pre2",
+    "ALCA_2025": "CMSSW_16_0_0_pre2"
+  },
+  "GlobalTag": "151X_mcRun3_2025_realistic_v4",
+  "ProcessingString": {
+    "GenSimFull": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "Digi_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "RecoNano_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+    "ALCA_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM"
+  },
+  "RequestType": "TaskChain",
+  "TaskChain": 4,
+  "RequestorDN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service",
+  "RequestStatus": "normal-archived",
+  "RequestTransition": [
+    {
+      "Status": "new",
+      "UpdateTime": 1764066866,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service"
+    },
+    {
+      "UpdateTime": 1764066872,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service",
+      "Status": "assignment-approved"
+    },
+    {
+      "UpdateTime": 1764068812,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+      "Status": "assigned"
+    },
+    {
+      "UpdateTime": 1764068870,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "staging"
+    },
+    {
+      "UpdateTime": 1764071179,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "staged"
+    },
+    {
+      "UpdateTime": 1764071477,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "acquired"
+    },
+    {
+      "UpdateTime": 1764072681,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "running-open"
+    },
+    {
+      "UpdateTime": 1764079295,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "running-closed"
+    },
+    {
+      "UpdateTime": 1764281195,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "completed"
+    },
+    {
+      "UpdateTime": 1764283429,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+      "Status": "closed-out"
+    },
+    {
+      "UpdateTime": 1764411143,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+      "Status": "announced"
+    },
+    {
+      "UpdateTime": 1764596710,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+      "Status": "normal-archived"
+    }
+  ],
+  "RequestDate": [
+    2025,
+    11,
+    25,
+    10,
+    34,
+    26
+  ],
+  "PriorityTransition": [
+    {
+      "Priority": 450000,
+      "UpdateTime": 1764066866,
+      "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service"
+    }
+  ],
+  "CouchWorkloadDBName": "reqmgr_workload_cache",
+  "CouchDBName": "reqmgr_config_cache",
+  "RequestName": "pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717",
+  "ConfigCacheID": null,
+  "OpenRunningTimeout": 0,
+  "GlobalTagConnect": null,
+  "LumiList": {},
+  "DashboardHost": "cms-jobmon.cern.ch",
+  "DashboardPort": 8884,
+  "PeriodicHarvestInterval": 0,
+  "DQMHarvestUnit": "byRun",
+  "DQMUploadProxy": null,
+  "DQMSequences": [],
+  "EnableNewStageout": false,
+  "IncludeParents": false,
+  "VoGroup": "unknown",
+  "VoRole": "unknown",
+  "ValidStatus": "PRODUCTION",
+  "OverrideCatalog": null,
+  "RunNumber": 0,
+  "RobustMerge": true,
+  "Comments": "",
+  "RequiresGPU": null,
+  "GPUParams": "null",
+  "JobExtraMatchRequirements": "",
+  "MinMergeSize": 2147483648,
+  "MaxMergeSize": 4294967296,
+  "MaxWaitTime": 86400,
+  "MaxMergeEvents": 20000000,
+  "HarvestingMemory": 3000,
+  "EventStreams": null,
+  "MergedLFNBase": "/store/relval",
+  "UnmergedLFNBase": "/store/unmerged",
+  "DeleteFromSource": false,
+  "IgnoredOutputModules": [],
+  "ChainParentageMap": {
+    "Task1": {
+      "ParentDset": null,
+      "ChildDsets": [
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM"
+      ]
+    },
+    "Task2": {
+      "ParentDset": "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM",
+      "ChildDsets": [
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-DIGI-RAW"
+      ]
+    },
+    "Task3": {
+      "ParentDset": "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-DIGI-RAW",
+      "ChildDsets": [
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/DQMIO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/NANOAODSIM",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-RECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/MINIAODSIM"
+      ]
+    },
+    "Task4": {
+      "ParentDset": "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-RECO",
+      "ChildDsets": [
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiPixelCalSingleMuonLoose-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-EcalESAlign-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-HcalCalHBHEMuonProducerFilter-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-MuAlOverlaps-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiStripCalMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlJpsiMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlDiMuonAndVertex-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiPixelCalSingleMuonTight-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlZMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlMuonIsolated-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+        "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlUpsilonMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO"
+      ]
+    }
+  },
+  "FirstEvent": 1,
+  "FirstLumi": 1,
+  "RequestWorkflow": "https://cmsweb.cern.ch/couchdb/reqmgr_workload_cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/spec",
+  "OutputDatasets": [
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-DIGI-RAW",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/DQMIO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/MINIAODSIM",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/NANOAODSIM",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/GEN-SIM-RECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-EcalESAlign-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-HcalCalHBHEMuonProducerFilter-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-MuAlOverlaps-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiPixelCalSingleMuonLoose-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiPixelCalSingleMuonTight-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-SiStripCalMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlDiMuonAndVertex-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlJpsiMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlMuonIsolated-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlUpsilonMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO",
+    "/RelValQCD_FlatPt_15_3000HS_14/CMSSW_16_0_0_pre2-TkAlZMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1/ALCARECO"
+  ],
+  "InitialPriority": 450000,
+  "SiteBlacklist": [],
+  "TrustSitelists": false,
+  "TrustPUSitelists": false,
+  "BlockCloseMaxEvents": 200000000,
+  "BlockCloseMaxWaitTime": 172800,
+  "Dashboard": "relval",
+  "SoftTimeout": 159600,
+  "GracePeriod": 300,
+  "CustodialSites": [],
+  "NonCustodialSites": [],
+  "SiteWhitelist": [
+    "T1_DE_KIT"
+  ],
+  "Team": "relval",
+  "HardTimeout": 159900,
+  "SubscriptionPriority": "Low",
+  "AllowOpportunistic": false,
+  "BlockCloseMaxFiles": 500,
+  "BlockCloseMaxSize": 5000000000000,
+  "Override": {
+    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+  },
+  "DatasetLifetime": 0,
+  "OutputModulesLFNBases": [
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/NANOAODSIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlUpsilonMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/MuAlOverlaps-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlZMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlMuonIsolated-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM-RECO/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlJpsiMuMu-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/HcalCalHBHEMuonProducerFilter-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/SiPixelCalSingleMuonLoose-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/EcalESAlign-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM-DIGI-RAW/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlDiMuonAndVertex-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/MINIAODSIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/SiPixelCalSingleMuonTight-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/DQMIO/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/TkAlMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+    "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/ALCARECO/SiStripCalMinBias-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+  ],
+  "TotalEstimatedJobs": 5000,
+  "TotalInputEvents": 500000,
+  "TotalInputLumis": 5000,
+  "TotalInputFiles": 0
+}
