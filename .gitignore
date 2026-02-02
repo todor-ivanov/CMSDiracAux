@@ -3,3 +3,4 @@
 *.pyc
 tmp/
 dirac-cwl/
+DIRAC/
