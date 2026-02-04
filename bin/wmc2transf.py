@@ -10,19 +10,27 @@ import os
 import sys
 import json
 import xmltodict
+from pprint import pprint, pformat
 
 # from WMCore
 from WMCore.DataStructs.JobPackage import JobPackage
 from WMCore.WMSpec.WMWorkload import WMWorkloadHelper
 
 # from DIRAC
-from DIRAC import gLogger
+from DIRAC import gLogger, gConfig, S_OK, S_ERROR
 from DIRAC.ProductionSystem.Client.ProductionClient import ProductionClient
 from DIRAC.ProductionSystem.Client.ProductionStep import ProductionStep
 from DIRAC.Interfaces.API.Job import Job
 from DIRAC.Core.Workflow.Parameter import Parameter
 from DIRAC.Resources.Catalog.FileCatalog import FileCatalog
+from DIRAC.TransformationSystem.Client.Transformation import Transformation
+from DIRAC.TransformationSystem.Client.TransformationClient import TransformationClient
+from DIRAC.TransformationSystem.Agent.TransformationPlugin import TransformationPlugin as DIRACTransformationPlugin
 
+# from CMSDirac
+from CMSDirac.CMSTransformationPlugin import CMSTransformationPlugin
+
+parseWmTaskPath = lambda p: [x for x in p.split('/') if x.strip() != '']
 
 class OptionParser():
     """Class to parse the command line arguments"""
@@ -51,7 +59,6 @@ class OptionParser():
 
 def main():
     pass
-
 
 def createCMSJob(cmsJob):
     job = Job()
@@ -89,6 +96,7 @@ def createCMSJob(cmsJob):
     return job
 
 
+
 if __name__ == '__main__':
     optmgr = OptionParser()
     opts = optmgr.parser.parse_args()
@@ -107,9 +115,24 @@ if __name__ == '__main__':
     wmWorkload = WMWorkloadHelper(wmWorkloadDef)
     wmWorkloadTree = wmWorkload.data.dictionary_whole_tree_()
 
-    # Create all DIRAC objects:
-    job = createCMSJob(wmJob)
+    wmJobTask = parseWmTaskPath(wmJob['task'])[1]
+    wmTask = wmWorkload.getTask(wmJobTask)
+    # wmTask = wmWorkload.getTask('GenSimFull')
+    wmTaskDict = wmTask.data.dictionary_whole_tree_()
 
+    # ------------------------------------------------------
+    # Create all DIRAC objects:
+
+    # First create a job
+    job = createCMSJob(wmJob)
+    jobXml = xmltodict.parse(job.workflow.toXML())
+    jobJDL=pformat(job._toJDL())
+
+    # Second create a vanila transformation
+    transformation = Transformation()
+
+    # Try to create an instance of the minimal CMSTransformationPlugin
+    cmsTransPlugin = CMSTransformationPlugin('ByLumi')
 
     """Executes everything"""
     main()
