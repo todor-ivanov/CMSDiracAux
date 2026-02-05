@@ -1,1 +1,23 @@
-" \n    Arguments = \"jobDescription.xml -o LogLevel=INFO\";\n    Executable = \"dirac-jobexec\";\n    InputSandbox = \n        {\n            /bin/git,\n            jobDescription.xml\n        };\n    JobName = CMS test job;\n    JobType = User;\n    LogLevel = INFO;\n    OutputSandbox = \n        {\n            *log,\n            Script1_git.log,\n            Script2_CodeOutput.log,\n            Script3_CodeOutput.log,\n            std.err,\n            std.out\n        };\n    Priority = 1;\n    StdError = std.err;\n    StdOutput = std.out;"
+ 
+    Arguments = "jobDescription.xml -o LogLevel=INFO";
+    Executable = "dirac-jobexec";
+    InputSandbox = 
+        {
+            /bin/git,
+            jobDescription.xml
+        };
+    JobName = CMS test job;
+    JobType = User;
+    LogLevel = INFO;
+    OutputSandbox = 
+        {
+            *log,
+            Script1_git.log,
+            Script2_CodeOutput.log,
+            Script3_CodeOutput.log,
+            std.err,
+            std.out
+        };
+    Priority = 1;
+    StdError = std.err;
+    StdOutput = std.out;

@@ -137,7 +137,7 @@ if __name__ == '__main__':
         json.dump(job.workflow.toXML(), fd, indent=4)
 
     with open(f'test/job_{opts.wmJobIndex}.jdl', 'w') as fd:
-        json.dump(job._toJDL(), fd, indent=4)
+        fd.write(job._toJDL())
 
     # Second create a vanila transformation
     transformation = Transformation()
