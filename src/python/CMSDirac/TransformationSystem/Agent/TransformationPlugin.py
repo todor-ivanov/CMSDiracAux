@@ -4,7 +4,7 @@ from DIRAC.TransformationSystem.Client.TransformationClient import Transformatio
 from DIRAC.TransformationSystem.Agent.TransformationPlugin import TransformationPlugin as DIRACTransformationPlugin
 
 
-class CMSTransformationPlugin(DIRACTransformationPlugin):
+class TransformationPlugin(DIRACTransformationPlugin):
     """
     A minimal CMS Transformation extension
     """

@@ -23,12 +23,14 @@ from DIRAC.ProductionSystem.Client.ProductionStep import ProductionStep
 from DIRAC.Interfaces.API.Job import Job
 from DIRAC.Core.Workflow.Parameter import Parameter
 from DIRAC.Resources.Catalog.FileCatalog import FileCatalog
-from DIRAC.TransformationSystem.Client.Transformation import Transformation
-from DIRAC.TransformationSystem.Client.TransformationClient import TransformationClient
+from DIRAC.TransformationSystem.Client.Transformation import Transformation as DIRACTransformation
+from DIRAC.TransformationSystem.Client.TransformationClient import TransformationClient as DIRACTransformationClient
 from DIRAC.TransformationSystem.Agent.TransformationPlugin import TransformationPlugin as DIRACTransformationPlugin
 
 # from CMSDirac
-from CMSDirac.CMSTransformationPlugin import CMSTransformationPlugin
+from CMSDirac.TransformationSystem.Agent.TransformationPlugin import TransformationPlugin as CMSTransformationPlugin
+from CMSDirac.TransformationSystem.Client.Transformation import Transformation
+from CMSDirac.TransformationSystem.Client.TransformationClient import TransformationClient
 
 parseWmTaskPath = lambda p: [x for x in p.split('/') if x.strip() != '']
 
@@ -127,6 +129,15 @@ if __name__ == '__main__':
     job = createCMSJob(wmJob)
     jobXml = xmltodict.parse(job.workflow.toXML())
     jobJDL=pformat(job._toJDL())
+
+    with open(f'test/job_{opts.wmJobIndex}.xml.json', 'w') as fd:
+        json.dump(jobXml, fd, indent=4)
+
+    with open(f'test/job_{opts.wmJobIndex}.xml', 'w') as fd:
+        json.dump(job.workflow.toXML(), fd, indent=4)
+
+    with open(f'test/job_{opts.wmJobIndex}.jdl', 'w') as fd:
+        json.dump(job._toJDL(), fd, indent=4)
 
     # Second create a vanila transformation
     transformation = Transformation()
