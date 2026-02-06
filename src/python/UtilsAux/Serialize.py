@@ -70,6 +70,6 @@ def _isSerializable(obj):
     """
     try:
         json.dumps(obj)
-         return True
+        return True
     except TypeError:
         return False
