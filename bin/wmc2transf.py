@@ -43,7 +43,12 @@ class OptionParser():
         Examples:
 
         * interactive mode:
-        ipython -i ....
+
+        ipython -i bin/wmc2transf.py -- \
+             -j test/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMSandbox/JobPackage.pcl  \
+             -w test/CMSWorkflows.d/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/run_job_219128/job/WMSandbox/WMWorkload.pkl  \
+             -i 219128 \
+             -o test/
         """
 
         helpStr = """
@@ -182,7 +187,22 @@ if __name__ == '__main__':
         fd.write(job._toJDL())
 
     # Second create a vanila transformation
-    transformation = Transformation()
+    trans = Transformation()
+
+    trans = Transformation()
+
+    trans.setTransformationName = "CMS Test transformation"
+    trans.setTransformationGroup("Test")
+    trans.setTransformationFamily("Test")
+    trans.setType("Production")
+    trans.setDescription("A simple test transformation out of the simplest CMS test job" )
+    trans.setPlugin("ByLumi")
+    trans.setBody(job.workflow.toXML())
+    # transXml = xmltodict.parse(transformation.getTransformationsByUser('tivanov')['Value'][0]['Body'])
+    transXml = xmltodict.parse(trans.paramValues['Body'])
+
+    with open(f'{opts.outDir}/transformation.xml.json', 'w') as fd:
+        json.dump(transXml, fd, indent=4)
 
     # Try to create an instance of the minimal CMSTransformationPlugin
     cmsTransPlugin = CMSTransformationPlugin('ByLumi')
