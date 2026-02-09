@@ -81,7 +81,7 @@ def createCMSJob(cmsJob):
                           f"__CMSJobParameter__: {parName}")
 
     # job step1: setup CMS runtime required software
-    job.setExecutable("/bin/git", arguments="clone https://github.com/todor-ivanov/CMSDiracAux.git")
+    job.setExecutable("/bin/git", arguments="clone -b runtime https://github.com/todor-ivanov/CMSDiracAux.git")
 
     # job step2: Source the CMSDiracAux repository environments
     job.setExecutable("source ./CMSDiracAux/env.sh")

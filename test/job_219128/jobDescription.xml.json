@@ -655,7 +655,7 @@
                         "@in": "True",
                         "@out": "False",
                         "@description": "Arguments for executable Script",
-                        "value": "clone https://github.com/todor-ivanov/CMSDiracAux.git"
+                        "value": "clone -b runtime https://github.com/todor-ivanov/CMSDiracAux.git"
                     },
                     {
                         "@name": "applicationLog",
