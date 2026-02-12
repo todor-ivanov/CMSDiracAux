@@ -21,6 +21,7 @@ from DIRAC import gLogger, gConfig, S_OK, S_ERROR
 from DIRAC.ProductionSystem.Client.ProductionClient import ProductionClient
 from DIRAC.ProductionSystem.Client.ProductionStep import ProductionStep
 from DIRAC.Interfaces.API.Job import Job
+from DIRAC.Core.Workflow.Workflow import fromXMLFile
 from DIRAC.Core.Workflow.Parameter import Parameter
 from DIRAC.Resources.Catalog.FileCatalog import FileCatalog
 from DIRAC.TransformationSystem.Client.Transformation import Transformation as DIRACTransformation
@@ -74,14 +75,18 @@ def createCMSJob(cmsJob):
     # Translate all CMS job parameters into Dirac job parameters:
     # NOTE: We follow a flat dictionary approach:
     for parName, value in cmsJob.items():
+        if parName == "name":
+            continue
+        #     parName = "jobName"
         job._addParameter(job.workflow,
                           parName,
-                          "CMSJobParameter",
+                          # "CMSJobParameter",
+                          "parameter",
                           value,
                           f"__CMSJobParameter__: {parName}")
 
     # job step1: setup CMS runtime required software
-    job.setExecutable("/bin/git", arguments="clone https://github.com/todor-ivanov/CMSDiracAux.git")
+    job.setExecutable("/bin/git", arguments="clone --depth 1 -b runtime https://github.com/todor-ivanov/CMSDiracAux.git")
 
     # job step2: Source the CMSDiracAux repository environments
     job.setExecutable("source ./CMSDiracAux/env.sh")
@@ -175,8 +180,10 @@ if __name__ == '__main__':
     with open(f'{opts.outDir}/jobDescription.xml.json', 'w') as fd:
         json.dump(jobXml, fd, indent=4)
 
-    with open(f'{opts.outDir}/jobDescription.xml', 'w') as fd:
-        json.dump(job.workflow.toXML(), fd, indent=4)
+    # with open(f'{opts.outDir}/jobDescription.xml', 'w') as fd:
+    #     json.dump(job.workflow.toXML(), fd, indent=4)
+    jobDescrFile = f'{opts.outDir}/jobDescription.xml'
+    job.workflow.toXMLFile(jobDescrFile)
 
     with open(f'{opts.outDir}/job.jdl', 'w') as fd:
         fd.write(job._toJDL())
