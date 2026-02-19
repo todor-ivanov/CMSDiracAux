@@ -10,11 +10,17 @@ import os
 import sys
 import json
 import xmltodict
+import random
+import string
 from pprint import pprint, pformat
 
 # from WMCore
 from WMCore.DataStructs.JobPackage import JobPackage
 from WMCore.WMSpec.WMWorkload import WMWorkloadHelper
+from WMCore.Services.ReqMgr.ReqMgr import ReqMgr
+from WMCore.Services.WorkQueue.WorkQueue import WorkQueue
+from WMCore.Database.CMSCouch import CouchServer, CouchConflictError
+from WMCore.Lexicon import splitCouchServiceURL
 
 # from DIRAC
 from DIRAC import gLogger, gConfig, S_OK, S_ERROR
@@ -35,6 +41,8 @@ from CMSDirac.TransformationSystem.Client.Transformation import Transformation
 from CMSDirac.TransformationSystem.Client.TransformationClient import TransformationClient
 
 parseWmTaskPath = lambda p: [x for x in p.split('/') if x.strip() != '']
+
+
 
 class OptionParser():
     """Class to parse the command line arguments"""
@@ -63,8 +71,13 @@ class OptionParser():
                                  dest="wmJobIndex", default="", help="WMCore Job index (int)")
         self.parser.add_argument("-j", "--wmJobPkg", action="store",
                                  dest="wmJobPkgFile", default="", help="WMCore Job Definition (in *.pkl format)")
-        self.parser.add_argument("-w", "--wmWorkload", action="store",
+        self.exclArgs = self.parser.add_mutually_exclusive_group()
+        self.exclArgs.add_argument("-w", "--wmWorkload", action="store",
                                  dest="wmWorkloadFile", default="", help="WMCore Workload Definition (in *.pkl format)")
+        self.exclArgs.add_argument("-r", "--wmReqName", action="store",
+                                 dest="wmReqName", default="", help="WMCore Request name to fetch from WMCore Request Manager")
+        self.parser.add_argument("-m", "--wmReqMgr", action="store",
+                                 dest="wmReqMgr", default="cmsweb-testbed.cern.ch", help="WMCore Request manager instance(Default: https://cmsweb-testbed.cern.ch/reqmgr2 )")
         self.parser.add_argument("-o", "--outDir", action="store",
                                  dest="outDir", default="/tmp", help="Output directory (Default: /tmp)")
 
@@ -111,73 +124,131 @@ def createCMSJob(cmsJob):
     # return job.workflow.toXML()
     return job
 
+def randStr(size=8):
+    return ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(size))
+
 
 if __name__ == '__main__':
+    # Parse arguments:
     optmgr = OptionParser()
     opts = optmgr.parser.parse_args()
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
     logging.basicConfig()
 
+    # Load all WMCore definitions
+    wmReqMgrUrl = f"https://{opts.wmReqMgr}/reqmgr2"
+    wmCouchDb = f"https://{opts.wmReqMgr}/couchdb/reqmgr_workload_cache"
+    wmCouchUrl = splitCouchServiceURL(wmCouchDb)[0]
+    wmCouchDbName = splitCouchServiceURL(wmCouchDb)[1]
+    wmReqMgr = ReqMgr(wmReqMgrUrl)
+
+    if opts.wmReqName:
+        wmWorkload = WMWorkloadHelper()
+        wmWorkload.load(f"{wmCouchDb}/{opts.wmReqName}/spec")
+    else:
+        with open(opts.wmWorkloadFile, 'rb') as fd:
+            wmWorkloadDef = pickle.load(fd)
+            wmWorkload = WMWorkloadHelper(wmWorkloadDef)
+
+    wmWorkloadTree = wmWorkload.data.dictionary_whole_tree_()
+    wmRequest = wmReqMgr.getRequestByNames(wmWorkload.name())
+
+    # Try to load the WMCore job from an eventual JobPackage
+    wmJobPkg = JobPackage()
+    wmJob = None
+    if opts.wmJobPkgFile:
+        wmJobPkg.load(opts.wmJobPkgFile)
+        if not opts.wmJobIndex:
+            wmJobPkg.pop('directory', None)
+            if wmJobPkg:
+                opts.wmJobIndex = list(wmJobPkg.keys())[0]
+        if opts.wmJobIndex:
+            wmJob = wmJobPkg[int(opts.wmJobIndex)]
+
     # Parse the input files paths
-    opts.wmJobPkgFile = os.path.realpath(opts.wmJobPkgFile)
-    opts.wmWorkloadFile = os.path.realpath(opts.wmWorkloadFile)
+    opts.outDir = os.path.abspath(opts.outDir)
+    if opts.wmJobPkgFile:
+        wmJobPkgFilePath = os.path.realpath(opts.wmJobPkgFile)
+        wmJobPkgFileName = os.path.basename(wmJobPkgFilePath)
+        wmJobPkgFileExt = os.path.splitext(wmJobPkgFileName)[1]
+        wmJobPkgFileName = os.path.splitext(wmJobPkgFileName)[0]
+        wmJobPkgFileDir = os.path.dirname(opts.wmJobPkgFile)
+    else:
+        wmJobPkgFileName = "JobPackage"
+        wmJobPkgFileDir = opts.outDir
 
-    opts.wmJobPkgFileName = os.path.basename(opts.wmJobPkgFile)
-    opts.wmWorkloadFileName = os.path.basename(opts.wmWorkloadFile)
-
-    opts.wmJobPkgFileExt = os.path.splitext(opts.wmJobPkgFileName)[1]
-    opts.wmJobPkgFileName = os.path.splitext(opts.wmJobPkgFileName)[0]
-
-    opts.wmWorkloadFileExt = os.path.splitext(opts.wmWorkloadFileName)[1]
-    opts.wmWorkloadFileName = os.path.splitext(opts.wmWorkloadFileName)[0]
-
-    opts.wmJobPkgFileDir = os.path.dirname(opts.wmJobPkgFile)
-    opts.wmWorkloadFileDir = os.path.dirname(opts.wmWorkloadFile)
+    if opts.wmWorkloadFile:
+        wmWorkloadFilePath = os.path.realpath(opts.wmWorkloadFile)
+        wmWorkloadFileName = os.path.basename(wmWorkloadFilePath)
+        wmWorkloadFileExt = os.path.splitext(wmWorkloadFileName)[1]
+        wmWorkloadFileName = os.path.splitext(wmWorkloadFileName)[0]
+        wmWorkloadFileDir = os.path.dirname(opts.wmWorkloadFile)
+    else:
+        wmWorkloadFileName = "WMWorkload"
+        wmWorkloadFileDir = opts.outDir
 
     # Set the output dir
     if opts.outDir == "/tmp":
-        opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
-        opts.outDir = os.path.abspath(opts.outDir)
-        opts.wmJobPkgFileSerOut = f"{os.path.join(opts.wmJobPkgFileDir, opts.wmJobPkgFileName)}.json"
-        opts.wmWorkloadFileSerOut = f"{os.path.join(opts.wmWorkloadFileDir, opts.wmWorkloadFileName)}.json"
+        opts.outDir = os.path.join(opts.outDir, f"wf_{wmWorkload.name()}")
+        if opts.wmJobIndex:
+            opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
+        wmJobPkgFileSerOut = f"{os.path.join(wmJobPkgFileDir, wmJobPkgFileName)}.json"
+        wmWorkloadFileSerOut = f"{os.path.join(wmWorkloadFileDir, wmWorkloadFileName)}.json"
+        wmRequestSerOut = f"{os.path.join(wmWorkloadFileDir, 'WMRequest')}.json"
     else:
-        opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
-        opts.outDir = os.path.abspath(opts.outDir)
-        opts.wmJobPkgFileSerOut = f"{os.path.join(opts.outDir, opts.wmJobPkgFileName)}.json"
-        opts.wmWorkloadFileSerOut = f"{os.path.join(opts.outDir, opts.wmWorkloadFileName)}.json"
+        opts.outDir = os.path.join(opts.outDir, f"wf_{wmWorkload.name()}")
+        if opts.wmJobIndex:
+            opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
+        wmJobPkgFileSerOut = f"{os.path.join(opts.outDir, wmJobPkgFileName)}.json"
+        wmWorkloadFileSerOut = f"{os.path.join(opts.outDir, wmWorkloadFileName)}.json"
+        wmRequestSerOut = f"{os.path.join(opts.outDir, 'WMRequest')}.json"
 
     # Create the output dir if missing:
     if not os.path.exists(opts.outDir):
-        os.mkdir(opts.outDir)
+        os.makedirs(opts.outDir, exist_ok=True)
 
-    # Load all WMCore definitions
-    wmJobPkg = JobPackage()
-    wmJobPkg.load(opts.wmJobPkgFile)
-    wmJob = wmJobPkg[int(opts.wmJobIndex)]
-
-    with open(opts.wmWorkloadFile, 'rb') as fd:
-        wmWorkloadDef = pickle.load(fd)
-
-    wmWorkload = WMWorkloadHelper(wmWorkloadDef)
-    wmWorkloadTree = wmWorkload.data.dictionary_whole_tree_()
-
-    wmJobTask = parseWmTaskPath(wmJob['task'])[1]
-    wmTask = wmWorkload.getTask(wmJobTask)
-    # wmTask = wmWorkload.getTask('GenSimFull')
+    if wmJob:
+        wmJobTask = parseWmTaskPath(wmJob['task'])[1]
+        wmTask = wmWorkload.getTask(wmJobTask)
+    else:
+        wmTask = wmWorkload.getTask('GenSimFull')
     wmTaskDict = wmTask.data.dictionary_whole_tree_()
 
-    # Serialize and write them to the output dir:
-    with open(opts.wmWorkloadFileSerOut, "w") as fd:
-        json.dump(serializeObj_(wmWorkloadDef.dictionary_whole_tree_()), fd, indent=4)
+    # Serialize and write WMCore objects to the output dir:
+    with open(wmWorkloadFileSerOut, "w") as fd:
+        # json.dump(serializeObj_(wmWorkloadDef.dictionary_whole_tree_()), fd, indent=4)
+        json.dump(serializeObj_(wmWorkload.data.dictionary_whole_tree_()), fd, indent=4)
 
-    with open(opts.wmJobPkgFileSerOut, "w") as fd:
+    with open(wmRequestSerOut, "w") as fd:
+        json.dump(serializeObj_(wmRequest), fd, indent=4)
+
+    with open(wmJobPkgFileSerOut, "w") as fd:
         json.dump(serializeObj_(wmJobPkg), fd, indent=4)
+
+    # walk all tasks' job splitting configurations:
+    for taskPath in wmWorkload.listAllTaskPathNames():
+        taskSplitting = wmWorkload.listJobSplittingParametersByTask()[taskPath]
+
+    # walk all tasks
+    for taskPath in wmWorkload.listAllTaskPathNames():
+        task = wmWorkload.getTaskByPath(taskPath)
+        cmsRunStepsNames = task.listAllStepNames(cmsRunOnly=True)
+        print(f"Task Name: {task.name()}")
+        print(f"Task Path: {taskPath}")
+        print(f"Task steps: {task.listAllStepNames(cmsRunOnly=False)}")
+        print(f"cmsRun steps: {task.listAllStepNames(cmsRunOnly=True)}")
+        for stepName in task.listAllStepNames(cmsRunOnly=False):
+            step = task.getStepHelper(stepName)
+            print(f"step Name: {step.name()}")
+            print(f"step Config: {step.getConfigCacheID()}")
+
 
     # ------------------------------------------------------
     # Create all DIRAC objects:
 
     # First create a job
+    # NOTE: If --wmJobPkg is not provided as an argument the script will break here
     job = createCMSJob(wmJob)
     jobXml = xmltodict.parse(job.workflow.toXML())
     jobJDL=pformat(job._toJDL())
