@@ -1,26 +1,143 @@
 {
+    "emulator": {},
+    "debug": {
+        "verbosity": 0,
+        "keepLogs": false
+    },
+    "output": {
+        "modules": {
+            "FEVTDEBUGoutput": {
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "rawSkim": null,
+                "filterName": "",
+                "dataTier": "GEN-SIM",
+                "transient": true,
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1"
+            }
+        },
+        "stderr": "cmsRun1-stderr.log",
+        "stdout": "cmsRun1-stdout.log",
+        "jobReport": "FrameworkJobReport.xml",
+        "analysisFiles": {},
+        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "keep": true
+    },
     "monitoring": {},
+    "environment": {
+        "variables": {},
+        "paths": {}
+    },
+    "errorDestinationStep": "logArch1",
+    "stepPhysicsType": "GEN,SIM",
+    "override": {},
+    "application": {
+        "controls": {},
+        "gpu": {
+            "gpuRequirements": null,
+            "gpuRequired": "forbidden"
+        },
+        "command": {
+            "arguments": "",
+            "configurationPickle": "PSet.pkl",
+            "executable": "cmsRun",
+            "psetTweak": null,
+            "configurationHash": null,
+            "configuration": "PSet.py"
+        },
+        "setup": {
+            "softwareEnvironment": "",
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
+            "scramProject": "CMSSW",
+            "scramCommand": "scramv1",
+            "scramArch": [
+                "el8_amd64_gcc13"
+            ],
+            "buildArch": null
+        },
+        "multicore": {
+            "numberOfCores": 8,
+            "eventStreams": 1
+        },
+        "configuration": {
+            "cacheName": "reqmgr_config_cache",
+            "configId": "145b5022e36a88759d2e1096624248a2",
+            "arguments": {
+                "globalTag": "151X_mcRun3_2025_realistic_v4"
+            },
+            "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2/configFile",
+            "configCacheUrl": "https://cmsweb.cern.ch/couchdb",
+            "eventsPerLumi": 100,
+            "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV151X_mcRun3_2025_realistic_v4\\np2\\ns.'",
+            "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2"
+        }
+    },
     "build": {
         "directories": {
             "cmsRun1": {}
         }
     },
     "tree": {
+        "parent": null,
+        "childNames": [
+            "stageOut1",
+            "logArch1"
+        ],
         "children": {
-            "logArch1": {
-                "logcount": 0,
+            "stageOut1": {
+                "retryDelay": 300,
+                "sandbox": {},
+                "override": {},
+                "asyncDest": null,
+                "filecount": 0,
                 "retryCount": 3,
+                "files": {},
+                "stepType": "StageOut",
+                "newStageout": false,
+                "output": {
+                    "minMergeSize": 2147483648,
+                    "maxMergeEvents": 20000000
+                },
                 "build": {
                     "directories": {
-                        "logArch1": {}
+                        "stageOut1": {}
                     }
                 },
                 "tree": {
-                    "children": {},
+                    "parent": "cmsRun1",
                     "childNames": [],
-                    "parent": "cmsRun1"
+                    "children": {}
+                },
+                "userDN": null,
+                "owner_vogroup": "DEFAULT",
+                "emulator": {},
+                "environment": {
+                    "variables": {},
+                    "paths": {}
+                },
+                "application": {
+                    "controls": {},
+                    "configuration": {}
+                },
+                "owner_vorole": "DEFAULT",
+                "objectType": "WMStep",
+                "input": {
+                    "links": {}
+                }
+            },
+            "logArch1": {
+                "emulator": {},
+                "logcount": 0,
+                "retryCount": 3,
+                "retryDelay": 300,
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
                 },
                 "objectType": "WMStep",
+                "logs": {},
                 "environment": {
                     "variables": {},
                     "paths": {}
@@ -28,163 +145,46 @@
                 "override": {
                     "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
                 },
-                "output": {
-                    "modules": {
-                        "logArchive": {}
-                    }
-                },
-                "newStageout": false,
-                "input": {
-                    "links": {}
-                },
-                "sandbox": {},
-                "logs": {},
-                "retryDelay": 300,
                 "application": {
-                    "configuration": {},
-                    "controls": {}
+                    "controls": {},
+                    "configuration": {}
                 },
-                "emulator": {},
-                "stepType": "LogArchive"
-            },
-            "stageOut1": {
-                "files": {},
-                "retryCount": 3,
-                "environment": {
-                    "variables": {},
-                    "paths": {}
-                },
-                "output": {
-                    "maxMergeEvents": 20000000,
-                    "minMergeSize": 2147483648
-                },
-                "input": {
-                    "links": {}
-                },
-                "newStageout": false,
                 "build": {
                     "directories": {
-                        "stageOut1": {}
+                        "logArch1": {}
                     }
                 },
                 "tree": {
-                    "children": {},
+                    "parent": "cmsRun1",
                     "childNames": [],
-                    "parent": "cmsRun1"
+                    "children": {}
                 },
-                "override": {},
-                "asyncDest": null,
-                "owner_vorole": "DEFAULT",
+                "newStageout": false,
                 "sandbox": {},
-                "application": {
-                    "configuration": {},
-                    "controls": {}
+                "input": {
+                    "links": {}
                 },
-                "owner_vogroup": "DEFAULT",
-                "stepType": "StageOut",
-                "userDN": null,
-                "objectType": "WMStep",
-                "retryDelay": 300,
-                "filecount": 0,
-                "emulator": {}
-            }
-        },
-        "childNames": [
-            "stageOut1",
-            "logArch1"
-        ],
-        "parent": null
-    },
-    "debug": {
-        "keepLogs": false,
-        "verbosity": 0
-    },
-    "objectType": "WMStep",
-    "environment": {
-        "variables": {},
-        "paths": {}
-    },
-    "override": {},
-    "errorDestinationStep": "logArch1",
-    "output": {
-        "jobReport": "FrameworkJobReport.xml",
-        "stderr": "cmsRun1-stderr.log",
-        "stdout": "cmsRun1-stdout.log",
-        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
-        "keep": true,
-        "analysisFiles": {},
-        "modules": {
-            "FEVTDEBUGoutput": {
-                "dataTier": "GEN-SIM",
-                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "transient": true,
-                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
-                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "filterName": "",
-                "rawSkim": null
+                "stepType": "LogArchive"
             }
         }
     },
-    "input": {
-        "links": {}
-    },
-    "runtime": {
-        "postScramScripts": [],
-        "scramPreScripts": [],
-        "postScripts": [],
-        "preScripts": []
-    },
+    "objectType": "WMStep",
     "sandbox": {},
     "user": {
         "outputFiles": [],
         "script": null,
         "inputSandboxes": [],
-        "lfnBase": null,
-        "userFiles": []
+        "userFiles": [],
+        "lfnBase": null
     },
-    "application": {
-        "command": {
-            "executable": "cmsRun",
-            "configurationPickle": "PSet.pkl",
-            "psetTweak": null,
-            "configurationHash": null,
-            "configuration": "PSet.py",
-            "arguments": ""
-        },
-        "multicore": {
-            "numberOfCores": 8,
-            "eventStreams": 1
-        },
-        "controls": {},
-        "setup": {
-            "buildArch": null,
-            "cmsswVersion": "CMSSW_16_0_0_pre2",
-            "scramArch": [
-                "el8_amd64_gcc13"
-            ],
-            "scramCommand": "scramv1",
-            "softwareEnvironment": "",
-            "scramProject": "CMSSW"
-        },
-        "configuration": {
-            "configId": "145b5022e36a88759d2e1096624248a2",
-            "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV151X_mcRun3_2025_realistic_v4\\np2\\ns.'",
-            "cacheName": "reqmgr_config_cache",
-            "eventsPerLumi": 100,
-            "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2/configFile",
-            "arguments": {
-                "globalTag": "151X_mcRun3_2025_realistic_v4"
-            },
-            "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2",
-            "configCacheUrl": "https://cmsweb.cern.ch/couchdb"
-        },
-        "gpu": {
-            "gpuRequirements": null,
-            "gpuRequired": "forbidden"
-        }
+    "runtime": {
+        "scramPreScripts": [],
+        "postScripts": [],
+        "postScramScripts": [],
+        "preScripts": []
     },
-    "stepPhysicsType": "GEN,SIM",
-    "emulator": {},
+    "input": {
+        "links": {}
+    },
     "stepType": "CMSSW"
 }
