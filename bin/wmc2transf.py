@@ -260,7 +260,7 @@ if __name__ == '__main__':
     wmStepTree = wmTaskSteps['cmsRun1'].data.dictionary_whole_tree_()
 
     with open(f"{os.path.join(opts.outDir, 'WMTask')}.json", 'w') as fd:
-        json.dump(serializeObj_(wmTask), fd, indent=4)
+        json.dump(serializeObj_(wmTaskTree), fd, indent=4)
 
     with open(f"{os.path.join(opts.outDir, 'WMStep')}.json", 'w') as fd:
         json.dump(serializeObj_(wmStepTree), fd, indent=4)
