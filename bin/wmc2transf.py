@@ -43,7 +43,6 @@ from CMSDirac.TransformationSystem.Client.TransformationClient import Transforma
 parseWmTaskPath = lambda p: [x for x in p.split('/') if x.strip() != '']
 
 
-
 class OptionParser():
     """Class to parse the command line arguments"""
     def __init__(self):
@@ -212,8 +211,8 @@ if __name__ == '__main__':
         wmJobTask = parseWmTaskPath(wmJob['task'])[1]
         wmTask = wmWorkload.getTask(wmJobTask)
     else:
-        wmTask = wmWorkload.getTask('GenSimFull')
-    wmTaskDict = wmTask.data.dictionary_whole_tree_()
+        wmTask = wmWorkload.getTopLevelTask()[0]
+    wmTaskTree = wmTask.data.dictionary_whole_tree_()
 
     # Serialize and write WMCore objects to the output dir:
     with open(wmWorkloadFileSerOut, "w") as fd:
@@ -227,13 +226,17 @@ if __name__ == '__main__':
         json.dump(serializeObj_(wmJobPkg), fd, indent=4)
 
     # walk all tasks' job splitting configurations:
-    for taskPath in wmWorkload.listAllTaskPathNames():
-        taskSplitting = wmWorkload.listJobSplittingParametersByTask()[taskPath]
+    # for taskPath in wmWorkload.listAllTaskPathNames():
+    #     taskSplitting = wmWorkload.listJobSplittingParametersByTask()[taskPath]
+    wmSplittingTree = wmWorkload.listJobSplittingParametersByTask()
 
     # walk all tasks
+    cmsRunTaskCounter = 0
     for taskPath in wmWorkload.listAllTaskPathNames():
         task = wmWorkload.getTaskByPath(taskPath)
         cmsRunStepsNames = task.listAllStepNames(cmsRunOnly=True)
+        if cmsRunStepsNames:
+            cmsRunTaskCounter += 1
         print(f"Task Name: {task.name()}")
         print(f"Task Path: {taskPath}")
         print(f"Task steps: {task.listAllStepNames(cmsRunOnly=False)}")
@@ -243,6 +246,33 @@ if __name__ == '__main__':
             print(f"step Name: {step.name()}")
             print(f"step Config: {step.getConfigCacheID()}")
 
+    cmsRunTasks = {}
+    cmsRunTasksTree = {}
+    for taskPath in wmWorkload.listAllTaskPathNames():
+        task = wmWorkload.getTaskByPath(taskPath)
+        if task.listAllStepNames(cmsRunOnly=True):
+            cmsRunTasksTree[task.name()] = task.data.dictionary_whole_tree_()
+            cmsRunTasks[task.name()] = task
+            # for stepName in task.listAllStepNames(cmsRunOnly=False):
+            #     step = task.getStepHelper(stepName)
+
+    # Get all steps from the toplevel task
+    wmTaskSteps = {}
+    for stepName in wmTask.listAllStepNames(cmsRunOnly=False):
+        step = wmTask.getStepHelper(stepName)
+        wmTaskSteps[stepName] = step
+
+    wmStepTree = wmTaskSteps['cmsRun1'].data.dictionary_whole_tree_()
+
+    with open(f"{os.path.join(opts.outDir, 'WMTask')}.json", 'w') as fd:
+        json.dump(serializeObj_(wmTask), fd, indent=4)
+
+    with open(f"{os.path.join(opts.outDir, 'WMStep')}.json", 'w') as fd:
+        json.dump(serializeObj_(wmStepTree), fd, indent=4)
+
+    # with open(f"{os.path.join(opts.outDir, 'WMJob_%s' % opts.wmJobIndex)}.json", 'w') as fd:
+    with open(f"{os.path.join(opts.outDir, 'WMJob')}.json", 'w') as fd:
+        json.dump(serializeObj_(wmJob), fd, indent=4)
 
     # ------------------------------------------------------
     # Create all DIRAC objects:
