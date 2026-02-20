@@ -1,0 +1,190 @@
+{
+    "monitoring": {},
+    "build": {
+        "directories": {
+            "cmsRun1": {}
+        }
+    },
+    "tree": {
+        "children": {
+            "logArch1": {
+                "logcount": 0,
+                "retryCount": 3,
+                "build": {
+                    "directories": {
+                        "logArch1": {}
+                    }
+                },
+                "tree": {
+                    "children": {},
+                    "childNames": [],
+                    "parent": "cmsRun1"
+                },
+                "objectType": "WMStep",
+                "environment": {
+                    "variables": {},
+                    "paths": {}
+                },
+                "override": {
+                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                },
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
+                },
+                "newStageout": false,
+                "input": {
+                    "links": {}
+                },
+                "sandbox": {},
+                "logs": {},
+                "retryDelay": 300,
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "emulator": {},
+                "stepType": "LogArchive"
+            },
+            "stageOut1": {
+                "files": {},
+                "retryCount": 3,
+                "environment": {
+                    "variables": {},
+                    "paths": {}
+                },
+                "output": {
+                    "maxMergeEvents": 20000000,
+                    "minMergeSize": 2147483648
+                },
+                "input": {
+                    "links": {}
+                },
+                "newStageout": false,
+                "build": {
+                    "directories": {
+                        "stageOut1": {}
+                    }
+                },
+                "tree": {
+                    "children": {},
+                    "childNames": [],
+                    "parent": "cmsRun1"
+                },
+                "override": {},
+                "asyncDest": null,
+                "owner_vorole": "DEFAULT",
+                "sandbox": {},
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "owner_vogroup": "DEFAULT",
+                "stepType": "StageOut",
+                "userDN": null,
+                "objectType": "WMStep",
+                "retryDelay": 300,
+                "filecount": 0,
+                "emulator": {}
+            }
+        },
+        "childNames": [
+            "stageOut1",
+            "logArch1"
+        ],
+        "parent": null
+    },
+    "debug": {
+        "keepLogs": false,
+        "verbosity": 0
+    },
+    "objectType": "WMStep",
+    "environment": {
+        "variables": {},
+        "paths": {}
+    },
+    "override": {},
+    "errorDestinationStep": "logArch1",
+    "output": {
+        "jobReport": "FrameworkJobReport.xml",
+        "stderr": "cmsRun1-stderr.log",
+        "stdout": "cmsRun1-stdout.log",
+        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "keep": true,
+        "analysisFiles": {},
+        "modules": {
+            "FEVTDEBUGoutput": {
+                "dataTier": "GEN-SIM",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "transient": true,
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "filterName": "",
+                "rawSkim": null
+            }
+        }
+    },
+    "input": {
+        "links": {}
+    },
+    "runtime": {
+        "postScramScripts": [],
+        "scramPreScripts": [],
+        "postScripts": [],
+        "preScripts": []
+    },
+    "sandbox": {},
+    "user": {
+        "outputFiles": [],
+        "script": null,
+        "inputSandboxes": [],
+        "lfnBase": null,
+        "userFiles": []
+    },
+    "application": {
+        "command": {
+            "executable": "cmsRun",
+            "configurationPickle": "PSet.pkl",
+            "psetTweak": null,
+            "configurationHash": null,
+            "configuration": "PSet.py",
+            "arguments": ""
+        },
+        "multicore": {
+            "numberOfCores": 8,
+            "eventStreams": 1
+        },
+        "controls": {},
+        "setup": {
+            "buildArch": null,
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
+            "scramArch": [
+                "el8_amd64_gcc13"
+            ],
+            "scramCommand": "scramv1",
+            "softwareEnvironment": "",
+            "scramProject": "CMSSW"
+        },
+        "configuration": {
+            "configId": "145b5022e36a88759d2e1096624248a2",
+            "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV151X_mcRun3_2025_realistic_v4\\np2\\ns.'",
+            "cacheName": "reqmgr_config_cache",
+            "eventsPerLumi": 100,
+            "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2/configFile",
+            "arguments": {
+                "globalTag": "151X_mcRun3_2025_realistic_v4"
+            },
+            "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2",
+            "configCacheUrl": "https://cmsweb.cern.ch/couchdb"
+        },
+        "gpu": {
+            "gpuRequirements": null,
+            "gpuRequired": "forbidden"
+        }
+    },
+    "stepPhysicsType": "GEN,SIM",
+    "emulator": {},
+    "stepType": "CMSSW"
+}

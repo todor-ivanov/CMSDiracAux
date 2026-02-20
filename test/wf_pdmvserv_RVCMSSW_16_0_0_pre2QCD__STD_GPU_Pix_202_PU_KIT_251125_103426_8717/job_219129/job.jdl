@@ -1,0 +1,23 @@
+ 
+    Arguments = "jobDescription.xml -o LogLevel=INFO";
+    Executable = "dirac-jobexec";
+    InputSandbox = 
+        {
+            /bin/git,
+            jobDescription.xml
+        };
+    JobName = CMS test job;
+    JobType = User;
+    LogLevel = INFO;
+    OutputSandbox = 
+        {
+            *log,
+            Script1_git.log,
+            Script2_CodeOutput.log,
+            Script3_CodeOutput.log,
+            std.err,
+            std.out
+        };
+    Priority = 1;
+    StdError = std.err;
+    StdOutput = std.out;

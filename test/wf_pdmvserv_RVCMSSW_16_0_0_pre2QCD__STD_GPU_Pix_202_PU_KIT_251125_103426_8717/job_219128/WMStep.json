@@ -1,0 +1,190 @@
+{
+    "runtime": {
+        "preScripts": [],
+        "scramPreScripts": [],
+        "postScramScripts": [],
+        "postScripts": []
+    },
+    "build": {
+        "directories": {
+            "cmsRun1": {}
+        }
+    },
+    "user": {
+        "outputFiles": [],
+        "lfnBase": null,
+        "script": null,
+        "userFiles": [],
+        "inputSandboxes": []
+    },
+    "debug": {
+        "keepLogs": false,
+        "verbosity": 0
+    },
+    "stepPhysicsType": "GEN,SIM",
+    "input": {
+        "links": {}
+    },
+    "override": {},
+    "output": {
+        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "analysisFiles": {},
+        "jobReport": "FrameworkJobReport.xml",
+        "stdout": "cmsRun1-stdout.log",
+        "keep": true,
+        "modules": {
+            "FEVTDEBUGoutput": {
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "dataTier": "GEN-SIM",
+                "transient": true,
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "filterName": "",
+                "rawSkim": null
+            }
+        },
+        "stderr": "cmsRun1-stderr.log"
+    },
+    "tree": {
+        "children": {
+            "logArch1": {
+                "build": {
+                    "directories": {
+                        "logArch1": {}
+                    }
+                },
+                "retryDelay": 300,
+                "input": {
+                    "links": {}
+                },
+                "override": {
+                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                },
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
+                },
+                "tree": {
+                    "children": {},
+                    "childNames": [],
+                    "parent": "cmsRun1"
+                },
+                "newStageout": false,
+                "logcount": 0,
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "objectType": "WMStep",
+                "stepType": "LogArchive",
+                "retryCount": 3,
+                "logs": {},
+                "emulator": {},
+                "sandbox": {},
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                }
+            },
+            "stageOut1": {
+                "build": {
+                    "directories": {
+                        "stageOut1": {}
+                    }
+                },
+                "filecount": 0,
+                "override": {},
+                "asyncDest": null,
+                "output": {
+                    "maxMergeEvents": 20000000,
+                    "minMergeSize": 2147483648
+                },
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "objectType": "WMStep",
+                "stepType": "StageOut",
+                "retryCount": 3,
+                "owner_vorole": "DEFAULT",
+                "owner_vogroup": "DEFAULT",
+                "files": {},
+                "emulator": {},
+                "sandbox": {},
+                "input": {
+                    "links": {}
+                },
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "retryDelay": 300,
+                "userDN": null,
+                "tree": {
+                    "children": {},
+                    "childNames": [],
+                    "parent": "cmsRun1"
+                },
+                "newStageout": false
+            }
+        },
+        "childNames": [
+            "stageOut1",
+            "logArch1"
+        ],
+        "parent": null
+    },
+    "monitoring": {},
+    "environment": {
+        "paths": {},
+        "variables": {}
+    },
+    "objectType": "WMStep",
+    "stepType": "CMSSW",
+    "errorDestinationStep": "logArch1",
+    "emulator": {},
+    "sandbox": {},
+    "application": {
+        "setup": {
+            "scramProject": "CMSSW",
+            "buildArch": null,
+            "softwareEnvironment": "",
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
+            "scramArch": [
+                "el8_amd64_gcc13"
+            ],
+            "scramCommand": "scramv1"
+        },
+        "controls": {},
+        "gpu": {
+            "gpuRequired": "forbidden",
+            "gpuRequirements": null
+        },
+        "multicore": {
+            "numberOfCores": 8,
+            "eventStreams": 1
+        },
+        "command": {
+            "configurationPickle": "PSet.pkl",
+            "configurationHash": null,
+            "arguments": "",
+            "executable": "cmsRun",
+            "configuration": "PSet.py",
+            "psetTweak": null
+        },
+        "configuration": {
+            "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2/configFile",
+            "cacheName": "reqmgr_config_cache",
+            "configId": "145b5022e36a88759d2e1096624248a2",
+            "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2",
+            "arguments": {
+                "globalTag": "151X_mcRun3_2025_realistic_v4"
+            },
+            "eventsPerLumi": 100,
+            "configCacheUrl": "https://cmsweb.cern.ch/couchdb",
+            "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV151X_mcRun3_2025_realistic_v4\\np2\\ns.'"
+        }
+    }
+}

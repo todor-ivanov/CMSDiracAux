@@ -1,0 +1,137 @@
+<Workflow>
+<descr_short></descr_short>
+<description><![CDATA[]]></description>
+<name>CMS test job</name>
+<origin></origin>
+<type></type>
+<version>0.0</version>
+<Parameter name="JobType" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Job Type"><value><![CDATA[User]]></value></Parameter>
+<Parameter name="Priority" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="User Job Priority"><value><![CDATA[1]]></value></Parameter>
+<Parameter name="JobGroup" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Name of the JobGroup"><value><![CDATA[]]></value></Parameter>
+<Parameter name="JobName" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="User specified name"><value><![CDATA[CMS test job]]></value></Parameter>
+<Parameter name="StdOutput" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Standard output file"><value><![CDATA[std.out]]></value></Parameter>
+<Parameter name="StdError" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Standard error file"><value><![CDATA[std.err]]></value></Parameter>
+<Parameter name="InputData" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Default null input data value"><value><![CDATA[]]></value></Parameter>
+<Parameter name="LogLevel" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Job Logging Level"><value><![CDATA[INFO]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments to executable Step"><value><![CDATA[]]></value></Parameter>
+<Parameter name="ParametricInputData" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Default null parametric input data value"><value><![CDATA[]]></value></Parameter>
+<Parameter name="ParametricInputSandbox" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Default null parametric input sandbox value"><value><![CDATA[]]></value></Parameter>
+<Parameter name="OutputSandbox" type="JDL" linked_module="" linked_parameter="" in="True" out="False" description="Output sandbox file list"><value><![CDATA[*log]]></value></Parameter>
+<Parameter name="input_files" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: input_files"><value><![CDATA[[{'lfn': 'MCFakeFile-pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-GenSimFull-211d108fb13f4e0d53bae03a9beba455', 'size': 0, 'events': 100000, 'checksums': {}, 'runs': set(), 'merged': True, 'last_event': 0, 'first_event': 0, 'locations': set(), 'parents': set()}]]]></value></Parameter>
+<Parameter name="id" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: id"><value><![CDATA[219129]]></value></Parameter>
+<Parameter name="jobgroup" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: jobgroup"><value><![CDATA[42922]]></value></Parameter>
+<Parameter name="state" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: state"><value><![CDATA[new]]></value></Parameter>
+<Parameter name="state_time" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: state_time"><value><![CDATA[1764072663]]></value></Parameter>
+<Parameter name="outcome" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: outcome"><value><![CDATA[failure]]></value></Parameter>
+<Parameter name="retry_count" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: retry_count"><value><![CDATA[0]]></value></Parameter>
+<Parameter name="location" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: location"><value><![CDATA[]]></value></Parameter>
+<Parameter name="mask" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: mask"><value><![CDATA[{'inclusivemask': True, 'FirstEvent': 100101, 'LastEvent': 100200, 'FirstLumi': 1002, 'LastLumi': 1002, 'FirstRun': 1, 'LastRun': 1, 'runAndLumis': {}, 'jobID': 219129}]]></value></Parameter>
+<Parameter name="task" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: task"><value><![CDATA[/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull]]></value></Parameter>
+<Parameter name="fwjr" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: fwjr"><value><![CDATA[]]></value></Parameter>
+<Parameter name="fwjr_path" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: fwjr_path"><value><![CDATA[]]></value></Parameter>
+<Parameter name="workflow" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: workflow"><value><![CDATA[pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717]]></value></Parameter>
+<Parameter name="owner" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: owner"><value><![CDATA[pdmvserv]]></value></Parameter>
+<Parameter name="estimatedJobTime" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: estimatedJobTime"><value><![CDATA[3600]]></value></Parameter>
+<Parameter name="estimatedMemoryUsage" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: estimatedMemoryUsage"><value><![CDATA[20000.0]]></value></Parameter>
+<Parameter name="estimatedDiskUsage" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: estimatedDiskUsage"><value><![CDATA[1000000]]></value></Parameter>
+<Parameter name="cache_dir" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: cache_dir"><value><![CDATA[/data/srv/wmagent/current/install/JobCreator/JobCache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/JobCollection_42922_0/job_219129]]></value></Parameter>
+<Parameter name="sandbox" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: sandbox"><value><![CDATA[/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717-Sandbox.tar.bz2]]></value></Parameter>
+<Parameter name="jobType" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: jobType"><value><![CDATA[Production]]></value></Parameter>
+<Parameter name="taskType" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: taskType"><value><![CDATA[relval]]></value></Parameter>
+<Parameter name="counter" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: counter"><value><![CDATA[2]]></value></Parameter>
+<Parameter name="spec" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: spec"><value><![CDATA[/data/srv/wmagent/current/install/WorkQueueManager/cache/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/WMSandbox/WMWorkload.pkl]]></value></Parameter>
+<Parameter name="agentNumber" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: agentNumber"><value><![CDATA[258]]></value></Parameter>
+<Parameter name="agentName" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: agentName"><value><![CDATA[vocms0258.cern.ch]]></value></Parameter>
+<Parameter name="ownerDN" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: ownerDN"><value><![CDATA[/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service]]></value></Parameter>
+<Parameter name="ownerGroup" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: ownerGroup"><value><![CDATA[unknown]]></value></Parameter>
+<Parameter name="ownerRole" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: ownerRole"><value><![CDATA[unknown]]></value></Parameter>
+<Parameter name="numberOfCores" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: numberOfCores"><value><![CDATA[8]]></value></Parameter>
+<Parameter name="allowOpportunistic" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: allowOpportunistic"><value><![CDATA[False]]></value></Parameter>
+<Parameter name="requiresGPU" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: requiresGPU"><value><![CDATA[forbidden]]></value></Parameter>
+<Parameter name="jobExtraMatchRequirements" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: jobExtraMatchRequirements"><value><![CDATA[]]></value></Parameter>
+<Parameter name="requestType" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: requestType"><value><![CDATA[TaskChain]]></value></Parameter>
+<Parameter name="physicsTaskType" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: physicsTaskType"><value><![CDATA[GEN,SIM]]></value></Parameter>
+<Parameter name="campaignName" type="parameter" linked_module="" linked_parameter="" in="True" out="False" description="__CMSJobParameter__: campaignName"><value><![CDATA[CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651]]></value></Parameter>
+<ModuleDefinition>
+<body><![CDATA[
+from DIRAC.Workflow.Modules.Script import Script
+]]></body>
+<descr_short></descr_short>
+<description><![CDATA[ The Script class provides a simple way for users to specify an executable
+    or file to run (and is also a simple example of a workflow module).
+]]></description>
+<origin></origin>
+<required></required>
+<type>Script</type>
+<version>0.0</version>
+</ModuleDefinition>
+<StepDefinition>
+<descr_short></descr_short>
+<description><![CDATA[]]></description>
+<origin></origin>
+<type>ScriptStep1</type>
+<version>0.0</version>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[]]></value></Parameter>
+<ModuleInstance>
+<descr_short></descr_short>
+<name>Script</name>
+<type>Script</type>
+</ModuleInstance>
+</StepDefinition>
+<StepDefinition>
+<descr_short></descr_short>
+<description><![CDATA[]]></description>
+<origin></origin>
+<type>ScriptStep2</type>
+<version>0.0</version>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[]]></value></Parameter>
+<ModuleInstance>
+<descr_short></descr_short>
+<name>Script</name>
+<type>Script</type>
+</ModuleInstance>
+</StepDefinition>
+<StepDefinition>
+<descr_short></descr_short>
+<description><![CDATA[]]></description>
+<origin></origin>
+<type>ScriptStep3</type>
+<version>0.0</version>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[]]></value></Parameter>
+<ModuleInstance>
+<descr_short></descr_short>
+<name>Script</name>
+<type>Script</type>
+</ModuleInstance>
+</StepDefinition>
+<StepInstance>
+<descr_short></descr_short>
+<name>RunScriptStep1</name>
+<type>ScriptStep1</type>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[/bin/git]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[clone --depth 1 -b runtime https://github.com/todor-ivanov/CMSDiracAux.git]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[Script1_git.log]]></value></Parameter>
+</StepInstance>
+<StepInstance>
+<descr_short></descr_short>
+<name>RunScriptStep2</name>
+<type>ScriptStep2</type>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[source ./CMSDiracAux/env.sh]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[Script2_CodeOutput.log]]></value></Parameter>
+</StepInstance>
+<StepInstance>
+<descr_short></descr_short>
+<name>RunScriptStep3</name>
+<type>ScriptStep3</type>
+<Parameter name="executable" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Executable Script"><value><![CDATA[./CMSDiracAux/bin/Startup.py]]></value></Parameter>
+<Parameter name="arguments" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Arguments for executable Script"><value><![CDATA[]]></value></Parameter>
+<Parameter name="applicationLog" type="string" linked_module="" linked_parameter="" in="True" out="False" description="Log file name"><value><![CDATA[Script3_CodeOutput.log]]></value></Parameter>
+</StepInstance>
+</Workflow>
