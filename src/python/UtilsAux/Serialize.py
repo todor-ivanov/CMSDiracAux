@@ -6,7 +6,7 @@ import inspect
 from collections.abc import Iterable
 
 
-def serializeObj_(obj):
+def serializeObj_(obj, sort=True):
     """
     _serializeObj_
     Returns a serialized dictionary
@@ -29,12 +29,12 @@ def serializeObj_(obj):
     for membName, memb in inspect.getmembers(obj):
         outputD = dict()
         if inspect.ismethod(memb) and membName == 'dictionary_whole_tree_':
-            for key, value in serializeObj_(obj.dictionary_whole_tree_()).items():
-                outputD[key] = serializeObj_(value)
+            for key, value in serializeObj_(obj.dictionary_whole_tree_(), sort=sort).items():
+                outputD[key] = serializeObj_(value, sort=sort)
             return outputD
         elif inspect.ismethod(memb) and membName == 'dictionary_':
-            for key, value in serializeObj_(obj.dictionary_()).items():
-                outputD[key] = serializeObj_(value)
+            for key, value in serializeObj_(obj.dictionary_(), sort=sort).items():
+                outputD[key] = serializeObj_(value, sort=sort)
             return outputD
         else:
             continue
@@ -45,7 +45,9 @@ def serializeObj_(obj):
             return obj
         else:
             for value in obj:
-                outputList.append(serializeObj_(value))
+                outputList.append(serializeObj_(value, sort=sort))
+            if sort:
+                 outputList = sorted(outputList)
             return outputList
 
     elif isinstance(obj, dict):
@@ -54,7 +56,13 @@ def serializeObj_(obj):
             return obj
         else:
             for key, value in obj.items():
-                outputD[key] = serializeObj_(value)
+                outputD[key] = serializeObj_(value, sort=sort)
+            if sort:
+                try:
+                    sorted(outputD.items())
+                    outputD = dict(sorted(outputD.items()))
+                except TypeError:
+                    pass
             return outputD
 
     else:

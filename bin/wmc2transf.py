@@ -212,7 +212,7 @@ if __name__ == '__main__':
     # Serialize and write WMCore objects to the output dir:
     with open(wmWorkloadFileSerOut, "w") as fd:
         # json.dump(serializeObj_(wmWorkloadDef.dictionary_whole_tree_()), fd, indent=4)
-        json.dump(serializeObj_(wmWorkload.data.dictionary_whole_tree_()), fd, indent=4)
+        json.dump(serializeObj_(wmWorkloadTree), fd, indent=4)
 
     with open(wmRequestSerOut, "w") as fd:
         json.dump(serializeObj_(wmRequest), fd, indent=4)
