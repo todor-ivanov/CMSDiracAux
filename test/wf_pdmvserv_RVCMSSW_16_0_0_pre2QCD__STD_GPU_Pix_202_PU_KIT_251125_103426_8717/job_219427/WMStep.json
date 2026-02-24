@@ -1,12 +1,12 @@
 {
     "application": {
         "command": {
-            "executable": "cmsRun",
             "arguments": "",
-            "configurationHash": null,
             "configuration": "PSet.py",
-            "psetTweak": null,
-            "configurationPickle": "PSet.pkl"
+            "configurationHash": null,
+            "configurationPickle": "PSet.pkl",
+            "executable": "cmsRun",
+            "psetTweak": null
         },
         "configuration": {
             "arguments": {
@@ -22,22 +22,22 @@
         },
         "controls": {},
         "gpu": {
-            "gpuRequirements": null,
-            "gpuRequired": "forbidden"
+            "gpuRequired": "forbidden",
+            "gpuRequirements": null
         },
         "multicore": {
-            "numberOfCores": 8,
-            "eventStreams": 1
+            "eventStreams": 1,
+            "numberOfCores": 8
         },
         "setup": {
-            "cmsswVersion": "CMSSW_16_0_0_pre2",
-            "scramCommand": "scramv1",
             "buildArch": null,
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
             "scramArch": [
                 "el8_amd64_gcc13"
             ],
-            "softwareEnvironment": "",
-            "scramProject": "CMSSW"
+            "scramCommand": "scramv1",
+            "scramProject": "CMSSW",
+            "softwareEnvironment": ""
         }
     },
     "build": {
@@ -61,31 +61,31 @@
     "monitoring": {},
     "objectType": "WMStep",
     "output": {
-        "keep": true,
-        "stdout": "cmsRun1-stdout.log",
         "analysisFiles": {},
         "jobReport": "FrameworkJobReport.xml",
-        "stderr": "cmsRun1-stderr.log",
-        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "keep": true,
         "modules": {
             "FEVTDEBUGoutput": {
-                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
-                "filterName": "",
-                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
                 "transient": true,
+                "filterName": "",
                 "dataTier": "GEN-SIM",
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
                 "rawSkim": null
             }
-        }
+        },
+        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "stderr": "cmsRun1-stderr.log",
+        "stdout": "cmsRun1-stdout.log"
     },
     "override": {},
     "runtime": {
         "postScramScripts": [],
         "postScripts": [],
-        "scramPreScripts": [],
-        "preScripts": []
+        "preScripts": [],
+        "scramPreScripts": []
     },
     "sandbox": {},
     "stepPhysicsType": "GEN,SIM",
@@ -95,95 +95,95 @@
             "stageOut1",
             "logArch1"
         ],
-        "parent": null,
         "children": {
-            "stageOut1": {
-                "override": {},
-                "newStageout": false,
-                "asyncDest": null,
-                "files": {},
-                "build": {
-                    "directories": {
-                        "stageOut1": {}
-                    }
-                },
-                "input": {
-                    "links": {}
-                },
-                "owner_vorole": "DEFAULT",
-                "application": {
-                    "configuration": {},
-                    "controls": {}
-                },
-                "output": {
-                    "maxMergeEvents": 20000000,
-                    "minMergeSize": 2147483648
-                },
-                "filecount": 0,
-                "emulator": {},
-                "userDN": null,
-                "sandbox": {},
-                "objectType": "WMStep",
-                "retryCount": 3,
-                "stepType": "StageOut",
-                "environment": {
-                    "paths": {},
-                    "variables": {}
-                },
-                "tree": {
-                    "childNames": [],
-                    "parent": "cmsRun1",
-                    "children": {}
-                },
-                "retryDelay": 300,
-                "owner_vogroup": "DEFAULT"
-            },
             "logArch1": {
-                "environment": {
-                    "paths": {},
-                    "variables": {}
-                },
-                "override": {
-                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
-                },
+                "logs": {},
                 "newStageout": false,
-                "tree": {
-                    "childNames": [],
-                    "parent": "cmsRun1",
-                    "children": {}
-                },
-                "logcount": 0,
-                "retryDelay": 300,
-                "application": {
-                    "configuration": {},
-                    "controls": {}
-                },
-                "retryCount": 3,
                 "input": {
                     "links": {}
                 },
                 "objectType": "WMStep",
-                "output": {
-                    "modules": {
-                        "logArchive": {}
-                    }
+                "sandbox": {},
+                "application": {
+                    "configuration": {},
+                    "controls": {}
                 },
-                "emulator": {},
+                "tree": {
+                    "children": {},
+                    "parent": "cmsRun1",
+                    "childNames": []
+                },
+                "stepType": "LogArchive",
+                "retryCount": 3,
+                "retryDelay": 300,
                 "build": {
                     "directories": {
                         "logArch1": {}
                     }
                 },
-                "logs": {},
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "emulator": {},
+                "logcount": 0,
+                "override": {
+                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                },
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
+                }
+            },
+            "stageOut1": {
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "retryCount": 3,
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "stepType": "StageOut",
+                "retryDelay": 300,
+                "filecount": 0,
+                "files": {},
+                "output": {
+                    "maxMergeEvents": 20000000,
+                    "minMergeSize": 2147483648
+                },
+                "userDN": null,
+                "input": {
+                    "links": {}
+                },
                 "sandbox": {},
-                "stepType": "LogArchive"
+                "tree": {
+                    "children": {},
+                    "parent": "cmsRun1",
+                    "childNames": []
+                },
+                "asyncDest": null,
+                "build": {
+                    "directories": {
+                        "stageOut1": {}
+                    }
+                },
+                "emulator": {},
+                "override": {},
+                "newStageout": false,
+                "owner_vogroup": "DEFAULT",
+                "objectType": "WMStep",
+                "owner_vorole": "DEFAULT"
             }
-        }
+        },
+        "parent": null
     },
     "user": {
         "inputSandboxes": [],
-        "outputFiles": [],
         "lfnBase": null,
+        "outputFiles": [],
         "script": null,
         "userFiles": []
     }

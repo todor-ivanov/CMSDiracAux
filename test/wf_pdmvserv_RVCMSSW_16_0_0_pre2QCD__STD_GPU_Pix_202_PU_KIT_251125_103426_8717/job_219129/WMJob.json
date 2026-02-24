@@ -30,15 +30,15 @@
     "jobgroup": 42922,
     "location": null,
     "mask": {
-        "inclusivemask": true,
         "FirstEvent": 100101,
-        "LastEvent": 100200,
         "FirstLumi": 1002,
-        "LastLumi": 1002,
         "FirstRun": 1,
+        "LastEvent": 100200,
+        "LastLumi": 1002,
         "LastRun": 1,
-        "runAndLumis": {},
-        "jobID": 219129
+        "inclusivemask": true,
+        "jobID": 219129,
+        "runAndLumis": {}
     },
     "name": "fc873065-b21d-4c00-843e-cf58702751f8-1",
     "numberOfCores": 8,

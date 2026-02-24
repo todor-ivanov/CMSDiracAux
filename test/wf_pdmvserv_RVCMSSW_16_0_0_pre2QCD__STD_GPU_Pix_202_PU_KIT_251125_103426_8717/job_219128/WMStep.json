@@ -1,12 +1,12 @@
 {
     "application": {
         "command": {
-            "psetTweak": null,
-            "configurationPickle": "PSet.pkl",
+            "arguments": "",
             "configuration": "PSet.py",
             "configurationHash": null,
+            "configurationPickle": "PSet.pkl",
             "executable": "cmsRun",
-            "arguments": ""
+            "psetTweak": null
         },
         "configuration": {
             "arguments": {
@@ -31,13 +31,13 @@
         },
         "setup": {
             "buildArch": null,
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
             "scramArch": [
                 "el8_amd64_gcc13"
             ],
-            "scramProject": "CMSSW",
-            "softwareEnvironment": "",
             "scramCommand": "scramv1",
-            "cmsswVersion": "CMSSW_16_0_0_pre2"
+            "scramProject": "CMSSW",
+            "softwareEnvironment": ""
         }
     },
     "build": {
@@ -61,29 +61,29 @@
     "monitoring": {},
     "objectType": "WMStep",
     "output": {
+        "analysisFiles": {},
         "jobReport": "FrameworkJobReport.xml",
         "keep": true,
-        "stdout": "cmsRun1-stdout.log",
         "modules": {
             "FEVTDEBUGoutput": {
-                "rawSkim": null,
-                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
-                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
-                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
                 "transient": true,
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "dataTier": "GEN-SIM",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
                 "filterName": "",
-                "dataTier": "GEN-SIM"
+                "rawSkim": null
             }
         },
-        "stderr": "cmsRun1-stderr.log",
         "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
-        "analysisFiles": {}
+        "stderr": "cmsRun1-stderr.log",
+        "stdout": "cmsRun1-stdout.log"
     },
     "override": {},
     "runtime": {
-        "postScripts": [],
         "postScramScripts": [],
+        "postScripts": [],
         "preScripts": [],
         "scramPreScripts": []
     },
@@ -91,54 +91,12 @@
     "stepPhysicsType": "GEN,SIM",
     "stepType": "CMSSW",
     "tree": {
+        "childNames": [
+            "stageOut1",
+            "logArch1"
+        ],
         "children": {
-            "logArch1": {
-                "stepType": "LogArchive",
-                "build": {
-                    "directories": {
-                        "logArch1": {}
-                    }
-                },
-                "override": {
-                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
-                },
-                "application": {
-                    "configuration": {},
-                    "controls": {}
-                },
-                "newStageout": false,
-                "emulator": {},
-                "logcount": 0,
-                "tree": {
-                    "children": {},
-                    "childNames": [],
-                    "parent": "cmsRun1"
-                },
-                "logs": {},
-                "retryDelay": 300,
-                "environment": {
-                    "paths": {},
-                    "variables": {}
-                },
-                "sandbox": {},
-                "input": {
-                    "links": {}
-                },
-                "output": {
-                    "modules": {
-                        "logArchive": {}
-                    }
-                },
-                "retryCount": 3,
-                "objectType": "WMStep"
-            },
             "stageOut1": {
-                "newStageout": false,
-                "owner_vorole": "DEFAULT",
-                "userDN": null,
-                "owner_vogroup": "DEFAULT",
-                "asyncDest": null,
-                "files": {},
                 "build": {
                     "directories": {
                         "stageOut1": {}
@@ -149,42 +107,84 @@
                     "configuration": {},
                     "controls": {}
                 },
-                "objectType": "WMStep",
                 "stepType": "StageOut",
-                "override": {},
-                "output": {
-                    "maxMergeEvents": 20000000,
-                    "minMergeSize": 2147483648
-                },
-                "filecount": 0,
                 "input": {
                     "links": {}
                 },
+                "owner_vorole": "DEFAULT",
+                "owner_vogroup": "DEFAULT",
                 "tree": {
-                    "children": {},
                     "childNames": [],
-                    "parent": "cmsRun1"
+                    "parent": "cmsRun1",
+                    "children": {}
                 },
                 "retryDelay": 300,
+                "asyncDest": null,
+                "userDN": null,
+                "objectType": "WMStep",
+                "output": {
+                    "minMergeSize": 2147483648,
+                    "maxMergeEvents": 20000000
+                },
+                "sandbox": {},
+                "override": {},
+                "newStageout": false,
+                "retryCount": 3,
                 "environment": {
                     "paths": {},
                     "variables": {}
                 },
+                "files": {},
+                "filecount": 0
+            },
+            "logArch1": {
+                "build": {
+                    "directories": {
+                        "logArch1": {}
+                    }
+                },
+                "emulator": {},
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "stepType": "LogArchive",
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
+                },
+                "tree": {
+                    "childNames": [],
+                    "parent": "cmsRun1",
+                    "children": {}
+                },
                 "sandbox": {},
-                "retryCount": 3
+                "logcount": 0,
+                "objectType": "WMStep",
+                "retryDelay": 300,
+                "logs": {},
+                "override": {
+                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                },
+                "newStageout": false,
+                "retryCount": 3,
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "input": {
+                    "links": {}
+                }
             }
         },
-        "childNames": [
-            "stageOut1",
-            "logArch1"
-        ],
         "parent": null
     },
     "user": {
-        "script": null,
-        "outputFiles": [],
-        "userFiles": [],
+        "inputSandboxes": [],
         "lfnBase": null,
-        "inputSandboxes": []
+        "outputFiles": [],
+        "script": null,
+        "userFiles": []
     }
 }

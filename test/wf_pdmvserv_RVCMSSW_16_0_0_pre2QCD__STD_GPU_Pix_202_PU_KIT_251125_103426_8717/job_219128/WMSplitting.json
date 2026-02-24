@@ -1,0 +1,616 @@
+{
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull": {
+        "events_per_lumi": 100,
+        "lheInputFiles": false,
+        "include_parents": false,
+        "algorithm": "EventBased",
+        "events_per_job": 100,
+        "performance": {
+            "timePerEvent": 1.0,
+            "sizePerEvent": 1.0,
+            "memoryRequirement": 20000.0
+        },
+        "deterministicPileup": false,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Production"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullCleanupUnmergedFEVTDEBUGoutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025": {
+        "include_parents": false,
+        "algorithm": "LumiBased",
+        "performance": {
+            "timePerEvent": 1.0,
+            "sizePerEvent": 1.0,
+            "memoryRequirement": 20000.0
+        },
+        "deterministicPileup": false,
+        "lumis_per_job": 10,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Processing"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025CleanupUnmergedFEVTDEBUGHLToutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/Digi_2025FEVTDEBUGHLToutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025": {
+        "include_parents": false,
+        "algorithm": "LumiBased",
+        "performance": {
+            "timePerEvent": 1.0,
+            "sizePerEvent": 1.0,
+            "memoryRequirement": 20000.0
+        },
+        "deterministicPileup": false,
+        "lumis_per_job": 10,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Processing"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/LogCollectForRecoNano_2025": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025CleanupUnmergedDQMoutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025CleanupUnmergedMINIAODSIMoutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025CleanupUnmergedNANOEDMAODSIMoutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025CleanupUnmergedRECOSIMoutput": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeDQMoutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeDQMoutput/RecoNano_2025DQMoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeDQMoutput/RecoNano_2025MergeDQMoutputEndOfRunDQMHarvestMerged": {
+        "periodic_harvest_sibling": false,
+        "algorithm": "Harvest",
+        "performance": {
+            "memoryRequirement": 3072.0
+        },
+        "dqmHarvestUnit": "byRun",
+        "periodic_harvest_interval": 0,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Harvesting"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeDQMoutput/RecoNano_2025MergeDQMoutputEndOfRunDQMHarvestMerged/RecoNano_2025MergeDQMoutputMergedEndOfRunDQMHarvestLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeMINIAODSIMoutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeMINIAODSIMoutput/RecoNano_2025MINIAODSIMoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeNANOEDMAODSIMoutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeNANOEDMAODSIMoutput/RecoNano_2025NANOEDMAODSIMoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025": {
+        "include_parents": false,
+        "algorithm": "LumiBased",
+        "performance": {
+            "timePerEvent": 1.0,
+            "sizePerEvent": 1.0,
+            "memoryRequirement": 20000.0
+        },
+        "deterministicPileup": false,
+        "lumis_per_job": 10,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Processing"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamEcalESAlign": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamHcalCalHBHEMuonProducerFilter": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamMuAlOverlaps": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamSiPixelCalSingleMuonLoose": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamSiPixelCalSingleMuonTight": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamSiStripCalMinBias": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlDiMuonAndVertex": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlJpsiMuMu": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlMinBias": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlMuonIsolated": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlUpsilonMuMu": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025CleanupUnmergedALCARECOStreamTkAlZMuMu": {
+        "files_per_job": 50,
+        "algorithm": "SiblingProcessingBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamEcalESAlign": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamEcalESAlign/ALCA_2025ALCARECOStreamEcalESAlignMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamHcalCalHBHEMuonProducerFilter": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamHcalCalHBHEMuonProducerFilter/ALCA_2025ALCARECOStreamHcalCalHBHEMuonProducerFilterMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamMuAlOverlaps": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamMuAlOverlaps/ALCA_2025ALCARECOStreamMuAlOverlapsMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiPixelCalSingleMuonLoose": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiPixelCalSingleMuonLoose/ALCA_2025ALCARECOStreamSiPixelCalSingleMuonLooseMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiPixelCalSingleMuonTight": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiPixelCalSingleMuonTight/ALCA_2025ALCARECOStreamSiPixelCalSingleMuonTightMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiStripCalMinBias": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamSiStripCalMinBias/ALCA_2025ALCARECOStreamSiStripCalMinBiasMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlDiMuonAndVertex": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlDiMuonAndVertex/ALCA_2025ALCARECOStreamTkAlDiMuonAndVertexMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlJpsiMuMu": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlJpsiMuMu/ALCA_2025ALCARECOStreamTkAlJpsiMuMuMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlMinBias": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlMinBias/ALCA_2025ALCARECOStreamTkAlMinBiasMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlMuonIsolated": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlMuonIsolated/ALCA_2025ALCARECOStreamTkAlMuonIsolatedMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlUpsilonMuMu": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlUpsilonMuMu/ALCA_2025ALCARECOStreamTkAlUpsilonMuMuMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlZMuMu": {
+        "initial_lfn_counter": 0,
+        "algorithm": "ParentlessMergeBySize",
+        "min_merge_size": 2147483648,
+        "performance": {},
+        "max_merge_size": 4294967296,
+        "max_wait_time": 86400,
+        "max_merge_events": 20000000,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/ALCA_2025MergeALCARECOStreamTkAlZMuMu/ALCA_2025ALCARECOStreamTkAlZMuMuMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/ALCA_2025/LogCollectForALCA_2025": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/Digi_2025MergeFEVTDEBUGHLToutput/RecoNano_2025/RecoNano_2025MergeRECOSIMoutput/RecoNano_2025RECOSIMoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/Digi_2025/LogCollectForDigi_2025": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/GenSimFullMergeFEVTDEBUGoutput/GenSimFullFEVTDEBUGoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull/LogCollectForGenSimFull": {
+        "files_per_job": 500,
+        "algorithm": "MinFileBased",
+        "performance": {},
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    }
+}
