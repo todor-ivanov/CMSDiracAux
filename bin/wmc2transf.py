@@ -269,6 +269,9 @@ if __name__ == '__main__':
     with open(f"{os.path.join(opts.outDir, 'WMJob')}.json", 'w') as fd:
         json.dump(serializeObj_(wmJob), fd, indent=4)
 
+    with open(f"{os.path.join(opts.outDir, 'WMSplitting')}.json", 'w') as fd:
+        json.dump(serializeObj_(wmSplittingTree), fd, indent=4)
+
     # ------------------------------------------------------
     # Create all DIRAC objects:
 

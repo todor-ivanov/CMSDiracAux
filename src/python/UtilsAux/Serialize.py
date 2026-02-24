@@ -12,6 +12,12 @@ def serializeObj_(obj, sort=True):
     Returns a serialized dictionary
     """
     if _isSerializable(obj):
+        if isinstance(obj, dict) and sort:
+            try:
+                sorted(obj.items())
+                obj = dict(sorted(obj.items()))
+            except TypeError:
+                pass
         return obj
 
     if not isinstance(obj, Iterable):
@@ -51,19 +57,19 @@ def serializeObj_(obj, sort=True):
             return outputList
 
     elif isinstance(obj, dict):
-        outputD = dict()
         if _isSerializable(obj):
-            return obj
+            outputD = obj
         else:
+            outputD = dict()
             for key, value in obj.items():
                 outputD[key] = serializeObj_(value, sort=sort)
-            if sort:
-                try:
-                    sorted(outputD.items())
-                    outputD = dict(sorted(outputD.items()))
-                except TypeError:
+        if sort:
+            try:
+                sorted(outputD.items())
+                outputD = dict(sorted(outputD.items()))
+            except TypeError:
                     pass
-            return outputD
+        return outputD
 
     else:
         print(f"ERROR: Unrecognized iterable obj: {obj} of type {type(obj)}")
