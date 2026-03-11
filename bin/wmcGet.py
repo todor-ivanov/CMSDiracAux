@@ -84,23 +84,24 @@ class OptionParser():
 def main():
     pass
 
-def createCMSJob(cmsJob):
+def createCMSJob(cmsJob=None):
     job = Job()
     job.setName("CMS test job")
     job.setOutputSandbox(["*log"])
 
     # Translate all CMS job parameters into Dirac job parameters:
     # NOTE: We follow a flat dictionary approach:
-    for parName, value in cmsJob.items():
-        if parName == "name":
-            continue
-        #     parName = "jobName"
-        job._addParameter(job.workflow,
-                          parName,
-                          # "CMSJobParameter",
-                          "parameter",
-                          value,
-                          f"__CMSJobParameter__: {parName}")
+    if cmsJob:
+        for parName, value in cmsJob.items():
+            if parName == "name":
+                continue
+            #     parName = "jobName"
+            job._addParameter(job.workflow,
+                              parName,
+                              # "CMSJobParameter",
+                              "parameter",
+                              value,
+                              f"__CMSJobParameter__: {parName}")
 
     # job step1: setup CMS runtime required software
     job.setExecutable("/bin/git", arguments="clone --depth 1 -b runtime https://github.com/todor-ivanov/CMSDiracAux.git")
