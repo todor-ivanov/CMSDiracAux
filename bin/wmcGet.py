@@ -278,46 +278,46 @@ if __name__ == '__main__':
     with open(f"{os.path.join(opts.outDir, 'WMSplitting')}.json", 'w') as fd:
         json.dump(serializeObj_(wmSplittingTree), fd, indent=4)
 
-    # ------------------------------------------------------
-    # Create all DIRAC objects:
+    # # ------------------------------------------------------
+    # # Create all DIRAC objects:
 
-    # First create a job
-    # NOTE: If --wmJobPkg is not provided as an argument the script will break here
-    job = createCMSJob(wmJob)
-    jobXml = xmltodict.parse(job.workflow.toXML())
-    jobJDL=pformat(job._toJDL())
+    # # First create a job
+    # # NOTE: If --wmJobPkg is not provided as an argument the script will break here
+    # job = createCMSJob(wmJob)
+    # jobXml = xmltodict.parse(job.workflow.toXML())
+    # jobJDL=pformat(job._toJDL())
 
-    with open(f'{opts.outDir}/jobDescription.xml.json', 'w') as fd:
-        json.dump(jobXml, fd, indent=4)
+    # with open(f'{opts.outDir}/jobDescription.xml.json', 'w') as fd:
+    #     json.dump(jobXml, fd, indent=4)
 
-    # with open(f'{opts.outDir}/jobDescription.xml', 'w') as fd:
-    #     json.dump(job.workflow.toXML(), fd, indent=4)
-    jobDescrFile = f'{opts.outDir}/jobDescription.xml'
-    job.workflow.toXMLFile(jobDescrFile)
+    # # with open(f'{opts.outDir}/jobDescription.xml', 'w') as fd:
+    # #     json.dump(job.workflow.toXML(), fd, indent=4)
+    # jobDescrFile = f'{opts.outDir}/jobDescription.xml'
+    # job.workflow.toXMLFile(jobDescrFile)
 
-    with open(f'{opts.outDir}/job.jdl', 'w') as fd:
-        fd.write(job._toJDL())
+    # with open(f'{opts.outDir}/job.jdl', 'w') as fd:
+    #     fd.write(job._toJDL())
 
-    # Second create a vanila transformation
-    trans = Transformation()
+    # # Second create a vanila transformation
+    # trans = Transformation()
 
-    trans = Transformation()
+    # trans = Transformation()
 
-    trans.setTransformationName = "CMS Test transformation"
-    trans.setTransformationGroup("Test")
-    trans.setTransformationFamily("Test")
-    trans.setType("Production")
-    trans.setDescription("A simple test transformation out of the simplest CMS test job" )
-    trans.setPlugin("ByLumi")
-    trans.setBody(job.workflow.toXML())
-    # transXml = xmltodict.parse(transformation.getTransformationsByUser('tivanov')['Value'][0]['Body'])
-    transXml = xmltodict.parse(trans.paramValues['Body'])
+    # trans.setTransformationName = "CMS Test transformation"
+    # trans.setTransformationGroup("Test")
+    # trans.setTransformationFamily("Test")
+    # trans.setType("Production")
+    # trans.setDescription("A simple test transformation out of the simplest CMS test job" )
+    # trans.setPlugin("ByLumi")
+    # trans.setBody(job.workflow.toXML())
+    # # transXml = xmltodict.parse(transformation.getTransformationsByUser('tivanov')['Value'][0]['Body'])
+    # transXml = xmltodict.parse(trans.paramValues['Body'])
 
-    with open(f'{opts.outDir}/transformation.xml.json', 'w') as fd:
-        json.dump(transXml, fd, indent=4)
+    # with open(f'{opts.outDir}/transformation.xml.json', 'w') as fd:
+    #     json.dump(transXml, fd, indent=4)
 
-    # Try to create an instance of the minimal CMSTransformationPlugin
-    cmsTransPlugin = CMSTransformationPlugin('ByLumi')
+    # # Try to create an instance of the minimal CMSTransformationPlugin
+    # cmsTransPlugin = CMSTransformationPlugin('ByLumi')
 
     """Executes everything"""
     main()
