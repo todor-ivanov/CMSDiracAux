@@ -1,0 +1,5 @@
+{
+  "TransformationName": "GenSimFull",
+  "Plugin": "CMSWMCoreSplittingPlugin",
+  "Mode": "EventBased"
+}
