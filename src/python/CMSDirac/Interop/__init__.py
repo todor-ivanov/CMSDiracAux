@@ -1,0 +1,3 @@
+"""
+WMCore → DIRAC interoperability helpers.
+"""
