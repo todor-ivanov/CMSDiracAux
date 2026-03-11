@@ -3,28 +3,40 @@ from pathlib import Path
 
 
 def read_json(path):
-    with open(path) as f:
+    path = Path(path)
+    with path.open() as f:
         return json.load(f)
 
 
-def unwrap_request(raw):
+def write_json(path, payload):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    with path.open("w") as f:
+        json.dump(payload, f, indent=2, sort_keys=True)
 
+
+def unwrap_request(raw):
     if isinstance(raw, dict):
         return raw
 
+    if not isinstance(raw, list) or len(raw) != 1:
+        raise ValueError("WMRequest.json is expected to be a dict or a one-element list")
+
     wrapper = raw[0]
+    if not isinstance(wrapper, dict) or len(wrapper) != 1:
+        raise ValueError("WMRequest.json wrapper must contain exactly one request")
+
     return list(wrapper.values())[0]
 
 
-def load_serialized_bundle(job_dir):
+def load_serialized_bundle(input_dir):
+    input_dir = Path(input_dir)
 
-    job_dir = Path(job_dir)
-
-    request = unwrap_request(read_json(job_dir / "WMRequest.json"))
-    workload = read_json(job_dir / "WMWorkload.json")
-    task = read_json(job_dir / "WMTask.json")
-    step = read_json(job_dir / "WMStep.json")
-    splitting = read_json(job_dir / "WMSplitting.json")
+    request = unwrap_request(read_json(input_dir / "WMRequest.json"))
+    workload = read_json(input_dir / "WMWorkload.json")
+    task = read_json(input_dir / "WMTask.json")
+    step = read_json(input_dir / "WMStep.json")
+    splitting = read_json(input_dir / "WMSplitting.json")
 
     return {
         "request": request,
