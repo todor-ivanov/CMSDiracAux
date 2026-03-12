@@ -61,6 +61,13 @@ python3 bin/runLocalTransformation.py \
   --transformation-file <output_bundle_dir>/Transformations/GenSimFull.transformation.json
 ```
 
+### Step 3: emit one task-specific local job per generated task
+
+```bash
+python3 bin/runLocalTransformation.py \
+  --transformation-file <output_bundle_dir>/Transformations/GenSimFull.transformation.json
+```
+
 This runs CMSWMCoreSplittingPlugin locally and writes the grouped task
 descriptions to disk.
 
@@ -87,6 +94,16 @@ descriptions to disk.
 
   Tasks/
     GenSimFull.tasks.json
+
+  TaskJobs/
+    GenSimFull/
+      GenSimFull_task_0001.jobDescription.xml
+      GenSimFull_task_0001.job.jdl
+      GenSimFull_task_0001.job.params.json
+      GenSimFull_task_0002.jobDescription.xml
+      GenSimFull_task_0002.job.jdl
+      GenSimFull_task_0002.job.params.json
+      ...
 ```
 
 Where:
@@ -98,6 +115,7 @@ Where:
 - `GenSimFull.transformation.json` is the local transformation description
 - `GenSimFull.inputdata.json` is the static plugin input sidecar
 - `GenSimFull.tasks.json` is the final local grouped-task output
+- `GenSimFull_task_*` is the local DIRAC-like job description per generated task output
 - `local_task_materialization_report.json` summarizes the local runner result
 
 ## Important limitation

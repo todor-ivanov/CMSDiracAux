@@ -11,6 +11,9 @@ It consumes:
 and produces:
 
   - Tasks/<Task>.tasks.json
+  - TaskJobs/<Task>/<TaskName>.jobDescription.xml
+  - TaskJobs/<Task>/<TaskName>.job.jdl
+  - TaskJobs/<Task>/<TaskName>.job.params.json
   - Reports/local_task_materialization_report.json
 """
 
@@ -18,15 +21,11 @@ from pathlib import Path
 import argparse
 
 from CMSDirac.Interop.io import read_json, write_json
+from CMSDirac.Interop.task_materialize import emit_task_specific_jobs
 from CMSDirac.TransformationSystem.Agent.TransformationPlugin import TransformationPlugin
 
 
 def build_task_records(plugin_result, transformation_name):
-    """
-    Convert plugin output:
-      [("SE", ["lfn1", "lfn2"]), ...]
-    into a more explicit local task structure.
-    """
     tasks = []
 
     for idx, item in enumerate(plugin_result, start=1):
@@ -104,7 +103,10 @@ if __name__ == "__main__":
     (outdir / "Tasks").mkdir(parents=True, exist_ok=True)
     (outdir / "Reports").mkdir(parents=True, exist_ok=True)
 
-    write_json(outdir / "Tasks" / f"{transformation['Name']}.tasks.json", tasks)
+    tasks_file = outdir / "Tasks" / f"{transformation['Name']}.tasks.json"
+    write_json(tasks_file, tasks)
+
+    emitted_jobs = emit_task_specific_jobs(transformation, tasks, outdir)
 
     report = {
         "TransformationName": transformation["Name"],
@@ -112,7 +114,9 @@ if __name__ == "__main__":
         "PluginParams": plugin_params,
         "PluginInputFile": str(plugin_input_file),
         "TaskCount": len(tasks),
-        "TasksFile": str(outdir / "Tasks" / f"{transformation['Name']}.tasks.json"),
+        "TasksFile": str(tasks_file),
+        "EmittedTaskJobCount": len(emitted_jobs),
+        "TaskJobs": emitted_jobs,
         "ServerSideExecution": False,
         "Note": (
             "This is a local stage-1 materialization run. "
@@ -126,4 +130,5 @@ if __name__ == "__main__":
     print("Transformation:", transformation["Name"])
     print("Plugin:", plugin_name)
     print("Task count:", len(tasks))
-    print("Tasks file:", outdir / "Tasks" / f"{transformation['Name']}.tasks.json")
+    print("Tasks file:", tasks_file)
+    print("Task-specific local jobs emitted:", len(emitted_jobs))
