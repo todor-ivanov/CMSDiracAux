@@ -19,6 +19,14 @@ please open an issue in the repository.
 # CMSDiracAux
 Auxiliary scripts and tests for running CMS workflows within Dirac distributed computing system for the CMS experiment at CERN
 
+## Design and report notes
+
+Architecture notes are kept under `docs/architecture/`.
+
+Early report-oriented notes and preserved design reasoning are kept under
+`docs/reports/`.
+
+
 ## Running CMS jobs with Dirac
 
 These are notes collected during the process of initial tests of running CMS speciiffic jobs/workflows wihthin the Dirac distributed computing system.
