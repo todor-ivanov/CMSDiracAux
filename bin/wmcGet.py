@@ -189,20 +189,42 @@ if __name__ == '__main__':
         wmWorkloadFileDir = opts.outDir
 
     # Set the output dir
-    if opts.outDir == "/tmp":
-        opts.outDir = os.path.join(opts.outDir, f"wf_{wmWorkload.name()}")
-        if opts.wmJobIndex:
-            opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
-        wmJobPkgFileSerOut = f"{os.path.join(wmJobPkgFileDir, wmJobPkgFileName)}.json"
-        wmWorkloadFileSerOut = f"{os.path.join(wmWorkloadFileDir, wmWorkloadFileName)}.json"
-        wmRequestSerOut = f"{os.path.join(wmWorkloadFileDir, 'WMRequest')}.json"
+    #
+    # New rule:
+    #   opts.outDir is treated as the final target directory requested by the caller.
+    #   We do not append an extra wf_REQUEST_NAME layer here.
+    #   A job_<index> subdirectory is only added when a specific WMBS job was selected.
+    #
+    opts.outDir = os.path.abspath(opts.outDir)
+
+    if opts.wmJobPkgFile:
+        wmJobPkgFilePath = os.path.realpath(opts.wmJobPkgFile)
+        wmJobPkgFileName = os.path.basename(wmJobPkgFilePath)
+        wmJobPkgFileExt = os.path.splitext(wmJobPkgFileName)[1]
+        wmJobPkgFileName = os.path.splitext(wmJobPkgFileName)[0]
+        wmJobPkgFileDir = os.path.dirname(opts.wmJobPkgFile)
     else:
-        opts.outDir = os.path.join(opts.outDir, f"wf_{wmWorkload.name()}")
-        if opts.wmJobIndex:
-            opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
-        wmJobPkgFileSerOut = f"{os.path.join(opts.outDir, wmJobPkgFileName)}.json"
-        wmWorkloadFileSerOut = f"{os.path.join(opts.outDir, wmWorkloadFileName)}.json"
-        wmRequestSerOut = f"{os.path.join(opts.outDir, 'WMRequest')}.json"
+        wmJobPkgFileName = "JobPackage"
+        wmJobPkgFileDir = opts.outDir
+
+    if opts.wmWorkloadFile:
+        wmWorkloadFilePath = os.path.realpath(opts.wmWorkloadFile)
+        wmWorkloadFileName = os.path.basename(wmWorkloadFilePath)
+        wmWorkloadFileExt = os.path.splitext(wmWorkloadFileName)[1]
+        wmWorkloadFileName = os.path.splitext(wmWorkloadFileName)[0]
+        wmWorkloadFileDir = os.path.dirname(opts.wmWorkloadFile)
+    else:
+        wmWorkloadFileName = "WMWorkload"
+        wmWorkloadFileDir = opts.outDir
+
+    # Treat the provided output directory as final.
+    # Only create an extra job_<index> level if a specific job was selected.
+    if opts.wmJobIndex:
+        opts.outDir = os.path.join(opts.outDir, f"job_{opts.wmJobIndex}")
+
+    wmJobPkgFileSerOut = f"{os.path.join(opts.outDir, wmJobPkgFileName)}.json"
+    wmWorkloadFileSerOut = f"{os.path.join(opts.outDir, wmWorkloadFileName)}.json"
+    wmRequestSerOut = f"{os.path.join(opts.outDir, 'WMRequest')}.json"
 
     # Create the output dir if missing:
     if not os.path.exists(opts.outDir):

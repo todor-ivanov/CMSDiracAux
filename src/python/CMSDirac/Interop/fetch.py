@@ -33,4 +33,12 @@ def run_wmcget(opts):
 
     subprocess.run(cmd, check=True)
 
+    # Backward-compatible fallback:
+    # if wmcGet.py still created an extra wf_REQUEST_NAME layer,
+    # resolve it transparently.
+    legacy_nested_dir = layout["wmcore_dir"] / f"wf_{layout['request_name']}"
+
+    if legacy_nested_dir.exists():
+        return legacy_nested_dir
+
     return layout["wmcore_dir"]
