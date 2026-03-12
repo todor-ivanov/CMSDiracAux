@@ -1,0 +1,62 @@
+[
+  {
+    "InputData": {
+      "LFNCount": 1
+    },
+    "LFNs": [
+      "/store/mock/mock-dataset/file_0001.root"
+    ],
+    "StorageElement": "T2_TEST_SE",
+    "TaskID": 1,
+    "TaskName": "GenSimFull_task_0001",
+    "TransformationName": "GenSimFull"
+  },
+  {
+    "InputData": {
+      "LFNCount": 1
+    },
+    "LFNs": [
+      "/store/mock/mock-dataset/file_0002.root"
+    ],
+    "StorageElement": "T2_TEST_SE",
+    "TaskID": 2,
+    "TaskName": "GenSimFull_task_0002",
+    "TransformationName": "GenSimFull"
+  },
+  {
+    "InputData": {
+      "LFNCount": 1
+    },
+    "LFNs": [
+      "/store/mock/mock-dataset/file_0003.root"
+    ],
+    "StorageElement": "T2_TEST_SE",
+    "TaskID": 3,
+    "TaskName": "GenSimFull_task_0003",
+    "TransformationName": "GenSimFull"
+  },
+  {
+    "InputData": {
+      "LFNCount": 1
+    },
+    "LFNs": [
+      "/store/mock/mock-dataset/file_0004.root"
+    ],
+    "StorageElement": "T2_TEST_SE",
+    "TaskID": 4,
+    "TaskName": "GenSimFull_task_0004",
+    "TransformationName": "GenSimFull"
+  },
+  {
+    "InputData": {
+      "LFNCount": 1
+    },
+    "LFNs": [
+      "/store/mock/mock-dataset/file_0005.root"
+    ],
+    "StorageElement": "T2_TEST_SE",
+    "TaskID": 5,
+    "TaskName": "GenSimFull_task_0005",
+    "TransformationName": "GenSimFull"
+  }
+]

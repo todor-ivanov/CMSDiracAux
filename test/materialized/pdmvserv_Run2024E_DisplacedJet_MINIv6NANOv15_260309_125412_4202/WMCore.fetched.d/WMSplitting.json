@@ -1,0 +1,82 @@
+{
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing": {
+        "include_parents": false,
+        "job_time_limit": 172800,
+        "events_per_job": 43200,
+        "performance": {
+            "sizePerEvent": 1.0,
+            "memoryRequirement": 16000.0,
+            "timePerEvent": 1.0
+        },
+        "algorithm": "EventAwareLumiBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "runWhitelist": [],
+        "runBlacklist": [],
+        "type": "Processing"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingCleanupUnmergedMINIAODoutput": {
+        "files_per_job": 50,
+        "performance": {},
+        "algorithm": "SiblingProcessingBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingCleanupUnmergedNANOEDMAODoutput": {
+        "files_per_job": 50,
+        "performance": {},
+        "algorithm": "SiblingProcessingBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Cleanup"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeMINIAODoutput": {
+        "max_wait_time": 86400,
+        "min_merge_size": 2147483648,
+        "initial_lfn_counter": 0,
+        "performance": {},
+        "max_merge_events": 20000000,
+        "algorithm": "ParentlessMergeBySize",
+        "max_merge_size": 4294967296,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeMINIAODoutput/DataProcessingMINIAODoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "performance": {},
+        "algorithm": "MinFileBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeNANOEDMAODoutput": {
+        "max_wait_time": 86400,
+        "min_merge_size": 2147483648,
+        "initial_lfn_counter": 0,
+        "performance": {},
+        "max_merge_events": 20000000,
+        "algorithm": "ParentlessMergeBySize",
+        "max_merge_size": 4294967296,
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "Merge"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeNANOEDMAODoutput/DataProcessingNANOEDMAODoutputMergeLogCollect": {
+        "files_per_job": 500,
+        "performance": {},
+        "algorithm": "MinFileBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    },
+    "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/LogCollect": {
+        "files_per_job": 500,
+        "performance": {},
+        "algorithm": "MinFileBased",
+        "trustSitelists": false,
+        "trustPUSitelists": false,
+        "type": "LogCollect"
+    }
+}

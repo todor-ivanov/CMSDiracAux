@@ -1,0 +1,114 @@
+{
+  "Notes": [
+    "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
+    "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
+    "WMJob.json handling is intentionally deferred to a later refinement stage.",
+    "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report."
+  ],
+  "Production": {
+    "AcquisitionEra": "Run2024E",
+    "CampaignName": "Run3ReReco",
+    "PrepId": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+    "Priority": 510000,
+    "ProcessingString": "MINIv6NANOv15",
+    "ProductionName": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202",
+    "ProductionType": "Production"
+  },
+  "SchemaVersion": "wmcore-to-dirac/v0.4-das-lfn-resolution",
+  "SourceSystem": "WMCore",
+  "TargetSystem": "DIRAC",
+  "Tasks": [
+    {
+      "InputDataset": {
+        "DatasetHint": null,
+        "DatasetsResolved": [],
+        "LFNResolutionErrors": [],
+        "LFNResolutionMode": "none",
+        "LFNs": [
+          "/store/mock/mock-dataset/file_0001.root",
+          "/store/mock/mock-dataset/file_0002.root",
+          "/store/mock/mock-dataset/file_0003.root",
+          "/store/mock/mock-dataset/file_0004.root",
+          "/store/mock/mock-dataset/file_0005.root"
+        ],
+        "PlaceholderLFNs": [
+          "/store/mock/mock-dataset/file_0001.root",
+          "/store/mock/mock-dataset/file_0002.root",
+          "/store/mock/mock-dataset/file_0003.root",
+          "/store/mock/mock-dataset/file_0004.root",
+          "/store/mock/mock-dataset/file_0005.root"
+        ],
+        "ResolvedLFNs": [
+          "/store/mock/mock-dataset/file_0001.root",
+          "/store/mock/mock-dataset/file_0002.root",
+          "/store/mock/mock-dataset/file_0003.root",
+          "/store/mock/mock-dataset/file_0004.root",
+          "/store/mock/mock-dataset/file_0005.root"
+        ]
+      },
+      "OutputDataset": {
+        "AcquisitionEra": "Run2024E",
+        "ProcessingString": "MINIv6NANOv15"
+      },
+      "ParentTaskNames": [],
+      "Priority": 510000,
+      "RequestName": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202",
+      "SitePolicy": {},
+      "SourceRef": {
+        "WMSplitting": "WMSplitting.json",
+        "WMStep": "WMStep.json",
+        "WMTask": "WMTask.json"
+      },
+      "Splitting": {
+        "EventsPerJob": 43200,
+        "EventsPerLumi": null,
+        "FilesPerJob": null,
+        "LumisPerJob": null,
+        "PluginName": "CMSWMCoreSplittingPlugin",
+        "ResourceHints": {
+          "MemoryMB": 16000.0,
+          "RequiresGPU": true,
+          "SizePerEvent": 1.0,
+          "TimePerEvent": 1.0
+        },
+        "SourceRef": {
+          "WMSplitting": "WMSplitting.json"
+        },
+        "SplitMode": "EventAwareLumiBased",
+        "StaticDatasetMode": true
+      },
+      "Step": {
+        "Arguments": [
+          "step_cfg.py"
+        ],
+        "CpuCores": 8,
+        "CpuTime": null,
+        "Environment": {},
+        "Executable": "cmsRun",
+        "GpuRequired": true,
+        "InputArtifacts": [
+          "step_cfg.py"
+        ],
+        "MemoryMB": 16000.0,
+        "OutputArtifacts": [
+          "FrameworkJobReport.xml",
+          "wmcoreReport.json"
+        ],
+        "SoftwareArchitecture": [
+          "el8_amd64_gcc12"
+        ],
+        "SoftwareVersion": "CMSSW_15_0_2",
+        "SourceRef": {
+          "WMStep": "WMStep.json"
+        },
+        "StepName": "cmsRun1"
+      },
+      "TaskName": "GenSimFull",
+      "TaskPath": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing",
+      "TransformationFamily": "WMCoreInterOp",
+      "TransformationGroup": "CMS",
+      "TransformationType": "Production"
+    }
+  ],
+  "Warnings": []
+}

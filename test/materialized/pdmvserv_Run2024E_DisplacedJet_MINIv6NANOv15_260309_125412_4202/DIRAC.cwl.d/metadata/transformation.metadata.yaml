@@ -1,0 +1,10 @@
+job_type: "Transformation"
+source: "CMSDiracAux"
+workflow_type: "cwl"
+transformation_name: "GenSimFull"
+group_size: 5
+plugin: "CMSWMCoreSplittingPlugin"
+query_parameters:
+  static_dataset_mode: true
+  mode: "EventAwareLumiBased"
+note: "Stage-1 transformation metadata exported from a local DIRAC-like materialization bundle."

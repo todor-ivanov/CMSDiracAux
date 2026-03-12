@@ -1,0 +1,53 @@
+{
+  "LFNCount": 1,
+  "LFNs": [
+    "/store/mock/mock-dataset/file_0003.root"
+  ],
+  "Note": "Local task-specific job materialization only. No live DIRAC server-side job or task injection is performed.",
+  "Plugin": "CMSWMCoreSplittingPlugin",
+  "PluginParams": {
+    "EventsPerJob": 43200,
+    "EventsPerLumi": null,
+    "FilesPerJob": null,
+    "LumisPerJob": null,
+    "Mode": "EventAwareLumiBased",
+    "ResourceHints": {
+      "MemoryMB": 16000.0,
+      "RequiresGPU": true,
+      "SizePerEvent": 1.0,
+      "TimePerEvent": 1.0
+    },
+    "StaticDatasetMode": true
+  },
+  "ServerSideExecution": false,
+  "StorageElement": "T2_TEST_SE",
+  "TaskID": 3,
+  "TaskName": "GenSimFull_task_0003",
+  "TransformationName": "GenSimFull",
+  "TransformationParameters": {
+    "NextDeferredStep": "Query DBS and DAS to resolve LFNs from serialized WM objects per task.",
+    "PlaceholderLFNs": [
+      "/store/mock/mock-dataset/file_0001.root",
+      "/store/mock/mock-dataset/file_0002.root",
+      "/store/mock/mock-dataset/file_0003.root",
+      "/store/mock/mock-dataset/file_0004.root",
+      "/store/mock/mock-dataset/file_0005.root"
+    ],
+    "ReportFollowUp": "Update the complete architecture diagram to reflect the three-stage output layout and include the parameter-mapping tables in the report.",
+    "ResolvedLFNs": [
+      "/store/mock/mock-dataset/file_0001.root",
+      "/store/mock/mock-dataset/file_0002.root",
+      "/store/mock/mock-dataset/file_0003.root",
+      "/store/mock/mock-dataset/file_0004.root",
+      "/store/mock/mock-dataset/file_0005.root"
+    ],
+    "ServerSideNote": "Server-side task creation is not expected yet; the CMS DIRAC extension and Transformation Agent/plugin deployment are not available.",
+    "SourceRefs": {
+      "WMSplitting": "WMSplitting.json",
+      "WMStep": "WMStep.json",
+      "WMTask": "WMTask.json"
+    },
+    "SourceTaskPath": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing",
+    "WMRequestName": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202"
+  }
+}

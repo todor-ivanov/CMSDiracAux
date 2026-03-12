@@ -1,0 +1,13 @@
+{
+  "Notes": [
+    "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
+    "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
+    "WMJob.json handling is intentionally deferred to a later refinement stage.",
+    "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report."
+  ],
+  "ServerSideReady": false,
+  "ServerSideReadyReason": "CMS server-side DIRAC extension, plugin deployment, and Transformation Agent integration are not yet available in the current environment.",
+  "TransformationsCreated": 1,
+  "Warnings": [],
+  "Workflow": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202"
+}

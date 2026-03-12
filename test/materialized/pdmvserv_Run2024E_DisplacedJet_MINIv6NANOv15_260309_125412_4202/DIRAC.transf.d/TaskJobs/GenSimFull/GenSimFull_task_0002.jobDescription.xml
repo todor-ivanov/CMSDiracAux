@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow>
+  <Parameter name="JobName" value="GenSimFull_task_0002"/>
+  <Parameter name="TransformationName" value="GenSimFull"/>
+  <Parameter name="SourceTaskPath" value="/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing"/>
+  <Parameter name="StorageElement" value="T2_TEST_SE"/>
+  <Parameter name="InputLFNs" value="["/store/mock/mock-dataset/file_0002.root"]"/>
+  <Step name="FetchCMSDiracAux">
+    <Command>/bin/git clone --depth 1 -b runtime https://github.com/todor-ivanov/CMSDiracAux.git</Command>
+  </Step>
+  <Step name="SourceCMSDiracAux">
+    <Command>source ./CMSDiracAux/env.sh</Command>
+  </Step>
+  <Step name="RunCMSStartup">
+    <Command>./CMSDiracAux/bin/Startup.py</Command>
+  </Step>
+</Workflow>

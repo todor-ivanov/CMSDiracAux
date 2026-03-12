@@ -1,0 +1,1309 @@
+{
+    "campaignName": "Run3ReReco",
+    "constraints": {
+        "jobExtraMatchRequirements": "",
+        "sites": {
+            "whitelist": [
+                "T2_DE_DESY",
+                "T2_US_Florida",
+                "T2_US_Vanderbilt",
+                "T1_ES_PIC",
+                "T2_ES_CIEMAT",
+                "T2_US_Caltech",
+                "T2_IT_Rome",
+                "T2_CH_CERN",
+                "T2_US_Purdue",
+                "T2_US_UCSD",
+                "T2_US_MIT",
+                "T2_US_Wisconsin",
+                "T1_FR_CCIN2P3",
+                "T1_UK_RAL",
+                "T2_IT_Legnaro",
+                "T1_DE_KIT",
+                "T2_FR_GRIF",
+                "T2_US_Nebraska",
+                "T1_IT_CNAF",
+                "T1_US_FNAL",
+                "T2_DE_RWTH"
+            ],
+            "blacklist": [],
+            "trustlists": false,
+            "trustPUlists": false
+        }
+    },
+    "environment": {},
+    "input": {
+        "WMBS": {},
+        "dataset": {
+            "blocks": {
+                "whitelist": [],
+                "blacklist": []
+            },
+            "runs": {
+                "whitelist": [],
+                "blacklist": []
+            },
+            "primary": "DisplacedJet",
+            "dbsurl": "https://cmsweb-prod.cern.ch/dbs/prod/global/DBSReader",
+            "name": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+            "processed": "Run2024E-2024CDEReprocessing-v1",
+            "tier": "AOD"
+        },
+        "sandbox": null,
+        "splitting": {
+            "include_parents": false,
+            "job_time_limit": 172800,
+            "events_per_job": 43200,
+            "performance": {
+                "sizePerEvent": 1.0,
+                "memoryRequirement": 16000.0,
+                "timePerEvent": 1.0
+            },
+            "algorithm": "EventAwareLumiBased"
+        }
+    },
+    "logBaseLFN": "/store/unmerged",
+    "mergedLFNBase": "/store/data",
+    "notifications": {
+        "targets": []
+    },
+    "objectType": "WMTask",
+    "parameters": {
+        "acquisitionEra": "Run2024E",
+        "processingString": "MINIv6NANOv15",
+        "processingVersion": 1
+    },
+    "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing",
+    "physicsTaskType": "DataProcessing",
+    "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+    "pythonLibs": {},
+    "steps": {
+        "cmsRun1": {
+            "application": {
+                "command": {
+                    "arguments": "",
+                    "configuration": "PSet.py",
+                    "configurationHash": null,
+                    "configurationPickle": "PSet.pkl",
+                    "executable": "cmsRun",
+                    "psetTweak": null
+                },
+                "configuration": {
+                    "arguments": {
+                        "globalTag": "150X_dataRun3_v2"
+                    },
+                    "cacheName": "reqmgr_config_cache",
+                    "configCacheUrl": "https://cmsweb.cern.ch/couchdb",
+                    "configId": "c31eb7af49d013b4b4bc668ccc80c1be",
+                    "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/c31eb7af49d013b4b4bc668ccc80c1be",
+                    "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV150X_dataRun3_v2\\np2\\ns.'",
+                    "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/c31eb7af49d013b4b4bc668ccc80c1be/configFile"
+                },
+                "controls": {},
+                "gpu": {
+                    "gpuRequired": "forbidden",
+                    "gpuRequirements": null
+                },
+                "multicore": {
+                    "eventStreams": 0,
+                    "numberOfCores": 8
+                },
+                "setup": {
+                    "buildArch": null,
+                    "cmsswVersion": "CMSSW_15_0_2",
+                    "scramArch": [
+                        "el8_amd64_gcc12"
+                    ],
+                    "scramCommand": "scramv1",
+                    "scramProject": "CMSSW",
+                    "softwareEnvironment": ""
+                }
+            },
+            "build": {
+                "directories": {
+                    "cmsRun1": {}
+                }
+            },
+            "debug": {
+                "keepLogs": false,
+                "verbosity": 0
+            },
+            "emulator": {},
+            "environment": {
+                "paths": {},
+                "variables": {}
+            },
+            "errorDestinationStep": "logArch1",
+            "input": {
+                "links": {}
+            },
+            "monitoring": {},
+            "objectType": "WMStep",
+            "output": {
+                "analysisFiles": {},
+                "jobReport": "FrameworkJobReport.xml",
+                "keep": true,
+                "modules": {
+                    "NANOEDMAODoutput": {
+                        "transient": true,
+                        "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
+                        "primaryDataset": "DisplacedJet",
+                        "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
+                        "filterName": "",
+                        "rawSkim": null,
+                        "processedDataset": "Run2024E-MINIv6NANOv15-v1",
+                        "dataTier": "NANOAOD"
+                    },
+                    "MINIAODoutput": {
+                        "transient": true,
+                        "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                        "primaryDataset": "DisplacedJet",
+                        "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                        "filterName": "",
+                        "rawSkim": null,
+                        "processedDataset": "Run2024E-MINIv6NANOv15-v1",
+                        "dataTier": "MINIAOD"
+                    }
+                },
+                "prepId": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "stderr": "cmsRun1-stderr.log",
+                "stdout": "cmsRun1-stdout.log"
+            },
+            "override": {},
+            "runtime": {
+                "postScramScripts": [],
+                "postScripts": [],
+                "preScripts": [],
+                "scramPreScripts": []
+            },
+            "sandbox": {},
+            "stepPhysicsType": "DataProcessing",
+            "stepType": "CMSSW",
+            "tree": {
+                "childNames": [
+                    "stageOut1",
+                    "logArch1"
+                ],
+                "children": {
+                    "stageOut1": {
+                        "retryDelay": 300,
+                        "environment": {
+                            "variables": {},
+                            "paths": {}
+                        },
+                        "input": {
+                            "links": {}
+                        },
+                        "owner_vogroup": "DEFAULT",
+                        "override": {},
+                        "retryCount": 3,
+                        "objectType": "WMStep",
+                        "files": {},
+                        "tree": {
+                            "parent": "cmsRun1",
+                            "childNames": [],
+                            "children": {}
+                        },
+                        "emulator": {},
+                        "newStageout": false,
+                        "asyncDest": null,
+                        "userDN": null,
+                        "sandbox": {},
+                        "stepType": "StageOut",
+                        "build": {
+                            "directories": {
+                                "stageOut1": {}
+                            }
+                        },
+                        "application": {
+                            "configuration": {},
+                            "controls": {}
+                        },
+                        "output": {
+                            "maxMergeEvents": 20000000,
+                            "minMergeSize": 2147483648
+                        },
+                        "owner_vorole": "DEFAULT",
+                        "filecount": 0
+                    },
+                    "logArch1": {
+                        "sandbox": {},
+                        "newStageout": false,
+                        "retryDelay": 300,
+                        "logcount": 0,
+                        "stepType": "LogArchive",
+                        "environment": {
+                            "variables": {},
+                            "paths": {}
+                        },
+                        "build": {
+                            "directories": {
+                                "logArch1": {}
+                            }
+                        },
+                        "input": {
+                            "links": {}
+                        },
+                        "application": {
+                            "configuration": {},
+                            "controls": {}
+                        },
+                        "output": {
+                            "modules": {
+                                "logArchive": {}
+                            }
+                        },
+                        "tree": {
+                            "parent": "cmsRun1",
+                            "childNames": [],
+                            "children": {}
+                        },
+                        "logs": {},
+                        "override": {
+                            "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                        },
+                        "emulator": {},
+                        "retryCount": 3,
+                        "objectType": "WMStep"
+                    }
+                },
+                "parent": null
+            },
+            "user": {
+                "inputSandboxes": [],
+                "lfnBase": null,
+                "outputFiles": [],
+                "script": null,
+                "userFiles": []
+            }
+        },
+        "topStepName": "cmsRun1"
+    },
+    "subscriptions": {
+        "outputSubs": []
+    },
+    "taskType": "Processing",
+    "tree": {
+        "childNames": [
+            "LogCollect",
+            "DataProcessingMergeMINIAODoutput",
+            "DataProcessingCleanupUnmergedMINIAODoutput",
+            "DataProcessingMergeNANOEDMAODoutput",
+            "DataProcessingCleanupUnmergedNANOEDMAODoutput"
+        ],
+        "children": {
+            "DataProcessingCleanupUnmergedMINIAODoutput": {
+                "constraints": {
+                    "sites": {
+                        "whitelist": [],
+                        "blacklist": [],
+                        "trustlists": false,
+                        "trustPUlists": false
+                    }
+                },
+                "environment": {},
+                "input": {
+                    "sandbox": null,
+                    "outputModule": "MINIAODoutput",
+                    "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/cmsRun1",
+                    "WMBS": {},
+                    "splitting": {
+                        "files_per_job": 50,
+                        "performance": {},
+                        "algorithm": "SiblingProcessingBased"
+                    },
+                    "dataTier": "MINIAOD"
+                },
+                "logBaseLFN": "/store/unmerged",
+                "mergedLFNBase": "/store/data",
+                "notifications": {
+                    "targets": []
+                },
+                "objectType": "WMTask",
+                "parameters": {
+                    "processingVersion": 1,
+                    "processingString": "MINIv6NANOv15",
+                    "acquisitionEra": "Run2024E"
+                },
+                "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingCleanupUnmergedMINIAODoutput",
+                "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "pythonLibs": {},
+                "steps": {
+                    "cleanupUnmergedMINIAODoutput": {
+                        "sandbox": {},
+                        "logcount": 0,
+                        "retryDelay": 300,
+                        "stepType": "DeleteFiles",
+                        "environment": {
+                            "variables": {},
+                            "paths": {}
+                        },
+                        "build": {
+                            "directories": {
+                                "cleanupUnmergedMINIAODoutput": {}
+                            }
+                        },
+                        "input": {
+                            "links": {}
+                        },
+                        "application": {
+                            "configuration": {},
+                            "controls": {}
+                        },
+                        "output": {},
+                        "tree": {
+                            "parent": null,
+                            "childNames": [],
+                            "children": {}
+                        },
+                        "logs": {},
+                        "override": {},
+                        "emulator": {},
+                        "retryCount": 3,
+                        "objectType": "WMStep"
+                    },
+                    "topStepName": "cleanupUnmergedMINIAODoutput"
+                },
+                "subscriptions": {
+                    "outputSubs": []
+                },
+                "taskType": "Cleanup",
+                "tree": {
+                    "parent": "DataProcessing",
+                    "childNames": [],
+                    "children": {}
+                },
+                "unmergedLFNBase": "/store/unmerged",
+                "watchdog": {
+                    "PerformanceMonitor": {
+                        "hardTimeout": 159900,
+                        "maxPSS": 2355.2,
+                        "softTimeout": 159600
+                    },
+                    "interval": 300,
+                    "monitors": [
+                        "PerformanceMonitor"
+                    ]
+                }
+            },
+            "DataProcessingCleanupUnmergedNANOEDMAODoutput": {
+                "constraints": {
+                    "sites": {
+                        "whitelist": [],
+                        "blacklist": [],
+                        "trustlists": false,
+                        "trustPUlists": false
+                    }
+                },
+                "environment": {},
+                "input": {
+                    "sandbox": null,
+                    "outputModule": "NANOEDMAODoutput",
+                    "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/cmsRun1",
+                    "WMBS": {},
+                    "splitting": {
+                        "files_per_job": 50,
+                        "performance": {},
+                        "algorithm": "SiblingProcessingBased"
+                    },
+                    "dataTier": "NANOAOD"
+                },
+                "logBaseLFN": "/store/unmerged",
+                "mergedLFNBase": "/store/data",
+                "notifications": {
+                    "targets": []
+                },
+                "objectType": "WMTask",
+                "parameters": {
+                    "processingVersion": 1,
+                    "processingString": "MINIv6NANOv15",
+                    "acquisitionEra": "Run2024E"
+                },
+                "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingCleanupUnmergedNANOEDMAODoutput",
+                "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "pythonLibs": {},
+                "steps": {
+                    "cleanupUnmergedNANOEDMAODoutput": {
+                        "sandbox": {},
+                        "logcount": 0,
+                        "retryDelay": 300,
+                        "stepType": "DeleteFiles",
+                        "environment": {
+                            "variables": {},
+                            "paths": {}
+                        },
+                        "build": {
+                            "directories": {
+                                "cleanupUnmergedNANOEDMAODoutput": {}
+                            }
+                        },
+                        "input": {
+                            "links": {}
+                        },
+                        "application": {
+                            "configuration": {},
+                            "controls": {}
+                        },
+                        "output": {},
+                        "tree": {
+                            "parent": null,
+                            "childNames": [],
+                            "children": {}
+                        },
+                        "logs": {},
+                        "override": {},
+                        "emulator": {},
+                        "retryCount": 3,
+                        "objectType": "WMStep"
+                    },
+                    "topStepName": "cleanupUnmergedNANOEDMAODoutput"
+                },
+                "subscriptions": {
+                    "outputSubs": []
+                },
+                "taskType": "Cleanup",
+                "tree": {
+                    "parent": "DataProcessing",
+                    "childNames": [],
+                    "children": {}
+                },
+                "unmergedLFNBase": "/store/unmerged",
+                "watchdog": {
+                    "PerformanceMonitor": {
+                        "hardTimeout": 159900,
+                        "maxPSS": 2355.2,
+                        "softTimeout": 159600
+                    },
+                    "interval": 300,
+                    "monitors": [
+                        "PerformanceMonitor"
+                    ]
+                }
+            },
+            "DataProcessingMergeMINIAODoutput": {
+                "constraints": {
+                    "sites": {
+                        "whitelist": [],
+                        "blacklist": [],
+                        "trustlists": false,
+                        "trustPUlists": false
+                    }
+                },
+                "environment": {},
+                "input": {
+                    "WMBS": {},
+                    "dataTier": "MINIAOD",
+                    "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/cmsRun1",
+                    "outputModule": "MINIAODoutput",
+                    "sandbox": null,
+                    "splitting": {
+                        "max_wait_time": 86400,
+                        "min_merge_size": 2147483648,
+                        "initial_lfn_counter": 0,
+                        "performance": {},
+                        "max_merge_events": 20000000,
+                        "algorithm": "ParentlessMergeBySize",
+                        "max_merge_size": 4294967296
+                    }
+                },
+                "logBaseLFN": "/store/unmerged",
+                "mergedLFNBase": "/store/data",
+                "notifications": {
+                    "targets": []
+                },
+                "objectType": "WMTask",
+                "parameters": {
+                    "acquisitionEra": "Run2024E",
+                    "processingString": "MINIv6NANOv15",
+                    "processingVersion": 1
+                },
+                "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeMINIAODoutput",
+                "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "pythonLibs": {},
+                "steps": {
+                    "cmsRun1": {
+                        "application": {
+                            "command": {
+                                "arguments": "",
+                                "configuration": "PSet.py",
+                                "configurationHash": null,
+                                "configurationPickle": "PSet.pkl",
+                                "executable": "cmsRun",
+                                "psetTweak": null
+                            },
+                            "configuration": {
+                                "arguments": {
+                                    "globalTag": "150X_dataRun3_v2"
+                                },
+                                "function": "merge",
+                                "pickledarguments": "b'(dp0\\n.'",
+                                "scenario": "do_not_use",
+                                "skipBadFiles": true
+                            },
+                            "controls": {},
+                            "gpu": {
+                                "gpuRequired": "forbidden",
+                                "gpuRequirements": null
+                            },
+                            "multicore": {
+                                "eventStreams": 0,
+                                "numberOfCores": 1
+                            },
+                            "setup": {
+                                "buildArch": null,
+                                "cmsswVersion": "CMSSW_15_0_2",
+                                "scramArch": [
+                                    "el8_amd64_gcc12"
+                                ],
+                                "scramCommand": "scramv1",
+                                "scramProject": "CMSSW",
+                                "softwareEnvironment": ""
+                            }
+                        },
+                        "build": {
+                            "directories": {
+                                "cmsRun1": {}
+                            }
+                        },
+                        "debug": {
+                            "keepLogs": false,
+                            "verbosity": 0
+                        },
+                        "emulator": {},
+                        "environment": {
+                            "paths": {},
+                            "variables": {}
+                        },
+                        "errorDestinationStep": "logArch1",
+                        "input": {
+                            "links": {}
+                        },
+                        "monitoring": {},
+                        "objectType": "WMStep",
+                        "output": {
+                            "analysisFiles": {},
+                            "jobReport": "FrameworkJobReport.xml",
+                            "keep": true,
+                            "modules": {
+                                "Merged": {
+                                    "transient": false,
+                                    "lfnBase": "/store/data/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                                    "primaryDataset": "DisplacedJet",
+                                    "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                                    "filterName": "",
+                                    "rawSkim": null,
+                                    "processedDataset": "Run2024E-MINIv6NANOv15-v1",
+                                    "dataTier": "MINIAOD"
+                                }
+                            },
+                            "stderr": "cmsRun1-stderr.log",
+                            "stdout": "cmsRun1-stdout.log"
+                        },
+                        "override": {},
+                        "runtime": {
+                            "postScramScripts": [],
+                            "postScripts": [],
+                            "preScripts": [],
+                            "scramPreScripts": []
+                        },
+                        "sandbox": {},
+                        "stepType": "CMSSW",
+                        "tree": {
+                            "childNames": [
+                                "stageOut1",
+                                "logArch1"
+                            ],
+                            "children": {
+                                "stageOut1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "files": {},
+                                    "stepType": "StageOut",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "stageOut1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {
+                                        "maxMergeEvents": 0,
+                                        "minMergeSize": 0
+                                    },
+                                    "tree": {
+                                        "parent": "cmsRun1",
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "filecount": 0,
+                                    "override": {},
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                },
+                                "logArch1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "logcount": 0,
+                                    "stepType": "LogArchive",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "logArch1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {
+                                        "modules": {
+                                            "logArchive": {}
+                                        }
+                                    },
+                                    "tree": {
+                                        "parent": "cmsRun1",
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "logs": {},
+                                    "override": {
+                                        "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                                    },
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                }
+                            },
+                            "parent": null
+                        },
+                        "user": {
+                            "inputSandboxes": [],
+                            "lfnBase": null,
+                            "outputFiles": [],
+                            "script": null,
+                            "userFiles": []
+                        }
+                    },
+                    "topStepName": "cmsRun1"
+                },
+                "subscriptions": {
+                    "outputSubs": []
+                },
+                "taskType": "Merge",
+                "tree": {
+                    "childNames": [
+                        "DataProcessingMINIAODoutputMergeLogCollect"
+                    ],
+                    "children": {
+                        "DataProcessingMINIAODoutputMergeLogCollect": {
+                            "notifications": {
+                                "targets": []
+                            },
+                            "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                            "watchdog": {
+                                "PerformanceMonitor": {
+                                    "hardTimeout": 159900,
+                                    "maxPSS": 2355.2,
+                                    "softTimeout": 159600
+                                },
+                                "interval": 300,
+                                "monitors": [
+                                    "PerformanceMonitor"
+                                ]
+                            },
+                            "constraints": {
+                                "sites": {
+                                    "whitelist": [],
+                                    "blacklist": [],
+                                    "trustlists": false,
+                                    "trustPUlists": false
+                                }
+                            },
+                            "steps": {
+                                "topStepName": "logCollect1",
+                                "logCollect1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "logcount": 0,
+                                    "stepType": "LogCollect",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "logCollect1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "setup": {
+                                            "softwareEnvironment": "",
+                                            "buildArch": null,
+                                            "cmsswVersion": "CMSSW_15_0_2",
+                                            "scramCommand": "scramv1",
+                                            "scramArch": [
+                                                "el8_amd64_gcc12"
+                                            ],
+                                            "scramProject": "CMSSW"
+                                        },
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {},
+                                    "tree": {
+                                        "parent": null,
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "logs": {},
+                                    "override": {},
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                }
+                            },
+                            "environment": {},
+                            "parameters": {
+                                "processingVersion": 1,
+                                "processingString": "MINIv6NANOv15",
+                                "acquisitionEra": "Run2024E"
+                            },
+                            "logBaseLFN": "/store/unmerged",
+                            "input": {
+                                "sandbox": null,
+                                "outputModule": "logArchive",
+                                "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeMINIAODoutput/logArch1",
+                                "WMBS": {},
+                                "splitting": {
+                                    "files_per_job": 500,
+                                    "performance": {},
+                                    "algorithm": "MinFileBased"
+                                }
+                            },
+                            "unmergedLFNBase": "/store/unmerged",
+                            "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeMINIAODoutput/DataProcessingMINIAODoutputMergeLogCollect",
+                            "pythonLibs": {},
+                            "mergedLFNBase": "/store/data",
+                            "tree": {
+                                "parent": "DataProcessingMergeMINIAODoutput",
+                                "childNames": [],
+                                "children": {}
+                            },
+                            "taskType": "LogCollect",
+                            "subscriptions": {
+                                "outputSubs": []
+                            },
+                            "objectType": "WMTask"
+                        }
+                    },
+                    "parent": "DataProcessing"
+                },
+                "unmergedLFNBase": "/store/unmerged",
+                "watchdog": {
+                    "PerformanceMonitor": {
+                        "hardTimeout": 159900,
+                        "maxPSS": 2355.2,
+                        "softTimeout": 159600
+                    },
+                    "interval": 300,
+                    "monitors": [
+                        "PerformanceMonitor"
+                    ]
+                }
+            },
+            "DataProcessingMergeNANOEDMAODoutput": {
+                "constraints": {
+                    "sites": {
+                        "whitelist": [],
+                        "blacklist": [],
+                        "trustlists": false,
+                        "trustPUlists": false
+                    }
+                },
+                "environment": {},
+                "input": {
+                    "WMBS": {},
+                    "dataTier": "NANOAOD",
+                    "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/cmsRun1",
+                    "outputModule": "NANOEDMAODoutput",
+                    "sandbox": null,
+                    "splitting": {
+                        "max_wait_time": 86400,
+                        "min_merge_size": 2147483648,
+                        "initial_lfn_counter": 0,
+                        "performance": {},
+                        "max_merge_events": 20000000,
+                        "algorithm": "ParentlessMergeBySize",
+                        "max_merge_size": 4294967296
+                    }
+                },
+                "logBaseLFN": "/store/unmerged",
+                "mergedLFNBase": "/store/data",
+                "notifications": {
+                    "targets": []
+                },
+                "objectType": "WMTask",
+                "parameters": {
+                    "acquisitionEra": "Run2024E",
+                    "processingString": "MINIv6NANOv15",
+                    "processingVersion": 1
+                },
+                "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeNANOEDMAODoutput",
+                "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "pythonLibs": {},
+                "steps": {
+                    "cmsRun1": {
+                        "application": {
+                            "command": {
+                                "arguments": "",
+                                "configuration": "PSet.py",
+                                "configurationHash": null,
+                                "configurationPickle": "PSet.pkl",
+                                "executable": "cmsRun",
+                                "psetTweak": null
+                            },
+                            "configuration": {
+                                "arguments": {
+                                    "globalTag": "150X_dataRun3_v2",
+                                    "mergeNANO": true
+                                },
+                                "function": "merge",
+                                "pickledarguments": "b'(dp0\\nVmergeNANO\\np1\\nI01\\ns.'",
+                                "scenario": "do_not_use",
+                                "skipBadFiles": true
+                            },
+                            "controls": {},
+                            "gpu": {
+                                "gpuRequired": "forbidden",
+                                "gpuRequirements": null
+                            },
+                            "multicore": {
+                                "eventStreams": 0,
+                                "numberOfCores": 1
+                            },
+                            "setup": {
+                                "buildArch": null,
+                                "cmsswVersion": "CMSSW_15_0_2",
+                                "scramArch": [
+                                    "el8_amd64_gcc12"
+                                ],
+                                "scramCommand": "scramv1",
+                                "scramProject": "CMSSW",
+                                "softwareEnvironment": ""
+                            }
+                        },
+                        "build": {
+                            "directories": {
+                                "cmsRun1": {}
+                            }
+                        },
+                        "debug": {
+                            "keepLogs": false,
+                            "verbosity": 0
+                        },
+                        "emulator": {},
+                        "environment": {
+                            "paths": {},
+                            "variables": {}
+                        },
+                        "errorDestinationStep": "logArch1",
+                        "input": {
+                            "links": {}
+                        },
+                        "monitoring": {},
+                        "objectType": "WMStep",
+                        "output": {
+                            "analysisFiles": {},
+                            "jobReport": "FrameworkJobReport.xml",
+                            "keep": true,
+                            "modules": {
+                                "Merged": {
+                                    "transient": false,
+                                    "lfnBase": "/store/data/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
+                                    "primaryDataset": "DisplacedJet",
+                                    "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
+                                    "filterName": "",
+                                    "rawSkim": null,
+                                    "processedDataset": "Run2024E-MINIv6NANOv15-v1",
+                                    "dataTier": "NANOAOD"
+                                }
+                            },
+                            "stderr": "cmsRun1-stderr.log",
+                            "stdout": "cmsRun1-stdout.log"
+                        },
+                        "override": {},
+                        "runtime": {
+                            "postScramScripts": [],
+                            "postScripts": [],
+                            "preScripts": [],
+                            "scramPreScripts": []
+                        },
+                        "sandbox": {},
+                        "stepType": "CMSSW",
+                        "tree": {
+                            "childNames": [
+                                "stageOut1",
+                                "logArch1"
+                            ],
+                            "children": {
+                                "stageOut1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "files": {},
+                                    "stepType": "StageOut",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "stageOut1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {
+                                        "maxMergeEvents": 0,
+                                        "minMergeSize": 0
+                                    },
+                                    "tree": {
+                                        "parent": "cmsRun1",
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "filecount": 0,
+                                    "override": {},
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                },
+                                "logArch1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "logcount": 0,
+                                    "stepType": "LogArchive",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "logArch1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {
+                                        "modules": {
+                                            "logArchive": {}
+                                        }
+                                    },
+                                    "tree": {
+                                        "parent": "cmsRun1",
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "logs": {},
+                                    "override": {
+                                        "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                                    },
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                }
+                            },
+                            "parent": null
+                        },
+                        "user": {
+                            "inputSandboxes": [],
+                            "lfnBase": null,
+                            "outputFiles": [],
+                            "script": null,
+                            "userFiles": []
+                        }
+                    },
+                    "topStepName": "cmsRun1"
+                },
+                "subscriptions": {
+                    "outputSubs": []
+                },
+                "taskType": "Merge",
+                "tree": {
+                    "childNames": [
+                        "DataProcessingNANOEDMAODoutputMergeLogCollect"
+                    ],
+                    "children": {
+                        "DataProcessingNANOEDMAODoutputMergeLogCollect": {
+                            "notifications": {
+                                "targets": []
+                            },
+                            "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                            "watchdog": {
+                                "PerformanceMonitor": {
+                                    "hardTimeout": 159900,
+                                    "maxPSS": 2355.2,
+                                    "softTimeout": 159600
+                                },
+                                "interval": 300,
+                                "monitors": [
+                                    "PerformanceMonitor"
+                                ]
+                            },
+                            "constraints": {
+                                "sites": {
+                                    "whitelist": [],
+                                    "blacklist": [],
+                                    "trustlists": false,
+                                    "trustPUlists": false
+                                }
+                            },
+                            "steps": {
+                                "topStepName": "logCollect1",
+                                "logCollect1": {
+                                    "sandbox": {},
+                                    "newStageout": false,
+                                    "retryDelay": 300,
+                                    "logcount": 0,
+                                    "stepType": "LogCollect",
+                                    "environment": {
+                                        "variables": {},
+                                        "paths": {}
+                                    },
+                                    "build": {
+                                        "directories": {
+                                            "logCollect1": {}
+                                        }
+                                    },
+                                    "input": {
+                                        "links": {}
+                                    },
+                                    "application": {
+                                        "setup": {
+                                            "softwareEnvironment": "",
+                                            "buildArch": null,
+                                            "cmsswVersion": "CMSSW_15_0_2",
+                                            "scramCommand": "scramv1",
+                                            "scramArch": [
+                                                "el8_amd64_gcc12"
+                                            ],
+                                            "scramProject": "CMSSW"
+                                        },
+                                        "configuration": {},
+                                        "controls": {}
+                                    },
+                                    "output": {},
+                                    "tree": {
+                                        "parent": null,
+                                        "childNames": [],
+                                        "children": {}
+                                    },
+                                    "logs": {},
+                                    "override": {},
+                                    "emulator": {},
+                                    "retryCount": 3,
+                                    "objectType": "WMStep"
+                                }
+                            },
+                            "environment": {},
+                            "parameters": {
+                                "processingVersion": 1,
+                                "processingString": "MINIv6NANOv15",
+                                "acquisitionEra": "Run2024E"
+                            },
+                            "logBaseLFN": "/store/unmerged",
+                            "input": {
+                                "sandbox": null,
+                                "outputModule": "logArchive",
+                                "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeNANOEDMAODoutput/logArch1",
+                                "WMBS": {},
+                                "splitting": {
+                                    "files_per_job": 500,
+                                    "performance": {},
+                                    "algorithm": "MinFileBased"
+                                }
+                            },
+                            "unmergedLFNBase": "/store/unmerged",
+                            "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/DataProcessingMergeNANOEDMAODoutput/DataProcessingNANOEDMAODoutputMergeLogCollect",
+                            "pythonLibs": {},
+                            "mergedLFNBase": "/store/data",
+                            "tree": {
+                                "parent": "DataProcessingMergeNANOEDMAODoutput",
+                                "childNames": [],
+                                "children": {}
+                            },
+                            "taskType": "LogCollect",
+                            "subscriptions": {
+                                "outputSubs": []
+                            },
+                            "objectType": "WMTask"
+                        }
+                    },
+                    "parent": "DataProcessing"
+                },
+                "unmergedLFNBase": "/store/unmerged",
+                "watchdog": {
+                    "PerformanceMonitor": {
+                        "hardTimeout": 159900,
+                        "maxPSS": 2355.2,
+                        "softTimeout": 159600
+                    },
+                    "interval": 300,
+                    "monitors": [
+                        "PerformanceMonitor"
+                    ]
+                }
+            },
+            "LogCollect": {
+                "constraints": {
+                    "sites": {
+                        "whitelist": [],
+                        "blacklist": [],
+                        "trustlists": false,
+                        "trustPUlists": false
+                    }
+                },
+                "environment": {},
+                "input": {
+                    "sandbox": null,
+                    "outputModule": "logArchive",
+                    "inputStep": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/logArch1",
+                    "WMBS": {},
+                    "splitting": {
+                        "files_per_job": 500,
+                        "performance": {},
+                        "algorithm": "MinFileBased"
+                    }
+                },
+                "logBaseLFN": "/store/unmerged",
+                "mergedLFNBase": "/store/data",
+                "notifications": {
+                    "targets": []
+                },
+                "objectType": "WMTask",
+                "parameters": {
+                    "processingVersion": 1,
+                    "processingString": "MINIv6NANOv15",
+                    "acquisitionEra": "Run2024E"
+                },
+                "pathName": "/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing/LogCollect",
+                "prepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+                "pythonLibs": {},
+                "steps": {
+                    "topStepName": "logCollect1",
+                    "logCollect1": {
+                        "sandbox": {},
+                        "newStageout": false,
+                        "retryDelay": 300,
+                        "logcount": 0,
+                        "stepType": "LogCollect",
+                        "environment": {
+                            "variables": {},
+                            "paths": {}
+                        },
+                        "build": {
+                            "directories": {
+                                "logCollect1": {}
+                            }
+                        },
+                        "input": {
+                            "links": {}
+                        },
+                        "application": {
+                            "setup": {
+                                "softwareEnvironment": "",
+                                "buildArch": null,
+                                "cmsswVersion": "CMSSW_15_0_2",
+                                "scramCommand": "scramv1",
+                                "scramArch": [
+                                    "el8_amd64_gcc12"
+                                ],
+                                "scramProject": "CMSSW"
+                            },
+                            "configuration": {},
+                            "controls": {}
+                        },
+                        "output": {},
+                        "tree": {
+                            "parent": null,
+                            "childNames": [],
+                            "children": {}
+                        },
+                        "logs": {},
+                        "override": {},
+                        "emulator": {},
+                        "retryCount": 3,
+                        "objectType": "WMStep"
+                    }
+                },
+                "subscriptions": {
+                    "outputSubs": []
+                },
+                "taskType": "LogCollect",
+                "tree": {
+                    "parent": "DataProcessing",
+                    "childNames": [],
+                    "children": {}
+                },
+                "unmergedLFNBase": "/store/unmerged",
+                "watchdog": {
+                    "PerformanceMonitor": {
+                        "hardTimeout": 159900,
+                        "maxPSS": 2355.2,
+                        "softTimeout": 159600
+                    },
+                    "interval": 300,
+                    "monitors": [
+                        "PerformanceMonitor"
+                    ]
+                }
+            }
+        },
+        "parent": null
+    },
+    "unmergedLFNBase": "/store/unmerged",
+    "watchdog": {
+        "PerformanceMonitor": {
+            "hardTimeout": 159900,
+            "maxPSS": 16000,
+            "softTimeout": 159600
+        },
+        "interval": 300,
+        "monitors": [
+            "PerformanceMonitor"
+        ]
+    }
+}

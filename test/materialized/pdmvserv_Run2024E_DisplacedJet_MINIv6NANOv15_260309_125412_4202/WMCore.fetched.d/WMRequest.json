@@ -1,0 +1,215 @@
+[
+    {
+        "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202": {
+            "_id": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202",
+            "Campaign": "Run3ReReco",
+            "CMSSWVersion": "CMSSW_15_0_2",
+            "ConfigCacheUrl": "https://cmsweb.cern.ch/couchdb",
+            "CouchURL": "https://cmsweb.cern.ch/couchdb",
+            "EnableHarvesting": false,
+            "Group": "PPD",
+            "Memory": 16000,
+            "RequestType": "ReReco",
+            "PrepID": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
+            "Requestor": "pdmvserv",
+            "RequestPriority": 510000,
+            "RequestString": "Run2024E_DisplacedJet_MINIv6NANOv15",
+            "ScramArch": [
+                "el8_amd64_gcc12"
+            ],
+            "SizePerEvent": 1,
+            "TimePerEvent": 1,
+            "AcquisitionEra": "Run2024E",
+            "ProcessingString": "MINIv6NANOv15",
+            "GlobalTag": "150X_dataRun3_v2",
+            "Multicore": 8,
+            "Scenario": "pp",
+            "InputDataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+            "ConfigCacheID": "c31eb7af49d013b4b4bc668ccc80c1be",
+            "RequestorDN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service",
+            "RequestStatus": "announced",
+            "RequestTransition": [
+                {
+                    "Status": "new",
+                    "UpdateTime": 1773060852,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service"
+                },
+                {
+                    "UpdateTime": 1773060856,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service",
+                    "Status": "assignment-approved"
+                },
+                {
+                    "UpdateTime": 1773062734,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+                    "Status": "assigned"
+                },
+                {
+                    "UpdateTime": 1773063131,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "staging"
+                },
+                {
+                    "UpdateTime": 1773064966,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "staged"
+                },
+                {
+                    "UpdateTime": 1773065130,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "acquired"
+                },
+                {
+                    "UpdateTime": 1773065510,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "running-open"
+                },
+                {
+                    "UpdateTime": 1773128393,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "running-closed"
+                },
+                {
+                    "UpdateTime": 1773340385,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=msunmer/CN=852819/CN=Robot: WmCore Service Account",
+                    "Status": "completed"
+                },
+                {
+                    "UpdateTime": 1773341145,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+                    "Status": "closed-out"
+                },
+                {
+                    "UpdateTime": 1773342340,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=cmsunified/CN=658085/CN=Robot: CMS Unified account",
+                    "Status": "announced"
+                }
+            ],
+            "RequestDate": [
+                2026,
+                3,
+                9,
+                12,
+                54,
+                12
+            ],
+            "PriorityTransition": [
+                {
+                    "Priority": 110000,
+                    "UpdateTime": 1773060852,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=pdmvserv/CN=860734/CN=Robot: PdmV Service"
+                },
+                {
+                    "UpdateTime": 1773127612,
+                    "DN": "/DC=ch/DC=cern/OU=Organic Units/OU=Users/CN=vlimant/CN=652956/CN=Jean-Roch Vlimant",
+                    "Priority": 510000
+                }
+            ],
+            "CouchWorkloadDBName": "reqmgr_workload_cache",
+            "CouchDBName": "reqmgr_config_cache",
+            "RequestName": "pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202",
+            "OpenRunningTimeout": 0,
+            "GlobalTagConnect": null,
+            "LumiList": {},
+            "DbsUrl": "https://cmsweb-prod.cern.ch/dbs/prod/global/DBSReader",
+            "DashboardHost": "cms-jobmon.cern.ch",
+            "DashboardPort": 8884,
+            "PeriodicHarvestInterval": 0,
+            "DQMHarvestUnit": "byRun",
+            "DQMUploadProxy": null,
+            "DQMUploadUrl": "https://cmsweb.cern.ch/dqm/dev",
+            "DQMSequences": [],
+            "DQMConfigCacheID": null,
+            "EnableNewStageout": false,
+            "IncludeParents": false,
+            "VoGroup": "unknown",
+            "VoRole": "unknown",
+            "ValidStatus": "PRODUCTION",
+            "OverrideCatalog": null,
+            "RunNumber": 0,
+            "RobustMerge": true,
+            "Comments": "",
+            "SubRequestType": "",
+            "RequiresGPU": "forbidden",
+            "GPUParams": "null",
+            "JobExtraMatchRequirements": "",
+            "MinMergeSize": 2147483648,
+            "MaxMergeSize": 4294967296,
+            "MaxWaitTime": 86400,
+            "MaxMergeEvents": 20000000,
+            "ProcessingVersion": 1,
+            "HarvestingMemory": 3000,
+            "EventStreams": 0,
+            "MergedLFNBase": "/store/data",
+            "UnmergedLFNBase": "/store/unmerged",
+            "DeleteFromSource": false,
+            "PrimaryDataset": null,
+            "RunBlacklist": [],
+            "RunWhitelist": [],
+            "BlockBlacklist": [],
+            "BlockWhitelist": [],
+            "SplittingAlgo": "EventAwareLumiBased",
+            "EventsPerJob": 43200,
+            "LumisPerJob": 8,
+            "FilesPerJob": 1,
+            "TransientOutputModules": [],
+            "RequestWorkflow": "https://cmsweb.cern.ch/couchdb/reqmgr_workload_cache/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/spec",
+            "OutputDatasets": [
+                "/DisplacedJet/Run2024E-MINIv6NANOv15-v1/MINIAOD",
+                "/DisplacedJet/Run2024E-MINIv6NANOv15-v1/NANOAOD"
+            ],
+            "InitialPriority": 110000,
+            "SiteBlacklist": [],
+            "TrustSitelists": false,
+            "TrustPUSitelists": false,
+            "BlockCloseMaxEvents": 200000000,
+            "BlockCloseMaxWaitTime": 172800,
+            "Dashboard": "reprocessing",
+            "SoftTimeout": 159600,
+            "GracePeriod": 300,
+            "CustodialSites": [],
+            "NonCustodialSites": [],
+            "SiteWhitelist": [
+                "T2_DE_DESY",
+                "T2_US_Florida",
+                "T2_US_Vanderbilt",
+                "T1_ES_PIC",
+                "T2_ES_CIEMAT",
+                "T2_US_Caltech",
+                "T2_IT_Rome",
+                "T2_CH_CERN",
+                "T2_US_Purdue",
+                "T2_US_UCSD",
+                "T2_US_MIT",
+                "T2_US_Wisconsin",
+                "T1_FR_CCIN2P3",
+                "T1_UK_RAL",
+                "T2_IT_Legnaro",
+                "T1_DE_KIT",
+                "T2_FR_GRIF",
+                "T2_US_Nebraska",
+                "T1_IT_CNAF",
+                "T1_US_FNAL",
+                "T2_DE_RWTH"
+            ],
+            "Team": "production",
+            "HardTimeout": 159900,
+            "SubscriptionPriority": "Low",
+            "AllowOpportunistic": false,
+            "BlockCloseMaxFiles": 500,
+            "BlockCloseMaxSize": 5000000000000,
+            "Override": {
+                "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+            },
+            "DatasetLifetime": 0,
+            "OutputModulesLFNBases": [
+                "/store/unmerged/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                "/store/unmerged/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1"
+            ],
+            "TotalEstimatedJobs": 1347,
+            "TotalInputEvents": 57192223,
+            "TotalInputLumis": 33584,
+            "TotalInputFiles": 7100
+        }
+    }
+]
