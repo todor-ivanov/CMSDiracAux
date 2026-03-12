@@ -97,6 +97,10 @@ class TransformationPlugin(DIRACTransformationPlugin):
         else:
             self.transClient = transClient
 
+    def setInputData(self, data):
+        self.data = data
+
+
     # -------------------------------------------------------------------------
     # Public plugin entry points
     # -------------------------------------------------------------------------

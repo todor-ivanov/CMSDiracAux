@@ -54,6 +54,31 @@ class CanonicalProduction:
     ProductionName: str
     ProductionType: str
     Priority: int | None = None
+    CampaignName: str | None = None
+    AcquisitionEra: str | None = None
+    ProcessingString: str | None = None
+    PrepId: str | None = None
+
+
+@dataclass
+class LocalDIRACJob:
+    Name: str
+    WorkflowXML: str
+    JDL: str
+    Parameters: dict[str, Any] = field(default_factory=dict)
+
+
+@dataclass
+class LocalDIRACTransformation:
+    Name: str
+    Type: str
+    Group: str
+    Family: str
+    Plugin: str
+    PluginParams: dict[str, Any]
+    BodyXML: str
+    InputData: dict[str, Any] = field(default_factory=dict)
+    Parameters: dict[str, Any] = field(default_factory=dict)
 
 
 @dataclass
@@ -63,3 +88,5 @@ class TranslationDocument:
     TargetSystem: str
     Production: CanonicalProduction
     Tasks: list[CanonicalTask]
+    Warnings: list[str] = field(default_factory=list)
+    Notes: list[str] = field(default_factory=list)

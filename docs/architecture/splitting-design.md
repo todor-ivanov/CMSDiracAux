@@ -62,3 +62,25 @@ These are intentionally postponed in the current prototype.
 Before live DIRAC integration, the plugin is tested with a mock input-data
 sidecar produced by the translator. This allows the splitting logic to be
 validated independently of catalog and data-management integration.
+
+
+## Server-side limitation in the current stage
+
+The current prototype does not yet have access to a CMS-specific DIRAC server-side
+extension deployment.
+
+This means that even though the repository can now:
+
+- translate serialized WMCore workflow artifacts,
+- materialize local DIRAC-like Job and Transformation objects,
+- run the CMSWMCoreSplittingPlugin locally,
+
+it should **not** be expected to create server-side Transformation tasks in a live
+DIRAC instance yet.
+
+That future step depends on:
+
+- deployment of the CMS DIRAC extension on the server side,
+- registration/allow-listing of `CMSWMCoreSplittingPlugin`,
+- implementation of the corresponding Transformation Agent integration,
+- later runtime and data-management integration work.
