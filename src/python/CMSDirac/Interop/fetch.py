@@ -2,33 +2,35 @@ import subprocess
 import sys
 from pathlib import Path
 
+from CMSDirac.Interop.layout import build_request_layout
+
 
 def run_wmcget(opts):
-
     script = Path("bin/wmcGet.py")
+
+    if not opts.wmReqName:
+        raise RuntimeError(
+            "--fetch-inputs currently requires --wmReqName so the request-scoped "
+            "output layout can be constructed deterministically."
+        )
+
+    layout = build_request_layout(opts.outputBase, opts.wmReqName)
 
     cmd = [sys.executable, str(script)]
 
-
-    if opts.wmReqMgr:
+    if getattr(opts, "wmReqMgr", ""):
         cmd += ["-m", opts.wmReqMgr]
-
-    if opts.wmReqName:
+    if getattr(opts, "wmReqName", ""):
         cmd += ["-r", opts.wmReqName]
-
-    if opts.wmJobIndex:
+    if getattr(opts, "wmJobPkgFile", ""):
+        cmd += ["-j", opts.wmJobPkgFile]
+    if getattr(opts, "wmWorkloadFile", ""):
+        cmd += ["-w", opts.wmWorkloadFile]
+    if getattr(opts, "wmJobIndex", ""):
         cmd += ["-i", opts.wmJobIndex]
 
-    cmd += ["-o", opts.fetchOutDir]
+    cmd += ["-o", str(layout["wmcore_dir"])]
 
     subprocess.run(cmd, check=True)
 
-    if opts.wmReqName:
-        base = Path(opts.fetchOutDir) / f"wf_{opts.wmReqName}"
-    else:
-        base = Path(opts.fetchOutDir)
-
-    if opts.wmJobIndex:
-        return base / f"job_{opts.wmJobIndex}"
-
-    return base
+    return layout["wmcore_dir"]

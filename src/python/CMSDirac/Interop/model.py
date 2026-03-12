@@ -34,6 +34,7 @@ class CanonicalSplitting:
 
 @dataclass
 class CanonicalTask:
+    RequestName: str
     TaskName: str
     TaskPath: str
     ParentTaskNames: list[str]

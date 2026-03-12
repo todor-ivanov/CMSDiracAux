@@ -76,12 +76,20 @@ def build_local_transformation(task, local_job):
     }
 
     transf_params = {
+        "WMRequestName": task.RequestName,
         "SourceTaskPath": task.TaskPath,
         "SourceRefs": task.SourceRef,
         "PlaceholderLFNs": task.InputDataset.get("PlaceholderLFNs", []),
         "ServerSideNote": (
             "Server-side task creation is not expected yet; the CMS DIRAC extension "
             "and Transformation Agent/plugin deployment are not available."
+        ),
+        "NextDeferredStep": (
+            "Query DBS and DAS to resolve LFNs from serialized WM objects per task."
+        ),
+        "ReportFollowUp": (
+            "Update the complete architecture diagram to reflect the three-stage "
+            "output layout and include the parameter-mapping tables in the report."
         ),
     }
 

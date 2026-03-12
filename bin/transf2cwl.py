@@ -1,25 +1,6 @@
 #!/usr/bin/env python3
 """
 Export a locally materialized transformation bundle to a minimal CWL bundle.
-
-Stage-1 scope:
-- reads one local transformation JSON
-- reads the matching task list JSON
-- emits:
-    cwl_bundle/
-        tool.cwl
-        workflow.cwl
-        inputs/
-            task_0001.yaml
-            task_0002.yaml
-        metadata/
-            job.metadata.yaml
-            transformation.metadata.yaml
-        README.md
-
-This exporter is intentionally minimal.
-It targets a CWL bundle shape that is easy to validate with cwltool and is
-structurally aligned with the dirac-cwl prototype.
 """
 
 from __future__ import annotations
@@ -28,6 +9,7 @@ import argparse
 from pathlib import Path
 
 from CMSDirac.Interop.io import read_json, write_text
+from CMSDirac.Interop.layout import build_request_layout
 
 
 def dump_yaml_scalar(value):
@@ -102,7 +84,7 @@ arguments:
         echo "$lfn" >> execution.log
       done
       echo "Fetching CMSDiracAux runtime bundle" >> execution.log
-      echo "Sourcing environment" >> execution.log
+      echo "Sourcing environment" >> execution_log
       echo "Running Startup.py" >> execution.log
 stdout: execution.log
 requirements:
@@ -197,7 +179,7 @@ Contents
 - workflow.cwl
   Single-step CWL workflow wrapping tool.cwl.
 
-- inputs/
+- inputs
   One YAML input file per generated task.
 
 - metadata/job.metadata.yaml
@@ -222,19 +204,26 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     "--bundle-dir",
     required=True,
-    help="Path to the local output bundle produced by wmc2transf.py and runLocalTransformation.py",
+    help="Path to the local DIRAC transformation bundle",
 )
 
 parser.add_argument(
     "--transformation-name",
     default="",
-    help="Transformation name. If omitted, the first *.transformation.json file found is used.",
+    help="Transformation name. If omitted, the first transformation JSON found is used.",
+)
+
+parser.add_argument(
+    "--output-base",
+    dest="outputBase",
+    default="",
+    help="Optional top-level output base. If set, output goes to REQUEST_NAME/DIRAC.cwl.d",
 )
 
 parser.add_argument(
     "--outdir",
     default="",
-    help="Optional explicit output directory. Defaults to BUNDLE_DIR/cwl_bundle",
+    help="Optional explicit output directory. If not set, the request layout is used when possible.",
 )
 
 
@@ -249,7 +238,7 @@ if __name__ == "__main__":
     else:
         candidates = sorted((bundle_dir / "Transformations").glob("*.transformation.json"))
         if not candidates:
-            raise SystemExit("No transformation JSON files found under Transformations/")
+            raise SystemExit("No transformation JSON files found under Transformations")
         transformation_file = candidates[0]
         transformation_name = transformation_file.name.replace(".transformation.json", "")
 
@@ -257,17 +246,22 @@ if __name__ == "__main__":
 
     if not transformation_file.exists():
         raise SystemExit(f"Missing transformation file: {transformation_file}")
-
     if not tasks_file.exists():
-        raise SystemExit(
-            f"Missing tasks file: {tasks_file}\n"
-            "Run bin/runLocalTransformation.py first."
-        )
+        raise SystemExit(f"Missing tasks file: {tasks_file}. Run bin/runLocalTransformation.py first.")
 
     transformation = read_json(transformation_file)
     tasks = read_json(tasks_file)
 
-    outdir = Path(opts.outdir).resolve() if opts.outdir else bundle_dir / "cwl_bundle"
+    request_name = transformation.get("Parameters", {}).get("WMRequestName")
+
+    if opts.outdir:
+        outdir = Path(opts.outdir).resolve()
+    elif opts.outputBase and request_name:
+        layout = build_request_layout(opts.outputBase, request_name)
+        outdir = layout["cwl_dir"]
+    else:
+        outdir = bundle_dir.parent / "DIRAC.cwl.d"
+
     inputs_dir = outdir / "inputs"
     metadata_dir = outdir / "metadata"
 
@@ -279,22 +273,15 @@ if __name__ == "__main__":
 
     for idx, task_record in enumerate(tasks, start=1):
         input_payload = build_task_input_yaml(transformation, task_record)
-        input_yaml = dump_yaml(input_payload) + "\n"
-        write_text(inputs_dir / f"task_{idx:04d}.yaml", input_yaml)
+        write_text(inputs_dir / f"task_{idx:04d}.yaml", dump_yaml(input_payload) + "\n")
 
-    job_metadata_yaml = dump_yaml(build_job_metadata(transformation)) + "\n"
-    transformation_metadata_yaml = dump_yaml(build_transformation_metadata(transformation, tasks)) + "\n"
-
-    write_text(metadata_dir / "job.metadata.yaml", job_metadata_yaml)
-    write_text(metadata_dir / "transformation.metadata.yaml", transformation_metadata_yaml)
+    write_text(metadata_dir / "job.metadata.yaml", dump_yaml(build_job_metadata(transformation)) + "\n")
+    write_text(
+        metadata_dir / "transformation.metadata.yaml",
+        dump_yaml(build_transformation_metadata(transformation, tasks)) + "\n",
+    )
     write_text(outdir / "README.md", build_readme(transformation_name, len(tasks)))
 
     print("CWL export complete.")
     print("Transformation:", transformation_name)
     print("Bundle directory:", outdir)
-    print("Files created:")
-    print("  tool.cwl")
-    print("  workflow.cwl")
-    print("  inputs/")
-    print("  metadata/job.metadata.yaml")
-    print("  metadata/transformation.metadata.yaml")

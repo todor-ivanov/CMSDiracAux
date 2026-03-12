@@ -7,17 +7,7 @@ materialized local DIRAC-like CMS workflow in a CWL-digestible form.
 
 The short-term goal is not to reproduce the full DIRAC Python object model in
 CWL, but to export the current local transformation and task structure into a
-bundle that is structurally compatible with the direction taken by `dirac-cwl`.
-
-The `dirac-cwl` prototype already supports:
-
-- local testing with `cwltool`
-- submission as DIRAC jobs
-- submission as DIRAC transformations
-- submission as DIRAC productions
-
-and distinguishes these modes using CWL plus additional metadata files.
-This makes it the correct target for the next stage of the PoC.
+bundle that is structurally compatible with the direction taken by dirac-cwl.
 
 ## Current local materialization baseline
 
@@ -52,40 +42,36 @@ CMSWMCoreSplittingPlugin
     ↓
 Tasks and TaskJobs
 
-## Why CWL is the next milestone
+## New request-scoped output layout
 
-The CWL milestone is intentionally chosen before deeper server-side DIRAC
-integration because:
+The output layout is now organized under one request-scoped root:
 
-- the current environment does not provide a CMS-specific DIRAC server-side extension
-- server-side plugin deployment is not yet possible
-- real CMS data discovery is not available in the current DIRAC test setup
-- DIRACX is heading toward workflow descriptions that are more portable than the old Python object layer
+REQUEST_ROOT
+    ├── WMCore.fetched.d
+    ├── DIRAC.transf.d
+    └── DIRAC.cwl.d
 
-In this context, the current local materialized workflow should be treated as an
-intermediate representation that can now be exported into CWL.
+This separates:
+
+- fetched and serialized WMCore artifacts
+- local DIRAC-style materialization artifacts
+- CWL export artifacts
 
 ## Reference target: dirac-cwl
 
-The `dirac-cwl` prototype describes the following usage model:
+The dirac-cwl prototype supports:
 
-1. local workflow validation with `cwltool`
-2. submission as DIRAC jobs using:
-   - CWL task
-   - one or more input parameter sets
-   - DIRAC metadata
-3. submission as DIRAC transformations using:
-   - CWL task
-   - transformation metadata
-4. submission as DIRAC productions using:
-   - CWL task
-   - step metadata per transformation
+- local workflow validation with cwltool
+- submission as DIRAC jobs
+- submission as DIRAC transformations
+- submission as DIRAC productions
 
-This is enough for the current PoC to define a short export path.
+The current PoC targets a bundle shape that is easy to validate locally and is
+structurally aligned with those usage modes.
 
 ## Shortest export path
 
-The shortest path to the next milestone is:
+The shortest path to the milestone is:
 
 1. keep the current local materialized transformation as the source
 2. export one task tool as CWL CommandLineTool
@@ -96,32 +82,22 @@ The shortest path to the next milestone is:
 7. validate locally with cwltool
 8. only then align more tightly with dirac-cwl submission commands
 
-This avoids unnecessary deviation into unresolved WMBS details.
+## Source and target mapping
 
-## Mapping strategy
+Source objects:
 
-### Source objects
+- DIRAC.transf.d/Transformations/NAME.transformation.json
+- DIRAC.transf.d/Tasks/NAME.tasks.json
+- optionally DIRAC.transf.d/Jobs
+- optionally DIRAC.transf.d/TaskJobs
 
-The CWL exporter uses:
+Target bundle:
 
-- Transformations/NAME.transformation.json
-- Tasks/NAME.tasks.json
-- optionally Jobs/NAME.jobDescription.xml
-- optionally TaskJobs/NAME/*.job.params.json
-
-### Target bundle
-
-The exporter writes:
-
-cwl_bundle/
+DIRAC.cwl.d
     tool.cwl
     workflow.cwl
-    inputs/
-        task_0001.yaml
-        task_0002.yaml
-    metadata/
-        job.metadata.yaml
-        transformation.metadata.yaml
+    inputs
+    metadata
     README.md
 
 ## Conceptual mapping
@@ -158,12 +134,7 @@ That tool encapsulates the stage-1 execution model:
 - run Startup.py
 - pass task-specific LFNs and metadata as inputs
 
-This is intentionally a stage-1 abstraction and does not yet attempt full CMS
-runtime fidelity.
-
 ## Stage-1 scope
-
-The first CWL milestone is intentionally limited.
 
 Included:
 
@@ -178,7 +149,7 @@ Not included yet:
 - full WMBS job semantics
 - intra-file splitting
 - run/lumi masks
-- real DBS/DAS based data resolution
+- real DBS or DAS based data resolution
 - Rucio based data management integration
 - multi-step production decomposition
 
@@ -195,40 +166,40 @@ This milestone is achieved when:
   - storage element
   - placeholder LFNs
 
-## Expected repository additions
-
-New script:
-
-bin/transf2cwl.py
-
-Expected usage:
+## Expected usage
 
 python bin/transf2cwl.py \
-  --bundle-dir OUTPUT_DIR \
+  --bundle-dir OUTPUT_BASE/REQUEST_NAME/DIRAC.transf.d \
+  --output-base OUTPUT_BASE \
   --transformation-name GenSimFull
 
 Expected output:
 
-OUTPUT_DIR/cwl_bundle/
+OUTPUT_BASE/REQUEST_NAME/DIRAC.cwl.d
     tool.cwl
     workflow.cwl
-    inputs/
-        task_0001.yaml
-    metadata/
-        job.metadata.yaml
-        transformation.metadata.yaml
+    inputs
+    metadata
     README.md
 
-## Immediate next step after this milestone
+## Report follow-up note
 
-Once this export exists, the next follow-up is:
+The report workstream must keep expanding in parallel.
 
-- validate generated CWL with cwltool
-- compare generated metadata against dirac-cwl test bundles
-- then decide whether to target:
-  - job submission first
-  - transformation submission first
-  - or direct production decomposition
+The following should be added to the report:
+
+- the updated complete architecture diagram reflecting:
+  - WMCore.fetched.d
+  - DIRAC.transf.d
+  - DIRAC.cwl.d
+- the parameter-mapping tables between WMCore, canonical IR, and DIRAC
+- the rationale for moving from local DIRAC-style materialization toward CWL
+
+## Deferred technical note
+
+After this layout unification and CWL export stage, the next technical branch is:
+
+- query DBS and DAS to resolve LFNs from serialized WM objects per task
 
 ## Important note
 

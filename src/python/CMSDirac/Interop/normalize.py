@@ -74,6 +74,7 @@ def normalize_bundle(bundle):
     )
 
     task_obj = CanonicalTask(
+        RequestName=request["RequestName"],
         TaskName=task.get("taskName", "GenSimFull"),
         TaskPath=task_path,
         ParentTaskNames=[],
@@ -113,10 +114,12 @@ def normalize_bundle(bundle):
         "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
         "Static placeholder LFNs are used for stage-1 plugin/materialization tests.",
         "WMJob.json handling is intentionally deferred to a later refinement stage.",
+        "Next deferred technical step: query DBS and DAS to resolve LFNs from serialized WM objects per task.",
+        "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report.",
     ]
 
     return TranslationDocument(
-        SchemaVersion="wmcore-to-dirac/v0.2-local-materialization",
+        SchemaVersion="wmcore-to-dirac/v0.3-request-layout",
         SourceSystem="WMCore",
         TargetSystem="DIRAC",
         Production=prod,
