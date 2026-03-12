@@ -1,24 +1,16 @@
 #!/usr/bin/env python3
 """
 Minimal WMCore to DIRAC translator and local object materializer.
-
-This script:
-  - loads serialized WMCore artifacts
-  - normalizes them into canonical translation objects
-  - materializes local DIRAC-style Job and Transformation objects on disk
-  - emits static plugin-input sidecars for stage-1 splitting tests
-
-It does not create live server-side DIRAC objects.
 """
 
 from pathlib import Path
 import argparse
 
-from CMSDirac.Interop.io import load_serialized_bundle
-from CMSDirac.Interop.normalize import normalize_bundle
 from CMSDirac.Interop.emit import emit_translation_document
 from CMSDirac.Interop.fetch import run_wmcget
+from CMSDirac.Interop.io import load_serialized_bundle
 from CMSDirac.Interop.layout import build_request_layout
+from CMSDirac.Interop.normalize import normalize_bundle
 
 
 parser = argparse.ArgumentParser(
@@ -43,6 +35,12 @@ parser.add_argument(
     dest="outputBase",
     default="test/materialized",
     help="Top-level output directory for all generated artifacts",
+)
+
+parser.add_argument(
+    "--wmDasHost",
+    default="https://cmsweb-testbed.cern.ch",
+    help="DAS host used for dataset to LFN resolution",
 )
 
 parser.add_argument("-r", "--wmReqName", default="")
@@ -70,8 +68,9 @@ if __name__ == "__main__":
     print("Request root:", layout["request_root"])
     print("WMCore fetched dir:", layout["wmcore_dir"])
     print("DIRAC transformation dir:", layout["dirac_dir"])
+    print("DAS host:", opts.wmDasHost)
 
-    translation_document = normalize_bundle(bundle)
+    translation_document = normalize_bundle(bundle, das_host=opts.wmDasHost)
     emit_translation_document(translation_document, bundle, layout["dirac_dir"])
 
     request = bundle["request"]

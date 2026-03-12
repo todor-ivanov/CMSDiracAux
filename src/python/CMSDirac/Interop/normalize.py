@@ -1,3 +1,4 @@
+from CMSDirac.Interop.das import resolve_task_lfns
 from CMSDirac.Interop.model import (
     CanonicalProduction,
     CanonicalSplitting,
@@ -32,7 +33,7 @@ def _extract_placeholder_input_lfns(task):
     ]
 
 
-def normalize_bundle(bundle):
+def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
     request = bundle["request"]
     task = bundle["task"]
     step = bundle["step"]
@@ -41,6 +42,10 @@ def normalize_bundle(bundle):
     task_path = task["pathName"]
     split_cfg = splitting[task_path]
     perf = split_cfg.get("performance", {}) or {}
+
+    das_resolution = resolve_task_lfns(task, host=das_host)
+    placeholder_lfns = _extract_placeholder_input_lfns(task)
+    resolved_lfns = das_resolution["lfns"] or placeholder_lfns
 
     step_obj = CanonicalStep(
         StepName=step.get("stepName", "cmsRun1"),
@@ -84,7 +89,12 @@ def normalize_bundle(bundle):
         Priority=request.get("RequestPriority"),
         InputDataset={
             "DatasetHint": task.get("inputDataset"),
-            "PlaceholderLFNs": _extract_placeholder_input_lfns(task),
+            "DatasetsResolved": das_resolution["datasets"],
+            "LFNResolutionMode": das_resolution["resolution_mode"],
+            "LFNResolutionErrors": das_resolution["errors"],
+            "PlaceholderLFNs": placeholder_lfns,
+            "ResolvedLFNs": resolved_lfns,
+            "LFNs": resolved_lfns,
         },
         OutputDataset={
             "ProcessingString": request.get("ProcessingString"),
@@ -112,14 +122,13 @@ def normalize_bundle(bundle):
 
     notes = [
         "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
-        "Static placeholder LFNs are used for stage-1 plugin/materialization tests.",
+        "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
         "WMJob.json handling is intentionally deferred to a later refinement stage.",
-        "Next deferred technical step: query DBS and DAS to resolve LFNs from serialized WM objects per task.",
         "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report.",
     ]
 
     return TranslationDocument(
-        SchemaVersion="wmcore-to-dirac/v0.3-request-layout",
+        SchemaVersion="wmcore-to-dirac/v0.4-das-lfn-resolution",
         SourceSystem="WMCore",
         TargetSystem="DIRAC",
         Production=prod,

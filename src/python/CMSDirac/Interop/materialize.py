@@ -80,6 +80,7 @@ def build_local_transformation(task, local_job):
         "SourceTaskPath": task.TaskPath,
         "SourceRefs": task.SourceRef,
         "PlaceholderLFNs": task.InputDataset.get("PlaceholderLFNs", []),
+        "ResolvedLFNs": task.InputDataset.get("ResolvedLFNs", []),
         "ServerSideNote": (
             "Server-side task creation is not expected yet; the CMS DIRAC extension "
             "and Transformation Agent/plugin deployment are not available."
@@ -101,6 +102,6 @@ def build_local_transformation(task, local_job):
         Plugin=task.Splitting.PluginName,
         PluginParams=plugin_params,
         BodyXML=local_job.WorkflowXML,
-        InputData={"LFNs": task.InputDataset.get("PlaceholderLFNs", [])},
+        InputData={"LFNs": task.InputDataset.get("LFNs", task.InputDataset.get("PlaceholderLFNs", []))},
         Parameters=transf_params,
     )
