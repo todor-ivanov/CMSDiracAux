@@ -1,0 +1,190 @@
+{
+    "application": {
+        "command": {
+            "arguments": "",
+            "configuration": "PSet.py",
+            "configurationHash": null,
+            "configurationPickle": "PSet.pkl",
+            "executable": "cmsRun",
+            "psetTweak": null
+        },
+        "configuration": {
+            "arguments": {
+                "globalTag": "151X_mcRun3_2025_realistic_v4"
+            },
+            "cacheName": "reqmgr_config_cache",
+            "configCacheUrl": "https://cmsweb.cern.ch/couchdb",
+            "configId": "145b5022e36a88759d2e1096624248a2",
+            "configUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2",
+            "eventsPerLumi": 100,
+            "pickledarguments": "b'(dp0\\nVglobalTag\\np1\\nV151X_mcRun3_2025_realistic_v4\\np2\\ns.'",
+            "retrieveConfigUrl": "https://cmsweb.cern.ch/couchdb/reqmgr_config_cache/145b5022e36a88759d2e1096624248a2/configFile"
+        },
+        "controls": {},
+        "gpu": {
+            "gpuRequired": "forbidden",
+            "gpuRequirements": null
+        },
+        "multicore": {
+            "eventStreams": 1,
+            "numberOfCores": 8
+        },
+        "setup": {
+            "buildArch": null,
+            "cmsswVersion": "CMSSW_16_0_0_pre2",
+            "scramArch": [
+                "el8_amd64_gcc13"
+            ],
+            "scramCommand": "scramv1",
+            "scramProject": "CMSSW",
+            "softwareEnvironment": ""
+        }
+    },
+    "build": {
+        "directories": {
+            "cmsRun1": {}
+        }
+    },
+    "debug": {
+        "keepLogs": false,
+        "verbosity": 0
+    },
+    "emulator": {},
+    "environment": {
+        "paths": {},
+        "variables": {}
+    },
+    "errorDestinationStep": "logArch1",
+    "input": {
+        "links": {}
+    },
+    "monitoring": {},
+    "objectType": "WMStep",
+    "output": {
+        "analysisFiles": {},
+        "jobReport": "FrameworkJobReport.xml",
+        "keep": true,
+        "modules": {
+            "FEVTDEBUGoutput": {
+                "processedDataset": "CMSSW_16_0_0_pre2-151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "filterName": "",
+                "primaryDataset": "RelValQCD_FlatPt_15_3000HS_14",
+                "dataTier": "GEN-SIM",
+                "transient": true,
+                "lfnBase": "/store/unmerged/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "mergedLFNBase": "/store/relval/CMSSW_16_0_0_pre2/RelValQCD_FlatPt_15_3000HS_14/GEN-SIM/151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM-v1",
+                "rawSkim": null
+            }
+        },
+        "prepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+        "stderr": "cmsRun1-stderr.log",
+        "stdout": "cmsRun1-stdout.log"
+    },
+    "override": {},
+    "runtime": {
+        "postScramScripts": [],
+        "postScripts": [],
+        "preScripts": [],
+        "scramPreScripts": []
+    },
+    "sandbox": {},
+    "stepPhysicsType": "GEN,SIM",
+    "stepType": "CMSSW",
+    "tree": {
+        "childNames": [
+            "stageOut1",
+            "logArch1"
+        ],
+        "children": {
+            "stageOut1": {
+                "owner_vogroup": "DEFAULT",
+                "input": {
+                    "links": {}
+                },
+                "sandbox": {},
+                "asyncDest": null,
+                "environment": {
+                    "variables": {},
+                    "paths": {}
+                },
+                "build": {
+                    "directories": {
+                        "stageOut1": {}
+                    }
+                },
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "objectType": "WMStep",
+                "tree": {
+                    "children": {},
+                    "parent": "cmsRun1",
+                    "childNames": []
+                },
+                "emulator": {},
+                "retryCount": 3,
+                "owner_vorole": "DEFAULT",
+                "filecount": 0,
+                "output": {
+                    "minMergeSize": 2147483648,
+                    "maxMergeEvents": 20000000
+                },
+                "userDN": null,
+                "files": {},
+                "newStageout": false,
+                "override": {},
+                "stepType": "StageOut",
+                "retryDelay": 300
+            },
+            "logArch1": {
+                "logcount": 0,
+                "output": {
+                    "modules": {
+                        "logArchive": {}
+                    }
+                },
+                "application": {
+                    "configuration": {},
+                    "controls": {}
+                },
+                "objectType": "WMStep",
+                "input": {
+                    "links": {}
+                },
+                "logs": {},
+                "emulator": {},
+                "environment": {
+                    "variables": {},
+                    "paths": {}
+                },
+                "newStageout": false,
+                "override": {
+                    "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
+                },
+                "sandbox": {},
+                "retryCount": 3,
+                "stepType": "LogArchive",
+                "tree": {
+                    "children": {},
+                    "parent": "cmsRun1",
+                    "childNames": []
+                },
+                "retryDelay": 300,
+                "build": {
+                    "directories": {
+                        "logArch1": {}
+                    }
+                }
+            }
+        },
+        "parent": null
+    },
+    "user": {
+        "inputSandboxes": [],
+        "lfnBase": null,
+        "outputFiles": [],
+        "script": null,
+        "userFiles": []
+    }
+}

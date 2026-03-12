@@ -1,0 +1,22 @@
+{
+  "/store/mock/mock-dataset/file_0001.root": {
+    "events": 100,
+    "se": "T2_TEST_SE"
+  },
+  "/store/mock/mock-dataset/file_0002.root": {
+    "events": 100,
+    "se": "T2_TEST_SE"
+  },
+  "/store/mock/mock-dataset/file_0003.root": {
+    "events": 100,
+    "se": "T2_TEST_SE"
+  },
+  "/store/mock/mock-dataset/file_0004.root": {
+    "events": 100,
+    "se": "T2_TEST_SE"
+  },
+  "/store/mock/mock-dataset/file_0005.root": {
+    "events": 100,
+    "se": "T2_TEST_SE"
+  }
+}

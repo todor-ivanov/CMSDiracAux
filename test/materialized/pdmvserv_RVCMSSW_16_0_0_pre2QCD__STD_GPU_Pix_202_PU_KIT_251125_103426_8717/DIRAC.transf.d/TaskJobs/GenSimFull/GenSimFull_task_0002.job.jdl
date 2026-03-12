@@ -1,0 +1,8 @@
+JobName = "GenSimFull_task_0002";
+JobType = "User";
+Executable = "cmsRun";
+Arguments = "step_cfg.py";
+InputSandbox = ["step_cfg.py", "WMWorkload.pkl", "JobPackage.pkl"];
+OutputSandbox = ["FrameworkJobReport.xml", "wmcoreReport.json", "*.log"];
+Memory = 20000;
+Tag = {"GPU"};

@@ -1,0 +1,118 @@
+{
+  "Notes": [
+    "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
+    "Static placeholder LFNs are used for stage-1 plugin/materialization tests.",
+    "WMJob.json handling is intentionally deferred to a later refinement stage.",
+    "Next deferred technical step: query DBS and DAS to resolve LFNs from serialized WM objects per task.",
+    "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report."
+  ],
+  "Production": {
+    "AcquisitionEra": {
+      "ALCA_2025": "CMSSW_16_0_0_pre2",
+      "Digi_2025": "CMSSW_16_0_0_pre2",
+      "GenSimFull": "CMSSW_16_0_0_pre2",
+      "RecoNano_2025": "CMSSW_16_0_0_pre2"
+    },
+    "CampaignName": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-1764066651",
+    "PrepId": "CMSSW_16_0_0_pre2__Run3_2025_PU_GPUvsCPU_PixelHCalECalPF_KITFARM-QCD_FlatPt_15_3000HS_14-00002",
+    "Priority": 450000,
+    "ProcessingString": {
+      "ALCA_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+      "Digi_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+      "GenSimFull": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+      "RecoNano_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM"
+    },
+    "ProductionName": "pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717",
+    "ProductionType": "Production"
+  },
+  "SchemaVersion": "wmcore-to-dirac/v0.3-request-layout",
+  "SourceSystem": "WMCore",
+  "TargetSystem": "DIRAC",
+  "Tasks": [
+    {
+      "InputDataset": {
+        "DatasetHint": null,
+        "PlaceholderLFNs": [
+          "/store/mock/mock-dataset/file_0001.root",
+          "/store/mock/mock-dataset/file_0002.root",
+          "/store/mock/mock-dataset/file_0003.root",
+          "/store/mock/mock-dataset/file_0004.root",
+          "/store/mock/mock-dataset/file_0005.root"
+        ]
+      },
+      "OutputDataset": {
+        "AcquisitionEra": {
+          "ALCA_2025": "CMSSW_16_0_0_pre2",
+          "Digi_2025": "CMSSW_16_0_0_pre2",
+          "GenSimFull": "CMSSW_16_0_0_pre2",
+          "RecoNano_2025": "CMSSW_16_0_0_pre2"
+        },
+        "ProcessingString": {
+          "ALCA_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+          "Digi_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+          "GenSimFull": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM",
+          "RecoNano_2025": "151X_mcRun3_2025_realistic_v4_STD_GPUValidation_PixelHCalECalPF_2025_PU_KITFARM"
+        }
+      },
+      "ParentTaskNames": [],
+      "Priority": 450000,
+      "RequestName": "pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717",
+      "SitePolicy": {},
+      "SourceRef": {
+        "WMSplitting": "WMSplitting.json",
+        "WMStep": "WMStep.json",
+        "WMTask": "WMTask.json"
+      },
+      "Splitting": {
+        "EventsPerJob": 100,
+        "EventsPerLumi": 100,
+        "FilesPerJob": null,
+        "LumisPerJob": null,
+        "PluginName": "CMSWMCoreSplittingPlugin",
+        "ResourceHints": {
+          "MemoryMB": 20000.0,
+          "RequiresGPU": true,
+          "SizePerEvent": 1.0,
+          "TimePerEvent": 1.0
+        },
+        "SourceRef": {
+          "WMSplitting": "WMSplitting.json"
+        },
+        "SplitMode": "EventBased",
+        "StaticDatasetMode": true
+      },
+      "Step": {
+        "Arguments": [
+          "step_cfg.py"
+        ],
+        "CpuCores": 1,
+        "CpuTime": null,
+        "Environment": {},
+        "Executable": "cmsRun",
+        "GpuRequired": true,
+        "InputArtifacts": [
+          "step_cfg.py"
+        ],
+        "MemoryMB": 20000.0,
+        "OutputArtifacts": [
+          "FrameworkJobReport.xml",
+          "wmcoreReport.json"
+        ],
+        "SoftwareArchitecture": [
+          "el8_amd64_gcc13"
+        ],
+        "SoftwareVersion": "CMSSW_16_0_0_pre2",
+        "SourceRef": {
+          "WMStep": "WMStep.json"
+        },
+        "StepName": "cmsRun1"
+      },
+      "TaskName": "GenSimFull",
+      "TaskPath": "/pdmvserv_RVCMSSW_16_0_0_pre2QCD__STD_GPU_Pix_202_PU_KIT_251125_103426_8717/GenSimFull",
+      "TransformationFamily": "WMCoreInterOp",
+      "TransformationGroup": "CMS",
+      "TransformationType": "Production"
+    }
+  ],
+  "Warnings": []
+}
