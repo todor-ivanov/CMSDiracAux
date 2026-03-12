@@ -9,6 +9,10 @@ def run_wmcget(opts):
 
     cmd = [sys.executable, str(script)]
 
+
+    if opts.wmReqMgr:
+        cmd += ["-m", opts.wmReqMgr]
+
     if opts.wmReqName:
         cmd += ["-r", opts.wmReqName]
 
