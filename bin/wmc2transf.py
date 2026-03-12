@@ -48,7 +48,7 @@ parser.add_argument("-i", "--wmJobIndex", default="")
 parser.add_argument("-j", "--wmJobPkg", dest="wmJobPkgFile", default="")
 parser.add_argument("-w", "--wmWorkload", dest="wmWorkloadFile", default="")
 parser.add_argument("-m", "--wmReqMgr", default="cmsweb-testbed.cern.ch")
-parser.add_argument("--fetch-outdir", dest="fetchOutDir", default="/tmp")
+parser.add_argument("--fetch-outdir", dest="fetchOutDir", default="test/fetched")
 
 if __name__ == "__main__":
     opts = parser.parse_args()

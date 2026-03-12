@@ -17,9 +17,7 @@ def _build_task_workflow_xml(transformation, task_record):
     transformation_name = transformation["Name"]
     task_name = task_record["TaskName"]
     lfns = task_record.get("LFNs", [])
-    source_task_path = (
-        transformation.get("Parameters", {}).get("SourceTaskPath", "")
-    )
+    source_task_path = transformation.get("Parameters", {}).get("SourceTaskPath", "")
 
     workflow_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',

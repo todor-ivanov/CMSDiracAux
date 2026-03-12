@@ -18,12 +18,6 @@ def infer_gpu_required(request, step):
 
 
 def _extract_placeholder_input_lfns(task):
-    """
-    Stage-1 helper.
-
-    We do not yet have real CMS-visible data discovery in the DIRAC test setup,
-    so we derive placeholder LFNs from whatever input/task hints are available.
-    """
     input_dataset = (
         task.get("inputDataset")
         or task.get("inputDataSet")
@@ -118,7 +112,7 @@ def normalize_bundle(bundle):
     notes = [
         "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
         "Static placeholder LFNs are used for stage-1 plugin/materialization tests.",
-        "CMS WMBS job parameters are preserved locally when available, but are not yet consumed by live DIRAC services.",
+        "WMJob.json handling is intentionally deferred to a later refinement stage.",
     ]
 
     return TranslationDocument(

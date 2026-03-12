@@ -3,18 +3,6 @@
 Run a locally materialized transformation through CMSWMCoreSplittingPlugin.
 
 This is a stage-1 local runner. It does not contact DIRAC services.
-It consumes:
-
-  - Transformations/<Task>.transformation.json
-  - PluginInput/<Task>.inputdata.json
-
-and produces:
-
-  - Tasks/<Task>.tasks.json
-  - TaskJobs/<Task>/<TaskName>.jobDescription.xml
-  - TaskJobs/<Task>/<TaskName>.job.jdl
-  - TaskJobs/<Task>/<TaskName>.job.params.json
-  - Reports/local_task_materialization_report.json
 """
 
 from pathlib import Path

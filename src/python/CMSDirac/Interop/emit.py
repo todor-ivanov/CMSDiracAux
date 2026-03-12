@@ -17,25 +17,6 @@ def _build_plugin_input_data(task):
         for lfn in lfns
     }
 
-def _build_mock_input_data(task):
-    """
-    Stage-1 mock input dataset for the splitting plugin.
-
-    Since we do not yet have full WMCore dataset -> DIRAC FileCatalog mapping,
-    we emit a small synthetic input-data file that can be consumed directly by
-    CMSWMCoreSplittingPlugin.
-
-    The number of entries is intentionally small and deterministic.
-    """
-    events_per_job = task.Splitting.EventsPerJob or 100
-
-    return {
-        f"/store/mock/{task.TaskName}/file_{idx:04d}.root": {
-            "se": "T2_TEST_SE",
-            "events": events_per_job,
-        }
-        for idx in range(1, 6)
-    }
 
 def emit_translation_document(doc, bundle, outdir):
     outdir = Path(outdir)
@@ -75,4 +56,4 @@ def emit_translation_document(doc, bundle, outdir):
             "are not yet available in the current environment."
         ),
     }
-    write_json(outdir / "Reports/translation_report.json", report)
+    write_json(outdir / "Reports" / "translation_report.json", report)

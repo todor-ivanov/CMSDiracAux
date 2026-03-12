@@ -13,19 +13,7 @@ def _stringify(value):
 
 
 def build_local_dirac_job(task, wmjob=None):
-    """
-    Build a local-only DIRAC-style Job representation.
-
-    The purpose is to preserve:
-      - the CMS runtime bootstrap structure
-      - the carried WMBS job parameters
-      - a body that can later seed a transformation template
-    """
     job_name = f"{task.TaskName}.job"
-
-    extra_params = {}
-    if isinstance(wmjob, dict):
-        extra_params = dict(wmjob)
 
     workflow_lines = [
         '<?xml version="1.0" encoding="UTF-8"?>',
@@ -44,14 +32,8 @@ def build_local_dirac_job(task, wmjob=None):
         '  <Step name="RunCMSStartup">',
         '    <Command>./CMSDiracAux/bin/Startup.py</Command>',
         '  </Step>',
+        "</Workflow>",
     ]
-
-    for key, value in sorted(extra_params.items()):
-        workflow_lines.append(
-            f'  <Parameter name="{escape(str(key))}" value="{escape(_stringify(value))}" comment="__CMSJobParameter__"/>'
-        )
-
-    workflow_lines.append("</Workflow>")
     workflow_xml = "\n".join(workflow_lines) + "\n"
 
     input_sandbox = task.Step.InputArtifacts + ["WMWorkload.pkl", "JobPackage.pkl"]
@@ -78,7 +60,7 @@ def build_local_dirac_job(task, wmjob=None):
         Name=job_name,
         WorkflowXML=workflow_xml,
         JDL=jdl,
-        Parameters=extra_params,
+        Parameters={},
     )
 
 
@@ -111,8 +93,6 @@ def build_local_transformation(task, local_job):
         Plugin=task.Splitting.PluginName,
         PluginParams=plugin_params,
         BodyXML=local_job.WorkflowXML,
-        InputData={
-            "LFNs": task.InputDataset.get("PlaceholderLFNs", [])
-        },
+        InputData={"LFNs": task.InputDataset.get("PlaceholderLFNs", [])},
         Parameters=transf_params,
     )
