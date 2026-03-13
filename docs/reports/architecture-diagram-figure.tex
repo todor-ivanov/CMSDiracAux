@@ -1,0 +1,38 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}[
+node distance=2.5cm,
+block/.style={rectangle, draw, rounded corners, align=center, minimum width=3cm, minimum height=1cm},
+arrow/.style={->, thick}
+]
+
+\node[block] (wmcore) {WMCore \\ Workflow Management};
+\node[block, below of=wmcore] (wmcget) {wmcGet.py \\ Fetch + Serialize};
+\node[block, below of=wmcget] (wmjson) {WMCore.fetched.d};
+
+\node[block, right of=wmjson, xshift=4cm] (wmc2transf) {wmc2transf.py};
+\node[block, below of=wmc2transf] (ir) {Canonical Translation IR};
+
+\node[block, below of=ir] (emit) {emit\_translation\_document};
+\node[block, below of=emit] (dirac) {DIRAC.transf.d};
+
+\node[block, right of=dirac, xshift=4cm] (split) {runLocalTransformation};
+\node[block, below of=split] (plugin) {CMSWMCoreSplittingPlugin};
+\node[block, below of=plugin] (jobs) {Task-specific Jobs};
+
+\node[block, below of=jobs] (cwl) {CWL Export};
+
+\draw[arrow] (wmcore) -- (wmcget);
+\draw[arrow] (wmcget) -- (wmjson);
+\draw[arrow] (wmjson) -- (wmc2transf);
+\draw[arrow] (wmc2transf) -- (ir);
+\draw[arrow] (ir) -- (emit);
+\draw[arrow] (emit) -- (dirac);
+\draw[arrow] (dirac) -- (split);
+\draw[arrow] (split) -- (plugin);
+\draw[arrow] (plugin) -- (jobs);
+\draw[arrow] (jobs) -- (cwl);
+
+\end{tikzpicture}
+\caption{Architecture of the WMCore to DIRAC interoperability proof of concept.}
+\end{figure}
