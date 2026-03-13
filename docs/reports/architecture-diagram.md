@@ -1,3 +1,4 @@
+
 # System Architecture Diagram
 
 The following diagram shows the current architecture of the
@@ -37,7 +38,8 @@ WMCore → DIRAC interoperability proof of concept.
                     │                               │
                     │  loader                       │
                     │  normalizer                   │
-                    │  dataset resolution (DAS)     │
+                    │  dataset hint extraction      │
+                    │  DAS data discovery           │
                     │  task/step mapper             │
                     │  splitting mapper             │
                     │  report generator             │
@@ -55,25 +57,24 @@ WMCore → DIRAC interoperability proof of concept.
               │  PluginInput                              │
               └──────────────┬────────────────────────────┘
                              │
-              ┌──────────────┼────────────────────────────┐
-              │              │                            │
-              ▼              ▼                            ▼
-┌────────────────────┐  ┌──────────────────────┐  ┌─────────────────────┐
-│ Production System  │  │ Transformation System│  │ CMSDirac Plugin     │
-│                    │  │                      │  │                     │
-│ Production         │  │ Transformations      │  │ CMSWMCoreSplitting  │
-│ metadata           │  │ Task creation        │  │ Plugin              │
-└──────────┬─────────┘  └──────────┬───────────┘  └──────────┬──────────┘
-           │                       │                         │
-           └──────────────┬────────┴──────────────┬──────────┘
-                          │                       │
-                          ▼                       ▼
+        ┌────────────────────┼────────────────────┬────────────────────┐
+        │                    │                    │                    │
+        ▼                    ▼                    ▼                    ▼
+┌────────────────────┐  ┌──────────────────────┐  ┌─────────────────────┐  ┌────────────────────┐
+│ Production System  │  │ Transformation System│  │ CMSDirac Plugin     │  │ CWL Export         │
+│                    │  │                      │  │                     │  │                    │
+│ Production         │  │ Transformations      │  │ CMSWMCoreSplitting  │  │ transf2cwl.py      │
+│ metadata           │  │ Task creation        │  │ Plugin              │  │ DIRAC.cwl.d        │
+└──────────┬─────────┘  └──────────┬───────────┘  └──────────┬──────────┘  │ workflow.cwl       │
+           │                       │                         │             │ tool.cwl           │
+           └──────────────┬────────┴──────────────┬──────────┘             │ inputs             │
+                          │                       │                        │ metadata           │
+                          ▼                       ▼                        └────────────────────┘
                  ┌────────────────┐      ┌──────────────────┐
-                 │ DIRAC WMS      │      │ Data discovery   │
-                 │ (local PoC)    │      │ + file metadata  │
+                 │ DIRAC WMS      │      │ Catalog/Metadata │
                  │                │      │ resolver         │
-                 │ Jobs           │      │ DAS today        │
-                 │ TaskJobs       │      │ DBS later        │
+                 │ Jobs           │      │ phase 1: DAS     │
+                 │ Pilot runtime  │      │ phase 2: DBS     │
                  └───────┬────────┘      └──────────────────┘
                          │
                          ▼
@@ -81,19 +82,10 @@ WMCore → DIRAC interoperability proof of concept.
                  │  CMS execution │
                  │  cmsRun steps  │
                  │  CMSSW env     │
-                 └───────┬────────┘
-                         │
-                         ▼
-                 ┌────────────────┐
-                 │  CWL export    │
-                 │ transf2cwl.py  │
-                 │                │
-                 │  workflow.cwl  │
-                 │  tool.cwl      │
-                 │  inputs/       │
-                 │  metadata/     │
                  └────────────────┘
 ```
+
+
 
 Additional context:
 ```
