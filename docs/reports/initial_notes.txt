@@ -1,0 +1,58 @@
+Doc:
+    * Dirac + GlideinWMS: https://docs.google.com/document/d/1xdFJPvfNqpfGCgCT0Thgc8EmkNNabS4twhHOTxYj4lA/edit?tab=t.0
+    * Dirac CWL repository: https://github.com/DIRACGrid/dirac-cwl/tree/main
+    * DIRAC Pilot repository: https://github.com/DIRACGrid/Pilot
+    * DIRAC repository: https://github.com/DIRACGrid/DIRAC
+    * DriacX repository: https://github.com/DIRACGrid/diracx
+    * DiracX documentation:
+        * https://diracx.diracgrid.org/en/latest/dev/
+        * https://diracx.diracgrid.org/en/latest/admin/
+        * https://diracx.diracgrid.org/en/latest/user/
+        * https://diracx.diracgrid.org/en/latest/roadmap/
+    * LHCbDirac extension: https://gitlab.cern.ch/lhcb-dirac/LHCbDIRAC (not visible from outside CERN)
+
+Problems and obstacles:
+    * Runtime code distribution
+        * unique entities on different workload granularity levels:
+            * Workflow
+            * Tasks/steps
+            * Job/job_batch
+            * WMCore code version - sandbox
+            * CMSSW code version
+
+    * Difficulties in preserving the WMCore code for building our own workflows:
+        * Equivalence between transformation and WMCore tasks/steps - expressions in terms of data distribution = single transformation
+        (basically WMBS jobs)
+        * CMSrun configuration(PSet.py, PSet.pkl) distributed with the sandbox
+        * We have job batches  - yet another construct(job aggregation) which does not exist in Dirac 
+
+
+Systems map:
+    * WMAgent+ -> Transformation system
+    * GlobalWorkQueue -> Production system
+
+Questions:
+    * Would there be a place where all those needed code possible to be added  as new dev in DiracX?
+    * Human hours needed for rewriting our workflows descriptions from scratch?
+    * Are we going in the direction of using CWL to express the full of our workflows anyway - :
+    (This includes enormous pieces of code from the current WMCore system which
+    is responsible for practically creating the full workflow construct to be sent
+    to the runtime together with all CMSRun process configurations- PSets etc.)
+    * How much we can reuse from Dirac, once all this dissection happens?
+
+
+Possible paths:
+    * Preserving the pieces from WMCore which drive our workflow construction build up,
+    and trying to find a way to redistribute job sandboxes with Dirac + extra code
+    which should go into the pilot (the future GlideinWMS pilot) for unwrapping and
+    linking it all at runtime - least change from what we already know, biggest mismatch
+    between the two systems. (Including the two systems abstractions and terminology)
+    * Completely rewrite our workflows - biggest change for what we already have as
+    workflow and WM system construct and relation to CMSSW framework, but biggest
+    match between the FUTURE Dirac and FUTURE WMCore incarnation - creating least friction.
+
+
+
+Needed developments and required changes:
+    * CMSRuntime
+    * 
