@@ -1,13 +1,10 @@
 import json
-import shutil
 import subprocess
-from pprint import pformat,pprint
 
 
 def _normalize_dataset_hints(task):
     candidates = []
 
-    # Older flat guesses
     flat_candidates = [
         task.get("inputDataset"),
         task.get("inputDataSet"),
@@ -20,15 +17,12 @@ def _normalize_dataset_hints(task):
         if item:
             candidates.append(item)
 
-    # WMTask serialized structure used in this repository:
-    # task["input"]["dataset"]["name"]
     task_input = task.get("input") or {}
     dataset_info = task_input.get("dataset") or {}
 
     if dataset_info.get("name"):
         candidates.append(dataset_info["name"])
 
-    # Optional extra dataset-level hints
     if dataset_info.get("primary"):
         candidates.append(dataset_info["primary"])
     if dataset_info.get("processed"):
@@ -46,8 +40,6 @@ def _normalize_dataset_hints(task):
                 if isinstance(value, str) and value:
                     datasets.append(value)
 
-    # keep only dataset-like paths for DAS file queries
-    # example: /DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD
     normalized = []
     seen = set()
 
@@ -64,56 +56,48 @@ def _normalize_dataset_hints(task):
     return normalized
 
 
-def _extract_lfns_from_dasgoclient_json(payload):
-    lfns = []
+def _extract_file_records_from_dasgoclient_json(payload):
+    file_records = []
 
     if isinstance(payload, list):
-        # dasgoclient -json commonly returns a list of records
         for entry in payload:
             if not isinstance(entry, dict):
                 continue
 
-            # format often contains a "file" list
             for record in entry.get("file", []):
-                if isinstance(record, dict):
-                    name = record.get("name")
-                    if name:
-                        lfns.append(name)
+                if isinstance(record, dict) and record.get("name"):
+                    file_records.append(record)
 
-            # defensive fallback for nested dict values
             for value in entry.values():
                 if isinstance(value, list):
                     for record in value:
-                        if isinstance(record, dict):
-                            name = record.get("name")
-                            if name and str(name).startswith("/"):
-                                lfns.append(name)
+                        if (
+                            isinstance(record, dict)
+                            and record.get("name")
+                            and str(record.get("name")).startswith("/")
+                        ):
+                            file_records.append(record)
 
     elif isinstance(payload, dict):
         for record in payload.get("file", []):
-            if isinstance(record, dict):
-                name = record.get("name")
-                if name:
-                    lfns.append(name)
+            if isinstance(record, dict) and record.get("name"):
+                file_records.append(record)
 
+    # preserve order, drop duplicates by file name
     seen = set()
     out = []
-    for lfn in lfns:
-        if lfn not in seen:
-            seen.add(lfn)
-            out.append(lfn)
+    for record in file_records:
+        name = record.get("name")
+        if name and name not in seen:
+            seen.add(name)
+            out.append(record)
 
     return out
 
 
 def query_das_files_for_dataset(dataset, host="https://cmsweb-testbed.cern.ch"):
-    # subprocess.run already waits for completion.
-    # Use one single shell line so alias expansion works reliably.
-
     shell_cmd = (
-        'shopt -s expand_aliases; '
-        'type dasgoclient >&2; '
-        # f'/cvmfs/cms.cern.ch/common/dasgoclient -host "{host}" -query "file dataset={dataset}" -json'
+        f'type dasgoclient >&2; '
         f'dasgoclient -host "{host}" -query "file dataset={dataset}" -json'
     )
 
@@ -122,9 +106,6 @@ def query_das_files_for_dataset(dataset, host="https://cmsweb-testbed.cern.ch"):
         capture_output=True,
         text=True,
     )
-
-    print(proc.stderr)
-    # print(proc.stdout)
 
     if proc.returncode != 0:
         raise RuntimeError(
@@ -146,7 +127,6 @@ def query_das_files_for_dataset(dataset, host="https://cmsweb-testbed.cern.ch"):
 
     try:
         payload = json.loads(proc.stdout)
-        # print(f"DAS result: {pformat(payload)}")
     except Exception as exc:
         raise RuntimeError(
             "Failed to decode dasgoclient JSON output\n"
@@ -157,15 +137,16 @@ def query_das_files_for_dataset(dataset, host="https://cmsweb-testbed.cern.ch"):
             f"json error: {exc}"
         ) from exc
 
-    return _extract_lfns_from_dasgoclient_json(payload)
+    return _extract_file_records_from_dasgoclient_json(payload)
 
 
 def resolve_task_lfns(task, host="https://cmsweb-testbed.cern.ch"):
     datasets = _normalize_dataset_hints(task)
-    print(f"DAS datasets: {pformat(datasets)}")
+
     result = {
         "datasets": datasets,
         "lfns": [],
+        "file_records": [],
         "resolution_mode": "none",
         "errors": [],
     }
@@ -173,23 +154,30 @@ def resolve_task_lfns(task, host="https://cmsweb-testbed.cern.ch"):
     if not datasets:
         return result
 
-    all_lfns = []
+    all_file_records = []
 
     for dataset in datasets:
         try:
-            lfns = query_das_files_for_dataset(dataset, host=host)
-            all_lfns.extend(lfns)
+            records = query_das_files_for_dataset(dataset, host=host)
+            all_file_records.extend(records)
         except Exception as exc:
             result["errors"].append(f"{dataset}: {exc}")
 
+    # preserve order, drop duplicates by LFN
     seen = set()
+    unique_records = []
     unique_lfns = []
-    for lfn in all_lfns:
-        if lfn not in seen:
-            seen.add(lfn)
-            unique_lfns.append(lfn)
 
+    for record in all_file_records:
+        name = record.get("name")
+        if name and name not in seen:
+            seen.add(name)
+            unique_records.append(record)
+            unique_lfns.append(name)
+
+    result["file_records"] = unique_records
     result["lfns"] = unique_lfns
+
     if unique_lfns:
         result["resolution_mode"] = "das"
     elif datasets:

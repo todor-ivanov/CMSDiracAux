@@ -7,6 +7,8 @@ from CMSDirac.Interop.model import (
     TranslationDocument,
 )
 
+POC_MAX_INPUT_FILES = 20
+
 
 def infer_gpu_required(request, step):
     if request.get("RequiresGPU"):
@@ -19,15 +21,11 @@ def infer_gpu_required(request, step):
 
 
 def _derive_task_name(task):
-    # First prefer explicit task names if present
     for key in ("taskName", "name", "TaskName", "Name"):
         value = task.get(key)
         if isinstance(value, str) and value.strip():
             return value.strip()
 
-    # Otherwise derive from pathName, e.g.
-    # /REQUEST/GenSimFull      -> GenSimFull
-    # /REQUEST/DataProcessing  -> DataProcessing
     path_name = task.get("pathName", "")
     if isinstance(path_name, str) and path_name.strip():
         parts = [part for part in path_name.split("/") if part]
@@ -66,7 +64,17 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
 
     das_resolution = resolve_task_lfns(task, host=das_host)
     placeholder_lfns = _extract_placeholder_input_lfns(task)
-    resolved_lfns = das_resolution["lfns"] or placeholder_lfns
+
+    full_resolved_file_records = das_resolution["file_records"]
+    full_resolved_lfns = das_resolution["lfns"]
+
+    # PoC scalability cap:
+    # only materialize the first N files into the downstream pipeline.
+    capped_file_records = full_resolved_file_records[:POC_MAX_INPUT_FILES]
+    capped_lfns = full_resolved_lfns[:POC_MAX_INPUT_FILES]
+
+    resolved_file_records = capped_file_records
+    resolved_lfns = capped_lfns or placeholder_lfns
 
     step_obj = CanonicalStep(
         StepName=step.get("stepName", "cmsRun1"),
@@ -114,8 +122,12 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
             "LFNResolutionMode": das_resolution["resolution_mode"],
             "LFNResolutionErrors": das_resolution["errors"],
             "PlaceholderLFNs": placeholder_lfns,
+            "ResolvedFileRecords": resolved_file_records,
             "ResolvedLFNs": resolved_lfns,
             "LFNs": resolved_lfns,
+            "ResolvedFileCountTotal": len(full_resolved_file_records),
+            "ResolvedFileCountMaterialized": len(resolved_file_records),
+            "PoCMaxInputFiles": POC_MAX_INPUT_FILES,
         },
         OutputDataset={
             "ProcessingString": request.get("ProcessingString"),
@@ -144,13 +156,15 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
     notes = [
         "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
         "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
+        "PoC scalability limitation: only the first 20 resolved files per task are materialized downstream.",
+        "This limitation is significant for CMS because data is hierarchically organized as dataset -> block -> file.",
         "WMJob.json handling is intentionally deferred to a later refinement stage.",
         "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report.",
         "Preserve the DIRAC InputSandbox vs jobDescription.xml analysis as a dedicated report section.",
     ]
 
     return TranslationDocument(
-        SchemaVersion="wmcore-to-dirac/v0.4-das-lfn-resolution",
+        SchemaVersion="wmcore-to-dirac/v0.6-poc-file-cap",
         SourceSystem="WMCore",
         TargetSystem="DIRAC",
         Production=prod,

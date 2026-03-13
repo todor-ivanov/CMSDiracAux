@@ -6,13 +6,40 @@ from CMSDirac.Interop.materialize import build_local_dirac_job, build_local_tran
 
 
 def _build_plugin_input_data(task):
-    events_per_job = task.Splitting.EventsPerJob or 100
-    lfns = task.InputDataset.get("PlaceholderLFNs", [])
+    file_records = task.InputDataset.get("ResolvedFileRecords", []) or []
+    lfns = (
+        task.InputDataset.get("LFNs")
+        or task.InputDataset.get("ResolvedLFNs")
+        or task.InputDataset.get("PlaceholderLFNs", [])
+    )
+
+    # Best case: build from full DAS file records
+    if file_records:
+        plugin_input = {}
+
+        for record in file_records:
+            lfn = record.get("name")
+            if not lfn:
+                continue
+
+            plugin_input[lfn] = {
+                "events": int(record.get("nevents", 0) or 0),
+                "se": "UNKNOWN_SE",
+                "size": int(record.get("size", 0) or 0),
+                "dataset": record.get("dataset"),
+                "block": record.get("block.name") or record.get("block_name"),
+            }
+
+        if plugin_input:
+            return plugin_input
+
+    # Fallback: resolved LFNs but without per-file metadata
+    default_events = task.Splitting.EventsPerJob or 0
 
     return {
         lfn: {
-            "se": "T2_TEST_SE",
-            "events": events_per_job,
+            "events": int(default_events),
+            "se": "UNKNOWN_SE",
         }
         for lfn in lfns
     }

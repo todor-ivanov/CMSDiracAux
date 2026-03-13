@@ -81,6 +81,7 @@ def build_local_transformation(task, local_job):
         "SourceRefs": task.SourceRef,
         "PlaceholderLFNs": task.InputDataset.get("PlaceholderLFNs", []),
         "ResolvedLFNs": task.InputDataset.get("ResolvedLFNs", []),
+        "ResolvedFileRecords": task.InputDataset.get("ResolvedFileRecords", []),
         "ServerSideNote": (
             "Server-side task creation is not expected yet; the CMS DIRAC extension "
             "and Transformation Agent/plugin deployment are not available."
