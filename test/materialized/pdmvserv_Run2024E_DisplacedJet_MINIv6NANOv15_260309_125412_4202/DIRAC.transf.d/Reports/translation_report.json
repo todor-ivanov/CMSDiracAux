@@ -2,8 +2,11 @@
   "Notes": [
     "Server-side DIRAC Transformation Agent integration is not available in the current environment.",
     "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
+    "PoC scalability limitation: only the first 20 resolved files per task are materialized downstream.",
+    "This limitation is significant for CMS because data is hierarchically organized as dataset -> block -> file.",
     "WMJob.json handling is intentionally deferred to a later refinement stage.",
-    "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report."
+    "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report.",
+    "Preserve the DIRAC InputSandbox vs jobDescription.xml analysis as a dedicated report section."
   ],
   "ServerSideReady": false,
   "ServerSideReadyReason": "CMS server-side DIRAC extension, plugin deployment, and Transformation Agent integration are not yet available in the current environment.",

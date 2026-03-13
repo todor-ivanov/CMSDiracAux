@@ -1,5 +1,9 @@
-task_name: "GenSimFull_task_0002"
-transformation_name: "GenSimFull"
-storage_element: "T2_TEST_SE"
+task_name: "DataProcessing_task_0002"
+transformation_name: "DataProcessing"
+storage_element: "UNKNOWN_SE"
 lfns:
-  - "/store/mock/mock-dataset/file_0002.root"
+  - "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/4d1a1b26-8bca-446d-9aa6-d8569484457d.root"
+  - "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/8566e26b-5253-4c1a-9f8a-bc0204894131.root"
+  - "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/9981d2d8-e11e-4151-9537-93b0d8326639.root"
+  - "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/b50dd396-fe51-4eae-b921-5b1b6403483b.root"
+  - "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/b622b255-9e5d-4ee4-b91b-95bbe085f1e7.root"

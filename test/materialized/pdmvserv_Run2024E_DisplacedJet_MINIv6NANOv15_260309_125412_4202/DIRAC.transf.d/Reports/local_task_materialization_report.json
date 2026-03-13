@@ -1,8 +1,8 @@
 {
-  "EmittedTaskJobCount": 5,
+  "EmittedTaskJobCount": 4,
   "Note": "This is a local stage-1 materialization run. No live DIRAC Transformation Agent or server-side task creation is involved.",
   "Plugin": "CMSWMCoreSplittingPlugin",
-  "PluginInputFile": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/PluginInput/GenSimFull.inputdata.json",
+  "PluginInputFile": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/PluginInput/DataProcessing.inputdata.json",
   "PluginParams": {
     "EventsPerJob": 43200,
     "EventsPerLumi": null,
@@ -18,39 +18,33 @@
     "StaticDatasetMode": true
   },
   "ServerSideExecution": false,
-  "TaskCount": 5,
+  "TaskCount": 4,
   "TaskJobs": [
     {
-      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0001.jobDescription.xml",
-      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0001.job.jdl",
-      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0001.job.params.json",
-      "TaskName": "GenSimFull_task_0001"
+      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0001.jobDescription.xml",
+      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0001.job.jdl",
+      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0001.job.params.json",
+      "TaskName": "DataProcessing_task_0001"
     },
     {
-      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0002.jobDescription.xml",
-      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0002.job.jdl",
-      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0002.job.params.json",
-      "TaskName": "GenSimFull_task_0002"
+      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0002.jobDescription.xml",
+      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0002.job.jdl",
+      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0002.job.params.json",
+      "TaskName": "DataProcessing_task_0002"
     },
     {
-      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0003.jobDescription.xml",
-      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0003.job.jdl",
-      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0003.job.params.json",
-      "TaskName": "GenSimFull_task_0003"
+      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0003.jobDescription.xml",
+      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0003.job.jdl",
+      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0003.job.params.json",
+      "TaskName": "DataProcessing_task_0003"
     },
     {
-      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0004.jobDescription.xml",
-      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0004.job.jdl",
-      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0004.job.params.json",
-      "TaskName": "GenSimFull_task_0004"
-    },
-    {
-      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0005.jobDescription.xml",
-      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0005.job.jdl",
-      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/GenSimFull/GenSimFull_task_0005.job.params.json",
-      "TaskName": "GenSimFull_task_0005"
+      "JobDescriptionXML": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0004.jobDescription.xml",
+      "JobJDL": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0004.job.jdl",
+      "JobParams": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/TaskJobs/DataProcessing/DataProcessing_task_0004.job.params.json",
+      "TaskName": "DataProcessing_task_0004"
     }
   ],
-  "TasksFile": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/Tasks/GenSimFull.tasks.json",
-  "TransformationName": "GenSimFull"
+  "TasksFile": "/afs/cern.ch/user/t/tivanov/CMSDiracAux/test/materialized/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DIRAC.transf.d/Tasks/DataProcessing.tasks.json",
+  "TransformationName": "DataProcessing"
 }

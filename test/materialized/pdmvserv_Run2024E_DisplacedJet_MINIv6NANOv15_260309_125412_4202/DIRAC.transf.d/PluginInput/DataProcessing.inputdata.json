@@ -1,0 +1,142 @@
+{
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/086f034c-92c9-4b92-be57-bd030d8cf778.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 6473,
+    "se": "UNKNOWN_SE",
+    "size": 3102373490
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/185b2e12-e007-448e-97c9-5c9097f81d50.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 6047,
+    "se": "UNKNOWN_SE",
+    "size": 3083720752
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/255f3913-f6dc-4503-91c7-8da6fd8c9578.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7910,
+    "se": "UNKNOWN_SE",
+    "size": 3159352305
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/2adb2b58-ae38-4cc4-9a92-fa118143cd39.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7823,
+    "se": "UNKNOWN_SE",
+    "size": 4060029704
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/2da926c9-08a4-493d-8dc1-e79a90b8980c.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7372,
+    "se": "UNKNOWN_SE",
+    "size": 3779403978
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/4d1a1b26-8bca-446d-9aa6-d8569484457d.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7640,
+    "se": "UNKNOWN_SE",
+    "size": 3972425338
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/8566e26b-5253-4c1a-9f8a-bc0204894131.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 8441,
+    "se": "UNKNOWN_SE",
+    "size": 2892933133
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/9981d2d8-e11e-4151-9537-93b0d8326639.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 6959,
+    "se": "UNKNOWN_SE",
+    "size": 3111360460
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/b50dd396-fe51-4eae-b921-5b1b6403483b.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7999,
+    "se": "UNKNOWN_SE",
+    "size": 4180804948
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/b622b255-9e5d-4ee4-b91b-95bbe085f1e7.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7975,
+    "se": "UNKNOWN_SE",
+    "size": 4151108597
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/bfc18f15-75d3-4493-812c-91234a79858b.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7818,
+    "se": "UNKNOWN_SE",
+    "size": 4019858548
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/cab9ae3a-6511-4bc8-a453-d9773c314401.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 8037,
+    "se": "UNKNOWN_SE",
+    "size": 4153807263
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/ccaa59b9-5c8e-4dd1-89f7-dada038542cc.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7971,
+    "se": "UNKNOWN_SE",
+    "size": 4134593110
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/e291bbf1-ad0e-4833-a16b-a4792de6821f.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 5638,
+    "se": "UNKNOWN_SE",
+    "size": 2946110503
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/e4092d37-e1b5-44d4-aa0d-48c7d8d4c31e.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7808,
+    "se": "UNKNOWN_SE",
+    "size": 4026380625
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/eeabdcd9-3806-4cd4-8ae1-135fdc36d96c.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 6657,
+    "se": "UNKNOWN_SE",
+    "size": 3430140682
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/f2c4f2c8-fb14-4a57-b166-1354b815ab9e.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7919,
+    "se": "UNKNOWN_SE",
+    "size": 4116819012
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/f745c85b-0cdd-4e09-83f7-430c129ccadc.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7881,
+    "se": "UNKNOWN_SE",
+    "size": 4076428646
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/f7aa3516-9b8f-4522-96a5-7f4b755f1898.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7515,
+    "se": "UNKNOWN_SE",
+    "size": 3853074167
+  },
+  "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550001/4bd546f4-5809-4220-9cf3-b1481290530f.root": {
+    "block": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD#985463dc-655c-4fb8-901d-f982af5f1740",
+    "dataset": "/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD",
+    "events": 7823,
+    "se": "UNKNOWN_SE",
+    "size": 4065086834
+  }
+}

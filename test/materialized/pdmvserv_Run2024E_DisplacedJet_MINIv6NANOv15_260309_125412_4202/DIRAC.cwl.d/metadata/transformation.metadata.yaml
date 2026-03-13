@@ -1,8 +1,8 @@
 job_type: "Transformation"
 source: "CMSDiracAux"
 workflow_type: "cwl"
-transformation_name: "GenSimFull"
-group_size: 5
+transformation_name: "DataProcessing"
+group_size: 4
 plugin: "CMSWMCoreSplittingPlugin"
 query_parameters:
   static_dataset_mode: true

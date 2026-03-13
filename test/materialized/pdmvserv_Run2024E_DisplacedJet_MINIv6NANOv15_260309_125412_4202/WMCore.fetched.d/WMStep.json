@@ -64,25 +64,25 @@
         "jobReport": "FrameworkJobReport.xml",
         "keep": true,
         "modules": {
-            "NANOEDMAODoutput": {
-                "transient": true,
-                "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
-                "primaryDataset": "DisplacedJet",
-                "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
-                "filterName": "",
-                "rawSkim": null,
-                "processedDataset": "Run2024E-MINIv6NANOv15-v1",
-                "dataTier": "NANOAOD"
-            },
             "MINIAODoutput": {
-                "transient": true,
-                "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
-                "primaryDataset": "DisplacedJet",
-                "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
-                "filterName": "",
-                "rawSkim": null,
                 "processedDataset": "Run2024E-MINIv6NANOv15-v1",
-                "dataTier": "MINIAOD"
+                "filterName": "",
+                "transient": true,
+                "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1",
+                "primaryDataset": "DisplacedJet",
+                "dataTier": "MINIAOD",
+                "rawSkim": null,
+                "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/MINIAOD/MINIv6NANOv15-v1"
+            },
+            "NANOEDMAODoutput": {
+                "processedDataset": "Run2024E-MINIv6NANOv15-v1",
+                "filterName": "",
+                "transient": true,
+                "mergedLFNBase": "/store/data/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1",
+                "primaryDataset": "DisplacedJet",
+                "dataTier": "NANOAOD",
+                "rawSkim": null,
+                "lfnBase": "/store/unmerged/Run2024E/DisplacedJet/NANOAOD/MINIv6NANOv15-v1"
             }
         },
         "prepId": "ReReco-Run2024E-DisplacedJet-MINIv6NANOv15-00002",
@@ -106,85 +106,85 @@
         ],
         "children": {
             "stageOut1": {
-                "retryDelay": 300,
-                "environment": {
-                    "variables": {},
-                    "paths": {}
+                "application": {
+                    "controls": {},
+                    "configuration": {}
                 },
+                "emulator": {},
+                "filecount": 0,
+                "owner_vorole": "DEFAULT",
+                "objectType": "WMStep",
+                "stepType": "StageOut",
+                "override": {},
+                "retryDelay": 300,
+                "asyncDest": null,
+                "tree": {
+                    "parent": "cmsRun1",
+                    "children": {},
+                    "childNames": []
+                },
+                "sandbox": {},
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "userDN": null,
+                "owner_vogroup": "DEFAULT",
+                "output": {
+                    "minMergeSize": 2147483648,
+                    "maxMergeEvents": 20000000
+                },
+                "files": {},
+                "retryCount": 3,
                 "input": {
                     "links": {}
                 },
-                "owner_vogroup": "DEFAULT",
-                "override": {},
-                "retryCount": 3,
-                "objectType": "WMStep",
-                "files": {},
-                "tree": {
-                    "parent": "cmsRun1",
-                    "childNames": [],
-                    "children": {}
-                },
-                "emulator": {},
                 "newStageout": false,
-                "asyncDest": null,
-                "userDN": null,
-                "sandbox": {},
-                "stepType": "StageOut",
                 "build": {
                     "directories": {
                         "stageOut1": {}
                     }
-                },
-                "application": {
-                    "configuration": {},
-                    "controls": {}
-                },
-                "output": {
-                    "maxMergeEvents": 20000000,
-                    "minMergeSize": 2147483648
-                },
-                "owner_vorole": "DEFAULT",
-                "filecount": 0
+                }
             },
             "logArch1": {
-                "sandbox": {},
-                "newStageout": false,
-                "retryDelay": 300,
-                "logcount": 0,
-                "stepType": "LogArchive",
-                "environment": {
-                    "variables": {},
-                    "paths": {}
-                },
-                "build": {
-                    "directories": {
-                        "logArch1": {}
-                    }
-                },
-                "input": {
-                    "links": {}
-                },
-                "application": {
-                    "configuration": {},
-                    "controls": {}
-                },
                 "output": {
                     "modules": {
                         "logArchive": {}
                     }
                 },
-                "tree": {
-                    "parent": "cmsRun1",
-                    "childNames": [],
-                    "children": {}
-                },
-                "logs": {},
+                "stepType": "LogArchive",
                 "override": {
                     "eos-lfn-prefix": "root://eoscms.cern.ch//eos/cms/store/logs/prod/recent/PRODUCTION"
                 },
                 "emulator": {},
+                "logcount": 0,
+                "retryDelay": 300,
+                "application": {
+                    "controls": {},
+                    "configuration": {}
+                },
                 "retryCount": 3,
-                "objectType": "WMStep"
+                "input": {
+                    "links": {}
+                },
+                "logs": {},
+                "tree": {
+                    "parent": "cmsRun1",
+                    "children": {},
+                    "childNames": []
+                },
+                "sandbox": {},
+                "environment": {
+                    "paths": {},
+                    "variables": {}
+                },
+                "newStageout": false,
+                "objectType": "WMStep",
+                "build": {
+                    "directories": {
+                        "logArch1": {}
+                    }
+                }
             }
         },
         "parent": null

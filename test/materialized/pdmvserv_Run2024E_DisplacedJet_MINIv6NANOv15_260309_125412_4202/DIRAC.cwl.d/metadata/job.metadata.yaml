@@ -1,6 +1,6 @@
 job_type: "User"
 source: "CMSDiracAux"
 workflow_type: "cwl"
-transformation_name: "GenSimFull"
+transformation_name: "DataProcessing"
 plugin: "CMSWMCoreSplittingPlugin"
 note: "Stage-1 CWL export of a locally materialized CMS workflow. Intended for local validation and future dirac-cwl alignment."

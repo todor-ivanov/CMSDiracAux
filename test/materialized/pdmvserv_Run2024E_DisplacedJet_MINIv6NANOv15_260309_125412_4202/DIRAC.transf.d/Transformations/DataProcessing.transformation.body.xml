@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow>
-  <Parameter name="JobName" value="GenSimFull.job"/>
+  <Parameter name="JobName" value="DataProcessing.job"/>
   <Parameter name="Executable" value="cmsRun"/>
   <Parameter name="SoftwareVersion" value="CMSSW_15_0_2"/>
   <Parameter name="SoftwareArchitecture" value="["el8_amd64_gcc12"]"/>

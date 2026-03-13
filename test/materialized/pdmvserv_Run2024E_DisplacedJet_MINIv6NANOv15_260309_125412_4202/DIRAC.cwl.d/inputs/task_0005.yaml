@@ -1,5 +1,0 @@
-task_name: "GenSimFull_task_0005"
-transformation_name: "GenSimFull"
-storage_element: "T2_TEST_SE"
-lfns:
-  - "/store/mock/mock-dataset/file_0005.root"

@@ -1,4 +1,4 @@
-JobName = "GenSimFull_task_0004";
+JobName = "DataProcessing_task_0004";
 JobType = "User";
 Executable = "cmsRun";
 Arguments = "step_cfg.py";

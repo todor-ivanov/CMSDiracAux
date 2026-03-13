@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow>
+  <Parameter name="JobName" value="DataProcessing_task_0001"/>
+  <Parameter name="TransformationName" value="DataProcessing"/>
+  <Parameter name="SourceTaskPath" value="/pdmvserv_Run2024E_DisplacedJet_MINIv6NANOv15_260309_125412_4202/DataProcessing"/>
+  <Parameter name="StorageElement" value="UNKNOWN_SE"/>
+  <Parameter name="InputLFNs" value="["/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/086f034c-92c9-4b92-be57-bd030d8cf778.root", "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/185b2e12-e007-448e-97c9-5c9097f81d50.root", "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/255f3913-f6dc-4503-91c7-8da6fd8c9578.root", "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/2adb2b58-ae38-4cc4-9a92-fa118143cd39.root", "/store/data/Run2024E/DisplacedJet/AOD/2024CDEReprocessing-v1/2550000/2da926c9-08a4-493d-8dc1-e79a90b8980c.root"]"/>
+  <Step name="FetchCMSDiracAux">
+    <Command>/bin/git clone --depth 1 -b runtime https://github.com/todor-ivanov/CMSDiracAux.git</Command>
+  </Step>
+  <Step name="SourceCMSDiracAux">
+    <Command>source ./CMSDiracAux/env.sh</Command>
+  </Step>
+  <Step name="RunCMSStartup">
+    <Command>./CMSDiracAux/bin/Startup.py</Command>
+  </Step>
+</Workflow>
