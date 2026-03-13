@@ -1,12 +1,4 @@
-# Human-Readable System Architecture Diagram
 
-This diagram presents the full architecture of the WMCore → DIRAC
-interoperability proof of concept in a visually structured form.
-
-
-----------------------------------------------------------------------
-                          CMS Workflow Layer
-----------------------------------------------------------------------
 
                        +-----------------------+
                        |        WMCore         |
@@ -30,9 +22,7 @@ interoperability proof of concept in a visually structured form.
                        +-----------+-----------+
 
 
-----------------------------------------------------------------------
-                        Translation Layer
-----------------------------------------------------------------------
+
 
                        +-----------------------+
                        |     wmc2transf.py     |
@@ -158,6 +148,101 @@ Large CMS datasets may contain:
  hundreds of blocks
 
 
+
+# Human-Readable Architecture Diagram
+
+# Human-Readable System Architecture Diagram
+
+This diagram presents the full architecture of the WMCore → DIRAC
+interoperability proof of concept in a visually structured form.
+
+
+----------------------------------------------------------------------
+                          CMS Workflow Layer
+----------------------------------------------------------------------
+
+```
+┌─────────────────────────────┐
+│ WMCore                      │
+│ CMS workflow management     │
+└───────────────┬─────────────┘
+                │
+                ▼
+┌─────────────────────────────┐
+│ wmcGet.py                   │
+│ workflow fetch + serialize  │
+└───────────────┬─────────────┘
+                │
+                ▼
+┌─────────────────────────────┐
+│ WMCore.fetched.d            │
+│ serialized workflow objects │
+└───────────────┬─────────────┘
+```
+
+----------------------------------------------------------------------
+                        Translation Layer
+----------------------------------------------------------------------
+
+```
+┌─────────────────────────────┐
+│ wmc2transf.py               │
+│ build canonical IR          │
+│ + data discovery            │
+└───────────────┬─────────────┘
+                │
+                ▼
+┌─────────────────────────────┐
+│ Canonical Translation IR    │
+│ Production / Task / Step    │
+│ Splitting                   │
+└───────────────┬─────────────┘
+```
+
+----------------------------------------------------------------------
+                    DIRAC-style Materialization
+----------------------------------------------------------------------
+
+```
+        ┌─────────────────────────────┐
+        │ DIRAC materialization       │
+        │ DIRAC.transf.d              │
+        └───────────────┬─────────────┘
+                        │
+                        ▼
+        ┌─────────────────────────────┐
+        │ runLocalTransformation.py   │
+        │ splitting simulation        │
+        └───────────────┬─────────────┘
+                        │
+                        ▼
+        ┌─────────────────────────────┐
+        │ CMSWMCoreSplittingPlugin    │
+        └───────────────┬─────────────┘
+                        │
+                        ▼
+        ┌─────────────────────────────┐
+        │ Task-specific jobs          │
+        │ jobDescription.xml / JDL    │
+        └───────────────┬─────────────┘
+                        │
+                        ▼
+        ┌─────────────────────────────┐
+        │ DIRAC WMS / CMS execution   │
+        └─────────────────────────────┘
+
+        ┌─────────────────────────────┐
+        │ CWL export                  │
+        │ transf2cwl.py               │
+        └───────────────┬─────────────┘
+                        │
+                        ▼
+        ┌─────────────────────────────┐
+        │ DIRAC.cwl.d                 │
+        │ workflow bundle             │
+        └─────────────────────────────┘
+```
+
 ----------------------------------------------------------------------
                  PoC Scalability Limitation
 ----------------------------------------------------------------------
@@ -168,3 +253,5 @@ For development purposes the PoC currently materializes:
 
 This avoids generating extremely large transformation structures
 while still validating the translation architecture.
+
+

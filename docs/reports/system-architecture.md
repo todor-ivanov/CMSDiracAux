@@ -21,24 +21,27 @@ execution models and eventually exportable into CWL workflows.
 ------------------------------------------------------------
 
 The system is structured as a translation and materialization pipeline.
-
-WMCore workflow
-  |
-  v
+```
+WMCore workflow objects
+    │
+    ▼
 WMCore serialization
-  |
-  v
-Translation layer (canonical IR)
-  |
-  v
-Local DIRAC-style materialization
-  |
-  v
-DIRAC transformation simulation
-  |
-  v
-CWL workflow export
+    │
+    ▼
+Canonical Translation IR
+    │
+    ▼
+DIRAC-style materialization
+    │
+    ▼
+Local transformation simulation
 
+
+Canonical Translation IR
+    │
+    ▼
+CWL workflow export
+```
 
 Each stage produces artifacts that can be inspected and validated
 independently.
@@ -50,53 +53,55 @@ independently.
 
 CMS Workflow Management System
 
+```
 WMCore
-  |
-  v
+    │
+    ▼
 WMCore request objects
-  |
-  v
+    │
+    ▼
 wmcGet.py
-  |
-  v
+    │
+    ▼
 serialized WMCore JSON objects
-
+```
 
 Translation Layer
-
+```
 canonical translation IR
-  |
-  v
+    │
+    ▼
 wmc2transf.py
-  |
-  v
+    │
+    ▼
 canonical task and production objects
-
+```
 
 DIRAC-style Materialization
-
+```
 emit_translation_document
-  |
-  v
+    │
+    ▼
 DIRAC.transf.d artifacts
-  |
-  v
-runLocalTransformation.py
-  |
-  v
-CMSWMCoreSplittingPlugin
-  |
-  v
-task-specific job definitions
+    │
+    ▼
 
+runLocalTransformation.py
+    │
+    ▼
+CMSWMCoreSplittingPlugin
+    │
+    ▼
+task-specific job definitions
+```
 
 Workflow Language Export
-
+```
 transf2cwl.py
-  |
-  v
+    │
+    ▼
 DIRAC.cwl.d bundle
-
+```
 
 ------------------------------------------------------------
 3. Request-scoped artifact layout
@@ -105,39 +110,40 @@ DIRAC.cwl.d bundle
 All artifacts produced for a workflow request are grouped under a
 single request root directory.
 
+```
 REQUEST_ROOT
-|
-|-- WMCore.fetched.d
-|
-|-- DIRAC.transf.d
-|
-`-- DIRAC.cwl.d
+│
+├── WMCore.fetched.d
+│
+├── DIRAC.transf.d
+│
+└── DIRAC.cwl.d
+```
 
-
-WMCore.fetched.d
+* WMCore.fetched.d
 
 Contains serialized WMCore objects.
 
 Examples:
 
-WMTask.json
-WMStep.json
-WMSplitting.json
+- WMTask.json
+- WMStep.json
+- WMSplitting.json
 
 
-DIRAC.transf.d
+* DIRAC.transf.d
 
 Contains the local representation of DIRAC constructs.
 
 Examples:
 
-Transformations
-PluginInput
-Jobs
-Reports
+- Transformations
+- PluginInput
+- Jobs
+- Reports
 
 
-DIRAC.cwl.d
+* DIRAC.cwl.d
 
 Contains the CWL workflow bundle exported from the transformation.
 
@@ -156,15 +162,16 @@ DIRAC focuses on job execution and workload scheduling.
 
 To bridge these models, the PoC introduces a canonical intermediate
 representation.
-
+```
 WMCore objects
-  |
-  v
+    │
+    ▼
 Canonical Translation IR
-  |
-  v
-DIRAC transformation objects
+    │
+    ▼
 
+DIRAC transformation objects
+```
 
 This IR allows:
 
@@ -183,22 +190,23 @@ WMCore tasks normally reference datasets rather than explicit files.
 
 Example dataset:
 
-/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD
+`/DisplacedJet/Run2024E-2024CDEReprocessing-v1/AOD`
 
 
 The PoC resolves dataset files using DAS.
 
+```
 dataset
-  |
-  v
+    │
+    ▼
 dasgoclient query
-  |
-  v
+    │
+    ▼
 file records
-  |
-  v
+    │
+    ▼
 LFN list
-
+```
 
 The resolved metadata is propagated through the IR and used to build
 plugin input structures for the DIRAC transformation simulation.
@@ -213,15 +221,13 @@ DIRAC transformations normally run inside DIRAC services.
 Because server-side DIRAC deployment is not available in the current
 environment, the PoC simulates transformation execution locally.
 
-runLocalTransformation.py
+`runLocalTransformation.py`
 
 This component:
 
-loads transformation definitions
-
-invokes CMSWMCoreSplittingPlugin
-
-generates task-level job descriptions
+ - loads transformation definitions
+ - invokes CMSWMCoreSplittingPlugin
+ - generates task-level job descriptions
 
 
 The result is a local approximation of a DIRAC transformation execution.
@@ -235,15 +241,14 @@ CMS jobs rely on a complex runtime environment.
 
 Key components include:
 
-CMSSW software distribution
+ - CMSSW software distribution
+ - WMCore runtime modules
 
-WMCore runtime modules
+Runtime configuration artifacts such as:
 
-runtime configuration artifacts such as:
-
-step_cfg.py
-WMWorkload.pkl
-JobPackage.pkl
+- `step_cfg.py`
+- `WMWorkload.pkl`
+- `JobPackage.pkl`
 
 
 These artifacts are normally distributed through CMS workflow
@@ -265,19 +270,20 @@ align the workflow representation with future DIRACX workflow models
 
 allow validation using standard workflow tools such as:
 
-cwltool
+`cwltool`
 
 
 Export process:
 
+```
 DIRAC.transf.d
-  |
-  v
+    │
+    ▼
 transf2cwl.py
-  |
-  v
+    │
+    ▼
 CWL workflow bundle
-
+```
 
 This export step prepares the workflow representation for potential
 integration with modern workflow engines.
@@ -318,18 +324,17 @@ report.
 ------------------------------------------------------------
 
 CMS data is organized hierarchically.
-
+```
 dataset
-  |
-  v
+    │
+    ▼
 block
-  |
-  v
+    │
+    ▼
 file
-
+```
 
 Large productions operate across many blocks and thousands of files.
-
 The PoC currently operates only on a small subset of the file layer.
 
 
@@ -339,27 +344,27 @@ The PoC currently operates only on a small subset of the file layer.
 
 Several architectural directions remain for future work.
 
-Improved data discovery
+- Improved data discovery
 
-integration with DBS metadata
+- integration with DBS metadata
 
-block-level dataset partitioning
+- block-level dataset partitioning
 
-Rucio-based data management integration
+- Rucio-based data management integration
 
 
 DIRAC integration
 
-server-side deployment of CMS transformation plugins
+- server-side deployment of CMS transformation plugins
 
-full DIRAC Transformation Agent integration
+- full DIRAC Transformation Agent integration
 
 
-Workflow representation
+- Workflow representation
 
-native CWL workflows
+- native CWL workflows
 
-compatibility with DIRACX workflow architecture
+- compatibility with DIRACX workflow architecture
 
 
 ------------------------------------------------------------
@@ -369,17 +374,18 @@ compatibility with DIRACX workflow architecture
 The architecture introduced in this repository provides a bridge
 between two workflow ecosystems.
 
+```
 WMCore
-  |
-  v
+    │
+    ▼
 Translation IR
-  |
-  v
+    │
+    ▼
 DIRAC workflow representation
-  |
-  v
+    │
+    ▼
 CWL workflow export
-
+```
 
 The canonical Translation IR acts as the central abstraction layer
 that allows these systems to interoperate while remaining loosely
