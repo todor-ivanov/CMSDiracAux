@@ -57,11 +57,15 @@ echo "----------------------------------------"
 echo "Step 2: Run local transformation splitting"
 echo "----------------------------------------"
 
-TRANSFORMATION_FILE="${OUTPUT_BASE}/${REQUEST_NAME}/DIRAC.transf.d/Transformations/GenSimFull.transformation.json"
+TRANSFORMATION_FILE="$(find "${OUTPUT_BASE}/${REQUEST_NAME}/DIRAC.transf.d/Transformations" -maxdepth 1 -name '*.transformation.json' | head -n 1)"
+
+if [ -z "${TRANSFORMATION_FILE}" ]; then
+  echo "ERROR: no transformation file found under ${OUTPUT_BASE}/${REQUEST_NAME}/DIRAC.transf.d/Transformations"
+  exit 1
+fi
 
 python bin/runLocalTransformation.py \
   --transformation-file "${TRANSFORMATION_FILE}"
-
 
 # ------------------------------------------------------------
 # Step 3
@@ -74,8 +78,7 @@ echo "----------------------------------------"
 
 python bin/transf2cwl.py \
   --bundle-dir "${OUTPUT_BASE}/${REQUEST_NAME}/DIRAC.transf.d" \
-  --output-base "${OUTPUT_BASE}" \
-  --transformation-name "GenSimFull"
+  --output-base "${OUTPUT_BASE}"
 
 
 # ------------------------------------------------------------

@@ -18,13 +18,33 @@ def infer_gpu_required(request, step):
     return bool(runtime.get("requiresGPU"))
 
 
+def _derive_task_name(task):
+    # First prefer explicit task names if present
+    for key in ("taskName", "name", "TaskName", "Name"):
+        value = task.get(key)
+        if isinstance(value, str) and value.strip():
+            return value.strip()
+
+    # Otherwise derive from pathName, e.g.
+    # /REQUEST/GenSimFull      -> GenSimFull
+    # /REQUEST/DataProcessing  -> DataProcessing
+    path_name = task.get("pathName", "")
+    if isinstance(path_name, str) and path_name.strip():
+        parts = [part for part in path_name.split("/") if part]
+        if parts:
+            return parts[-1]
+
+    return "UnknownTask"
+
+
+def _extract_dataset_name(task):
+    task_input = task.get("input") or {}
+    dataset_info = task_input.get("dataset") or {}
+    return dataset_info.get("name")
+
+
 def _extract_placeholder_input_lfns(task):
-    input_dataset = (
-        task.get("inputDataset")
-        or task.get("inputDataSet")
-        or task.get("InputDataset")
-        or "mock-dataset"
-    )
+    input_dataset = _extract_dataset_name(task) or "mock-dataset"
     input_dataset = str(input_dataset).strip("/").replace("/", "_")
 
     return [
@@ -40,6 +60,7 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
     splitting = bundle["splitting"]
 
     task_path = task["pathName"]
+    task_name = _derive_task_name(task)
     split_cfg = splitting[task_path]
     perf = split_cfg.get("performance", {}) or {}
 
@@ -80,7 +101,7 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
 
     task_obj = CanonicalTask(
         RequestName=request["RequestName"],
-        TaskName=task.get("taskName", "GenSimFull"),
+        TaskName=task_name,
         TaskPath=task_path,
         ParentTaskNames=[],
         TransformationType="Production",
@@ -88,7 +109,7 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
         TransformationFamily="WMCoreInterOp",
         Priority=request.get("RequestPriority"),
         InputDataset={
-            "DatasetHint": task.get("inputDataset"),
+            "DatasetHint": _extract_dataset_name(task),
             "DatasetsResolved": das_resolution["datasets"],
             "LFNResolutionMode": das_resolution["resolution_mode"],
             "LFNResolutionErrors": das_resolution["errors"],
@@ -125,6 +146,7 @@ def normalize_bundle(bundle, das_host="https://cmsweb-testbed.cern.ch"):
         "DAS-based LFN resolution is attempted from WMTask dataset hints; placeholder LFNs are used as fallback.",
         "WMJob.json handling is intentionally deferred to a later refinement stage.",
         "Report follow-up: update the complete architecture diagram to reflect WMCore.fetched.d, DIRAC.transf.d, and DIRAC.cwl.d, and include the parameter-mapping tables in the report.",
+        "Preserve the DIRAC InputSandbox vs jobDescription.xml analysis as a dedicated report section.",
     ]
 
     return TranslationDocument(
