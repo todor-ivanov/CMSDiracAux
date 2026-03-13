@@ -122,9 +122,6 @@ why the systems differ
 what translation layer is required
 which components are experiment-specific
 ```
-
-This is the report you are constructing.
-
 ---
 
 ## Objective Completion Matrix:
