@@ -6,6 +6,14 @@ This section explains the **architectural mismatch between the CMS workflow mana
 
 Understanding this mismatch is critical for the CMSDiracAux project because the goal of the project is **not only to translate workflow descriptions**, but also to provide a **transition layer of workflow-level abstractions between the two systems**.
 
+The following sections address specific aspects of this
+interoperability challenge:
+
+• dataset-resolution-model.md
+• translation-ir-rationale.md
+• job-description-translation.md
+
+
 As stated in the project objectives:
 
 > The ultimate goal of the project is not only to create a deterministic translation PoC between the CMS workflow management system and DIRAC, but also to express the complexity of the workflows description and make and explain a transition layer of workflow level abstractions between the two systems, which is inevitably connected with the two system's internals. (reflecting the fact that Non of the two systems' workflows descriptions are agnostic to their own architectures)
@@ -18,6 +26,7 @@ DIRAC workflows  = distributed workload orchestration
 ```
 
 Therefore, **a direct translation between the two systems is not possible without introducing an intermediate abstraction layer**.
+
 
 ---
 
