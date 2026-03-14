@@ -767,6 +767,40 @@ The workflow remains a **template**, and jobs are **spawned dynamically from dat
 
 ---
 
+# WMBS necessity argument
+
+Here is yet another place to mention why WMBS Exists, even though already explained in other sections of the report.
+
+The CMS workflow system requires job splitting at a much finer
+granularity than the storage hierarchy used for dataset management.
+
+While datasets and files represent the storage organization of CMS data,
+job boundaries are often defined using run, luminosity section,
+or event counts.
+
+This requirement necessitates an additional bookkeeping layer that
+tracks the association between jobs and data units.
+
+The Workload Management Bookkeeping System (WMBS) fulfills this role.
+
+---
+
+# DIRACX outlook
+
+**DIRACX Perspective**
+
+The DIRACX architecture introduces explicit workflow and task
+abstractions that are conceptually closer to the CMS workflow model.
+
+Classic DIRAC represents workflows using productions and transformations,
+while DIRACX moves toward a workflow → task → job hierarchy.
+
+This convergence reduces the conceptual distance between the CMS
+workflow model and DIRAC execution infrastructure, which strengthens
+the relevance of the Translation IR approach proposed in this work.
+
+---
+
 # Conceptual Interpretation
 
 The diagram highlights where **dynamism resides in each system**.
