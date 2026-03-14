@@ -385,10 +385,6 @@ without coupling the workflow description to either system.
 ---
 
 
-Below is a **report-ready section** prepared to be **added to `wmcore-dirac-mismatch.md`**.
-It expands your idea, evaluates the **Schrödinger vs Dirac picture analogy**, and integrates it into the technical reasoning of the report.
-
-I preserved your **core conceptual insight** and expanded it into a structured explanation suitable for a technical report.
 
 ---
 
@@ -493,58 +489,121 @@ This difference significantly influences how each system manages data distributi
 
 ---
 
-# Analogy with Schrödinger and Dirac Pictures
+# Analogy Between Quantum Pictures and Workflow Management Models
 
-An interesting analogy can be drawn with the two equivalent formulations of quantum mechanics: the **Schrödinger picture** and the **Dirac (interaction) picture**.
+## Context
 
-In the Schrödinger picture:
+When comparing the CMS Workflow Management System (WMCore) with the DIRAC workflow model, an analogy with different formulations of quantum mechanics can help explain the conceptual difference in how workflows are represented and executed.
+
+---
+
+# Schrödinger Picture
+
+In the **Schrödinger picture**, the **state evolves with time**, while the operators remain fixed.
+
+Conceptually:
 
 ```text
-the state evolves in time
+state(t) evolves
 operators remain fixed
 ```
 
-In the Heisenberg picture (closely related to the Dirac interaction formulation):
+In this formulation, the entire evolution of the system is encoded in the **explicit time evolution of the state vector**.
+
+---
+
+## Analogy with CMS WMCore
+
+The CMS workflow system behaves similarly to the Schrödinger picture.
+
+In CMS:
+
+* workflows are **fully defined in advance**
+* job boundaries are **explicitly constructed**
+* the entire evolution of the workflow is **pre-determined**
+
+Conceptually:
+
+```text
+workflow definition
+        ↓
+explicit job splitting
+        ↓
+predefined jobs
+        ↓
+execution
+```
+
+Thus, the **state of the workflow evolves**, while the structure of the execution model remains fixed.
+
+---
+
+# Heisenberg Picture
+
+In the **Heisenberg picture**, the situation is reversed:
 
 ```text
 operators evolve
-states remain fixed
+state remains fixed
 ```
 
-A similar conceptual contrast appears in the workflow–data relationship.
+The system state is fixed, while the **observables (operators)** evolve with time.
+
+This formulation focuses on **transformations acting on the system rather than explicit evolution of the state**.
 
 ---
 
-## CMS workflow behavior (Schrödinger-like)
+## Analogy with DIRAC
 
-In the CMS system:
-
-```text
-workflow state evolves over data partitions
-```
-
-The workflow definition is **transformed into many concrete job states** before execution.
-
-The dataset acts as the **space through which the workflow propagates**.
-
-This resembles the Schrödinger picture where **the state evolves over time**.
-
----
-
-## DIRAC workflow behavior (Dirac-like)
+The DIRAC workflow model resembles the Heisenberg picture.
 
 In DIRAC:
 
+* the workflow definition acts as a **static template**
+* jobs are generated dynamically as data becomes available
+* the execution evolves through **operations applied to data**
+
+Conceptually:
+
 ```text
-workflow definition remains fixed
-jobs are generated dynamically from data
+workflow template
+        ↓
+data appears
+        ↓
+transformation generates tasks
+        ↓
+jobs executed dynamically
 ```
 
-The workflow template remains stable while the execution is generated through interactions with data.
-
-This resembles the Dirac interaction picture where **the operators define the interaction rules**.
+Thus, the **execution operators evolve**, while the workflow description remains largely static.
 
 ---
+
+# Conceptual Summary
+
+```text
+CMS WMCore
+Schrödinger-like model
+
+workflow evolves explicitly
+jobs defined in advance
+
+
+DIRAC
+Heisenberg-like model
+
+workflow template fixed
+execution generated dynamically
+```
+
+---
+
+This analogy highlights the fundamental philosophical difference between the systems:
+
+* **CMS workflows encode the full evolution of computation explicitly.**
+* **DIRAC workflows encode transformations applied dynamically to available data.**
+
+This conceptual distinction helps explain why an intermediate abstraction layer such as the **Translation IR** is required to bridge the two workflow models.
 
 # Validity of the Analogy
 
@@ -567,7 +626,7 @@ CMS → dynamic workflow over static job definitions
 DIRAC → static workflow template generating dynamic jobs
 ```
 
-This analogy therefore serves as a **useful conceptual aid**, but it should be interpreted as an illustration rather than a strict formal equivalence.
+This analogy serves as a **useful conceptual aid**, but it should be interpreted as an illustration rather than a strict formal equivalence.
 
 ---
 
