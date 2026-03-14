@@ -37,7 +37,7 @@ The execution model is shown below.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                    CMS Workflow Request                   │
+│                    CMS Workflow Request                  │
 │                                                          │
 │                 Physics workflow definition              │
 │                    (WMWorkload object)                   │
@@ -45,16 +45,16 @@ The execution model is shown below.
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                          Task                             │
-│                       (WMTask)                            │
+│                          Task                            │
+│                       (WMTask)                           │
 │                                                          │
 │        Represents a processing stage in the workflow     │
 └─────────────────────────────┬────────────────────────────┘
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                          Step                             │
-│                        (WMStep)                           │
+│                          Step                            │
+│                        (WMStep)                          │
 │                                                          │
 │   Defines execution inside the CMSSW framework           │
 │                                                          │
@@ -66,7 +66,7 @@ The execution model is shown below.
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                     WMBS Splitting                        │
+│                     WMBS Splitting                       │
 │                                                          │
 │        Multi-dimensional splitting algorithm             │
 │                                                          │
@@ -79,8 +79,8 @@ The execution model is shown below.
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                        Job Creation                       │
-│                        (WMBSJob)                          │
+│                        Job Creation                      │
+│                        (WMBSJob)                         │
 │                                                          │
 │   Job payload includes                                   │
 │   • workflow runtime sandbox                             │
@@ -165,21 +165,21 @@ The execution model is shown below.
 
 ```
 ┌──────────────────────────────────────────────────────────┐
-│                        Production                         │
+│                        Production                        │
 │                                                          │
 │            High-level description of a workflow          │
 └─────────────────────────────┬────────────────────────────┘
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                      Transformation                       │
+│                      Transformation                      │
 │                                                          │
 │     Defines how jobs should be generated from data       │
 └─────────────────────────────┬────────────────────────────┘
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                   Transformation Plugin                   │
+│                   Transformation Plugin                  │
 │                                                          │
 │           Determines job creation logic                  │
 │                                                          │
@@ -190,7 +190,7 @@ The execution model is shown below.
                               │
                               ▼
 ┌──────────────────────────────────────────────────────────┐
-│                           Job                             │
+│                           Job                            │
 │                                                          │
 │  Executable                                              │
 │  dirac-jobexec                                           │
@@ -265,44 +265,44 @@ The following diagram highlights the structural mismatch between the two workflo
                      │
                      ▼
         ┌───────────────────────────────┐
-        │           Workflow             │
-        │           WMWorkload           │
+        │           Workflow            │
+        │           WMWorkload          │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │             Task               │
-        │            WMTask              │
+        │             Task              │
+        │            WMTask             │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │             Step               │
-        │            WMStep              │
-        │                                │
-        │  Runtime: CMSSW / cmsRun       │
-        │  Parameter sets (pset.py)      │
+        │             Step              │
+        │            WMStep             │
+        │                               │
+        │  Runtime: CMSSW / cmsRun      │
+        │  Parameter sets (pset.py)     │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │        WMBS Splitting          │
-        │                                │
-        │  Multi-dimensional splitting   │
-        │                                │
-        │  • dataset / block / file      │
-        │  • runtime constraints         │
-        │  • data tiers                  │
+        │        WMBS Splitting         │
+        │                               │
+        │  Multi-dimensional splitting  │
+        │                               │
+        │  • dataset / block / file     │
+        │  • runtime constraints        │
+        │  • data tiers                 │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │           Job                  │
-        │          WMBSJob               │
-        │                                │
-        │  Input sandbox                 │
-        │  CMSSW runtime                 │
-        │  JobPackage.pkl                │
+        │           Job                 │
+        │          WMBSJob              │
+        │                               │
+        │  Input sandbox                │
+        │  CMSSW runtime                │
+        │  JobPackage.pkl               │
         └───────────────────────────────┘
 
 
@@ -318,29 +318,29 @@ The following diagram highlights the structural mismatch between the two workflo
                      │
                      ▼
         ┌───────────────────────────────┐
-        │          Production            │
+        │          Production           │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │        Transformation          │
+        │        Transformation         │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │  Transformation Plugin         │
-        │                                │
-        │  Splitting by input data       │
-        │  granularity                   │
+        │  Transformation Plugin        │
+        │                               │
+        │  Splitting by input data      │
+        │  granularity                  │
         └───────────────┬───────────────┘
                         │
                         ▼
         ┌───────────────────────────────┐
-        │             Job                │
-        │                                │
-        │  Executable: dirac-jobexec     │
-        │  jobDescription.xml input      │
-        │  runtime via CVMFS             │
+        │             Job               │
+        │                               │
+        │  Executable: dirac-jobexec    │
+        │  jobDescription.xml input     │
+        │  runtime via CVMFS            │
         └───────────────────────────────┘
 ```
 
@@ -650,27 +650,6 @@ This requirement is one of the primary motivations for the **Translation IR** in
 
 ---
 
-
-
-Below is a **publication-grade diagram** illustrating the **static vs dynamic workflow–data interaction models**.
-
-It is designed to be inserted into:
-
-```text
-docs/reports/interoperability/wmcore-dirac-mismatch.md
-```
-
-Place it **after the section discussing the Schrödinger–Dirac analogy**.
-
-The diagram follows your rendering rules:
-
-* fenced code block
-* box-drawing characters
-* explicit connectors
-* no dangling edges
-
----
-
 # Static vs Dynamic Workflow–Data Interaction Models
 
 ```text
@@ -730,8 +709,8 @@ The diagram follows your rendering rules:
                            │
                            ▼
                 ┌───────────────────────┐
-                │     Transformation     │
-                │      definition        │
+                │     Transformation    │
+                │      definition       │
                 │                       │
                 │  job template         │
                 │  splitting rules      │
@@ -818,7 +797,7 @@ execution system semantics
 │                                                              │
 │                  WMCore Workflow Definitions                 │
 │                                                              │
-│      WMWorkload / TaskChain / StepChain JSON requests       │
+│      WMWorkload / TaskChain / StepChain JSON requests        │
 └──────────────────────────────┬───────────────────────────────┘
                                │
                                ▼
@@ -827,10 +806,10 @@ execution system semantics
 │                                                              │
 │                         wmcGet.py                            │
 │                                                              │
-│   Extract workflow definitions from WMCore request manager  │
-│   Serialize workflow request objects                        │
+│   Extract workflow definitions from WMCore request manager   │
+│   Serialize workflow request objects                         │
 │                                                              │
-│                 Output → WMCore.fetched.d                   │
+│                 Output → WMCore.fetched.d                    │
 └──────────────────────────────┬───────────────────────────────┘
                                │
                                ▼
@@ -851,19 +830,19 @@ execution system semantics
 │     │                                                        │
 │     └── Dependency Graph                                     │
 │                                                              │
-│   Dataset discovery via DAS / dasgoclient                   │
+│   Dataset discovery via DAS / dasgoclient                    │
 └───────────────┬───────────────────────────────┬──────────────┘
                 │                               │
                 ▼                               ▼
 ┌──────────────────────────────┐      ┌──────────────────────────────┐
-│     DIRAC Materialization    │      │          CWL Export           │
-│                              │      │                               │
-│  Construct DIRAC Transform   │      │          transf2cwl.py        │
-│                              │      │                               │
-│  CMSWMCoreSplittingPlugin    │      │  Convert Translation IR       │
-│  (local simulation)          │      │  into CWL workflow            │
-│                              │      │                               │
-│      Output → DIRAC.transf.d │      │      Output → DIRAC.cwl.d     │
+│     DIRAC Materialization    │      │          CWL Export          │
+│                              │      │                              │
+│  Construct DIRAC Transform   │      │          transf2cwl.py       │
+│                              │      │                              │
+│  CMSWMCoreSplittingPlugin    │      │  Convert Translation IR      │
+│  (local simulation)          │      │  into CWL workflow           │
+│                              │      │                              │
+│      Output → DIRAC.transf.d │      │      Output → DIRAC.cwl.d    │
 └───────────────┬──────────────┘      └───────────────┬──────────────┘
                 │                                     │
                 ▼                                     ▼
