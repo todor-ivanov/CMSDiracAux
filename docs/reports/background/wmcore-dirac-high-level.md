@@ -613,7 +613,7 @@ Translation IR
 
 # Important Insight for the Report
 
-Your project is **not simply a translator**.
+The PoC is **not simply a translator**.
 
 It is effectively building:
 
@@ -622,7 +622,5 @@ Workflow Interoperability Layer
 ```
 
 Between two experiment computing systems.
-
-That makes the report far stronger scientifically.
 
 ---
