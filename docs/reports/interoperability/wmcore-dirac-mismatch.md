@@ -1,19 +1,3 @@
-Below is a **report-ready draft** of the document you requested.
-It follows your documentation conventions:
-
-* diagrams in **fenced code blocks**
-* **box-drawing diagrams**
-* no dangling connectors
-* neutral Markdown (safe for GitHub rendering)
-
-File target:
-
-```
-docs/reports/interoperability/wmcore-dirac-mismatch.md
-```
-
----
-
 # WMCore–DIRAC Workflow Model Mismatch
 
 ## Purpose of this section
