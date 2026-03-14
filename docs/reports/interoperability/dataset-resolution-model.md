@@ -1,24 +1,20 @@
 # Dataset Resolution Model
 
-## Purpose of this section
+## Purpose
 
-The CMS workflow management system and the DIRAC workload management framework operate with **different abstractions for data selection and job input definition**.
+CMS workflows operate primarily on **datasets**, while execution infrastructures ultimately process **files**.
 
-CMS workflows typically refer to **datasets**, while DIRAC transformations operate on **explicit lists of files**.
+The CMSDiracAux translation layer must therefore resolve dataset-level workflow definitions into **file-level execution units** before jobs can be created.
 
-Therefore, when translating workflows from WMCore to DIRAC, it is necessary to introduce a **dataset resolution stage** that converts dataset references into concrete file-level inputs.
-
-This section describes the dataset resolution model implemented in the CMSDiracAux prototype and explains its role in the workflow translation pipeline.
+This section describes the dataset resolution model used in the CMS workflow management system and the mechanism implemented in the CMSDiracAux proof-of-concept to translate dataset references into executable workload inputs.
 
 ---
 
-# Data Representation in CMS
+# CMS Data Hierarchy
 
-CMS workflows are defined at the level of **datasets**, which represent logical collections of files.
+CMS data are organized according to a hierarchical structure.
 
-The CMS data hierarchy follows a structured model.
-
-```
+```text id="cms_data_hierarchy"
 dataset
    │
    ▼
@@ -26,89 +22,78 @@ block
    │
    ▼
 file
+   │
+   ▼
+run
+   │
+   ▼
+lumi
+   │
+   ▼
+events
 ```
 
-Each level serves a specific purpose.
+Each level represents a progressively finer partition of the data.
 
-| Level   | Purpose                                |
-| ------- | -------------------------------------- |
-| dataset | logical data collection                |
-| block   | distribution unit across storage sites |
-| file    | physical processing unit               |
+| Level   | Description                                     |
+| ------- | ----------------------------------------------- |
+| Dataset | logical collection of data files                |
+| Block   | dataset subdivision used for storage management |
+| File    | physical storage unit                           |
+| Run     | data-taking period identifier                   |
+| Lumi    | luminosity section within a run                 |
+| Event   | individual recorded event                       |
 
-Workflow definitions typically reference datasets rather than individual files.
-
-For example, a workflow step may declare:
-
-```
-input dataset
-```
-
-without specifying the individual files that should be processed.
-
-The actual file lists are resolved dynamically during workflow preparation.
+In most workflow definitions the **dataset is the primary input abstraction**.
 
 ---
 
-# Dataset Discovery via DAS
+# Dataset References in Workflow Definitions
 
-Dataset resolution in CMS relies on the **Data Aggregation System (DAS)**.
+In CMS workflows the input data are typically specified using a dataset identifier.
 
-DAS provides a unified interface for querying CMS metadata services.
+Example:
 
-Typical queries include:
-
-```
-dataset → blocks
-dataset → files
-block → files
+```text
+/PrimaryDataset/ProcessingString/DataTier
 ```
 
-In practice, dataset resolution is often performed using the command-line tool:
+This identifier represents a logical dataset registered in the CMS data bookkeeping systems.
 
+Workflow tasks therefore define input data at the dataset level.
+
+```text id="workflow_dataset_reference"
+┌────────────────────────────┐
+│ Workflow Task              │
+│                            │
+│ InputDataset = dataset_id  │
+└───────────────┬────────────┘
+                │
+                ▼
+        dataset resolution
 ```
-dasgoclient
-```
 
-Example query:
-
-```
-dasgoclient --query="file dataset=/A/B/C"
-```
-
-The result of this query is a list of **Logical File Names (LFNs)** that represent the files belonging to the dataset.
-
-These LFNs become the **actual processing units for job execution**.
+Before jobs can be created, the dataset must be resolved into the underlying files.
 
 ---
 
-# Dataset Resolution in CMS Workflows
+# Dataset Discovery Infrastructure
 
-In the CMS workflow system, dataset resolution happens during **job creation inside WMBS**.
+Dataset resolution relies on the CMS data discovery infrastructure.
 
-The process is conceptually:
+Two primary services are used:
 
-```
-dataset reference
-        ↓
-block discovery
-        ↓
-file discovery
-        ↓
-job splitting
-```
+| Service                       | Purpose                               |
+| ----------------------------- | ------------------------------------- |
+| DBS (Data Bookkeeping System) | stores dataset metadata               |
+| DAS (Data Aggregation System) | query interface for dataset discovery |
 
-The WMBS subsystem uses this information to determine how jobs should be generated.
+These services provide information about:
 
-The final jobs therefore receive:
-
-```
-subset of dataset files
-```
-
-rather than the dataset itself.
-
-This resolution process is normally hidden from the workflow description.
+* dataset existence
+* file membership
+* run/lumi metadata
+* storage locations
 
 ---
 
@@ -142,130 +127,151 @@ Unlike CMS workflows, DIRAC transformations generally do not operate directly on
 
 ---
 
-# Dataset Resolution in the CMSDiracAux Pipeline
-
-In the CMSDiracAux prototype, dataset resolution is performed in the **translation layer**.
-
-This stage occurs between:
-
-```
-WMCore workflow extraction
-and
-Translation IR construction
-```
-
-The dataset resolution process is shown below.
-
-```
-WMCore workflow
-        │
-        ▼
-dataset reference
-        │
-        ▼
-DAS query
-        │
-        ▼
-file list (LFNs)
-        │
-        ▼
-Translation IR DataReference
-```
-
-The resulting file list is then stored inside the **DataReference entity** of the Translation IR.
-
----
 
 # Dataset Resolution Pipeline
 
-The dataset resolution workflow implemented in the prototype can be summarized as follows.
+The dataset resolution process converts a dataset identifier into a list of logical file names (LFNs).
 
+```text id="dataset_resolution_pipeline"
+┌────────────────────────────┐
+│ Workflow Task              │
+│ InputDataset               │
+└───────────────┬────────────┘
+                │
+                ▼
+┌────────────────────────────┐
+│ DAS Query                  │
+│ dataset → file records     │
+└───────────────┬────────────┘
+                │
+                ▼
+┌────────────────────────────┐
+│ File Metadata              │
+│ run / lumi information     │
+└───────────────┬────────────┘
+                │
+                ▼
+┌────────────────────────────┐
+│ Logical File Name List     │
+│ (LFNs)                     │
+└────────────────────────────┘
 ```
-dataset identifier
-        │
-        ▼
-dasgoclient query
-        │
-        ▼
-block discovery
-        │
-        ▼
+
+The resulting file list becomes the input to the job generation stage.
+
+---
+
+# Example DAS Query
+
+Dataset file discovery is typically performed using `dasgoclient`.
+
+Example:
+
+```text
+dasgoclient --query="file dataset=/ExampleDataset/Processing/DataTier"
+```
+
+The query returns metadata describing the files belonging to the dataset.
+
+Example output fields include:
+
+| Field        | Description         |
+| ------------ | ------------------- |
+| file.name    | logical file name   |
+| file.size    | file size           |
+| file.nevents | number of events    |
+| run          | run identifier      |
+| lumi         | luminosity sections |
+
+These metadata fields are later used for job partitioning.
+
+---
+
+# Dataset Resolution in CMSDiracAux
+
+The CMSDiracAux proof-of-concept implements dataset resolution as part of the **translator stage**.
+
+```text id="dataset_resolution_architecture"
+┌───────────────────────────────┐
+│ WMCore Workflow               │
+│ dataset references            │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ Translator Layer              │
+│ dataset resolution            │
+│ DAS queries                   │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ File List                     │
+│ used for splitting            │
+└───────────────┬───────────────┘
+                │
+                ▼
+┌───────────────────────────────┐
+│ DIRAC Transformation Inputs   │
+└───────────────────────────────┘
+```
+
+Dataset resolution therefore occurs **before DIRAC job generation**.
+
+---
+
+# Handling Large Datasets
+
+CMS datasets often contain very large numbers of files.
+
+Typical dataset sizes may include:
+
+| Dataset                    | Approximate file count     |
+| -------------------------- | -------------------------- |
+| small analysis dataset     | tens of files              |
+| typical production dataset | thousands of files         |
+| large reprocessing dataset | tens of thousands of files |
+
+For development purposes the CMSDiracAux proof-of-concept applies a temporary limit.
+
+```text
+maximum_files_per_dataset = 20
+```
+
+This limit prevents the generation of excessively large local artifacts during testing.
+
+---
+
+# Integration with Splitting
+
+Once files are resolved, job generation can proceed using splitting policies.
+
+```text id="resolution_splitting_flow"
+dataset
+   │
+   ▼
 file discovery
-        │
-        ▼
-LFN list
-        │
-        ▼
-Translation IR DataReference
-```
-
-This step converts CMS dataset abstractions into **file-level inputs compatible with DIRAC transformations**.
-
----
-
-# Limiting Dataset Materialization in the Prototype
-
-CMS datasets may contain extremely large numbers of files.
-
-For example:
-
-```
-dataset size ≈ thousands of files
-```
-
-Materializing all files during development would produce extremely large artifacts.
-
-Therefore the CMSDiracAux prototype introduces a temporary constraint:
-
-```
-maximum files per dataset = 20
-```
-
-This limit allows the prototype to demonstrate the translation process while keeping the generated artifacts manageable.
-
-The limit is purely a development constraint and is not inherent to the architecture.
-
----
-
-# Representation in the Translation IR
-
-Once resolved, dataset information is represented in the Translation IR as a **DataReference object**.
-
-Conceptually:
-
-```
-DataReference
-   dataset identifier
-   block identifiers
-   file list
-```
-
-Only the **file list** is required by the DIRAC execution model, but retaining the dataset and block identifiers provides additional context for workflow translation and debugging.
-
----
-
-# Interaction with Job Splitting
-
-Dataset resolution is tightly coupled with the **job splitting stage**.
-
-After resolving the file list, the workflow translator can apply the splitting policy defined in the Translation IR.
-
-The resulting process becomes:
-
-```
-dataset reference
-        │
-        ▼
-file resolution
-        │
-        ▼
+   │
+   ▼
+file list
+   │
+   ▼
 splitting policy
-        │
-        ▼
-job generation
+   │
+   ▼
+job definitions
 ```
 
-This sequence mirrors the logic implemented in the CMS WMBS subsystem.
+Splitting policies determine how files are partitioned into jobs.
+
+Examples include:
+
+* file-based splitting
+* run-based splitting
+* lumi-based splitting
+* event-aware splitting
+
+These policies are implemented within the job generation stage.
 
 ---
 
@@ -280,10 +286,7 @@ WMCore workflow
 workflow extraction
         │
         ▼
-dataset resolution
-        │
-        ▼
-Translation IR
+Translation IR  <── dataset resolution
         │
         ├── DIRAC transformation
         └── CWL workflow
@@ -292,6 +295,29 @@ Translation IR
 By resolving datasets at this stage, the Translation IR becomes independent of the CMS metadata infrastructure.
 
 This ensures that downstream execution systems only receive the **concrete file-level inputs required for execution**.
+
+---
+
+# Implications for DIRAC Execution
+
+DIRAC transformations typically operate on file-level inputs.
+
+Therefore the dataset resolution stage produces the input structure required by DIRAC workflows.
+
+```text id="dataset_dirac_mapping"
+dataset
+   │
+   ▼
+file list
+   │
+   ▼
+DIRAC transformation tasks
+   │
+   ▼
+DIRAC jobs
+```
+
+This conversion bridges the difference between CMS dataset abstractions and DIRAC execution units.
 
 ---
 
@@ -304,6 +330,16 @@ CMS workflow → dataset abstraction
 DIRAC workflow → file-level inputs
 ```
 
-The translation layer therefore converts **dataset semantics into file semantics** while preserving the workflow structure.
 
-This conversion is a key step in enabling deterministic translation between the two workflow systems.
+# Summary
+
+CMS workflows define input data at the **dataset level**, while execution infrastructures require **file-level processing units**.
+
+The dataset resolution model therefore performs the following steps:
+
+1. resolve dataset identifiers using DAS queries
+2. obtain file-level metadata
+3. construct logical file name lists
+4. provide these lists to the job generation stage
+
+This process enables CMS workflows defined in WMCore to be translated into executable jobs compatible with DIRAC workflow infrastructures.
