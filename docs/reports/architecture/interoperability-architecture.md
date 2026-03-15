@@ -1,7 +1,7 @@
 # CMS-DIRAC hybrid system
 
 This section provides a view of which pieces would be substituted from the current CMS Workflow management system
-once a **CMS-DIRAC** hybrid system is implemented with **CMSDiracAux** serving as an interoperable layer/system.
+once a **CMS-DIRAC** hybrid system is implemented with **CMSDiracAux** serving as an interoperable layer.
 
 The idea is that CMSDiracAux does **not replace the whole CMS workflow system**. Instead it **cuts the system at two conceptual boundaries**:
 
@@ -89,8 +89,9 @@ CMS Workflow Management System
                     CMS WORKFLOW MANAGEMENT SYSTEM
 ┌──────────────────────────────────────────────────────────────────────────────┐
 │                              CMSWEB SERVICES                                 │
-│                                                                              │
-│   ReqMgr2          DBS          Rucio          WMStats         CouchDB       │
+│                                              X---------+      X---------+    │
+│   ReqMgr2      DBS/DAS          Rucio        | WMStats |      | CouchDB |    │
+│                                              +---------+      +---------+    │
 └───────────────┬──────────────────────────────────────────────────────────────┘
                 │
                 ▼
@@ -100,38 +101,38 @@ CMS Workflow Management System
 │   Workflow Definition                                                        │
 │   Task Graph                                                                 │
 │   Splitting Policies                                                         │
-└───────────────┬──────────────────────────────────────────────────────────────┘
-                │
-════════════════╪═══════════════════════════════════════════════════════════════
-                │        CMSDiracAux intercepts workflows here
-════════════════╪═══════════════════════════════════════════════════════════════
-                │
-                ▼
+└─────────────────────────────────────────────────────┬────────────────────────┘
+                                                      │
+══════════════════════════════════════════════════════╪═════════════════════════
+                CMSDiracAux intercepts workflows here │
+══════════════════════════════════════════════════════╪═════════════════════════
+                                                      │
+                                                      ▼
 
-┌───────────────────────────────┐      ┌──────────────────────────────────────┐
+X-------------------------------+      ┌──────────────────────────────────────┐
 │ WMBS                          │      │ DIRAC-like CMS Splitting Plugin      │
-│ (inside WMAgents)             │      │ (WMBS logic reborn)                  │
+  (inside WMAgents)                    │ (WMBS logic reborn)                  │
 │                               │      │                                      │
-│ Job bookkeeping               │      │ Job ↔ data-content mapping           │
+  Job bookkeeping                      │ Job ↔ data-content mapping           │
 │ Run/Lumi splitting            │  →   │ Run/Lumi splitting                   │
-│ Job definitions               │      │ Job definitions                      │
-└───────────────────────────────┘      └──────────────────────────────────────┘
-                │                                     │
-                │                                     ▼
-                │                    ┌─────────────────────────────────────────┐
-                │                    │      DIRAC TRANSFORMATION SYSTEM        │
-                │                    │                                         │
-                │                    │   Transformation                        │
-                │                    │          │                              │
-                │                    │          ▼                              │
-                │                    │        Jobs                             │
-                │                    └───────────────┬─────────────────────────┘
-                │                                    │
-════════════════╪════════════════════════════════════╪══════════════════════════
-                │        CMSDiracAux replaces execution backend here
-════════════════╪════════════════════════════════════╪══════════════════════════
-                │                                    │
-                ▼                                    ▼
+  Job definitions                      │ Job definitions                      │
++-------------------------------+      └──────────────────────────────────────┘
+                                                      │
+                                                      ▼
+                                     ┌─────────────────────────────────────────┐
+                                     │      DIRAC TRANSFORMATION SYSTEM        │
+                                     │                                         │
+                                     │   Transformation                        │
+                                     │          │                              │
+                                     │          ▼                              │
+                                     │        Jobs                             │
+                                     └───────────────┬─────────────────────────┘
+                                                     │
+═════════════════════════════════════════════════════╪══════════════════════════
+                        CMSDiracAux replaces execution backend here
+═════════════════════════════════════════════════════╪══════════════════════════
+                                                     │
+                                                     ▼
 ┌──────────────────────────────────────────┐   ┌──────────────────────────────┐
 │ CMS Submission Infrastructure            │   │ DIRAC WORKLOAD MANAGEMENT    │
 │                                          │   │                              │
