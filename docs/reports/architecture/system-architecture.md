@@ -32,6 +32,7 @@ DIRAC Execution Infrastructure
 Worker Node Runtime Environment
 ```
 
+
 Each layer serves a different purpose and represents a different abstraction level in the workflow execution pipeline.
 
 ---
@@ -402,6 +403,71 @@ cmsRun
 This architecture preserves CMS workflow semantics while allowing execution within the DIRAC distributed computing framework.
 
 The Translation IR serves as the key abstraction layer enabling this interoperability.
+
+# Detailed view
+
+```
+                        CMSDiracAux Architecture Overview
+
+
+        CMS Workflow System             CMSDiracAux        DIRAC Execution System
+   ─────────────────────────────  ─────────────────────  ───────────────────────────
+
+
+   ┌────────────────────────────┐
+   │        ReqMgr / WMCore     │
+   │                            │
+   │  Workflow definition       │
+   │  Task graph                │
+   │  Splitting policies        │
+   └─────────────┬──────────────┘
+                 │
+                 │ workflow extraction
+                 ▼
+                ┌──────────────────────────┐
+                │  Workflow serialization  │
+                │      (wmcGet.py)         │
+                └─────────────┬────────────┘
+                              │
+                              ▼
+                            ┌───────────────────────────────┐
+                            │        Translation IR         │
+                            │                               │
+                            │  CanonicalWorkflow            │
+                            │  CanonicalTasks               │
+                            │  CanonicalSplitting           │
+                            │  CanonicalDatasetRefs         │
+                            └─────────────┬─────────────────┘
+                                          │
+                                          │ materialization
+                                          ▼
+                             ┌─────────────────────────────┐
+                             │     DIRAC Transformation    │
+                             │                             │
+                             │  CMS Splitting Plugin       │
+                             │  (WMBS logic reborn)        │
+                             └───────────────────────┬─────┘
+                                                     │
+                                                     ▼
+                                  ┌──────────────────────────────────────────┐
+                                  │  +------------+   +-------------------+  │
+                                  │  | GlideinWMS | + | DIRAC Workload    |  │
+                                  │  | HTCondor   |   | Management System |  │
+                                  │  +------------+   +-------------------+  │
+                                  │                                          │
+                                  │  Job queue                               │
+                                  │  Pilot matching                          │
+                                  └────────────────────┬─────────────────────┘
+                                                       │
+                                                       ▼
+                                            ┌──────────────────────┐
+                                            │     Worker Nodes     │
+                                            │                      │
+                                            │  runtime bootstrap   │
+                                            │  cmsRun execution    │
+                                            └──────────────────────┘
+```
+> **Figure:** Detailed CMSDiracAux Functional overview. The system extracts workflows from the CMS WMCore infrastructure and translates them into a canonical intermediate representation (Translation IR). The IR is then materialized into DIRAC transformations that reproduce CMS splitting semantics through dedicated plugins. Jobs are executed through the DIRAC workload management system while preserving CMS runtime behavior.
 
 ---
 
