@@ -1,3 +1,87 @@
+# Proof-of-Concept Evaluation
+
+## Overview
+
+The CMSDiracAux prototype demonstrates that workflows defined within the CMS workflow management system can be translated into execution structures compatible with the DIRAC distributed computing framework.
+
+The prototype focuses on validating the architectural feasibility of such a translation rather than implementing a full production-grade system.
+
+---
+
+# Translation Feasibility
+
+The project successfully demonstrates that workflow descriptions originating from WMCore can be converted into a canonical intermediate representation.
+
+This representation captures:
+
+* workflow metadata
+* task structure
+* dataset references
+* splitting policies
+
+The resulting IR provides a stable abstraction for further processing.
+
+---
+
+# Execution Model Compatibility
+
+The translation pipeline successfully bridges the conceptual differences between CMS and DIRAC execution models.
+
+CMS workflows follow an explicit workflow evolution model:
+
+```
+workflow → tasks → jobs
+```
+
+DIRAC workflows follow a dynamic execution model:
+
+```
+transformation → tasks → jobs
+```
+
+The Translation IR allows CMS workflows to be expressed in a form compatible with the DIRAC transformation system.
+
+---
+
+# Preservation of Splitting Semantics
+
+A key challenge in the translation process is preserving CMS splitting semantics.
+
+CMS workflows often define splitting policies at the level of data content rather than storage containers.
+
+The CMSDiracAux architecture demonstrates that this functionality can be reproduced inside DIRAC through a CMS-specific splitting plugin.
+
+---
+
+# Runtime Reconstruction
+
+The prototype demonstrates the feasibility of reconstructing CMS runtime environments on worker nodes using bootstrap scripts.
+
+These scripts inject the runtime parameters required by CMS jobs and ensure that the correct dataset partitions are processed.
+
+---
+
+# Architectural Insight
+
+The most important architectural insight emerging from this work is that CMS workflow bookkeeping cannot be removed simply by changing the execution backend.
+
+Even when workflows are executed through DIRAC, the system must maintain the mapping between:
+
+```
+workflow tasks
+data partitions
+jobs
+```
+
+This mapping was originally implemented by WMBS and must be reproduced within the DIRAC transformation system.
+
+---
+
+# Summary
+
+The CMSDiracAux proof-of-concept confirms that interoperability between the CMS workflow management system and the DIRAC distributed computing framework is achievable through a carefully designed translation architecture centered around a canonical intermediate representation.
+
+
 # Proof of Concept Evaluation
 
 This document summarizes the results, limitations, and lessons learned
